@@ -50,14 +50,14 @@
     /* Menu Home Styling */
     .home-card {
       background: var(--card);
-      border-radius: 20px;
-      padding: 36px 24px;
+      border-radius: 24px;
+      padding: 36px 20px;
       box-shadow: 0 10px 25px -5px rgba(0,0,0,0.07);
       text-align: center;
     }
 
     .home-card h1 {
-      font-size: 1.8rem;
+      font-size: 1.85rem;
       color: var(--primary);
       margin-bottom: 8px;
     }
@@ -65,16 +65,17 @@
     .home-card p {
       color: var(--text-muted);
       font-size: 1rem;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
     }
 
     .menu-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 18px;
+      gap: 20px;
+      align-items: end;
     }
 
-    @media (min-width: 600px) {
+    @media (min-width: 620px) {
       .menu-grid {
         grid-template-columns: 1fr 1fr;
       }
@@ -83,34 +84,57 @@
     .menu-btn {
       background: #f8fafc;
       border: 2px solid var(--border);
-      border-radius: 16px;
-      padding: 24px 20px;
-      text-align: left;
+      border-radius: 20px;
+      padding: 24px 18px 20px;
+      text-align: center;
       cursor: pointer;
-      transition: all 0.25s ease;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      align-items: center;
+      gap: 12px;
+      position: relative;
     }
 
     .menu-btn:hover {
       border-color: var(--primary);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.15);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px -6px rgba(79, 70, 229, 0.2);
       background: #fff;
     }
 
     .menu-btn.math:hover {
       border-color: var(--secondary);
-      box-shadow: 0 10px 20px -5px rgba(14, 165, 233, 0.15);
+      box-shadow: 0 12px 24px -6px rgba(14, 165, 233, 0.2);
+    }
+
+    /* Karakter Kartun Container */
+    .avatar-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      margin-bottom: 4px;
+      transition: transform 0.3s ease;
+    }
+
+    .menu-btn:hover .avatar-wrapper {
+      transform: scale(1.05);
+    }
+
+    .avatar-anin {
+      height: 155px;
+      width: auto;
+    }
+
+    .avatar-putri {
+      height: 135px;
+      width: auto;
     }
 
     .menu-btn .badge {
-      display: inline-block;
-      align-self: flex-start;
       font-size: 0.75rem;
       font-weight: 700;
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 20px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -120,7 +144,7 @@
     .badge-math { background: #e0f2fe; color: var(--secondary); }
 
     .menu-btn h2 {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       color: var(--text);
     }
 
@@ -128,6 +152,7 @@
       font-size: 0.88rem;
       color: var(--text-muted);
       margin: 0;
+      line-height: 1.4;
     }
 
     /* Quiz Header */
@@ -373,22 +398,80 @@
 <body>
 
   <div class="container">
-    <!-- 1. Menu Utama -->
+    <!-- 1. Menu Utama dengan Karakter Lucu -->
     <div id="home-view" class="home-card">
       <h1>🏆 Portal Olimpiade Bocils</h1>
       <p>Pilih paket latihan soal di bawah ini untuk mulai belajar:</p>
 
       <div class="menu-grid">
+        <!-- Kartu Kakak Anin (Lebih Tinggi, Berhijab & Berkacamata) -->
         <div class="menu-btn" onclick="startQuiz('anin')">
+          <div class="avatar-wrapper">
+            <svg class="avatar-anin" viewBox="0 0 120 165" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Badan & Pakaian -->
+              <path d="M32 125C32 110 40 100 60 100C80 100 88 110 88 125V165H32V125Z" fill="#6366F1"/>
+              <!-- Kerudung / Hijab (Bahu & Dada) -->
+              <path d="M28 65C28 102 38 122 60 122C82 122 92 102 92 65C92 28 82 15 60 15C38 15 28 28 28 65Z" fill="#A5B4FC"/>
+              <!-- Wajah -->
+              <ellipse cx="60" cy="66" rx="22" ry="24" fill="#FDDFCA"/>
+              <!-- Pipi Merah Merona -->
+              <ellipse cx="46" cy="74" rx="4.5" ry="2.5" fill="#FCA5A5" opacity="0.6"/>
+              <ellipse cx="74" cy="74" rx="4.5" ry="2.5" fill="#FCA5A5" opacity="0.6"/>
+              <!-- Mata -->
+              <ellipse cx="50" cy="65" rx="2.8" ry="3.8" fill="#1E293B"/>
+              <ellipse cx="70" cy="65" rx="2.8" ry="3.8" fill="#1E293B"/>
+              <circle cx="51.2" cy="63.5" r="1.2" fill="#FFFFFF"/>
+              <circle cx="71.2" cy="63.5" r="1.2" fill="#FFFFFF"/>
+              <!-- Senyum -->
+              <path d="M55 77C57.5 80 62.5 80 65 77" stroke="#9A3412" stroke-width="2" stroke-linecap="round"/>
+              <!-- Kacamata Bulat Lucu & Frame -->
+              <circle cx="49" cy="65" r="9" stroke="#374151" stroke-width="2.5" fill="none"/>
+              <circle cx="71" cy="65" r="9" stroke="#374151" stroke-width="2.5" fill="none"/>
+              <path d="M58 65H62" stroke="#374151" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Bros Hijab Cantik -->
+              <circle cx="60" cy="112" r="4.5" fill="#FBBF24"/>
+              <circle cx="60" cy="112" r="2" fill="#F59E0B"/>
+            </svg>
+          </div>
           <span class="badge badge-english">Kelas 4 SD</span>
-          <h2>Soal Kakak Anin</h2>
-          <p>Olimpiade Bahasa Inggris (25 Soal: Grammar, Vocab, Reading + Pembahasan)</p>
+          <h2>Kakak Anin</h2>
+          <p>Olimpiade Bahasa Inggris<br>(25 Soal: Grammar, Vocab, Reading)</p>
         </div>
 
+        <!-- Kartu Kakak Putri (Lebih Pendek, Rambut Kuncir Lucu, Tanpa Kacamata) -->
         <div class="menu-btn math" onclick="startQuiz('putri')">
+          <div class="avatar-wrapper">
+            <svg class="avatar-putri" viewBox="0 0 120 145" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Kuncir Rambut Dua (Kiri & Kanan) -->
+              <circle cx="28" cy="48" r="14" fill="#475569"/>
+              <circle cx="92" cy="48" r="14" fill="#475569"/>
+              <ellipse cx="36" cy="54" rx="5" ry="3" fill="#F43F5E"/>
+              <ellipse cx="84" cy="54" rx="5" ry="3" fill="#F43F5E"/>
+              <!-- Badan / Baju Lucu -->
+              <path d="M35 110C35 96 44 88 60 88C76 88 85 96 85 110V145H35V110Z" fill="#38BDF8"/>
+              <!-- Kerah Baju Putih -->
+              <path d="M52 88L60 98L68 88" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Rambut Belakang -->
+              <circle cx="60" cy="52" r="28" fill="#475569"/>
+              <!-- Wajah Imut -->
+              <ellipse cx="60" cy="58" rx="23" ry="22" fill="#FDDFCA"/>
+              <!-- Poni Rambut Depan -->
+              <path d="M37 50C43 40 54 38 60 44C66 38 77 40 83 50C80 43 72 35 60 35C48 35 40 43 37 50Z" fill="#475569"/>
+              <!-- Pipi Merah Merona -->
+              <circle cx="45" cy="67" r="4" fill="#FCA5A5" opacity="0.7"/>
+              <circle cx="75" cy="67" r="4" fill="#FCA5A5" opacity="0.7"/>
+              <!-- Mata Ceria Berbinar (Besar) -->
+              <ellipse cx="48" cy="58" rx="3.5" ry="4.5" fill="#1E293B"/>
+              <ellipse cx="72" cy="58" rx="3.5" ry="4.5" fill="#1E293B"/>
+              <circle cx="49.5" cy="56" r="1.5" fill="#FFFFFF"/>
+              <circle cx="73.5" cy="56" r="1.5" fill="#FFFFFF"/>
+              <!-- Senyum Lebar Ceria -->
+              <path d="M54 69C54 74 66 74 66 69" stroke="#E11D48" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
           <span class="badge badge-math">Kelas 2 SD</span>
-          <h2>Soal Kakak Putri</h2>
-          <p>Olimpiade Matematika (25 Soal: Logika, Pola, Operasi Hitung + Pembahasan)</p>
+          <h2>Kakak Putri</h2>
+          <p>Olimpiade Matematika<br>(25 Soal: Pola, Logika, Operasi Hitung)</p>
         </div>
       </div>
     </div>
@@ -882,7 +965,6 @@
       activeQuizData.forEach((item, index) => {
         const expBox = document.getElementById(`exp-${index}`);
         const expTitle = document.getElementById(`exp-title-${index}`);
-        const card = document.getElementById(`q-card-${index}`);
         let isCorrect = false;
 
         if (item.type === "mcq") {
