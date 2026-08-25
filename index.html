@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portal Latihan Olimpiade Bocils</title>
+  <title>Portal Latihan Belajar Bocils</title>
   <style>
     :root {
       --primary: #4f46e5;
       --primary-hover: #4338ca;
       --secondary: #0ea5e9;
       --secondary-hover: #0284c7;
-      --bg: #f1f5f9;
+      --accent: #ec4899;
+      --accent-hover: #db2777;
+      --bg: #f8fafc;
       --card: #ffffff;
       --text: #1e293b;
       --text-muted: #64748b;
@@ -41,7 +43,7 @@
 
     .container {
       width: 100%;
-      max-width: 760px;
+      max-width: 860px;
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -52,12 +54,12 @@
       background: var(--card);
       border-radius: 24px;
       padding: 36px 20px;
-      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.07);
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.06);
       text-align: center;
     }
 
     .home-card h1 {
-      font-size: 1.85rem;
+      font-size: 2rem;
       color: var(--primary);
       margin-bottom: 8px;
     }
@@ -65,19 +67,19 @@
     .home-card p {
       color: var(--text-muted);
       font-size: 1rem;
-      margin-bottom: 28px;
+      margin-bottom: 30px;
     }
 
     .menu-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 18px;
       align-items: end;
     }
 
-    @media (min-width: 620px) {
+    @media (min-width: 720px) {
       .menu-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
@@ -85,27 +87,31 @@
       background: #f8fafc;
       border: 2px solid var(--border);
       border-radius: 20px;
-      padding: 24px 18px 20px;
+      padding: 24px 14px 20px;
       text-align: center;
       cursor: pointer;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
-      position: relative;
+      gap: 10px;
     }
 
     .menu-btn:hover {
       border-color: var(--primary);
       transform: translateY(-6px);
-      box-shadow: 0 12px 24px -6px rgba(79, 70, 229, 0.2);
+      box-shadow: 0 12px 24px -6px rgba(79, 70, 229, 0.18);
       background: #fff;
     }
 
     .menu-btn.math:hover {
       border-color: var(--secondary);
-      box-shadow: 0 12px 24px -6px rgba(14, 165, 233, 0.2);
+      box-shadow: 0 12px 24px -6px rgba(14, 165, 233, 0.18);
+    }
+
+    .menu-btn.tk:hover {
+      border-color: var(--accent);
+      box-shadow: 0 12px 24px -6px rgba(236, 72, 153, 0.18);
     }
 
     /* Karakter Kartun Container */
@@ -118,18 +124,12 @@
     }
 
     .menu-btn:hover .avatar-wrapper {
-      transform: scale(1.05);
+      transform: scale(1.06);
     }
 
-    .avatar-anin {
-      height: 155px;
-      width: auto;
-    }
-
-    .avatar-putri {
-      height: 135px;
-      width: auto;
-    }
+    .avatar-anin { height: 160px; width: auto; }
+    .avatar-putri { height: 142px; width: auto; }
+    .avatar-sheva { height: 125px; width: auto; }
 
     .menu-btn .badge {
       font-size: 0.75rem;
@@ -142,14 +142,15 @@
 
     .badge-english { background: #e0e7ff; color: var(--primary); }
     .badge-math { background: #e0f2fe; color: var(--secondary); }
+    .badge-tk { background: #fce7f3; color: var(--accent); }
 
     .menu-btn h2 {
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       color: var(--text);
     }
 
     .menu-btn p {
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
       margin: 0;
       line-height: 1.4;
@@ -178,9 +179,7 @@
       transition: 0.2s;
     }
 
-    .back-btn:hover {
-      background: #e2e8f0;
-    }
+    .back-btn:hover { background: #e2e8f0; }
 
     .quiz-title {
       font-size: 1.1rem;
@@ -203,6 +202,10 @@
       background: linear-gradient(135deg, #0ea5e9, #06b6d4);
     }
 
+    .score-board.tk-theme {
+      background: linear-gradient(135deg, #ec4899, #f43f5e);
+    }
+
     .score-board h2 {
       font-size: 1.5rem;
       margin-bottom: 8px;
@@ -218,12 +221,11 @@
     .question-card {
       background: var(--card);
       border-radius: 16px;
-      padding: 20px 22px;
+      padding: 22px;
       box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04);
       display: flex;
       flex-direction: column;
       gap: 14px;
-      border: 2px solid transparent;
     }
 
     .q-number {
@@ -233,15 +235,27 @@
       text-transform: uppercase;
     }
 
-    .math-mode .q-number {
-      color: var(--secondary);
-    }
+    .math-mode .q-number { color: var(--secondary); }
+    .tk-mode .q-number { color: var(--accent); }
 
     .q-text {
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       font-weight: 600;
       line-height: 1.5;
       white-space: pre-line;
+    }
+
+    /* Visual Box Khusus Anak TK */
+    .visual-box {
+      background: #fdf2f8;
+      border: 2px dashed #f472b6;
+      border-radius: 14px;
+      padding: 16px;
+      text-align: center;
+      font-size: 2.2rem;
+      letter-spacing: 4px;
+      margin: 4px 0 8px;
+      user-select: none;
     }
 
     .passage-box {
@@ -258,17 +272,17 @@
     .options-list {
       display: flex;
       flex-direction: column;
-      gap: 9px;
+      gap: 10px;
     }
 
     .option-label {
       display: flex;
       align-items: center;
-      padding: 12px 16px;
+      padding: 13px 16px;
       border: 2px solid var(--border);
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
-      font-size: 0.98rem;
+      font-size: 1rem;
       transition: all 0.2s;
     }
 
@@ -284,9 +298,8 @@
       height: 18px;
     }
 
-    .math-mode .option-label input {
-      accent-color: var(--secondary);
-    }
+    .math-mode .option-label input { accent-color: var(--secondary); }
+    .tk-mode .option-label input { accent-color: var(--accent); }
 
     .input-box {
       padding: 12px 16px;
@@ -299,20 +312,15 @@
       transition: border-color 0.2s;
     }
 
-    .input-box:focus {
-      border-color: var(--primary);
-    }
-
-    .math-mode .input-box:focus {
-      border-color: var(--secondary);
-    }
+    .input-box:focus { border-color: var(--primary); }
+    .math-mode .input-box:focus { border-color: var(--secondary); }
 
     /* Explanation Box */
     .explanation-box {
       margin-top: 10px;
       padding: 14px 16px;
       border-radius: 10px;
-      font-size: 0.92rem;
+      font-size: 0.94rem;
       line-height: 1.5;
       display: none;
     }
@@ -351,7 +359,7 @@
       padding: 16px 36px;
       font-size: 1.1rem;
       font-weight: 700;
-      border-radius: 12px;
+      border-radius: 14px;
       cursor: pointer;
       width: 100%;
       max-width: 340px;
@@ -368,10 +376,13 @@
       background: var(--secondary);
       box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
     }
+    .math-mode .btn-submit:hover { background: var(--secondary-hover); }
 
-    .math-mode .btn-submit:hover {
-      background: var(--secondary-hover);
+    .tk-mode .btn-submit {
+      background: var(--accent);
+      box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
     }
+    .tk-mode .btn-submit:hover { background: var(--accent-hover); }
 
     .btn-retry {
       background: #f1f5f9;
@@ -385,9 +396,7 @@
       display: none;
     }
 
-    .btn-retry:hover {
-      background: #e2e8f0;
-    }
+    .btn-retry:hover { background: #e2e8f0; }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-8px); }
@@ -398,37 +407,29 @@
 <body>
 
   <div class="container">
-    <!-- 1. Menu Utama dengan Karakter Lucu -->
+    <!-- 1. Menu Utama (3 Pilihan Karakter) -->
     <div id="home-view" class="home-card">
-      <h1>🏆 Portal Olimpiade Bocils</h1>
-      <p>Pilih paket latihan soal di bawah ini untuk mulai belajar:</p>
+      <h1>🌟 Portal Belajar Bocils</h1>
+      <p>Yuk pilih paket latihan kuis seru di bawah ini:</p>
 
       <div class="menu-grid">
-        <!-- Kartu Kakak Anin (Lebih Tinggi, Berhijab & Berkacamata) -->
+        <!-- Kartu 1: Kakak Anin (Berhijab + Kacamata) -->
         <div class="menu-btn" onclick="startQuiz('anin')">
           <div class="avatar-wrapper">
             <svg class="avatar-anin" viewBox="0 0 120 165" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Badan & Pakaian -->
               <path d="M32 125C32 110 40 100 60 100C80 100 88 110 88 125V165H32V125Z" fill="#6366F1"/>
-              <!-- Kerudung / Hijab (Bahu & Dada) -->
               <path d="M28 65C28 102 38 122 60 122C82 122 92 102 92 65C92 28 82 15 60 15C38 15 28 28 28 65Z" fill="#A5B4FC"/>
-              <!-- Wajah -->
               <ellipse cx="60" cy="66" rx="22" ry="24" fill="#FDDFCA"/>
-              <!-- Pipi Merah Merona -->
               <ellipse cx="46" cy="74" rx="4.5" ry="2.5" fill="#FCA5A5" opacity="0.6"/>
               <ellipse cx="74" cy="74" rx="4.5" ry="2.5" fill="#FCA5A5" opacity="0.6"/>
-              <!-- Mata -->
               <ellipse cx="50" cy="65" rx="2.8" ry="3.8" fill="#1E293B"/>
               <ellipse cx="70" cy="65" rx="2.8" ry="3.8" fill="#1E293B"/>
               <circle cx="51.2" cy="63.5" r="1.2" fill="#FFFFFF"/>
               <circle cx="71.2" cy="63.5" r="1.2" fill="#FFFFFF"/>
-              <!-- Senyum -->
               <path d="M55 77C57.5 80 62.5 80 65 77" stroke="#9A3412" stroke-width="2" stroke-linecap="round"/>
-              <!-- Kacamata Bulat Lucu & Frame -->
               <circle cx="49" cy="65" r="9" stroke="#374151" stroke-width="2.5" fill="none"/>
               <circle cx="71" cy="65" r="9" stroke="#374151" stroke-width="2.5" fill="none"/>
               <path d="M58 65H62" stroke="#374151" stroke-width="2.5" stroke-linecap="round"/>
-              <!-- Bros Hijab Cantik -->
               <circle cx="60" cy="112" r="4.5" fill="#FBBF24"/>
               <circle cx="60" cy="112" r="2" fill="#F59E0B"/>
             </svg>
@@ -438,40 +439,63 @@
           <p>Olimpiade Bahasa Inggris<br>(25 Soal: Grammar, Vocab, Reading)</p>
         </div>
 
-        <!-- Kartu Kakak Putri (Lebih Pendek, Rambut Kuncir Lucu, Tanpa Kacamata) -->
+        <!-- Kartu 2: Kakak Putri (Berhijab Toska, Tanpa Kacamata) -->
         <div class="menu-btn math" onclick="startQuiz('putri')">
           <div class="avatar-wrapper">
             <svg class="avatar-putri" viewBox="0 0 120 145" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Kuncir Rambut Dua (Kiri & Kanan) -->
-              <circle cx="28" cy="48" r="14" fill="#475569"/>
-              <circle cx="92" cy="48" r="14" fill="#475569"/>
-              <ellipse cx="36" cy="54" rx="5" ry="3" fill="#F43F5E"/>
-              <ellipse cx="84" cy="54" rx="5" ry="3" fill="#F43F5E"/>
-              <!-- Badan / Baju Lucu -->
-              <path d="M35 110C35 96 44 88 60 88C76 88 85 96 85 110V145H35V110Z" fill="#38BDF8"/>
-              <!-- Kerah Baju Putih -->
-              <path d="M52 88L60 98L68 88" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <!-- Rambut Belakang -->
-              <circle cx="60" cy="52" r="28" fill="#475569"/>
-              <!-- Wajah Imut -->
-              <ellipse cx="60" cy="58" rx="23" ry="22" fill="#FDDFCA"/>
-              <!-- Poni Rambut Depan -->
-              <path d="M37 50C43 40 54 38 60 44C66 38 77 40 83 50C80 43 72 35 60 35C48 35 40 43 37 50Z" fill="#475569"/>
-              <!-- Pipi Merah Merona -->
-              <circle cx="45" cy="67" r="4" fill="#FCA5A5" opacity="0.7"/>
-              <circle cx="75" cy="67" r="4" fill="#FCA5A5" opacity="0.7"/>
-              <!-- Mata Ceria Berbinar (Besar) -->
-              <ellipse cx="48" cy="58" rx="3.5" ry="4.5" fill="#1E293B"/>
-              <ellipse cx="72" cy="58" rx="3.5" ry="4.5" fill="#1E293B"/>
-              <circle cx="49.5" cy="56" r="1.5" fill="#FFFFFF"/>
-              <circle cx="73.5" cy="56" r="1.5" fill="#FFFFFF"/>
-              <!-- Senyum Lebar Ceria -->
-              <path d="M54 69C54 74 66 74 66 69" stroke="#E11D48" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M34 112C34 98 42 90 60 90C78 90 86 98 86 112V145H34V112Z" fill="#0EA5E9"/>
+              <!-- Hijab Toska Ceria -->
+              <path d="M29 55C29 90 39 110 60 110C81 110 91 90 91 55C91 22 81 10 60 10C39 10 29 22 29 55Z" fill="#38BDF8"/>
+              <ellipse cx="60" cy="58" rx="21" ry="23" fill="#FDDFCA"/>
+              <circle cx="47" cy="65" r="4" fill="#FCA5A5" opacity="0.6"/>
+              <circle cx="73" cy="65" r="4" fill="#FCA5A5" opacity="0.6"/>
+              <!-- Mata Bulat Cantik Berbinar -->
+              <ellipse cx="50" cy="56" rx="3.2" ry="4.5" fill="#1E293B"/>
+              <ellipse cx="70" cy="56" rx="3.2" ry="4.5" fill="#1E293B"/>
+              <circle cx="51.5" cy="54" r="1.5" fill="#FFFFFF"/>
+              <circle cx="71.5" cy="54" r="1.5" fill="#FFFFFF"/>
+              <path d="M54 68C56.5 72 63.5 72 66 68" stroke="#E11D48" stroke-width="2.2" stroke-linecap="round"/>
+              <!-- Pin Bunga di Hijab -->
+              <circle cx="76" cy="32" r="5" fill="#F43F5E"/>
+              <circle cx="76" cy="32" r="2.5" fill="#FEF08A"/>
             </svg>
           </div>
           <span class="badge badge-math">Kelas 2 SD</span>
           <h2>Kakak Putri</h2>
-          <p>Olimpiade Matematika<br>(25 Soal: Pola, Logika, Operasi Hitung)</p>
+          <p>Olimpiade Matematika<br>(25 Soal: Pola, Logika, Hitung)</p>
+        </div>
+
+        <!-- Kartu 3: Adik Sheva (Bocil Chubby Kuncir Dua, Tanpa Hijab) -->
+        <div class="menu-btn tk" onclick="startQuiz('sheva')">
+          <div class="avatar-wrapper">
+            <svg class="avatar-sheva" viewBox="0 0 120 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Kuncir Rambut Dua Cabang Kiri & Kanan -->
+              <circle cx="24" cy="38" r="13" fill="#475569"/>
+              <circle cx="96" cy="38" r="13" fill="#475569"/>
+              <ellipse cx="32" cy="45" rx="5" ry="3.5" fill="#F43F5E"/>
+              <ellipse cx="88" cy="45" rx="5" ry="3.5" fill="#F43F5E"/>
+              <!-- Badan & Baju Lucu -->
+              <path d="M36 94C36 82 44 76 60 76C76 76 84 82 84 94V125H36V94Z" fill="#F472B6"/>
+              <circle cx="60" cy="76" r="18" fill="#475569"/>
+              <!-- Wajah Chubby / Gembul Imut -->
+              <ellipse cx="60" cy="52" rx="26" ry="24" fill="#FDDFCA"/>
+              <!-- Pipi Gembul Merah Merona -->
+              <circle cx="42" cy="62" r="6" fill="#FCA5A5" opacity="0.8"/>
+              <circle cx="78" cy="62" r="6" fill="#FCA5A5" opacity="0.8"/>
+              <!-- Rambut Poni Lucu -->
+              <path d="M35 44C42 34 52 32 60 38C68 32 78 34 85 44C80 36 71 28 60 28C49 28 40 36 35 44Z" fill="#475569"/>
+              <!-- Mata Ceria Besar -->
+              <ellipse cx="48" cy="51" rx="4" ry="5.5" fill="#1E293B"/>
+              <ellipse cx="72" cy="51" rx="4" ry="5.5" fill="#1E293B"/>
+              <circle cx="50" cy="49" r="2" fill="#FFFFFF"/>
+              <circle cx="74" cy="49" r="2" fill="#FFFFFF"/>
+              <!-- Senyum Lebar Lucu -->
+              <path d="M53 62C53 69 67 69 67 62" fill="#BE123C"/>
+            </svg>
+          </div>
+          <span class="badge badge-tk">Kategori TK</span>
+          <h2>Adik Sheva</h2>
+          <p>Matematika Ceria Bergambar<br>(15 Soal: Tambah & Kurang)</p>
         </div>
       </div>
     </div>
@@ -480,13 +504,13 @@
     <div id="quiz-view" style="display: none;" class="container">
       <div class="top-bar">
         <button class="back-btn" onclick="goHome()">⬅ Menu Utama</button>
-        <div class="quiz-title" id="quiz-header-title">Latihan Olimpiade</div>
+        <div class="quiz-title" id="quiz-header-title">Latihan Belajar</div>
       </div>
 
       <div class="score-board" id="score-board">
-        <h2>Hasil Evaluasi Kuis</h2>
+        <h2>Hasil Belajar Hari Ini! 🎉</h2>
         <div class="big-score" id="score-percentage">0%</div>
-        <p id="score-detail">Kamu berhasil menjawab 0 dari 25 soal dengan benar.</p>
+        <p id="score-detail">Kamu berhasil menjawab 0 soal dengan benar.</p>
       </div>
 
       <div id="questions-list" style="display: flex; flex-direction: column; gap: 18px;">
@@ -875,6 +899,130 @@
       }
     ];
 
+    // BANK DATA SOAL ADIK SHEVA (MATEMATIKA TK BERGAMBAR)
+    const dataSheva = [
+      {
+        type: "mcq",
+        visual: "🍎 🍎 🍎  +  🍎 🍎",
+        q: "Hitung jumlah buah apel di atas ya!\n3 apel + 2 apel = ...",
+        options: ["4 apel", "5 apel", "6 apel"],
+        ans: 1,
+        exp: "Ada 3 apel merah ditambah 2 apel merah lagi, jadi totalnya ada 5 apel! 🍎"
+      },
+      {
+        type: "mcq",
+        visual: "⭐ ⭐ ⭐ ⭐ ⭐ ⭐  -  ⭐ ⭐",
+        q: "Ada 6 bintang, lalu hilang 2 bintang. Sisanya tinggal berapa ya?\n6 - 2 = ...",
+        options: ["3 bintang", "4 bintang", "5 bintang"],
+        ans: 1,
+        exp: "6 dikurangi 2 sisanya tinggal 4 bintang! ⭐"
+      },
+      {
+        type: "mcq",
+        visual: "🐥 🐥 🐥 🐥  +  🐥 🐥 🐥",
+        q: "Ada 4 anak ayam bermain dengan 3 anak ayam. Berapa jumlah semua anak ayam?\n4 + 3 = ...",
+        options: ["7 anak ayam", "8 anak ayam", "6 anak ayam"],
+        ans: 0,
+        exp: "4 anak ayam ditambah 3 anak ayam sama dengan 7 anak ayam! 🐥"
+      },
+      {
+        type: "mcq",
+        visual: "🚗 🚗 🚗 🚗 🚗  -  🚗 🚗 🚗",
+        q: "Ada 5 mobil-mobilan, dipinjam teman 3 mobil. Sisa mobil sekarang ada berapa?\n5 - 3 = ...",
+        options: ["1 mobil", "2 mobil", "3 mobil"],
+        ans: 1,
+        exp: "5 mobil dikurangi 3 mobil, sisanya tinggal 2 mobil! 🚗"
+      },
+      {
+        type: "mcq",
+        visual: "🍦  +  🍦 🍦 🍦 🍦 🍦",
+        q: "1 es krim ditambah 5 es krim lezat. Berapa jumlah es krim semuanya?\n1 + 5 = ...",
+        options: ["5 es krim", "6 es krim", "7 es krim"],
+        ans: 1,
+        exp: "1 ditambah 5 hasilnya adalah 6 es krim! 🍦"
+      },
+      {
+        type: "mcq",
+        visual: "🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈  -  🎈 🎈 🎈 🎈",
+        q: "Sheva punya 8 balon, lalu meletus 4 balon. Berapa balon yang masih utuh?\n8 - 4 = ...",
+        options: ["3 balon", "4 balon", "5 balon"],
+        ans: 1,
+        exp: "8 balon dikurang 4 balon yang meletus, sisanya masih ada 4 balon! 🎈"
+      },
+      {
+        type: "mcq",
+        visual: "🐱 🐱 🐱  +  🐱 🐱 🐱",
+        q: "3 kucing lucu ditambah 3 kucing lagi. Berapa kucing semuanya?\n3 + 3 = ...",
+        options: ["5 kucing", "6 kucing", "7 kucing"],
+        ans: 1,
+        exp: "3 + 3 sama dengan 6 kucing yang manis! 🐱"
+      },
+      {
+        type: "mcq",
+        visual: "🍓 🍓 🍓 🍓 🍓 🍓 🍓  -  🍓 🍓 🍓",
+        q: "Ibu punya 7 stroberi, dimakan 3 stroberi. Sisa stroberi ada berapa?\n7 - 3 = ...",
+        options: ["4 stroberi", "5 stroberi", "6 stroberi"],
+        ans: 0,
+        exp: "7 dikurangi 3 hasilnya 4 stroberi! 🍓"
+      },
+      {
+        type: "mcq",
+        visual: "🍩 🍩 🍩 🍩  +  🍩 🍩 🍩 🍩",
+        q: "4 donat manis ditambah 4 donat lagi. Berapa jumlahnya?\n4 + 4 = ...",
+        options: ["7 donat", "8 donat", "9 donat"],
+        ans: 1,
+        exp: "4 ditambah 4 donat sama dengan 8 donat lezat! 🍩"
+      },
+      {
+        type: "mcq",
+        visual: "🍭 🍭 🍭 🍭 🍭 🍭 🍭 🍭 🍭 🍭  -  🍭 🍭",
+        q: "Ada 10 permen lolipop, diberikan ke adik 2. Berapa sisa lolipop?\n10 - 2 = ...",
+        options: ["7 permen", "8 permen", "9 permen"],
+        ans: 1,
+        exp: "10 dikurangi 2 hasilnya 8 permen lolipop! 🍭"
+      },
+      {
+        type: "mcq",
+        visual: "🐠 🐠  +  🐠 🐠 🐠 🐠 🐠 🐠",
+        q: "Di kolam ada 2 ikan mas, lalu dimasukkan 6 ikan lagi. Jumlah ikan jadi berapa?\n2 + 6 = ...",
+        options: ["7 ikan", "8 ikan", "9 ikan"],
+        ans: 1,
+        exp: "2 ditambah 6 ikan sama dengan 8 ikan! 🐠"
+      },
+      {
+        type: "mcq",
+        visual: "🌸 🌸 🌸 🌸 🌸 🌸 🌸 🌸 🌸  -  🌸 🌸 🌸 🌸 🌸",
+        q: "Ada 9 bunga mekar di taman, dipetik 5 bunga. Sisa bunga di taman ada...\n9 - 5 = ...",
+        options: ["4 bunga", "5 bunga", "3 bunga"],
+        ans: 0,
+        exp: "9 bunga dikurangi 5 bunga, sisa di taman ada 4 bunga! 🌸"
+      },
+      {
+        type: "mcq",
+        visual: "🍬 🍬 🍬 🍬 🍬 🍬  +  🍬 🍬 🍬 🍬",
+        q: "6 permen ditambah 4 permen manis. Berapa jumlah semuanya?\n6 + 4 = ...",
+        options: ["9 permen", "10 permen", "11 permen"],
+        ans: 1,
+        exp: "6 ditambah 4 hasilnya tepat 10 permen! 🍬"
+      },
+      {
+        type: "mcq",
+        visual: "🍪 🍪 🍪 🍪 🍪  -  🍪 🍪 🍪 🍪 🍪",
+        q: "Ada 5 keping biskuit, lalu dimakan semua 5 biskuitnya. Sisa biskuit sekarang ada berapa?\n5 - 5 = ...",
+        options: ["0 biskuit (habis)", "1 biskuit", "2 biskuit"],
+        ans: 0,
+        exp: "5 biskuit kalau dimakan semua 5, biskuitnya habis jadi 0! 🍪"
+      },
+      {
+        type: "mcq",
+        visual: "🎁 🎁 🎁 🎁 🎁 🎁 🎁  +  🎁 🎁",
+        q: "Ada 7 kotak kado ulang tahun ditambah dapat kado lagi 2. Berapa total kado?\n7 + 2 = ...",
+        options: ["8 kado", "9 kado", "10 kado"],
+        ans: 1,
+        exp: "7 ditambah 2 sama dengan 9 kotak kado! 🎁"
+      }
+    ];
+
     let currentQuizType = "";
     let activeQuizData = [];
 
@@ -884,16 +1032,23 @@
       const quizView = document.getElementById("quiz-view");
       quizView.style.display = "flex";
 
+      quizView.classList.remove("math-mode", "tk-mode");
+      const scoreBoard = document.getElementById("score-board");
+      scoreBoard.classList.remove("math-theme", "tk-theme");
+
       if (type === "anin") {
         document.getElementById("quiz-header-title").textContent = "Latihan Kakak Anin (Bahasa Inggris Kelas 4)";
-        quizView.classList.remove("math-mode");
-        document.getElementById("score-board").classList.remove("math-theme");
         activeQuizData = dataAnin;
-      } else {
+      } else if (type === "putri") {
         document.getElementById("quiz-header-title").textContent = "Latihan Kakak Putri (Matematika Kelas 2 SD)";
         quizView.classList.add("math-mode");
-        document.getElementById("score-board").classList.add("math-theme");
+        scoreBoard.classList.add("math-theme");
         activeQuizData = dataPutri;
+      } else if (type === "sheva") {
+        document.getElementById("quiz-header-title").textContent = "Latihan Ceria Adik Sheva (Matematika TK)";
+        quizView.classList.add("tk-mode");
+        scoreBoard.classList.add("tk-theme");
+        activeQuizData = dataSheva;
       }
 
       renderQuestions();
@@ -925,6 +1080,11 @@
           passageHTML = `<div class="passage-box"><strong>Reading Passage:</strong><br>${item.passage}</div>`;
         }
 
+        let visualHTML = "";
+        if (item.visual) {
+          visualHTML = `<div class="visual-box">${item.visual}</div>`;
+        }
+
         let inputHTML = "";
         if (item.type === "mcq") {
           inputHTML = `<div class="options-list">`;
@@ -948,6 +1108,7 @@
         card.innerHTML = `
           <div class="q-number">Soal Nomor ${index + 1} / ${activeQuizData.length}</div>
           ${passageHTML}
+          ${visualHTML}
           <div class="q-text">${item.q}</div>
           ${inputHTML}
           <div class="explanation-box" id="exp-${index}">
@@ -1016,7 +1177,7 @@
         expBox.style.display = "block";
         if (isCorrect) {
           expBox.className = "explanation-box correct";
-          expTitle.innerHTML = "✅ <strong>Jawaban Benar!</strong>";
+          expTitle.innerHTML = "✅ <strong>Jawaban Benar! Hebat!</strong>";
         } else {
           expBox.className = "explanation-box wrong";
           let correctText = item.type === "mcq" ? `${String.fromCharCode(65 + item.ans)}. ${item.options[item.ans]}` : item.ans.join(" / ");
@@ -1028,7 +1189,7 @@
       const scoreBoard = document.getElementById("score-board");
       const percentage = Math.round((correctCount / activeQuizData.length) * 100);
       document.getElementById("score-percentage").textContent = `${percentage}%`;
-      document.getElementById("score-detail").innerHTML = `Hebat! Berhasil menjawab <strong>${correctCount}</strong> dari <strong>${activeQuizData.length}</strong> soal dengan benar.`;
+      document.getElementById("score-detail").innerHTML = `Luar biasa! Berhasil menjawab <strong>${correctCount}</strong> dari <strong>${activeQuizData.length}</strong> soal dengan benar.`;
       scoreBoard.style.display = "block";
 
       document.getElementById("submit-all-btn").style.display = "none";
