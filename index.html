@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>English Olympiad Quiz - Grade 4</title>
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --bg: #f3f4f6;
+      --card: #ffffff;
+      --text: #1f2937;
+      --text-muted: #6b7280;
+      --correct: #10b981;
+      --wrong: #ef4444;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 16px;
+    }
+
+    .quiz-card {
+      background: var(--card);
+      width: 100%;
+      max-width: 680px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 12px;
+    }
+
+    .header h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .progress-badge {
+      font-size: 0.875rem;
+      font-weight: 600;
+      background: #e0e7ff;
+      color: var(--primary);
+      padding: 4px 10px;
+      border-radius: 9999px;
+    }
+
+    .passage-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #334155;
+      margin-bottom: 10px;
+    }
+
+    .passage-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .question-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .option-btn {
+      background: #fff;
+      border: 2px solid var(--border);
+      padding: 14px 16px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: var(--text);
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--primary);
+      background-color: #f5f3ff;
+    }
+
+    .option-btn.correct {
+      background-color: #d1fae5 !important;
+      border-color: var(--correct) !important;
+      color: #065f46;
+      font-weight: 700;
+    }
+
+    .option-btn.wrong {
+      background-color: #fee2e2 !important;
+      border-color: var(--wrong) !important;
+      color: #991b1b;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .text-input {
+      padding: 14px 16px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .text-input:focus {
+      border-color: var(--primary);
+    }
+
+    .text-input.correct {
+      border-color: var(--correct);
+      background-color: #d1fae5;
+    }
+
+    .text-input.wrong {
+      border-color: var(--wrong);
+      background-color: #fee2e2;
+    }
+
+    .feedback-msg {
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 6px;
+      display: none;
+    }
+
+    .feedback-msg.show {
+      display: block;
+    }
+
+    .feedback-msg.correct {
+      background: #d1fae5;
+      color: #065f46;
+    }
+
+    .feedback-msg.wrong {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: flex-end;
+      border-top: 2px solid var(--border);
+      padding-top: 14px;
+    }
+
+    .action-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .action-btn:hover {
+      background: var(--primary-hover);
+    }
+
+    .result-view {
+      text-align: center;
+      padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .score-circle {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: #e0e7ff;
+      color: var(--primary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.25rem;
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-card" id="quiz-container">
+    <div class="header">
+      <h1>English Olympiad Prep</h1>
+      <span class="progress-badge" id="progress-text">Question 1 / 25</span>
+    </div>
+
+    <div id="passage-container" class="passage-box" style="display: none;">
+      <span class="passage-title">Reading Passage:</span>
+      <p id="passage-text"></p>
+    </div>
+
+    <div class="question-title" id="question-text">Loading question...</div>
+
+    <div id="interaction-container">
+      <!-- Dynamic: Options or Input -->
+    </div>
+
+    <div class="feedback-msg" id="feedback"></div>
+
+    <div class="footer">
+      <button class="action-btn" id="next-btn" style="display: none;">Next Question</button>
+      <button class="action-btn" id="submit-input-btn" style="display: none;">Submit Answer</button>
+    </div>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        type: "mcq",
+        question: "Look at the sky! The dark clouds are gathering, it _____ rain soon.",
+        options: ["is going to", "was", "rained", "has"],
+        answer: 0
+      },
+      {
+        type: "mcq",
+        question: "Neither Sarah nor her brother brought _____ umbrella today.",
+        options: ["their", "her", "his", "its"],
+        answer: 0
+      },
+      {
+        type: "mcq",
+        question: "Our English class starts exactly _____ half past eight in the morning.",
+        options: ["on", "in", "at", "to"],
+        answer: 2
+      },
+      {
+        type: "mcq",
+        question: "Mount Everest is the _____ mountain in the world.",
+        options: ["high", "higher", "highest", "most high"],
+        answer: 2
+      },
+      {
+        type: "mcq",
+        question: "You _____ wash your hands before eating to stay healthy.",
+        options: ["must", "might", "would", "could"],
+        answer: 0
+      },
+      {
+        type: "mcq",
+        question: "The farmer has ten sheep and five _____.",
+        options: ["oxes", "oxen", "oxs", "ox"],
+        answer: 1
+      },
+      {
+        type: "mcq",
+        question: "The brave firefighter rescued the little kitten. The word BRAVE has the same meaning as _____.",
+        options: ["coward", "courageous", "fearful", "weak"],
+        answer: 1
+      },
+      {
+        type: "mcq",
+        question: "The room was very NOISY during recess. The opposite of NOISY is _____.",
+        options: ["loud", "busy", "quiet", "crowded"],
+        answer: 2
+      },
+      {
+        type: "mcq",
+        question: "Tom: 'I won the spelling bee competition yesterday!'\nJerry: '_____! I am so proud of you.'",
+        options: ["Never mind", "Congratulations", "Excuse me", "Good luck"],
+        answer: 1
+      },
+      {
+        type: "mcq",
+        question: "A place where historical objects are kept and displayed to the public is a _____.",
+        options: ["library", "museum", "laboratory", "stadium"],
+        answer: 1
+      },
+      {
+        type: "mcq",
+        question: "Identify the incorrect word:\n'She don't (A) like (B) eating vegetables (C) for dinner (D).'",
+        options: ["don't", "like", "vegetables", "dinner"],
+        answer: 0
+      },
+      {
+        type: "mcq",
+        question: "Identify the incorrect word:\n'There are (A) three (B) childs (C) playing in the park (D).'",
+        options: ["are", "three", "childs", "park"],
+        answer: 2
+      },
+      {
+        type: "mcq",
+        question: "Arrange into a correct sentence:\n'always / breakfast / he / eats / at 6 AM'",
+        options: [
+          "He eats always breakfast at 6 AM.",
+          "He always eats breakfast at 6 AM.",
+          "Breakfast he eats always at 6 AM.",
+          "At 6 AM always he eats breakfast."
+        ],
+        answer: 1
+      },
+      {
+        type: "mcq",
+        passage: "The Clever Honeybee: Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
+        question: "What is the main topic of the paragraph?",
+        options: [
+          "How to harvest sweet honey.",
+          "The life and communication of bees.",
+          "Dangerous flying insects in nature.",
+          "Different types of colorful flowers."
+        ],
+        answer: 1
+      },
+      {
+        type: "mcq",
+        passage: "The Clever Honeybee: Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
+        question: "How many bees can live together in a single colony?",
+        options: ["Up to 600 bees", "Up to 6,000 bees", "Up to 60,000 bees", "Up to 600,000 bees"],
+        answer: 2
+      },
+      {
+        type: "mcq",
+        passage: "The Clever Honeybee: Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
+        question: "What is the 'waggle dance' used for?",
+        options: [
+          "To scare enemies away",
+          "To entertain the queen bee",
+          "To communicate food locations",
+          "To build new honeycombs"
+        ],
+        answer: 2
+      },
+      {
+        type: "mcq",
+        passage: "The Clever Honeybee: Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
+        question: "Why are bees important for nature?",
+        options: [
+          "They help plants and fruits grow through pollination.",
+          "They protect flowers from other insects.",
+          "They clean the forest ground.",
+          "They make the weather warmer."
+        ],
+        answer: 0
+      },
+      {
+        type: "mcq",
+        passage: "The Clever Honeybee: Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
+        question: "Based on the text, which statement is TRUE?",
+        options: [
+          "Bees live alone without colonies.",
+          "Bees communicate through singing.",
+          "Bees do not eat nectar.",
+          "Without bees, many plants would struggle to reproduce."
+        ],
+        answer: 3
+      },
+      {
+        type: "input",
+        question: "Unscramble the letters to form a word meaning 'a vehicle that flies into outer space': [ H - P - S - C - E - A - I - S - P ]",
+        answers: ["spaceship", "space ship"]
+      },
+      {
+        type: "input",
+        question: "Word Formation: My older sister is a talented _____ (DANCE). She wins many trophies.",
+        answers: ["dancer"]
+      },
+      {
+        type: "input",
+        question: "Irregular Past Tense: Yesterday, my mother _____ (BUY) fresh apples from the supermarket.",
+        answers: ["bought"]
+      },
+      {
+        type: "input",
+        question: "Preposition: The cat is sleeping comfortably _____ the rug in front of the fireplace.",
+        answers: ["on", "upon"]
+      },
+      {
+        type: "input",
+        question: "Spelling & Definition: The fourth month of the year is _____.",
+        answers: ["april"]
+      },
+      {
+        type: "input",
+        question: "Collective Noun: A group of wolves hunting together is called a _____.",
+        answers: ["pack"]
+      },
+      {
+        type: "input",
+        question: "Cloze / Logic: Birds use their wings to fly, while fish use their _____ to swim.",
+        answers: ["fins", "fin"]
+      }
+    ];
+
+    let currentIndex = 0;
+    let score = 0;
+    let answered = false;
+
+    const quizContainer = document.getElementById("quiz-container");
+    const progressText = document.getElementById("progress-text");
+    const passageContainer = document.getElementById("passage-container");
+    const passageText = document.getElementById("passage-text");
+    const questionText = document.getElementById("question-text");
+    const interactionContainer = document.getElementById("interaction-container");
+    const feedback = document.getElementById("feedback");
+    const nextBtn = document.getElementById("next-btn");
+    const submitInputBtn = document.getElementById("submit-input-btn");
+
+    function loadQuestion() {
+      answered = false;
+      feedback.className = "feedback-msg";
+      feedback.style.display = "none";
+      nextBtn.style.display = "none";
+      submitInputBtn.style.display = "none";
+      interactionContainer.innerHTML = "";
+
+      const current = quizData[currentIndex];
+      progressText.textContent = `Question ${currentIndex + 1} / ${quizData.length}`;
+      questionText.textContent = current.question;
+
+      if (current.passage) {
+        passageText.textContent = current.passage;
+        passageContainer.style.display = "block";
+      } else {
+        passageContainer.style.display = "none";
+      }
+
+      if (current.type === "mcq") {
+        const grid = document.createElement("div");
+        grid.className = "options-grid";
+        current.options.forEach((opt, idx) => {
+          const btn = document.createElement("button");
+          btn.className = "option-btn";
+          btn.textContent = `${String.fromCharCode(65 + idx)}. ${opt}`;
+          btn.onclick = () => handleMCQ(idx, btn, grid);
+          grid.appendChild(btn);
+        });
+        interactionContainer.appendChild(grid);
+      } else if (current.type === "input") {
+        const group = document.createElement("div");
+        group.className = "input-group";
+        const input = document.createElement("input");
+        input.type = "text";
+        input.id = "user-answer";
+        input.className = "text-input";
+        input.placeholder = "Type your answer here...";
+        input.autocomplete = "off";
+        input.addEventListener("keyup", (e) => {
+          if (e.key === "Enter" && !answered) checkInputAnswer();
+        });
+        group.appendChild(input);
+        interactionContainer.appendChild(group);
+        submitInputBtn.style.display = "block";
+      }
+    }
+
+    function handleMCQ(selectedIdx, btn, grid) {
+      if (answered) return;
+      answered = true;
+      const current = quizData[currentIndex];
+      const buttons = grid.querySelectorAll(".option-btn");
+      buttons.forEach((b) => (b.disabled = true));
+
+      if (selectedIdx === current.answer) {
+        btn.classList.add("correct");
+        feedback.textContent = "Correct! Well done.";
+        feedback.className = "feedback-msg correct show";
+        score++;
+      } else {
+        btn.classList.add("wrong");
+        buttons[current.answer].classList.add("correct");
+        feedback.textContent = `Incorrect. The correct answer is: ${current.options[current.answer]}`;
+        feedback.className = "feedback-msg wrong show";
+      }
+      nextBtn.style.display = "block";
+    }
+
+    function checkInputAnswer() {
+      if (answered) return;
+      const input = document.getElementById("user-answer");
+      const userVal = input.value.trim().toLowerCase();
+      if (!userVal) return;
+
+      answered = true;
+      input.disabled = true;
+      submitInputBtn.style.display = "none";
+
+      const current = quizData[currentIndex];
+      const isCorrect = current.answers.some((ans) => ans.toLowerCase() === userVal);
+
+      if (isCorrect) {
+        input.classList.add("correct");
+        feedback.textContent = "Correct! Well done.";
+        feedback.className = "feedback-msg correct show";
+        score++;
+      } else {
+        input.classList.add("wrong");
+        feedback.textContent = `Incorrect. Acceptable answer: ${current.answers.join(" / ")}`;
+        feedback.className = "feedback-msg wrong show";
+      }
+      nextBtn.style.display = "block";
+    }
+
+    submitInputBtn.onclick = checkInputAnswer;
+
+    nextBtn.onclick = () => {
+      currentIndex++;
+      if (currentIndex < quizData.length) {
+        loadQuestion();
+      } else {
+        showResults();
+      }
+    };
+
+    function showResults() {
+      const finalScore = Math.round((score / quizData.length) * 100);
+      quizContainer.innerHTML = `
+        <div class="result-view">
+          <h1>Quiz Completed!</h1>
+          <div class="score-circle">${finalScore}%</div>
+          <p style="font-size: 1.1rem;">You answered <strong>${score}</strong> out of <strong>${quizData.length}</strong> questions correctly.</p>
+          <button class="action-btn" onclick="location.reload()" style="margin-top: 10px;">Try Again</button>
+        </div>
+      `;
+    }
+
+    loadQuestion();
+  </script>
+</body>
+</html>
