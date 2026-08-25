@@ -3,158 +3,274 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Olimpiade Bahasa Inggris SD Kelas 4</title>
+  <title>Portal Latihan Olimpiade Bocils</title>
   <style>
     :root {
-      --primary: #4338ca;
-      --primary-light: #e0e7ff;
-      --accent: #f59e0b;
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --text-main: #1e293b;
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --secondary: #0ea5e9;
+      --secondary-hover: #0284c7;
+      --bg: #f1f5f9;
+      --card: #ffffff;
+      --text: #1e293b;
       --text-muted: #64748b;
-      --correct-bg: #d1fae5;
+      --correct-bg: #ecfdf5;
       --correct-border: #10b981;
       --correct-text: #065f46;
-      --wrong-bg: #fee2e2;
+      --wrong-bg: #fef2f2;
       --wrong-border: #ef4444;
       --wrong-text: #991b1b;
-      --border-color: #cbd5e1;
+      --border: #e2e8f0;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     }
 
     body {
       background-color: var(--bg);
-      color: var(--text-main);
-      padding: 20px 12px;
-      line-height: 1.6;
+      color: var(--text);
+      padding: 20px 14px 60px;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
     }
 
     .container {
-      max-width: 800px;
-      margin: 0 auto;
+      width: 100%;
+      max-width: 760px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
-    /* Header Banner */
-    .header-banner {
-      background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
-      color: #ffffff;
-      padding: 28px 20px;
-      border-radius: 16px;
+    /* Menu Home Styling */
+    .home-card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 36px 24px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.07);
       text-align: center;
-      box-shadow: 0 10px 20px -5px rgba(67, 56, 202, 0.3);
-      margin-bottom: 24px;
     }
 
-    .header-banner h1 {
-      font-size: 1.6rem;
+    .home-card h1 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .home-card p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    @media (min-width: 600px) {
+      .menu-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .menu-btn {
+      background: #f8fafc;
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .menu-btn:hover {
+      border-color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.15);
+      background: #fff;
+    }
+
+    .menu-btn.math:hover {
+      border-color: var(--secondary);
+      box-shadow: 0 10px 20px -5px rgba(14, 165, 233, 0.15);
+    }
+
+    .menu-btn .badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-english { background: #e0e7ff; color: var(--primary); }
+    .badge-math { background: #e0f2fe; color: var(--secondary); }
+
+    .menu-btn h2 {
+      font-size: 1.25rem;
+      color: var(--text);
+    }
+
+    .menu-btn p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* Quiz Header */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--card);
+      padding: 16px 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+
+    .back-btn {
+      background: #f1f5f9;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .back-btn:hover {
+      background: #e2e8f0;
+    }
+
+    .quiz-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* Score Board */
+    .score-board {
+      background: linear-gradient(135deg, #4f46e5, #3b82f6);
+      color: white;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .score-board.math-theme {
+      background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+    }
+
+    .score-board h2 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .score-board .big-score {
+      font-size: 3rem;
       font-weight: 800;
       margin-bottom: 6px;
     }
 
-    .header-banner p {
-      font-size: 0.95rem;
-      opacity: 0.9;
-    }
-
-    /* Reading Box */
-    .reading-card {
-      background: #f1f5f9;
-      border-left: 5px solid var(--primary);
-      padding: 18px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      font-size: 0.95rem;
-    }
-
-    .reading-card h3 {
-      color: var(--primary);
-      margin-bottom: 8px;
-      font-size: 1.1rem;
-    }
-
-    /* Question Card */
+    /* Question Cards */
     .question-card {
-      background: var(--card-bg);
-      border-radius: 14px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      border: 2px solid transparent;
-      transition: all 0.2s ease;
-    }
-
-    .question-header {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 20px 22px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04);
       display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      margin-bottom: 14px;
+      flex-direction: column;
+      gap: 14px;
+      border: 2px solid transparent;
     }
 
     .q-number {
-      background: var(--primary-light);
-      color: var(--primary);
-      font-weight: 700;
       font-size: 0.85rem;
-      padding: 4px 10px;
-      border-radius: 20px;
-      white-space: nowrap;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+    }
+
+    .math-mode .q-number {
+      color: var(--secondary);
     }
 
     .q-text {
       font-size: 1.05rem;
       font-weight: 600;
-      color: var(--text-main);
+      line-height: 1.5;
       white-space: pre-line;
     }
 
-    /* MCQ Styling */
+    .passage-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #334155;
+    }
+
+    /* Options */
     .options-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      margin-top: 10px;
+      gap: 9px;
     }
 
-    .option-item {
+    .option-label {
       display: flex;
       align-items: center;
       padding: 12px 16px;
-      border: 2px solid var(--border-color);
+      border: 2px solid var(--border);
       border-radius: 10px;
       cursor: pointer;
       font-size: 0.98rem;
       transition: all 0.2s;
-      background: #ffffff;
     }
 
-    .option-item:hover {
-      border-color: var(--primary);
+    .option-label:hover {
       background: #f8fafc;
+      border-color: #cbd5e1;
     }
 
-    .option-item input[type="radio"] {
+    .option-label input {
       margin-right: 12px;
       accent-color: var(--primary);
       width: 18px;
       height: 18px;
     }
 
-    /* Short Answer Input */
+    .math-mode .option-label input {
+      accent-color: var(--secondary);
+    }
+
     .input-box {
-      width: 100%;
       padding: 12px 16px;
-      font-size: 1rem;
-      border: 2px solid var(--border-color);
+      border: 2px solid var(--border);
       border-radius: 10px;
+      font-size: 1rem;
       outline: none;
-      margin-top: 10px;
+      width: 100%;
+      max-width: 320px;
       transition: border-color 0.2s;
     }
 
@@ -162,479 +278,688 @@
       border-color: var(--primary);
     }
 
-    /* Discussion / Explanation Box (Hidden by default) */
-    .explanation-box {
-      display: none;
-      margin-top: 14px;
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      background: #edf2f7;
+    .math-mode .input-box:focus {
+      border-color: var(--secondary);
     }
 
-    .explanation-box.visible {
+    /* Explanation Box */
+    .explanation-box {
+      margin-top: 10px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      display: none;
+    }
+
+    .explanation-box.correct {
+      background: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      color: var(--correct-text);
+    }
+
+    .explanation-box.wrong {
+      background: var(--wrong-bg);
+      border: 1px solid var(--wrong-border);
+      color: var(--wrong-text);
+    }
+
+    .explanation-title {
+      font-weight: 700;
+      margin-bottom: 4px;
       display: block;
     }
 
-    /* Result State Styling */
-    .question-card.is-correct {
-      border-color: var(--correct-border);
-      background-color: #f0fdf4;
-    }
-
-    .question-card.is-wrong {
-      border-color: var(--wrong-border);
-      background-color: #fef2f2;
-    }
-
-    .explanation-box.correct-style {
-      background: var(--correct-bg);
-      color: var(--correct-text);
-      border: 1px solid var(--correct-border);
-    }
-
-    .explanation-box.wrong-style {
-      background: var(--wrong-bg);
-      color: var(--wrong-text);
-      border: 1px solid var(--wrong-border);
-    }
-
-    /* Submit Section */
-    .submit-section {
-      text-align: center;
-      margin: 30px 0 50px;
+    /* Action Buttons */
+    .submit-container {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
     }
 
     .btn-submit {
       background: var(--primary);
       color: white;
+      border: none;
+      padding: 16px 36px;
       font-size: 1.1rem;
       font-weight: 700;
-      padding: 16px 40px;
-      border: none;
       border-radius: 12px;
       cursor: pointer;
-      box-shadow: 0 8px 15px rgba(67, 56, 202, 0.25);
-      transition: transform 0.2s, background 0.2s;
+      width: 100%;
+      max-width: 340px;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+      transition: all 0.2s;
     }
 
     .btn-submit:hover {
-      background: #3730a3;
+      background: var(--primary-hover);
       transform: translateY(-2px);
     }
 
-    /* Result Summary Banner */
-    .score-summary {
-      display: none;
-      background: white;
-      border-radius: 16px;
-      padding: 24px;
-      text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
-      border: 2px solid var(--primary);
+    .math-mode .btn-submit {
+      background: var(--secondary);
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
     }
 
-    .score-summary.visible {
-      display: block;
+    .math-mode .btn-submit:hover {
+      background: var(--secondary-hover);
     }
 
-    .score-number {
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin: 10px 0;
-    }
-
-    .btn-reset {
-      background: #64748b;
-      color: white;
-      border: none;
-      padding: 10px 20px;
+    .btn-retry {
+      background: #f1f5f9;
+      color: var(--text);
+      border: 2px solid var(--border);
+      padding: 12px 24px;
       font-size: 0.95rem;
-      border-radius: 8px;
+      font-weight: 600;
+      border-radius: 10px;
       cursor: pointer;
-      margin-top: 10px;
+      display: none;
+    }
+
+    .btn-retry:hover {
+      background: #e2e8f0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <!-- Header -->
-    <div class="header-banner">
-      <h1>English Olympiad Prep Grade 4</h1>
-      <p>Paket Soal Latihan Olimpiade Bahasa Inggris (25 Soal)</p>
-    </div>
+    <!-- 1. Menu Utama -->
+    <div id="home-view" class="home-card">
+      <h1>🏆 Portal Olimpiade Bocils</h1>
+      <p>Pilih paket latihan soal di bawah ini untuk mulai belajar:</p>
 
-    <!-- Score Board (Appears after submission) -->
-    <div class="score-summary" id="score-board">
-      <h2>Hasil Latihan Kuis</h2>
-      <div class="score-number" id="score-text">0 / 100</div>
-      <p id="detail-score-text">Kamu berhasil menjawab 0 dari 25 soal dengan benar.</p>
-      <p style="margin-top: 8px; font-weight: 600; color: #475569;">
-        Silakan gulir ke bawah untuk mempelajari pembahasan lengkap tiap soal!
-      </p>
-      <button class="btn-reset" onclick="location.reload()">Kerjakan Ulang</button>
-    </div>
+      <div class="menu-grid">
+        <div class="menu-btn" onclick="startQuiz('anin')">
+          <span class="badge badge-english">Kelas 4 SD</span>
+          <h2>Soal Kakak Anin</h2>
+          <p>Olimpiade Bahasa Inggris (25 Soal: Grammar, Vocab, Reading + Pembahasan)</p>
+        </div>
 
-    <!-- Questions Form -->
-    <form id="quiz-form">
-      <div id="questions-list"></div>
-
-      <div class="submit-section" id="submit-area">
-        <button type="button" class="btn-submit" id="btn-finish" onclick="submitQuiz()">
-          Kumpulkan & Lihat Hasil
-        </button>
+        <div class="menu-btn math" onclick="startQuiz('putri')">
+          <span class="badge badge-math">Kelas 2 SD</span>
+          <h2>Soal Kakak Putri</h2>
+          <p>Olimpiade Matematika (25 Soal: Logika, Pola, Operasi Hitung + Pembahasan)</p>
+        </div>
       </div>
-    </form>
+    </div>
+
+    <!-- 2. Halaman Soal Kuis -->
+    <div id="quiz-view" style="display: none;" class="container">
+      <div class="top-bar">
+        <button class="back-btn" onclick="goHome()">⬅ Menu Utama</button>
+        <div class="quiz-title" id="quiz-header-title">Latihan Olimpiade</div>
+      </div>
+
+      <div class="score-board" id="score-board">
+        <h2>Hasil Evaluasi Kuis</h2>
+        <div class="big-score" id="score-percentage">0%</div>
+        <p id="score-detail">Kamu berhasil menjawab 0 dari 25 soal dengan benar.</p>
+      </div>
+
+      <div id="questions-list" style="display: flex; flex-direction: column; gap: 18px;">
+        <!-- Soal dirender lewat JS -->
+      </div>
+
+      <div class="submit-container">
+        <button class="btn-submit" id="submit-all-btn" onclick="evaluateQuiz()">Kumpulkan & Lihat Hasil</button>
+        <button class="btn-retry" id="retry-btn" onclick="retryCurrentQuiz()">Ulangi Kuis</button>
+      </div>
+    </div>
   </div>
 
   <script>
-    const questions = [
+    // BANK DATA SOAL KAKAK ANIN (ENGLISH GRADE 4)
+    const dataAnin = [
       {
-        id: 1,
         type: "mcq",
-        question: "Look at the sky! The dark clouds are gathering, it _____ rain soon.",
+        q: "Look at the sky! The dark clouds are gathering, it _____ rain soon.",
         options: ["is going to", "was", "rained", "has"],
-        answer: 0,
-        explanation: "Pembahasan: Kalimat ini menyatakan prediksi berdasarkan bukti nyata yang terlihat saat ini (dark clouds). Gunakan 'is going to'."
+        ans: 0,
+        exp: "Gunakan 'is going to' untuk menyatakan prediksi masa depan yang sudah ada bukti jelas saat ini (awan gelap)."
       },
       {
-        id: 2,
         type: "mcq",
-        question: "Neither Sarah nor her brother brought _____ umbrella today.",
+        q: "Neither Sarah nor her brother brought _____ umbrella today.",
         options: ["their", "her", "his", "its"],
-        answer: 0,
-        explanation: "Pembahasan: Secara umum pada olimpiade dasar, kata ganti kepemilikan jamak 'their' digunakan untuk merujuk pada gabungan subjek tersebut."
+        ans: 0,
+        exp: "Dalam konteks percakapan/modern English untuk gabungan dua orang (Sarah & saudaranya), kata ganti jamak yang umum adalah 'their'."
       },
       {
-        id: 3,
         type: "mcq",
-        question: "Our English class starts exactly _____ half past eight in the morning.",
+        q: "Our English class starts exactly _____ half past eight in the morning.",
         options: ["on", "in", "at", "to"],
-        answer: 2,
-        explanation: "Pembahasan: Kata depan (preposition) untuk waktu yang spesifik (jam/waktu pasti) adalah 'at' (contoh: at 8.30)."
+        ans: 2,
+        exp: "Preposisi waktu untuk jam spesifik / waktu tepat selalu memakai 'at' (contoh: at 8:30)."
       },
       {
-        id: 4,
         type: "mcq",
-        question: "Mount Everest is the _____ mountain in the world.",
+        q: "Mount Everest is the _____ mountain in the world.",
         options: ["high", "higher", "highest", "most high"],
-        answer: 2,
-        explanation: "Pembahasan: Kalimat tingkat paling (superlative) yang diawali kata 'the' butuh kata sifat bertingkat paling tinggi, yaitu 'highest'."
+        ans: 2,
+        exp: "Superlative (paling tinggi) untuk kata berakhiran satu suku kata menggunakan akhiran '-est' (highest)."
       },
       {
-        id: 5,
         type: "mcq",
-        question: "You _____ wash your hands before eating to stay healthy.",
+        q: "You _____ wash your hands before eating to stay healthy.",
         options: ["must", "might", "would", "could"],
-        answer: 0,
-        explanation: "Pembahasan: 'Must' digunakan untuk menyatakan kewajiban atau keharusan penting demi kesehatan."
+        ans: 0,
+        exp: "'Must' digunakan untuk menyatakan keharusan atau aturan penting demi kesehatan."
       },
       {
-        id: 6,
         type: "mcq",
-        question: "The farmer has ten sheep and five _____.",
+        q: "The farmer has ten sheep and five _____.",
         options: ["oxes", "oxen", "oxs", "ox"],
-        answer: 1,
-        explanation: "Pembahasan: Bentuk jamak tidak teratur (irregular plural) dari kata 'ox' (lembu/sapi jantan) adalah 'oxen'."
+        ans: 1,
+        exp: "Bentuk jamak tidak beraturan (irregular plural) dari satu 'ox' (lembu) adalah 'oxen'."
       },
       {
-        id: 7,
         type: "mcq",
-        question: "The brave firefighter rescued the little kitten. The word BRAVE has the same meaning as _____.",
+        q: "The brave firefighter rescued the little kitten. The word BRAVE has the same meaning as _____.",
         options: ["coward", "courageous", "fearful", "weak"],
-        answer: 1,
-        explanation: "Pembahasan: Persamaan kata (synonym) dari 'brave' (berani) adalah 'courageous'."
+        ans: 1,
+        exp: "Sinonim (persamaan kata) dari 'brave' (pemberani) adalah 'courageous'."
       },
       {
-        id: 8,
         type: "mcq",
-        question: "The room was very NOISY during recess. The opposite of NOISY is _____.",
+        q: "The room was very NOISY during recess. The opposite of NOISY is _____.",
         options: ["loud", "busy", "quiet", "crowded"],
-        answer: 2,
-        explanation: "Pembahasan: Lawan kata (antonym) dari 'noisy' (bising/ramai) adalah 'quiet' (tenang/hening)."
+        ans: 2,
+        exp: "Antonim (lawan kata) dari 'noisy' (bising/ramai) adalah 'quiet' (tenang/sunyi)."
       },
       {
-        id: 9,
         type: "mcq",
-        question: "Tom: 'I won the spelling bee competition yesterday!'\nJerry: '_____! I am so proud of you.'",
+        q: "Tom: 'I won the spelling bee competition yesterday!'\nJerry: '_____! I am so proud of you.'",
         options: ["Never mind", "Congratulations", "Excuse me", "Good luck"],
-        answer: 1,
-        explanation: "Pembahasan: Ungkapan yang tepat untuk memberi selamat atas keberhasilan seseorang adalah 'Congratulations'."
+        ans: 1,
+        exp: "Ungkapan yang tepat saat teman meraih kemenangan/prestasi adalah 'Congratulations!' (Selamat!)."
       },
       {
-        id: 10,
         type: "mcq",
-        question: "A place where historical objects are kept and displayed to the public is a _____.",
+        q: "A place where historical objects are kept and displayed to the public is a _____.",
         options: ["library", "museum", "laboratory", "stadium"],
-        answer: 1,
-        explanation: "Pembahasan: Tempat menyimpan dan memamerkan benda-benda bersejarah kepada publik disebut 'museum'."
+        ans: 1,
+        exp: "Tempat menyimpan dan memamerkan benda-benda bersejarah adalah 'museum'."
       },
       {
-        id: 11,
         type: "mcq",
-        question: "Identify the incorrect word:\n'She don't (A) like (B) eating vegetables (C) for dinner (D).'",
+        q: "Identify the incorrect word:\n'She don't (A) like (B) eating vegetables (C) for dinner (D).'",
         options: ["don't", "like", "vegetables", "dinner"],
-        answer: 0,
-        explanation: "Pembahasan: Subjek tunggal 'She' seharusnya menggunakan kata kerja bantu 'doesn't', bukan 'don't'."
+        ans: 0,
+        exp: "Subjek 'She' adalah orang ketiga tunggal, sehingga harus menggunakan 'doesn't', bukan 'don't'."
       },
       {
-        id: 12,
         type: "mcq",
-        question: "Identify the incorrect word:\n'There are (A) three (B) childs (C) playing in the park (D).'",
+        q: "Identify the incorrect word:\n'There are (A) three (B) childs (C) playing in the park (D).'",
         options: ["are", "three", "childs", "park"],
-        answer: 2,
-        explanation: "Pembahasan: Bentuk jamak dari kata 'child' yang benar adalah 'children', bukan 'childs'."
+        ans: 2,
+        exp: "Bentuk jamak dari 'child' adalah 'children', bukan 'childs'."
       },
       {
-        id: 13,
         type: "mcq",
-        question: "Arrange into a correct sentence:\n'always / breakfast / he / eats / at 6 AM'",
+        q: "Arrange into a correct sentence:\n'always / breakfast / he / eats / at 6 AM'",
         options: [
           "He eats always breakfast at 6 AM.",
           "He always eats breakfast at 6 AM.",
           "Breakfast he eats always at 6 AM.",
           "At 6 AM always he eats breakfast."
         ],
-        answer: 1,
-        explanation: "Pembahasan: Tata bahasa yang benar: Subject + Adverb of Frequency + Verb + Object + Time (He + always + eats + breakfast + at 6 AM)."
+        ans: 1,
+        exp: "Adverb of frequency 'always' diletakkan sebelum kata kerja utama: Subject + always + Verb (He always eats breakfast at 6 AM)."
       },
       {
-        id: 14,
         type: "mcq",
-        passage: "Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
-        question: "What is the main topic of the paragraph?",
+        passage: "The Clever Honeybee: Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
+        q: "What is the main topic of the paragraph?",
         options: [
           "How to harvest sweet honey.",
           "The life and communication of bees.",
           "Dangerous flying insects in nature.",
           "Different types of colorful flowers."
         ],
-        answer: 1,
-        explanation: "Pembahasan: Paragraf tersebut secara umum membahas tentang kehidupan lebah serta cara mereka berkomunikasi."
+        ans: 1,
+        exp: "Paragraf tersebut membahas tentang koloni lebah dan cara mereka berkomunikasi melalui tarian waggle."
       },
       {
-        id: 15,
         type: "mcq",
-        passage: "Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
-        question: "How many bees can live together in a single colony?",
+        passage: "The Clever Honeybee: Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
+        q: "How many bees can live together in a single colony?",
         options: ["Up to 600 bees", "Up to 6,000 bees", "Up to 60,000 bees", "Up to 600,000 bees"],
-        answer: 2,
-        explanation: "Pembahasan: Berdasarkan teks kalimat kedua: 'A single bee colony can contain up to 60,000 bees'."
+        ans: 2,
+        exp: "Sesuai teks: 'A single bee colony can contain up to 60,000 bees'."
       },
       {
-        id: 16,
         type: "mcq",
-        passage: "Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
-        question: "What is the 'waggle dance' used for?",
+        passage: "The Clever Honeybee: Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
+        q: "What is the 'waggle dance' used for?",
         options: [
           "To scare enemies away",
           "To entertain the queen bee",
           "To communicate food locations",
           "To build new honeycombs"
         ],
-        answer: 2,
-        explanation: "Pembahasan: Teks menyebutkan 'waggle dance' digunakan untuk 'share information about the direction and distance to flowers with nectar' (lokasi makanan)."
+        ans: 2,
+        exp: "Sesuai teks: waggle dance digunakan untuk berbagi informasi arah dan jarak bunga/makanan ('direction and distance to flowers with nectar')."
       },
       {
-        id: 17,
         type: "mcq",
-        passage: "Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
-        question: "Why are bees important for nature?",
+        passage: "The Clever Honeybee: Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
+        q: "Why are bees important for nature?",
         options: [
           "They help plants and fruits grow through pollination.",
           "They protect flowers from other insects.",
           "They clean the forest ground.",
           "They make the weather warmer."
         ],
-        answer: 0,
-        explanation: "Pembahasan: Peran utama lebah pada alam adalah membantu penyerbukan (pollination) sehingga buah dan bunga dapat tumbuh."
+        ans: 0,
+        exp: "Lebah sangat penting karena membantu proses penyerbukan tanaman dan buah-buahan (pollination)."
       },
       {
-        id: 18,
         type: "mcq",
-        passage: "Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
-        question: "Based on the text, which statement is TRUE?",
+        passage: "The Clever Honeybee: Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
+        q: "Based on the text, which statement is TRUE?",
         options: [
           "Bees live alone without colonies.",
           "Bees communicate through singing.",
           "Bees do not eat nectar.",
           "Without bees, many plants would struggle to reproduce."
         ],
-        answer: 3,
-        explanation: "Pembahasan: Kalimat terakhir 'Without bees, many fruits and flowers would not be able to grow' menegaskan bahwa tanpa lebah, tanaman akan sulit berkembang biak."
+        ans: 3,
+        exp: "Tanpa bantuan penyerbukan lebah, banyak bunga dan buah tidak akan bisa tumbuh/berkembang biak ('would not be able to grow')."
       },
       {
-        id: 19,
         type: "input",
-        question: "Unscramble the letters to form a word meaning 'a vehicle that flies into outer space':\n[ H - P - S - C - E - A - I - S - P ]",
-        answers: ["spaceship", "space ship"],
-        explanation: "Pembahasan: Susunan huruf acak tersebut membentuk kata 'SPACESHIP' (pesawat luar angkasa)."
+        q: "Unscramble the letters to form a word meaning 'a vehicle that flies into outer space': [ H - P - S - C - E - A - I - S - P ]",
+        ans: ["spaceship", "space ship"],
+        exp: "Huruf-huruf tersebut jika disusun membentuk kata 'SPACESHIP' (pesawat luar angkasa)."
       },
       {
-        id: 20,
         type: "input",
-        question: "Word Formation: My older sister is a talented _____ (DANCE). She wins many trophies.",
-        answers: ["dancer"],
-        explanation: "Pembahasan: Mengubah kata kerja 'DANCE' menjadi kata benda penunjuk profesi/pelaku: 'DANCER' (penari)."
+        q: "Word Formation: My older sister is a talented _____ (DANCE). She wins many trophies.",
+        ans: ["dancer"],
+        exp: "Kata kerja 'dance' (menari) diubah menjadi kata benda orang / penari dengan menambahkan akhiran -r menjadi 'dancer'."
       },
       {
-        id: 21,
         type: "input",
-        question: "Irregular Past Tense: Yesterday, my mother _____ (BUY) fresh apples from the supermarket.",
-        answers: ["bought"],
-        explanation: "Pembahasan: Kata kerja lampau (Past Tense) tidak teratur dari 'BUY' adalah 'BOUGHT'."
+        q: "Irregular Past Tense: Yesterday, my mother _____ (BUY) fresh apples from the supermarket.",
+        ans: ["bought"],
+        exp: "Bentuk lampau (Past Tense / V2) dari kata kerja 'buy' adalah 'bought'."
       },
       {
-        id: 22,
         type: "input",
-        question: "Preposition: The cat is sleeping comfortably _____ the rug in front of the fireplace.",
-        answers: ["on", "upon"],
-        explanation: "Pembahasan: Kata depan posisi di atas permukaan karpet adalah 'ON'."
+        q: "Preposition: The cat is sleeping comfortably _____ the rug in front of the fireplace.",
+        ans: ["on", "upon"],
+        exp: "Preposisi tempat di atas permukaan karpet menggunakan 'on'."
       },
       {
-        id: 23,
         type: "input",
-        question: "Spelling & Definition: The fourth month of the year is _____.",
-        answers: ["april"],
-        explanation: "Pembahasan: Bulan keempat dalam setahun adalah 'APRIL'."
+        q: "Spelling & Definition: The fourth month of the year is _____.",
+        ans: ["april"],
+        exp: "Urutan bulan ke-4 dalam kalender Masehi adalah 'April'."
       },
       {
-        id: 24,
         type: "input",
-        question: "Collective Noun: A group of wolves hunting together is called a _____.",
-        answers: ["pack"],
-        explanation: "Pembahasan: Sebutan untuk sekelompok serigala yang berkumpul/berburu bersama adalah 'PACK'."
+        q: "Collective Noun: A group of wolves hunting together is called a _____.",
+        ans: ["pack"],
+        exp: "Sebutan kelompok/kawanan serigala dalam bahasa Inggris adalah 'a pack of wolves'."
       },
       {
-        id: 25,
         type: "input",
-        question: "Cloze / Logic: Birds use their wings to fly, while fish use their _____ to swim.",
-        answers: ["fins", "fin"],
-        explanation: "Pembahasan: Burung terbang memakai sayap (wings), sedangkan ikan berenang menggunakan sirip ('FINS' atau 'FIN')."
+        q: "Cloze / Logic: Birds use their wings to fly, while fish use their _____ to swim.",
+        ans: ["fins", "fin"],
+        exp: "Burung terbang dengan sayap (wings), sedangkan ikan berenang menggunakan sirip ('fins')."
       }
     ];
 
-    function renderQuiz() {
-      const listContainer = document.getElementById("questions-list");
-      listContainer.innerHTML = "";
+    // BANK DATA SOAL KAKAK PUTRI (MATEMATIKA KELAS 2 SD)
+    const dataPutri = [
+      {
+        type: "mcq",
+        q: "Perhatikan pola bilangan berikut:\n3, 6, 9, 12, A, 18, B.\nBerapakah nilai dari A + B?",
+        options: ["33", "36", "39", "42"],
+        ans: 1,
+        exp: "Pola selalu bertambah +3.\nA = 12 + 3 = 15.\nB = 18 + 3 = 21.\nMaka A + B = 15 + 21 = 36."
+      },
+      {
+        type: "mcq",
+        q: "Di sebuah peternakan ada 4 ekor ayam dan 3 ekor kambing. Berapa jumlah seluruh kaki hewan tersebut?",
+        options: ["14 kaki", "18 kaki", "20 kaki", "24 kaki"],
+        ans: 2,
+        exp: "Kaki ayam: 4 x 2 = 8 kaki.\nKaki kambing: 3 x 4 = 12 kaki.\nTotal kaki = 8 + 12 = 20 kaki."
+      },
+      {
+        type: "mcq",
+        q: "Jika sekarang hari Selasa, maka 10 hari lagi adalah hari...",
+        options: ["Kamis", "Jumat", "Sabtu", "Minggu"],
+        ans: 1,
+        exp: "Satu minggu ada 7 hari.\n7 hari dari Selasa adalah Selasa lagi.\nSisa 3 hari: Rabu (+1), Kamis (+2), Jumat (+3).\nJadi 10 hari lagi adalah hari Jumat."
+      },
+      {
+        type: "mcq",
+        q: "Sebuah bus membawa 28 penumpang. Di halte pertama turun 9 orang dan naik 5 orang. Berapa banyak penumpang di dalam bus sekarang?",
+        options: ["22 orang", "24 orang", "25 orang", "26 orang"],
+        ans: 1,
+        exp: "Penumpang awal = 28.\nTurun 9 orang = 28 - 9 = 19 orang.\nNaik 5 orang = 19 + 5 = 24 orang."
+      },
+      {
+        type: "mcq",
+        q: "Aku adalah bilangan dua angka. Angka puluhanku adalah 6. Angka satuanku 2 lebih kecil dari angka puluhan. Bilangan berapakah aku?",
+        options: ["68", "64", "46", "62"],
+        ans: 1,
+        exp: "Angka puluhan = 6.\nAngka satuan = 6 - 2 = 4.\nMaka bilangannya adalah 64."
+      },
+      {
+        type: "mcq",
+        q: "Ibu membeli 3 kotak donat. Setiap kotak berisi 6 donat. Donat-donat itu dibagikan sama rata kepada 2 anaknya. Berapa donat yang didapat tiap anak?",
+        options: ["8 donat", "9 donat", "10 donat", "12 donat"],
+        ans: 1,
+        exp: "Total donat = 3 kotak x 6 = 18 donat.\nDibagi 2 anak = 18 : 2 = 9 donat per anak."
+      },
+      {
+        type: "mcq",
+        q: "Bangun datar yang memiliki 3 sisi dan 3 titik sudut adalah...",
+        options: ["Persegi", "Persegi Panjang", "Segitiga", "Lingkaran"],
+        ans: 2,
+        exp: "Segitiga adalah bangun datar yang dibatasi oleh 3 ruas garis (sisi) dan memiliki 3 titik sudut."
+      },
+      {
+        type: "mcq",
+        q: "Jarum panjang menunjuk angka 6 dan jarum pendek berada di antara angka 4 dan 5. Jam berapakah itu?",
+        options: ["Pukul 04.30", "Pukul 05.30", "Pukul 06.20", "Pukul 04.06"],
+        ans: 0,
+        exp: "Jarum pendek di antara 4 dan 5 menunjukkan jam 4 lewat. Jarum panjang di angka 6 menunjukkan 30 menit (6 x 5 = 30). Jadi pukul 04.30."
+      },
+      {
+        type: "mcq",
+        q: "Manakah pecahan yang nilainya PALING BESAR?",
+        options: ["1/2", "1/3", "1/4", "1/5"],
+        ans: 0,
+        exp: "Pada pecahan dengan pembilang sama (angka atas 1), semakin KECIL angka penyebutnya (angka bawah), nilainya justru semakin BESAR. Jadi 1/2 adalah yang terbesar."
+      },
+      {
+        type: "mcq",
+        q: "Budi memiliki 1 lembar uang Rp10.000, 2 lembar uang Rp2.000, dan 3 koin Rp500. Berapa total uang Budi?",
+        options: ["Rp14.500", "Rp15.000", "Rp15.500", "Rp16.000"],
+        ans: 2,
+        exp: "Rp10.000 + (2 x Rp2.000 = Rp4.000) + (3 x Rp500 = Rp1.500) = Rp10.000 + Rp4.000 + Rp1.500 = Rp15.500."
+      },
+      {
+        type: "mcq",
+        q: "Dalam antrean kantin, Alif berada di urutan ke-4 dari depan dan urutan ke-5 dari belakang. Berapa jumlah anak dalam antrean itu?",
+        options: ["7 anak", "8 anak", "9 anak", "10 anak"],
+        ans: 1,
+        exp: "Jumlah = (posisi depan + posisi belakang) - 1.\nJumlah = (4 + 5) - 1 = 9 - 1 = 8 anak.\n(Dikurang 1 karena Alif dihitung 2 kali)."
+      },
+      {
+        type: "mcq",
+        q: "Berapakah hasil dari: 45 + 28 - 19 = ...",
+        options: ["52", "54", "56", "58"],
+        ans: 1,
+        exp: "Langkah 1: 45 + 28 = 73.\nLangkah 2: 73 - 19 = 54."
+      },
+      {
+        type: "mcq",
+        q: "Sebuah tali panjangnya 1 meter. Tali tersebut dipotong 35 cm. Berapa cm sisa tali sekarang?",
+        options: ["55 cm", "65 cm", "75 cm", "135 cm"],
+        ans: 1,
+        exp: "1 meter = 100 cm.\nSisa = 100 cm - 35 cm = 65 cm."
+      },
+      {
+        type: "mcq",
+        q: "Perhatikan perbandingan berikut:\n2 apel = 4 stroberi\n1 apel = ... stroberi?",
+        options: ["1 stroberi", "2 stroberi", "3 stroberi", "4 stroberi"],
+        ans: 1,
+        exp: "Jika 2 apel seberat 4 stroberi, maka 1 apel seberat 4 : 2 = 2 stroberi."
+      },
+      {
+        type: "mcq",
+        q: "Umur Kakak 9 tahun. Umur Adik 4 tahun lebih muda dari Kakak. Berapakah JUMLAH umur mereka berdua?",
+        options: ["13 tahun", "14 tahun", "15 tahun", "18 tahun"],
+        ans: 1,
+        exp: "Umur Kakak = 9 tahun.\nUmur Adik = 9 - 4 = 5 tahun.\nJumlah umur = 9 + 5 = 14 tahun."
+      },
+      {
+        type: "mcq",
+        q: "Manakah operasi hitung di bawah ini yang hasilnya PALING KECIL?",
+        options: ["5 x 4", "30 - 12", "12 + 7", "40 : 2"],
+        ans: 1,
+        exp: "A. 5 x 4 = 20\nB. 30 - 12 = 18\nC. 12 + 7 = 19\nD. 40 : 2 = 20\nHasil paling kecil adalah 18 (Pilihan B)."
+      },
+      {
+        type: "mcq",
+        q: "Sebuah akuarium berisi 15 ikan mas, 12 ikan koki, dan 8 ikan guppy. Berapa jumlah seluruh ikan di akuarium?",
+        options: ["33 ekor", "35 ekor", "37 ekor", "40 ekor"],
+        ans: 1,
+        exp: "15 + 12 + 8 = 15 + 20 = 35 ekor."
+      },
+      {
+        type: "mcq",
+        q: "Perhatikan pola gambar berikut: Segitiga, Lingkaran, Kotak, Segitiga, Lingkaran, Kotak, Segitiga, ...\nBentuk apakah urutan ke-11?",
+        options: ["Segitiga", "Lingkaran", "Kotak", "Bintang"],
+        ans: 1,
+        exp: "Pola berulang tiap 3 bentuk:\n1: Segitiga, 2: Lingkaran, 3: Kotak\n4: Segitiga, 5: Lingkaran, 6: Kotak\n7: Segitiga, 8: Lingkaran, 9: Kotak\n10: Segitiga, 11: Lingkaran.\nJadi bentuk ke-11 adalah Lingkaran."
+      },
+      {
+        type: "input",
+        q: "Isian Singkat: Berapakah hasil dari (7 x 4) + 15 = ...",
+        ans: ["43"],
+        exp: "Kerjakan perkalian dulu: 7 x 4 = 28.\nLalu jumlahkan: 28 + 15 = 43."
+      },
+      {
+        type: "input",
+        q: "Isian Singkat: Aku adalah bilangan ganjil antara 20 dan 30. Jumlah kedua angka penyusun ku adalah 9. Bilangan berapakah aku?",
+        ans: ["27"],
+        exp: "Bilangan antara 20 dan 30 dengan kepala 2. Supaya jumlah angkanya 9, angka satuannya harus 9 - 2 = 7. Bilangan 27 adalah ganjil. Jawabannya: 27."
+      },
+      {
+        type: "input",
+        q: "Isian Singkat: Roni memiliki 24 kelereng. Diberikan kepada adiknya sebanyak 8 kelereng. Lalu ia membeli lagi 6 kelereng. Berapa kelereng Roni sekarang?",
+        ans: ["22"],
+        exp: "24 - 8 = 16 kelereng.\n16 + 6 = 22 kelereng."
+      },
+      {
+        type: "input",
+        q: "Isian Singkat: Sebuah meja persegi memiliki panjang sisi 5 cm. Berapakah keliling meja tersebut? (Tulis angkanya saja)",
+        ans: ["20", "20 cm"],
+        exp: "Keliling persegi = 4 x sisi = 4 x 5 cm = 20 cm."
+      },
+      {
+        type: "input",
+        q: "Isian Singkat: Di rak ada 5 piring. Setiap piring berisi 4 kue nastar. Berapa jumlah semua kue nastar di rak?",
+        ans: ["20"],
+        exp: "5 piring x 4 kue = 20 kue."
+      },
+      {
+        type: "input",
+        q: "Isian Singkat: Ayah berangkat kerja pukul 07.00 pagi dan tiba di kantor pukul 07.45 pagi. Berapa MENIT lama perjalanan Ayah?",
+        ans: ["45", "45 menit"],
+        exp: "Dari pukul 07.00 sampai 07.45 adalah 45 menit."
+      },
+      {
+        type: "input",
+        q: "Isian Singkat: Nilai dari setengah (1/2) dari 18 buah apel adalah ... buah apel.",
+        ans: ["9"],
+        exp: "1/2 dari 18 sama dengan 18 dibagi 2 = 9 buah apel."
+      }
+    ];
 
-      let currentPassage = "";
+    let currentQuizType = "";
+    let activeQuizData = [];
 
-      questions.forEach((q, index) => {
-        // If there's a new passage, render passage block
-        if (q.passage && q.passage !== currentPassage) {
-          currentPassage = q.passage;
-          const passageDiv = document.createElement("div");
-          passageDiv.className = "reading-card";
-          passageDiv.innerHTML = `<h3>Reading Text (Questions ${index + 1} - 18):</h3><p>${q.passage}</p>`;
-          listContainer.appendChild(passageDiv);
-        }
+    function startQuiz(type) {
+      currentQuizType = type;
+      document.getElementById("home-view").style.display = "none";
+      const quizView = document.getElementById("quiz-view");
+      quizView.style.display = "flex";
 
+      if (type === "anin") {
+        document.getElementById("quiz-header-title").textContent = "Latihan Kakak Anin (Bahasa Inggris Kelas 4)";
+        quizView.classList.remove("math-mode");
+        document.getElementById("score-board").classList.remove("math-theme");
+        activeQuizData = dataAnin;
+      } else {
+        document.getElementById("quiz-header-title").textContent = "Latihan Kakak Putri (Matematika Kelas 2 SD)";
+        quizView.classList.add("math-mode");
+        document.getElementById("score-board").classList.add("math-theme");
+        activeQuizData = dataPutri;
+      }
+
+      renderQuestions();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function goHome() {
+      document.getElementById("quiz-view").style.display = "none";
+      document.getElementById("home-view").style.display = "block";
+      document.getElementById("score-board").style.display = "none";
+      document.getElementById("submit-all-btn").style.display = "block";
+      document.getElementById("retry-btn").style.display = "none";
+    }
+
+    function renderQuestions() {
+      const container = document.getElementById("questions-list");
+      container.innerHTML = "";
+      document.getElementById("score-board").style.display = "none";
+      document.getElementById("submit-all-btn").style.display = "block";
+      document.getElementById("retry-btn").style.display = "none";
+
+      activeQuizData.forEach((item, index) => {
         const card = document.createElement("div");
         card.className = "question-card";
-        card.id = `q-card-${q.id}`;
+        card.id = `q-card-${index}`;
 
-        let optionsHtml = "";
+        let passageHTML = "";
+        if (item.passage) {
+          passageHTML = `<div class="passage-box"><strong>Reading Passage:</strong><br>${item.passage}</div>`;
+        }
 
-        if (q.type === "mcq") {
-          optionsHtml = `<div class="options-list">`;
-          q.options.forEach((opt, optIndex) => {
-            optionsHtml += `
-              <label class="option-item">
-                <input type="radio" name="q_${q.id}" value="${optIndex}">
-                <span>${String.fromCharCode(65 + optIndex)}. ${opt}</span>
+        let inputHTML = "";
+        if (item.type === "mcq") {
+          inputHTML = `<div class="options-list">`;
+          item.options.forEach((opt, optIdx) => {
+            inputHTML += `
+              <label class="option-label" id="label-${index}-${optIdx}">
+                <input type="radio" name="question-${index}" value="${optIdx}">
+                <span>${String.fromCharCode(65 + optIdx)}. ${opt}</span>
               </label>
             `;
           });
-          optionsHtml += `</div>`;
-        } else if (q.type === "input") {
-          optionsHtml = `
-            <input type="text" class="input-box" name="q_${q.id}" placeholder="Ketik jawabanmu di sini..." autocomplete="off">
+          inputHTML += `</div>`;
+        } else {
+          inputHTML = `
+            <div>
+              <input type="text" class="input-box" id="input-${index}" placeholder="Tulis jawaban di sini..." autocomplete="off">
+            </div>
           `;
         }
 
         card.innerHTML = `
-          <div class="question-header">
-            <span class="q-number">Soal ${q.id}</span>
-            <div class="q-text">${q.question}</div>
-          </div>
-          ${optionsHtml}
-          <div class="explanation-box" id="exp-${q.id}">
-            <strong>Kunci Jawaban:</strong> <span id="ans-text-${q.id}"></span><br>
-            ${q.explanation}
+          <div class="q-number">Soal Nomor ${index + 1} / ${activeQuizData.length}</div>
+          ${passageHTML}
+          <div class="q-text">${item.q}</div>
+          ${inputHTML}
+          <div class="explanation-box" id="exp-${index}">
+            <span class="explanation-title" id="exp-title-${index}"></span>
+            <div id="exp-content-${index}">${item.exp}</div>
           </div>
         `;
-
-        listContainer.appendChild(card);
+        container.appendChild(card);
       });
     }
 
-    function submitQuiz() {
-      let scoreCount = 0;
-      const form = document.getElementById("quiz-form");
+    function evaluateQuiz() {
+      let correctCount = 0;
 
-      questions.forEach((q) => {
-        const card = document.getElementById(`q-card-${q.id}`);
-        const expBox = document.getElementById(`exp-${q.id}`);
-        const ansText = document.getElementById(`ans-text-${q.id}`);
+      activeQuizData.forEach((item, index) => {
+        const expBox = document.getElementById(`exp-${index}`);
+        const expTitle = document.getElementById(`exp-title-${index}`);
+        const card = document.getElementById(`q-card-${index}`);
         let isCorrect = false;
 
-        if (q.type === "mcq") {
-          const selectedOption = form.querySelector(`input[name="q_${q.id}"]:checked`);
-          const userVal = selectedOption ? parseInt(selectedOption.value) : -1;
+        if (item.type === "mcq") {
+          const selected = document.querySelector(`input[name="question-${index}"]:checked`);
+          const userVal = selected ? parseInt(selected.value) : -1;
 
-          if (userVal === q.answer) {
+          // Disable inputs
+          document.querySelectorAll(`input[name="question-${index}"]`).forEach(el => el.disabled = true);
+
+          if (userVal === item.ans) {
             isCorrect = true;
+            correctCount++;
           }
 
-          ansText.textContent = `${String.fromCharCode(65 + q.answer)}. ${q.options[q.answer]}`;
-        } else if (q.type === "input") {
-          const inputElem = form.querySelector(`input[name="q_${q.id}"]`);
-          const userVal = inputElem ? inputElem.value.trim().toLowerCase() : "";
-
-          if (q.answers.some(ans => ans.toLowerCase() === userVal)) {
-            isCorrect = true;
+          // Highlight correct option
+          const correctLabel = document.getElementById(`label-${index}-${item.ans}`);
+          if (correctLabel) {
+            correctLabel.style.borderColor = "var(--correct-border)";
+            correctLabel.style.backgroundColor = "var(--correct-bg)";
+            correctLabel.style.fontWeight = "700";
           }
 
-          ansText.textContent = q.answers.join(" / ");
-        }
-
-        // Apply styles based on result
-        if (isCorrect) {
-          scoreCount++;
-          card.classList.add("is-correct");
-          expBox.classList.add("visible", "correct-style");
+          // Highlight wrong choice if picked
+          if (!isCorrect && userVal !== -1) {
+            const wrongLabel = document.getElementById(`label-${index}-${userVal}`);
+            if (wrongLabel) {
+              wrongLabel.style.borderColor = "var(--wrong-border)";
+              wrongLabel.style.backgroundColor = "var(--wrong-bg)";
+            }
+          }
         } else {
-          card.classList.add("is-wrong");
-          expBox.classList.add("visible", "wrong-style");
+          const inputEl = document.getElementById(`input-${index}`);
+          const userText = inputEl.value.trim().toLowerCase();
+          inputEl.disabled = true;
+
+          const match = item.ans.some(a => a.toLowerCase() === userText);
+          if (match) {
+            isCorrect = true;
+            correctCount++;
+            inputEl.style.borderColor = "var(--correct-border)";
+            inputEl.style.backgroundColor = "var(--correct-bg)";
+          } else {
+            inputEl.style.borderColor = "var(--wrong-border)";
+            inputEl.style.backgroundColor = "var(--wrong-bg)";
+          }
         }
 
-        // Disable all inputs after submission
-        const inputs = card.querySelectorAll("input");
-        inputs.forEach(i => i.disabled = true);
+        // Tampilkan kotak pembahasan
+        expBox.style.display = "block";
+        if (isCorrect) {
+          expBox.className = "explanation-box correct";
+          expTitle.innerHTML = "✅ <strong>Jawaban Benar!</strong>";
+        } else {
+          expBox.className = "explanation-box wrong";
+          let correctText = item.type === "mcq" ? `${String.fromCharCode(65 + item.ans)}. ${item.options[item.ans]}` : item.ans.join(" / ");
+          expTitle.innerHTML = `❌ <strong>Jawaban Kurang Tepat.</strong> (Kunci Jawaban: <strong>${correctText}</strong>)`;
+        }
       });
 
-      // Calculate final percentage
-      const finalScore = Math.round((scoreCount / questions.length) * 100);
-
-      // Display score board
+      // Tampilkan Skor Akhir di Atas
       const scoreBoard = document.getElementById("score-board");
-      document.getElementById("score-text").textContent = `${finalScore} / 100`;
-      document.getElementById("detail-score-text").textContent = `Kamu berhasil menjawab ${scoreCount} dari ${questions.length} soal dengan benar.`;
-      scoreBoard.classList.add("visible");
+      const percentage = Math.round((correctCount / activeQuizData.length) * 100);
+      document.getElementById("score-percentage").textContent = `${percentage}%`;
+      document.getElementById("score-detail").innerHTML = `Hebat! Berhasil menjawab <strong>${correctCount}</strong> dari <strong>${activeQuizData.length}</strong> soal dengan benar.`;
+      scoreBoard.style.display = "block";
 
-      // Hide submit button
-      document.getElementById("submit-area").style.display = "none";
+      document.getElementById("submit-all-btn").style.display = "none";
+      document.getElementById("retry-btn").style.display = "inline-block";
 
-      // Scroll to top smoothly to see the score
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Scroll mulus ke atas untuk melihat skor
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    // Initialize quiz on load
-    window.onload = renderQuiz;
+    function retryCurrentQuiz() {
+      renderQuestions();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   </script>
 </body>
 </html>
