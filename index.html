@@ -49,7 +49,7 @@
       gap: 20px;
     }
 
-    /* Menu Home Styling */
+    /* Card Box */
     .home-card {
       background: var(--card);
       border-radius: 24px;
@@ -114,7 +114,52 @@
       box-shadow: 0 12px 24px -6px rgba(236, 72, 153, 0.18);
     }
 
-    /* Karakter Kartun Container */
+    /* Sub-menu Grid (Khusus Kakak Anin) */
+    .submenu-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 600px) {
+      .submenu-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .sub-btn {
+      background: #f8fafc;
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .sub-btn:hover {
+      border-color: var(--primary);
+      background: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px -4px rgba(79, 70, 229, 0.15);
+    }
+
+    .sub-btn h3 {
+      font-size: 1.15rem;
+      color: var(--primary);
+    }
+
+    .sub-btn p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* Karakter Kartun */
     .avatar-wrapper {
       display: flex;
       justify-content: center;
@@ -156,7 +201,7 @@
       line-height: 1.4;
     }
 
-    /* Quiz Header */
+    /* Quiz Top Header */
     .top-bar {
       display: flex;
       justify-content: space-between;
@@ -182,7 +227,7 @@
     .back-btn:hover { background: #e2e8f0; }
 
     .quiz-title {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: var(--primary);
     }
@@ -245,7 +290,6 @@
       white-space: pre-line;
     }
 
-    /* Visual Box Khusus Anak TK */
     .visual-box {
       background: #fdf2f8;
       border: 2px dashed #f472b6;
@@ -407,14 +451,14 @@
 <body>
 
   <div class="container">
-    <!-- 1. Menu Utama (3 Pilihan Karakter) -->
+    <!-- 1. Menu Utama (3 Karakter) -->
     <div id="home-view" class="home-card">
       <h1>🌟 Portal Belajar Bocils</h1>
-      <p>Yuk pilih paket latihan kuis seru di bawah ini:</p>
+      <p>Pilih paket latihan kuis seru di bawah ini:</p>
 
       <div class="menu-grid">
-        <!-- Kartu 1: Kakak Anin (Berhijab + Kacamata) -->
-        <div class="menu-btn" onclick="startQuiz('anin')">
+        <!-- Kartu 1: Kakak Anin -->
+        <div class="menu-btn" onclick="openAninMenu()">
           <div class="avatar-wrapper">
             <svg class="avatar-anin" viewBox="0 0 120 165" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M32 125C32 110 40 100 60 100C80 100 88 110 88 125V165H32V125Z" fill="#6366F1"/>
@@ -436,26 +480,23 @@
           </div>
           <span class="badge badge-english">Kelas 4 SD</span>
           <h2>Kakak Anin</h2>
-          <p>Olimpiade Bahasa Inggris<br>(25 Soal: Grammar, Vocab, Reading)</p>
+          <p>Olimpiade Bahasa Inggris<br>(2 Paket Kategori Soal)</p>
         </div>
 
-        <!-- Kartu 2: Kakak Putri (Berhijab Toska, Tanpa Kacamata) -->
+        <!-- Kartu 2: Kakak Putri -->
         <div class="menu-btn math" onclick="startQuiz('putri')">
           <div class="avatar-wrapper">
             <svg class="avatar-putri" viewBox="0 0 120 145" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M34 112C34 98 42 90 60 90C78 90 86 98 86 112V145H34V112Z" fill="#0EA5E9"/>
-              <!-- Hijab Toska Ceria -->
               <path d="M29 55C29 90 39 110 60 110C81 110 91 90 91 55C91 22 81 10 60 10C39 10 29 22 29 55Z" fill="#38BDF8"/>
               <ellipse cx="60" cy="58" rx="21" ry="23" fill="#FDDFCA"/>
               <circle cx="47" cy="65" r="4" fill="#FCA5A5" opacity="0.6"/>
               <circle cx="73" cy="65" r="4" fill="#FCA5A5" opacity="0.6"/>
-              <!-- Mata Bulat Cantik Berbinar -->
               <ellipse cx="50" cy="56" rx="3.2" ry="4.5" fill="#1E293B"/>
               <ellipse cx="70" cy="56" rx="3.2" ry="4.5" fill="#1E293B"/>
               <circle cx="51.5" cy="54" r="1.5" fill="#FFFFFF"/>
               <circle cx="71.5" cy="54" r="1.5" fill="#FFFFFF"/>
               <path d="M54 68C56.5 72 63.5 72 66 68" stroke="#E11D48" stroke-width="2.2" stroke-linecap="round"/>
-              <!-- Pin Bunga di Hijab -->
               <circle cx="76" cy="32" r="5" fill="#F43F5E"/>
               <circle cx="76" cy="32" r="2.5" fill="#FEF08A"/>
             </svg>
@@ -465,31 +506,24 @@
           <p>Olimpiade Matematika<br>(25 Soal: Pola, Logika, Hitung)</p>
         </div>
 
-        <!-- Kartu 3: Adik Sheva (Bocil Chubby Kuncir Dua, Tanpa Hijab) -->
+        <!-- Kartu 3: Adik Sheva -->
         <div class="menu-btn tk" onclick="startQuiz('sheva')">
           <div class="avatar-wrapper">
             <svg class="avatar-sheva" viewBox="0 0 120 125" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Kuncir Rambut Dua Cabang Kiri & Kanan -->
               <circle cx="24" cy="38" r="13" fill="#475569"/>
               <circle cx="96" cy="38" r="13" fill="#475569"/>
               <ellipse cx="32" cy="45" rx="5" ry="3.5" fill="#F43F5E"/>
               <ellipse cx="88" cy="45" rx="5" ry="3.5" fill="#F43F5E"/>
-              <!-- Badan & Baju Lucu -->
               <path d="M36 94C36 82 44 76 60 76C76 76 84 82 84 94V125H36V94Z" fill="#F472B6"/>
               <circle cx="60" cy="76" r="18" fill="#475569"/>
-              <!-- Wajah Chubby / Gembul Imut -->
               <ellipse cx="60" cy="52" rx="26" ry="24" fill="#FDDFCA"/>
-              <!-- Pipi Gembul Merah Merona -->
               <circle cx="42" cy="62" r="6" fill="#FCA5A5" opacity="0.8"/>
               <circle cx="78" cy="62" r="6" fill="#FCA5A5" opacity="0.8"/>
-              <!-- Rambut Poni Lucu -->
               <path d="M35 44C42 34 52 32 60 38C68 32 78 34 85 44C80 36 71 28 60 28C49 28 40 36 35 44Z" fill="#475569"/>
-              <!-- Mata Ceria Besar -->
               <ellipse cx="48" cy="51" rx="4" ry="5.5" fill="#1E293B"/>
               <ellipse cx="72" cy="51" rx="4" ry="5.5" fill="#1E293B"/>
               <circle cx="50" cy="49" r="2" fill="#FFFFFF"/>
               <circle cx="74" cy="49" r="2" fill="#FFFFFF"/>
-              <!-- Senyum Lebar Lucu -->
               <path d="M53 62C53 69 67 69 67 62" fill="#BE123C"/>
             </svg>
           </div>
@@ -500,10 +534,32 @@
       </div>
     </div>
 
-    <!-- 2. Halaman Soal Kuis -->
+    <!-- 2. Sub-Menu Khusus Kakak Anin -->
+    <div id="anin-category-view" class="home-card" style="display: none;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+        <button class="back-btn" onclick="goHome()">⬅ Menu Utama</button>
+        <span class="badge badge-english">Kakak Anin • Kelas 4 SD</span>
+      </div>
+      <h1 style="font-size: 1.6rem; color: var(--primary);">Pilih Paket Latihan Bahasa Inggris</h1>
+      <p style="margin-bottom: 20px;">Silakan pilih kategori latihan yang ingin dikerjakan:</p>
+
+      <div class="submenu-grid">
+        <div class="sub-btn" onclick="startQuiz('anin1')">
+          <h3>📘 Paket 1: Grammar & Reading</h3>
+          <p>25 Soal Campuran (Pilihan Ganda & Isian Singkat) + Pembahasan Lengkap.</p>
+        </div>
+
+        <div class="sub-btn" onclick="startQuiz('anin2')">
+          <h3>🏆 Paket 2: Babak Penyisihan ESM Level 2</h3>
+          <p>40 Soal Pilihan Ganda (Latso 1, 2, 3, 4 dari AIS Institute) + Kunci & Pembahasan.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Halaman Soal Kuis -->
     <div id="quiz-view" style="display: none;" class="container">
       <div class="top-bar">
-        <button class="back-btn" onclick="goHome()">⬅ Menu Utama</button>
+        <button class="back-btn" id="quiz-back-btn" onclick="goBackFromQuiz()">⬅ Kembali</button>
         <div class="quiz-title" id="quiz-header-title">Latihan Belajar</div>
       </div>
 
@@ -513,9 +569,7 @@
         <p id="score-detail">Kamu berhasil menjawab 0 soal dengan benar.</p>
       </div>
 
-      <div id="questions-list" style="display: flex; flex-direction: column; gap: 18px;">
-        <!-- Soal dirender lewat JS -->
-      </div>
+      <div id="questions-list" style="display: flex; flex-direction: column; gap: 18px;"></div>
 
       <div class="submit-container">
         <button class="btn-submit" id="submit-all-btn" onclick="evaluateQuiz()">Kumpulkan & Lihat Hasil</button>
@@ -525,8 +579,10 @@
   </div>
 
   <script>
-    // BANK DATA SOAL KAKAK ANIN (ENGLISH GRADE 4)
-    const dataAnin = [
+    // ==========================================
+    // 1. DATA SOAL KAKAK ANIN - PAKET 1 (25 SOAL)
+    // ==========================================
+    const dataAnin1 = [
       {
         type: "mcq",
         q: "Look at the sky! The dark clouds are gathering, it _____ rain soon.",
@@ -727,7 +783,273 @@
       }
     ];
 
-    // BANK DATA SOAL KAKAK PUTRI (MATEMATIKA KELAS 2 SD)
+    // =========================================================================
+    // 2. DATA SOAL KAKAK ANIN - PAKET 2 (BABAK PENYISIHAN ESM LEVEL 2 - 40 SOAL)
+    // =========================================================================
+    const dataAnin2 = [
+      // LATSO 1
+      {
+        q: "[Latso 1 - No. 1] Which sentence correctly uses a preposition to show location?",
+        options: ["The cat sleeps under the chair.", "The cat sleeps quickly the chair.", "The cat sleeps before the chair.", "The cat sleeps happy the chair."],
+        ans: 0,
+        exp: "'Under' adalah kata depan (preposition of location) yang tepat untuk menunjukkan lokasi di bawah kursi."
+      },
+      {
+        q: "[Latso 1 - No. 2] What time is shown if the short hand is on 3 and the long hand is on 12?",
+        options: ["3:00", "12:15", "3:30", "2:45"],
+        ans: 0,
+        exp: "Jarum pendek di angka 3 dan jarum panjang tepat di angka 12 menunjukkan pukul 03.00 (3:00)."
+      },
+      {
+        q: "[Latso 1 - No. 3] Choose the sentence that uses the simple present correctly.",
+        options: ["She go to school every day.", "He plays soccer on Sunday.", "I am go to the park yesterday.", "They is eating lunch now."],
+        ans: 1,
+        exp: "Subjek 'He' (tunggal) menggunakan kata kerja berakhiran -s ('plays'). Pilihan A salah karena harusnya 'She goes'."
+      },
+      {
+        passage: "Rani left her umbrella at home. The sky was dark and the air smelled wet.",
+        q: "[Latso 1 - No. 4] Read the short passage and answer the inference question. What can you infer will probably happen next?",
+        options: ["Rani will watch a movie indoors.", "It will rain and Rani may get wet.", "Rani will travel to another country.", "The sun will shine brightly."],
+        ans: 1,
+        exp: "Karena Rani meninggalkan payungnya dan langit sudah gelap berbau hujan, kemungkinan besar akan segera turun hujan dan Rani akan basah."
+      },
+      {
+        q: "[Latso 1 - No. 5] Choose the best preposition to complete the sentence: 'The bird sat _____ the branch.'",
+        options: ["on", "to", "for", "by"],
+        ans: 0,
+        exp: "Burung bertengger di atas dahan pohon menggunakan preposisi 'on' (sat on the branch)."
+      },
+      {
+        q: "[Latso 1 - No. 6] What time is it if the clock shows the long hand on 6 and short hand halfway between 4 and 5?",
+        options: ["4:30", "5:15", "4:15", "4:45"],
+        ans: 0,
+        exp: "Jarum panjang di angka 6 (30 menit) dan jarum pendek di antara 4 dan 5 menunjukkan pukul 04.30."
+      },
+      {
+        q: "[Latso 1 - No. 7] Select the correct simple present sentence for a habitual action.",
+        options: ["My father cooks breakfast every morning.", "My father cooked breakfast every morning.", "My father will cook breakfast every morning.", "My father cooking breakfast every morning."],
+        ans: 0,
+        exp: "Kebiasaan rutin setiap pagi (habitual action) menggunakan Simple Present Tense: 'cooks breakfast every morning'."
+      },
+      {
+        passage: "Tom opened his book and cleaned his glasses before reading. His sister was already at the window watching the rain.",
+        q: "[Latso 1 - No. 8] Read the passage and answer: Which sentence is the best inference?",
+        options: ["Tom likes to read in the rain without glasses.", "Tom cannot read because there is no light.", "Tom will read quietly inside while it rains.", "Tom and his sister will go swimming."],
+        ans: 2,
+        exp: "Tom sudah membersihkan kacamata dan membuka bukunya di dalam rumah saat di luar sedang hujan, maka ia akan membaca dengan tenang di dalam rumah."
+      },
+      {
+        q: "[Latso 1 - No. 9] Which sentence uses a preposition of time correctly?",
+        options: ["We have music class on Monday.", "We have music class under Monday.", "We have music class between Monday.", "We have music class beside Monday."],
+        ans: 0,
+        exp: "Nama hari dalam bahasa Inggris selalu menggunakan preposisi waktu 'on' (on Monday)."
+      },
+      {
+        q: "[Latso 1 - No. 10] What time is it when the short hand points to 9 and the long hand points to 3?",
+        options: ["9:15", "9:45", "3:45", "9:30"],
+        ans: 0,
+        exp: "Jarum pendek di angka 9 dan jarum panjang di angka 3 (15 menit) menunjukkan pukul 09.15 (a quarter past nine)."
+      },
+
+      // LATSO 2
+      {
+        q: "[Latso 2 - No. 1] Choose the correct simple present form to complete the sentence: 'Every evening, Anna _____ her homework.'",
+        options: ["does", "do", "did", "doing"],
+        ans: 0,
+        exp: "Subjek 'Anna' adalah orang ketiga tunggal, sehingga bentuk kata kerja Simple Present dari 'do' adalah 'does'."
+      },
+      {
+        passage: "The library bell rang, and Maya hurried to the desk with a big smile and a library card in her hand.",
+        q: "[Latso 2 - No. 2] Read and infer: What can you infer about Maya?",
+        options: ["Maya wants to return a book she hates.", "Maya probably wants to borrow or check out a book.", "Maya is lost and needs directions.", "Maya is angry about the library rules."],
+        ans: 1,
+        exp: "Maya tersenyum lebar sambil memegang kartu perpustakaan (library card) menuju meja petugas, artinya ia ingin meminjam buku."
+      },
+      {
+        q: "[Latso 2 - No. 3] Choose the correct preposition: 'The school is _____ the corner of Oak Street.'",
+        options: ["at", "above", "through", "across"],
+        ans: 0,
+        exp: "Untuk lokasi di sudut jalan, ungkapan preposisi yang tepat adalah 'at the corner of...'."
+      },
+      {
+        q: "[Latso 2 - No. 4] What time is shown when the long hand is on 12 and the short hand is a little after 7?",
+        options: ["About 7:00", "About 7:30", "About 6:00", "About 8:00"],
+        ans: 0,
+        exp: "Jarum panjang di angka 12 dan jarum pendek di dekat angka 7 menunjukkan waktu sekitar pukul 07.00."
+      },
+      {
+        q: "[Latso 2 - No. 5] Select the correctly written simple present question.",
+        options: ["Do she play the piano?", "Does she play the piano?", "Is she plays the piano?", "She does play the piano?"],
+        ans: 1,
+        exp: "Kalimat tanya Simple Present untuk subjek 'she' diawali dengan auxiliary verb 'Does' + Subject + Verb 1 ('Does she play...?')."
+      },
+      {
+        passage: "A small bowl of seeds sat on the table and the mouse looked at it carefully before it crept closer.",
+        q: "[Latso 2 - No. 6] Read and infer: What is likely true?",
+        options: ["The mouse will cook the seeds.", "The mouse will eat the seeds.", "The mouse will hide the seeds from the cat.", "The mouse will go to school."],
+        ans: 1,
+        exp: "Tikus mendekati mangkuk berisi biji-bijian (makanannya) secara hati-hati untuk memakannya."
+      },
+      {
+        q: "[Latso 2 - No. 7] Which sentence correctly uses a preposition to show direction?",
+        options: ["The dog ran toward the gate.", "The dog ran happy the gate.", "The dog ran besidely the gate.", "The dog ran blue the gate."],
+        ans: 0,
+        exp: "'Toward' (menuju/ke arah) adalah preposisi yang menyatakan arah pergerakan (direction)."
+      },
+      {
+        q: "[Latso 2 - No. 8] What time is it when the short hand is on 12 and the long hand is on 6?",
+        options: ["12:30", "6:00", "12:06", "6:30"],
+        ans: 0,
+        exp: "Jarum pendek di angka 12 dan jarum panjang di angka 6 menunjukkan pukul 12.30 (half past twelve)."
+      },
+      {
+        q: "[Latso 2 - No. 9] Choose the correct simple present sentence that describes a general truth.",
+        options: ["Water boils at 100 degrees Celsius.", "Water boiled at 100 degrees Celsius yesterday.", "Water will boiling at 100 degrees Celsius.", "Water is boil at 100 degrees Celsius."],
+        ans: 0,
+        exp: "Fakta ilmiah / kebenaran umum (general truth) selalu ditulis dalam Simple Present Tense: 'Water boils at 100 degrees Celsius'."
+      },
+      {
+        passage: "Lina fed the stray dog a bowl of rice and left a blanket by the door. The next morning, she found paw prints on it and the blanket moved slightly.",
+        q: "[Latso 2 - No. 10] Read the short paragraph and infer the best answer: What can you infer happened overnight?",
+        options: ["A bird slept on the blanket.", "The stray dog returned and used the blanket.", "The blanket was stolen by a cat.", "Lina moved the blanket while she slept."],
+        ans: 1,
+        exp: "Adanya jejak telapak kaki anjing (paw prints) di atas selimut menunjukkan bahwa anjing liar tersebut kembali dan tidur menggunakan selimut itu."
+      },
+
+      // LATSO 3
+      {
+        q: "[Latso 3 - No. 1] Maya looks at the clock and says, 'My dance class starts in 40 minutes.' The clock now shows 2:20. What time will Maya's class begin?",
+        options: ["2:40", "3:00", "3:10", "3:20"],
+        ans: 1,
+        exp: "2:20 ditambah 40 menit = 2:60 atau tepat pukul 03.00 (3:00)."
+      },
+      {
+        q: "[Latso 3 - No. 2] 'Every morning, the sun warms the playground while the children line up.' Which sentence best shows the simple present tense used correctly?",
+        options: ["The sun warmed the playground every morning.", "Every morning, the sun warms the playground.", "The children will line up every morning.", "The children lining up every morning."],
+        ans: 1,
+        exp: "Pilihan B menggunakan Simple Present Tense yang tepat ('warms') untuk rutinitas 'Every morning'."
+      },
+      {
+        passage: "Sam left his umbrella under the bench. He runs quickly but comes back soon.",
+        q: "[Latso 3 - No. 3] Read: What can you infer about Sam?",
+        options: ["Sam enjoys sitting on benches.", "Sam forgot his umbrella and returned to get it.", "Sam wanted to buy a new umbrella.", "Sam lost his umbrella on purpose."],
+        ans: 1,
+        exp: "Sam meninggalkan payungnya di bawah bangku lalu berlari kembali dengan cepat untuk mengambil payungnya yang tertinggal."
+      },
+      {
+        q: "[Latso 3 - No. 4] Which preposition best completes the sentence? 'The cat slept _____ the table while the family ate.'",
+        options: ["on", "between", "under", "during"],
+        ans: 2,
+        exp: "Kucing tidur di bawah meja ('under the table') saat keluarga sedang makan di atas meja."
+      },
+      {
+        q: "[Latso 3 - No. 5] Lily says, 'I never eat breakfast.' Which choice gives the most likely reason you can infer from that statement?",
+        options: ["Lily likes to eat many snacks.", "Lily does not feel hungry in the morning.", "Lily always eats breakfast at school.", "Lily cooks breakfast for her family."],
+        ans: 1,
+        exp: "Alasan paling umum seseorang tidak pernah sarapan adalah karena tidak merasa lapar di pagi hari."
+      },
+      {
+        q: "[Latso 3 - No. 6] What is the correct time expression for 7:45 in words?",
+        options: ["Quarter after seven", "Quarter to eight", "Twenty-five to eight", "Fifteen to seven"],
+        ans: 1,
+        exp: "Pukul 07.45 berarti 15 menit menuju jam 8, dibaca 'Quarter to eight'."
+      },
+      {
+        q: "[Latso 3 - No. 7] Choose the sentence that uses simple present to describe a habitual action.",
+        options: ["He is playing soccer now.", "He plays soccer every Saturday.", "He played soccer yesterday.", "He will play soccer tomorrow."],
+        ans: 1,
+        exp: "Kebiasaan rutin setiap hari Sabtu ('every Saturday') menggunakan kata kerja Simple Present 'plays'."
+      },
+      {
+        passage: "No one saw the broken window except Nora. She kept quiet.",
+        q: "[Latso 3 - No. 8] Read: What is the best inference?",
+        options: ["Nora broke the window for fun.", "Nora was the only witness and chose not to tell.", "Many people saw the window break.", "Nora told everyone about the window."],
+        ans: 1,
+        exp: "Hanya Nora yang melihat jendela pecah (satu-satunya saksi) dan ia memilih untuk diam tidak memberitahu siapa-siapa."
+      },
+      {
+        q: "[Latso 3 - No. 9] Which preposition correctly completes: 'The kite flew _____ the tall trees and landed near the road.'",
+        options: ["in", "above", "into", "below"],
+        ans: 1,
+        exp: "Layang-layang terbang melayang di atas pepohonan yang tinggi menggunakan preposisi 'above'."
+      },
+      {
+        q: "[Latso 3 - No. 10] The clock shows 11:10. Which activity most likely fits this time if school starts at 8:00 and lunch is at 12:00?",
+        options: ["Sleeping at night", "Morning assembly", "Recess or class time before lunch", "After-school club"],
+        ans: 2,
+        exp: "Pukul 11.10 adalah waktu jam pelajaran sekolah atau istirahat menjelang makan siang jam 12.00."
+      },
+
+      // LATSO 4
+      {
+        passage: "Tom waters the plants on Sundays, but this week he forgot. The plants droop.",
+        q: "[Latso 4 - No. 1] Read: What can you infer about the plants?",
+        options: ["The plants never need water.", "The plants need weekly care and show signs when they do not get it.", "The plants grow faster without water.", "The plants do not belong to Tom."],
+        ans: 1,
+        exp: "Tanaman tersebut layu (droop) saat lupa disiram, menandakan bahwa tanaman butuh perawatan rutin setiap minggu."
+      },
+      {
+        q: "[Latso 4 - No. 2] Choose the sentence with the correct preposition: 'The picture of the family hangs _____ the living room wall.'",
+        options: ["at", "on", "to", "by"],
+        ans: 1,
+        exp: "Foto yang menempel di dinding ruangan menggunakan preposisi 'on' (on the wall)."
+      },
+      {
+        q: "[Latso 4 - No. 3] Which question asks for the time shown if the minute hand points at 6 and the hour hand is halfway between 3 and 4?",
+        options: ["Is it 3:30?", "Is it 3:15?", "Is it 4:30?", "Is it 3:45?"],
+        ans: 0,
+        exp: "Jarum menit di angka 6 dan jarum jam di antara 3 dan 4 menunjukkan waktu 03.30 ('Is it 3:30?')."
+      },
+      {
+        passage: "Every day, Mei helps her little brother with homework before dinner.",
+        q: "[Latso 4 - No. 4] Read: Which statement is a reasonable inference?",
+        options: ["Mei sometimes helps with chores after dinner.", "Mei never studies herself.", "Mei regularly spends time helping her brother in the evening.", "Mei dislikes children."],
+        ans: 2,
+        exp: "Karena dilakukan setiap hari sebelum makan malam (every day before dinner), Mei secara rutin membantu adiknya belajar di waktu sore/malam."
+      },
+      {
+        q: "[Latso 4 - No. 5] Pick the sentence that best uses simple present for a scheduled event.",
+        options: ["The train arrives at 9:00 every morning.", "The train arrived at 9:00 yesterday.", "The train is arriving now.", "The train will have arrived by noon."],
+        ans: 0,
+        exp: "Jadwal transportasi resmi menggunakan Simple Present Tense: 'The train arrives at 9:00 every morning'."
+      },
+      {
+        q: "[Latso 4 - No. 6] Which preposition completes the sentence best? 'The keys are _____ the drawer next to the sink.'",
+        options: ["inside", "between", "above", "across"],
+        ans: 0,
+        exp: "Kunci berada di dalam laci meja menggunakan preposisi 'inside'."
+      },
+      {
+        passage: "A dog sits by the door and whines when the mail carrier walks by.",
+        q: "[Latso 4 - No. 7] Read: What inference is strongest?",
+        options: ["The dog is afraid of the mail carrier.", "The dog expects visitors and reacts when someone passes the house.", "The mail carrier brings treats for the dog.", "The dog is sleepy."],
+        ans: 1,
+        exp: "Anjing tersebut selalu duduk di dekat pintu dan merengek/bereaksi setiap ada orang (tukang pos) yang lewat di depan rumah."
+      },
+      {
+        q: "[Latso 4 - No. 8] If the clock says quarter past five, what time is it?",
+        options: ["5:15", "5:45", "4:45", "6:15"],
+        ans: 0,
+        exp: "'Quarter past five' berarti lewat 15 menit dari jam 5, yaitu pukul 05.15."
+      },
+      {
+        passage: "Carlos studies the map every night before the trip. He asks many questions.",
+        q: "[Latso 4 - No. 9] Choose the best inference: What can you infer about Carlos?",
+        options: ["Carlos dislikes traveling.", "Carlos wants to be well prepared and learn the route.", "Carlos learns maps only in school.", "Carlos plans to change the map."],
+        ans: 1,
+        exp: "Mempelajari peta tiap malam dan banyak bertanya menunjukkan Carlos ingin mempersiapkan rute perjalanannya dengan matang."
+      },
+      {
+        q: "[Latso 4 - No. 10] Which sentence uses the correct preposition for movement? 'We walked _____ the bridge to reach the park.'",
+        options: ["through", "over", "beside", "behind"],
+        ans: 1,
+        exp: "Berjalan melintasi/di atas jembatan menggunakan preposisi pergerakan 'over' (walked over the bridge)."
+      }
+    ];
+
+    // ===============================================
+    // 3. DATA SOAL KAKAK PUTRI (MATEMATIKA KELAS 2 SD)
+    // ===============================================
     const dataPutri = [
       {
         type: "mcq",
@@ -899,7 +1221,9 @@
       }
     ];
 
-    // BANK DATA SOAL ADIK SHEVA (MATEMATIKA TK BERGAMBAR)
+    // ========================================================
+    // 4. DATA SOAL ADIK SHEVA (MATEMATIKA TK BERGAMBAR - 15 SOAL)
+    // ========================================================
     const dataSheva = [
       {
         type: "mcq",
@@ -1026,9 +1350,35 @@
     let currentQuizType = "";
     let activeQuizData = [];
 
+    function openAninMenu() {
+      document.getElementById("home-view").style.display = "none";
+      document.getElementById("quiz-view").style.display = "none";
+      document.getElementById("anin-category-view").style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function goHome() {
+      document.getElementById("quiz-view").style.display = "none";
+      document.getElementById("anin-category-view").style.display = "none";
+      document.getElementById("home-view").style.display = "block";
+      document.getElementById("score-board").style.display = "none";
+      document.getElementById("submit-all-btn").style.display = "block";
+      document.getElementById("retry-btn").style.display = "none";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function goBackFromQuiz() {
+      if (currentQuizType.startsWith("anin")) {
+        openAninMenu();
+      } else {
+        goHome();
+      }
+    }
+
     function startQuiz(type) {
       currentQuizType = type;
       document.getElementById("home-view").style.display = "none";
+      document.getElementById("anin-category-view").style.display = "none";
       const quizView = document.getElementById("quiz-view");
       quizView.style.display = "flex";
 
@@ -1036,9 +1386,12 @@
       const scoreBoard = document.getElementById("score-board");
       scoreBoard.classList.remove("math-theme", "tk-theme");
 
-      if (type === "anin") {
-        document.getElementById("quiz-header-title").textContent = "Latihan Kakak Anin (Bahasa Inggris Kelas 4)";
-        activeQuizData = dataAnin;
+      if (type === "anin1") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Paket 1: Grammar & Reading";
+        activeQuizData = dataAnin1;
+      } else if (type === "anin2") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Paket 2: Penyisihan ESM Level 2";
+        activeQuizData = dataAnin2;
       } else if (type === "putri") {
         document.getElementById("quiz-header-title").textContent = "Latihan Kakak Putri (Matematika Kelas 2 SD)";
         quizView.classList.add("math-mode");
@@ -1055,14 +1408,6 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    function goHome() {
-      document.getElementById("quiz-view").style.display = "none";
-      document.getElementById("home-view").style.display = "block";
-      document.getElementById("score-board").style.display = "none";
-      document.getElementById("submit-all-btn").style.display = "block";
-      document.getElementById("retry-btn").style.display = "none";
-    }
-
     function renderQuestions() {
       const container = document.getElementById("questions-list");
       container.innerHTML = "";
@@ -1077,7 +1422,7 @@
 
         let passageHTML = "";
         if (item.passage) {
-          passageHTML = `<div class="passage-box"><strong>Reading Passage:</strong><br>${item.passage}</div>`;
+          passageHTML = `<div class="passage-box"><strong>Reading / Short Passage:</strong><br>${item.passage}</div>`;
         }
 
         let visualHTML = "";
@@ -1086,7 +1431,7 @@
         }
 
         let inputHTML = "";
-        if (item.type === "mcq") {
+        if (item.type !== "input") {
           inputHTML = `<div class="options-list">`;
           item.options.forEach((opt, optIdx) => {
             inputHTML += `
@@ -1128,7 +1473,7 @@
         const expTitle = document.getElementById(`exp-title-${index}`);
         let isCorrect = false;
 
-        if (item.type === "mcq") {
+        if (item.type !== "input") {
           const selected = document.querySelector(`input[name="question-${index}"]:checked`);
           const userVal = selected ? parseInt(selected.value) : -1;
 
@@ -1180,7 +1525,7 @@
           expTitle.innerHTML = "✅ <strong>Jawaban Benar! Hebat!</strong>";
         } else {
           expBox.className = "explanation-box wrong";
-          let correctText = item.type === "mcq" ? `${String.fromCharCode(65 + item.ans)}. ${item.options[item.ans]}` : item.ans.join(" / ");
+          let correctText = item.type !== "input" ? `${String.fromCharCode(65 + item.ans)}. ${item.options[item.ans]}` : item.ans.join(" / ");
           expTitle.innerHTML = `❌ <strong>Jawaban Kurang Tepat.</strong> (Kunci Jawaban: <strong>${correctText}</strong>)`;
         }
       });
@@ -1195,7 +1540,7 @@
       document.getElementById("submit-all-btn").style.display = "none";
       document.getElementById("retry-btn").style.display = "inline-block";
 
-      // Scroll mulus ke atas untuk melihat skor
+      // Scroll mulus ke atas
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
