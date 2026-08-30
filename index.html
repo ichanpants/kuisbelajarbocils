@@ -162,7 +162,7 @@
     }
 
     .sub-btn h3 {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--primary);
     }
 
@@ -170,9 +170,20 @@
     .sub-btn.tk-sub h3 { color: var(--accent); }
 
     .sub-btn p {
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
       margin: 0;
+    }
+
+    .category-divider {
+      grid-column: 1 / -1;
+      text-align: left;
+      font-weight: 700;
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-top: 10px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid var(--border);
     }
 
     /* Karakter Kartun */
@@ -367,7 +378,7 @@
       font-size: 1rem;
       outline: none;
       width: 100%;
-      max-width: 320px;
+      max-width: 400px;
       transition: border-color 0.2s;
     }
 
@@ -493,7 +504,7 @@
           </div>
           <span class="badge badge-english">Kelas 4 SD</span>
           <h2>Kakak Anin</h2>
-          <p>Olimpiade Bahasa Inggris<br>(5 Paket Latihan Soal)</p>
+          <p>Bahasa Inggris & Matematika<br>(8 Paket Latihan Soal)</p>
         </div>
 
         <!-- Kartu 2: Kakak Putri -->
@@ -547,38 +558,57 @@
       </div>
     </div>
 
-    <!-- 2. Sub-Menu Khusus Kakak Anin (5 Menu) -->
+    <!-- 2. Sub-Menu Khusus Kakak Anin (8 Paket) -->
     <div id="anin-category-view" class="home-card" style="display: none;">
-      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
         <button class="back-btn" onclick="goHome()">⬅ Menu Utama</button>
         <span class="badge badge-english">Kakak Anin • Kelas 4 SD</span>
       </div>
-      <h1 style="font-size: 1.6rem; color: var(--primary);">Paket Latihan Bahasa Inggris</h1>
-      <p style="margin-bottom: 20px;">Pilih salah satu dari 5 paket latihan di bawah ini:</p>
+      <h1 style="font-size: 1.55rem; color: var(--primary);">Paket Belajar Kakak Anin</h1>
+      <p style="margin-bottom: 16px;">Pilih materi latihan yang ingin dipelajari:</p>
 
       <div class="submenu-grid">
+        <div class="category-divider">📘 Latihan Matematika Kelas 4 (Buku Kurikulum Merdeka)</div>
+
+        <div class="sub-btn" onclick="startQuiz('anin_math1')">
+          <h3>📐 Math Paket 1: Bilangan & Nilai Tempat</h3>
+          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Membaca, Menulis, & Nilai Tempat s.d. 10.000.</p>
+        </div>
+
+        <div class="sub-btn" onclick="startQuiz('anin_math2')">
+          <h3>📊 Math Paket 2: Urutan, Komposisi & Dekomposisi</h3>
+          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Membandingkan, Mengurutkan, & Uraian Bilangan.</p>
+        </div>
+
+        <div class="sub-btn" onclick="startQuiz('anin_math3')">
+          <h3>➕ Math Paket 3: Operasi Hitung Bilangan Cacah</h3>
+          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Penjumlahan, Pengurangan & Perkalian Donat/Buah.</p>
+        </div>
+
+        <div class="category-divider">🔤 Latihan Bahasa Inggris & Olimpiade</div>
+
         <div class="sub-btn full-width" onclick="startQuiz('anin_campuran')">
-          <h3>📘 Paket Latihan 1 (Campuran)</h3>
+          <h3>📘 Paket 1: Grammar & Reading (Campuran)</h3>
           <p>25 Soal (18 PG + 7 Isian Singkat: Grammar, Vocab & Reading) + Pembahasan.</p>
         </div>
 
         <div class="sub-btn" onclick="startQuiz('anin_esm1')">
-          <h3>🏆 Babak Penyisihan 1</h3>
+          <h3>🏆 English Babak Penyisihan 1</h3>
           <p>10 Soal Pilihan Ganda (ESM Level 2 - AIS Institute) + Kunci & Pembahasan[cite: 1].</p>
         </div>
 
         <div class="sub-btn" onclick="startQuiz('anin_esm2')">
-          <h3>🏆 Babak Penyisihan 2</h3>
+          <h3>🏆 English Babak Penyisihan 2</h3>
           <p>10 Soal Pilihan Ganda (ESM Level 2 - AIS Institute) + Kunci & Pembahasan[cite: 1].</p>
         </div>
 
         <div class="sub-btn" onclick="startQuiz('anin_esm3')">
-          <h3>🏆 Babak Penyisihan 3</h3>
+          <h3>🏆 English Babak Penyisihan 3</h3>
           <p>10 Soal Pilihan Ganda (ESM Level 2 - AIS Institute) + Kunci & Pembahasan[cite: 1].</p>
         </div>
 
         <div class="sub-btn" onclick="startQuiz('anin_esm4')">
-          <h3>🏆 Babak Penyisihan 4</h3>
+          <h3>🏆 English Babak Penyisihan 4</h3>
           <p>10 Soal Pilihan Ganda (ESM Level 2 - AIS Institute) + Kunci & Pembahasan[cite: 1].</p>
         </div>
       </div>
@@ -666,8 +696,393 @@
   </div>
 
   <script>
+    // =========================================================================
+    // DATA KAKAK ANIN - MATEMATIKA KELAS 4 (KURIKULUM MERDEKA: 3 PAKET @ 20 SOAL)
+    // =========================================================================
+
+    // MATH PAKET 1: MEMBACA, MENULIS & NILAI TEMPAT (20 SOAL)
+    const dataAninMath1 = [
+      // 10 Pilihan Ganda
+      {
+        q: "1. Jarak rumah Helen ke minimarket adalah 3.286 meter. Bilangan 3.286 dibaca ....",
+        options: ["Tiga ribu dua ratus enam puluh delapan", "Tiga ribu dua ratus delapan puluh enam", "Tiga ribu delapan ratus dua puluh enam", "Tiga ribu enam ratus dua puluh delapan"],
+        ans: 1,
+        exp: "3.286 = Tiga Ribu Dua Ratus Delapan Puluh Enam[cite: 3]."
+      },
+      {
+        q: "2. Tinggi puncak Mahameru di Gunung Semeru adalah 3.676 meter di atas permukaan laut. Lambang bilangan dari 'tiga ribu enam ratus tujuh puluh enam' adalah ....",
+        options: ["3.667", "3.766", "3.676", "3.776"],
+        ans: 2,
+        exp: "Tiga ribu (3), enam ratus (6), tujuh puluh (7), enam (6) = 3.676[cite: 3]."
+      },
+      {
+        q: "3. Angka 6 pada bilangan 8.463 menempati nilai tempat ....",
+        options: ["Ribuan", "Ratusan", "Puluhan", "Satuan"],
+        ans: 2,
+        exp: "Pada bilangan 8.463: 8 ribuan, 4 ratusan, 6 puluhan, dan 3 satuan[cite: 3]."
+      },
+      {
+        q: "4. Angka 6 pada bilangan 6.789 menempati nilai tempat ....",
+        options: ["Ribuan", "Ratusan", "Puluhan", "Satuan"],
+        ans: 0,
+        exp: "Angka 6 berada paling depan pada bilangan 4 angka, bernilai 6.000 (Ribuan)[cite: 3]."
+      },
+      {
+        q: "5. Bilangan 7.003 dibaca ....",
+        options: ["Tujuh ratus tiga", "Tujuh ribu tiga", "Tujuh ribu tiga puluh", "Tujuh ribu tiga ratus"],
+        ans: 1,
+        exp: "Jika angka pada ratusan dan puluhan bernilai 0, maka tidak dibaca, sehingga dibaca: Tujuh ribu tiga[cite: 3]."
+      },
+      {
+        q: "6. Bilangan 5.091 dibaca ....",
+        options: ["Lima ribu sembilan puluh satu", "Lima ribu sembilan ratus satu", "Lima puluh sembilan satu", "Lima ratus sembilan puluh satu"],
+        ans: 0,
+        exp: "5.091 dibaca: Lima ribu sembilan puluh satu (ratusan 0 tidak dibaca)[cite: 3]."
+      },
+      {
+        q: "7. Luas Pulau Bali adalah 5.780 km². Bilangan 5.780 dibaca ....",
+        options: ["Lima ribu tujuh ratus delapan", "Lima ribu tujuh ratus delapan puluh", "Lima ribu delapan ratus tujuh puluh", "Lima ribu tujuh puluh delapan"],
+        ans: 1,
+        exp: "5.780 dibaca: Lima ribu tujuh ratus delapan puluh[cite: 3]."
+      },
+      {
+        q: "8. Pada bilangan 2.150 yang tertera pada struk belanja, angka 1 menempati nilai tempat ....",
+        options: ["Ribuan", "Ratusan", "Puluhan", "Satuan"],
+        ans: 1,
+        exp: "Pada 2.150: 2 ribuan, 1 ratusan (100), 5 puluhan (50), dan 0 satuan[cite: 3]."
+      },
+      {
+        q: "9. Lambang bilangan dari 'Enam ribu dua' adalah ....",
+        options: ["6.200", "6.020", "6.002", "6.202"],
+        ans: 2,
+        exp: "Enam ribu (6), ratusan dan puluhan nol (00), satuan dua (2) = 6.002[cite: 3]."
+      },
+      {
+        q: "10. Ketinggian Puncak Jaya mencapai 4.884 mdpl. Bilangan 4.884 dibaca ....",
+        options: ["Empat ribu delapan ratus delapan puluh empat", "Empat ribu delapan ratus empat puluh delapan", "Empat ribu empat ratus delapan puluh delapan", "Empat puluh delapan delapan puluh empat"],
+        ans: 0,
+        exp: "4.884 dibaca: Empat ribu delapan ratus delapan puluh empat[cite: 3]."
+      },
+      // 5 Isian Singkat
+      {
+        type: "input",
+        q: "11. Bilangan 1.206 dibaca: .....",
+        ans: ["seribu dua ratus enam", "satu ribu dua ratus enam"],
+        exp: "1.206 dibaca: Seribu dua ratus enam[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "12. Tuliskan lambang bilangan dari 'tiga ribu dua ratus lima puluh empat': .....",
+        ans: ["3.254", "3254"],
+        exp: "3 ribuan + 2 ratusan + 5 puluhan + 4 satuan = 3.254[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "13. Pada bilangan 4.675, angka 6 menempati nilai tempat: .....",
+        ans: ["ratusan", "ratus"],
+        exp: "Angka 6 pada 4.675 bernilai 600, yaitu Ratusan[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "14. Pada bilangan 1.236, angka 6 menempati nilai tempat: .....",
+        ans: ["satuan"],
+        exp: "Angka 6 berada di posisi paling belakang, yaitu Satuan[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "15. Lambang bilangan dari 'Sembilan ribu empat puluh lima' adalah: .....",
+        ans: ["9.045", "9045"],
+        exp: "9 ribuan, 0 ratusan, 4 puluhan, 5 satuan = 9.045[cite: 3]."
+      },
+      // 5 Uraian
+      {
+        type: "input",
+        q: "16. (Uraian) Slamet membeli makanan ringan di warung seharga Rp7.350,00. Tentukan rincian nilai tempat dari bilangan 7.350! (Tuliskan: angka ribuan, ratusan, puluhan, dan satuan)",
+        ans: ["7 ribuan, 3 ratusan, 5 puluhan, 0 satuan", "7350", "7 ribuan 3 ratusan 5 puluhan 0 satuan"],
+        exp: "Rincian nilai tempat 7.350: Angka 7 menempati ribuan, angka 3 menempati ratusan, angka 5 menempati puluhan, dan angka 0 menempati satuan[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "17. (Uraian) Slamet memiliki uang Rp9.500,00. Bagaimanakah cara membaca bilangan 9.500 tersebut?",
+        ans: ["sembilan ribu lima ratus", "sembilan ribu lima ratus rupiah"],
+        exp: "Bilangan 9.500 dibaca: Sembilan ribu lima ratus[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "18. (Uraian) Sebuah bilangan terdiri atas: 7 ribuan, 8 ratusan, 1 puluhan, dan 2 satuan. Bilangan berapakah yang terbentuk?",
+        ans: ["7.812", "7812"],
+        exp: "7 ribuan + 8 ratusan + 1 puluhan + 2 satuan = 7.812[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "19. (Uraian) Pada bilangan 2.910, sebutkan nilai tempat untuk angka 9 dan angka 1!",
+        ans: ["9 ratusan dan 1 puluhan", "ratusan dan puluhan", "9 ratusan, 1 puluhan"],
+        exp: "Angka 9 menempati nilai tempat ratusan (900) dan angka 1 menempati nilai tempat puluhan (10)[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "20. (Uraian) Helen membeli minuman di minimarket seharga Rp6.750,00. Sebutkan nama bilangan dari 6.750!",
+        ans: ["enam ribu tujuh ratus lima puluh", "enam ribu tujuh ratus lima puluh rupiah"],
+        exp: "6.750 dibaca: Enam ribu tujuh ratus lima puluh[cite: 3]."
+      }
+    ];
+
+    // MATH PAKET 2: MEMBANDINGKAN, MENGURUTKAN, KOMPOSISI & DEKOMPOSISI (20 SOAL)
+    const dataAninMath2 = [
+      // 10 Pilihan Ganda
+      {
+        q: "1. Perbandingan yang tepat antara bilangan 8.750 dan 7.500 adalah ....",
+        options: ["8.750 < 7.500", "8.750 > 7.500", "8.750 = 7.500", "7.500 > 8.750"],
+        ans: 1,
+        exp: "Angka ribuan 8 lebih besar dari 7, maka 8.750 > 7.500[cite: 3]."
+      },
+      {
+        q: "2. Tanda pembanding yang benar untuk 4.352 ... 4.365 adalah ....",
+        options: [">", "<", "=", ">="],
+        ans: 1,
+        exp: "Ribuan dan ratusan sama, pada nilai puluhan 5 kurang dari 6, jadi 4.352 < 4.365[cite: 3]."
+      },
+      {
+        q: "3. Tanda pembanding yang benar untuk 9.999 ... 9.998 adalah ....",
+        options: [">", "<", "=", "<="],
+        ans: 0,
+        exp: "Pada nilai satuan 9 lebih dari 8, sehingga 9.999 > 9.998[cite: 3]."
+      },
+      {
+        q: "4. Ketinggian Gunung Sinabung 2.460 m, Gunung Semeru 3.676 m, dan Gunung Rinjani 3.726 m. Gunung manakah yang paling tinggi?",
+        options: ["Gunung Sinabung", "Gunung Semeru", "Gunung Rinjani", "Semuanya sama"],
+        ans: 2,
+        exp: "3.726 > 3.676 > 2.460. Jadi Gunung Rinjani adalah yang tertinggi[cite: 3]."
+      },
+      {
+        q: "5. Urutan bilangan 3.676, 2.460, dan 3.726 dari yang terkecil ke terbesar adalah ....",
+        options: ["2.460, 3.676, 3.726", "3.726, 3.676, 2.460", "2.460, 3.726, 3.676", "3.676, 2.460, 3.726"],
+        ans: 0,
+        exp: "Urutan dari yang terkecil: 2.460 < 3.676 < 3.726[cite: 3]."
+      },
+      {
+        q: "6. Bentuk komposisi dari: 6 ribuan + 3 ratusan + 4 puluhan + 8 satuan adalah ....",
+        options: ["6.438", "6.348", "6.384", "6.834"],
+        ans: 1,
+        exp: "6.000 + 300 + 40 + 8 = 6.348[cite: 3]."
+      },
+      {
+        q: "7. Bentuk dekomposisi panjang dari bilangan 6.849 adalah ....",
+        options: ["6.000 + 80 + 400 + 9", "6.000 + 800 + 40 + 9", "600 + 80 + 40 + 9", "6.000 + 800 + 90 + 4"],
+        ans: 1,
+        exp: "6.849 = 6.000 + 800 + 40 + 9[cite: 3]."
+      },
+      {
+        q: "8. Bentuk dekomposisi dari bilangan 6.035 adalah ....",
+        options: ["6.000 + 300 + 5", "6.000 + 0 + 30 + 5", "600 + 30 + 5", "6.000 + 30 + 50"],
+        ans: 1,
+        exp: "6.035 = 6 ribuan + 0 ratusan + 3 puluhan + 5 satuan = 6.000 + 0 + 30 + 5[cite: 3]."
+      },
+      {
+        q: "9. Dari angka 1, 5, 9, 2 bilangan terbesar 4 angka yang dapat dibentuk tanpa pengulangan adalah ....",
+        options: ["9.512", "9.521", "9.251", "9.152"],
+        ans: 1,
+        exp: "Urutkan angka dari yang terbesar ke terkecil: 9, 5, 2, 1 = 9.521[cite: 3]."
+      },
+      {
+        q: "10. Dari angka 1, 5, 9, 2 bilangan terkecil 4 angka yang dapat dibentuk tanpa pengulangan adalah ....",
+        options: ["1.259", "1.529", "1.295", "1.592"],
+        ans: 0,
+        exp: "Urutkan angka dari yang terkecil ke terbesar: 1, 2, 5, 9 = 1.259[cite: 3]."
+      },
+      // 5 Isian Singkat
+      {
+        type: "input",
+        q: "11. Isilah titik-titik dengan tanda pembanding (>, <, atau =):\n1.001 ..... 1.002",
+        ans: ["<", "kurang dari"],
+        exp: "1.001 kurang dari 1.002 (1.001 < 1.002)[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "12. Isilah titik-titik dengan tanda pembanding (>, <, atau =):\n8.765 ..... 8.765",
+        ans: ["=", "sama dengan"],
+        exp: "Nilai kedua bilangan sama persis (8.765 = 8.765)[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "13. Bentuk bilangan dari '6 ribuan + 4 ratusan + 8 puluhan + 2 satuan' adalah: .....",
+        ans: ["6.482", "6482"],
+        exp: "6.000 + 400 + 80 + 2 = 6.482[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "14. Bentuk bilangan dari '6 ribuan + 0 ratusan + 4 puluhan + 0 satuan' adalah: .....",
+        ans: ["6.040", "6040"],
+        exp: "6.000 + 0 + 40 + 0 = 6.040[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "15. Dekomposisi bilangan 7.020 = ..... ribuan + 0 ratusan + 2 puluhan + 0 satuan (tulis angka ribuannya saja)",
+        ans: ["7"],
+        exp: "7.020 memiliki 7 ribuan[cite: 3]."
+      },
+      // 5 Uraian
+      {
+        type: "input",
+        q: "16. (Uraian) Urutkan bilangan 7.570, 5.240, 3.041, dan 9.941 dari yang TERKECIL ke TERBESAR!",
+        ans: ["3.041, 5.240, 7.570, 9.941", "3041, 5240, 7570, 9941", "3.041,5.240,7.570,9.941"],
+        exp: "Bandingkan angka ribuannya (3 < 5 < 7 < 9). Urutannya: 3.041, 5.240, 7.570, 9.941[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "17. (Uraian) Di kios A harga bengkoang Rp7.500 dan di kios B Rp8.750. Kios manakah yang menawarkan harga lebih murah?",
+        ans: ["kios a", "kios a (rp7.500)", "a"],
+        exp: "Karena 7.500 < 8.750, maka Kios A menjual dengan harga lebih murah[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "18. (Uraian) Tuliskan dekomposisi penjumlahan nilai tempat dari bilangan 2.001!",
+        ans: ["2.000 + 0 + 0 + 1", "2000 + 0 + 0 + 1", "2.000 + 1", "2 ribuan + 1 satuan"],
+        exp: "2.001 = 2 ribuan + 0 ratusan + 0 puluhan + 1 satuan = 2.000 + 0 + 0 + 1[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "19. (Uraian) Jika diberikan angka 1, 5, 9, 2 dan angka BOLEH BERULANG, berapakah bilangan 4 angka terbesar yang dapat dibuat?",
+        ans: ["9.999", "9999"],
+        exp: "Karena boleh berulang, kita ambil angka terbesar (9) sebanyak 4 kali = 9.999[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "20. (Uraian) Tuliskan bentuk penjumlahan nilai tempat dari 9.999!",
+        ans: ["9.000 + 900 + 90 + 9", "9000 + 900 + 90 + 9"],
+        exp: "9.999 = 9.000 + 900 + 90 + 9[cite: 3]."
+      }
+    ];
+
+    // MATH PAKET 3: OPERASI HITUNG PENJUMLAHAN, PENGURANGAN & PERKALIAN (20 SOAL)
+    const dataAninMath3 = [
+      // 10 Pilihan Ganda
+      {
+        q: "1. Pak Toni mempunyai 131 pohon jeruk di Jember dan 321 pohon jeruk di Banyuwangi. Berapa jumlah seluruh pohon jeruk Pak Toni?",
+        options: ["442 pohon", "452 pohon", "462 pohon", "552 pohon"],
+        ans: 1,
+        exp: "131 + 321 = (100+300) + (30+20) + (1+1) = 400 + 50 + 2 = 452 pohon[cite: 3]."
+      },
+      {
+        q: "2. SD Gebang 1 memiliki 124 buku, SD Gebang 2 memiliki 411 buku, dan SD Gebang 5 memiliki 363 buku. Berapa banyak buku seluruhnya?",
+        options: ["888 buku", "898 buku", "908 buku", "798 buku"],
+        ans: 1,
+        exp: "124 + 411 + 363 = 898 buku[cite: 3]."
+      },
+      {
+        q: "3. Pedagang buah memikul 2 keranjang jeruk. Keranjang 1 berisi 189 jeruk dan keranjang 2 berisi 245 jeruk. Berapa jumlah seluruh jeruk?",
+        options: ["424 jeruk", "434 jeruk", "444 jeruk", "414 jeruk"],
+        ans: 1,
+        exp: "189 + 245 = 434 jeruk (penjumlahan dengan teknik menyimpan)[cite: 3]."
+      },
+      {
+        q: "4. Hasil penjumlahan dari 373 + 208 adalah ....",
+        options: ["571", "581", "583", "591"],
+        ans: 1,
+        exp: "373 + 208 = 581 (3 + 8 = 11, simpan 1; 1 + 7 + 0 = 8; 3 + 2 = 5)[cite: 3]."
+      },
+      {
+        q: "5. Di perpustakaan ada 265 buku pelajaran. Pada tahun ajaran baru dipinjam siswa sebanyak 132 buku. Berapa sisa buku pelajaran?",
+        options: ["123 buku", "133 buku", "143 buku", "135 buku"],
+        ans: 1,
+        exp: "265 - 132 = 133 buku[cite: 3]."
+      },
+      {
+        q: "6. Hasil pengurangan dengan teknik meminjam dari 241 - 175 adalah ....",
+        options: ["66", "76", "166", "56"],
+        ans: 0,
+        exp: "241 - 175 = 66[cite: 3]."
+      },
+      {
+        q: "7. Hasil dari 253 - 176 adalah ....",
+        options: ["67", "77", "87", "97"],
+        ans: 1,
+        exp: "253 - 176 = 77[cite: 3]."
+      },
+      {
+        q: "8. Ada 12 kotak donat. Setiap kotak berisi 4 donat. Berapa jumlah seluruh donat?",
+        options: ["44 donat", "48 donat", "52 donat", "56 donat"],
+        ans: 1,
+        exp: "12 x 4 = (10 x 4) + (2 x 4) = 40 + 8 = 48 donat[cite: 3]."
+      },
+      {
+        q: "9. Hasil dari 629 + 123 adalah ....",
+        options: ["742", "752", "762", "852"],
+        ans: 1,
+        exp: "629 + 123 = 752[cite: 3]."
+      },
+      {
+        q: "10. Hasil dari 689 - 233 adalah ....",
+        options: ["446", "456", "466", "436"],
+        ans: 1,
+        exp: "689 - 233 = 456[cite: 3]."
+      },
+      // 5 Isian Singkat
+      {
+        type: "input",
+        q: "11. Hasil dari 333 + 519 = .....",
+        ans: ["852"],
+        exp: "333 + 519 = 852[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "12. Hasil dari 821 + 98 = .....",
+        ans: ["919"],
+        exp: "821 + 98 = 919[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "13. Hasil dari 832 - 622 = .....",
+        ans: ["210"],
+        exp: "832 - 622 = 210[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "14. Hasil dari 600 - 235 = .....",
+        ans: ["365"],
+        exp: "600 - 235 = 365[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "15. Hitunglah perkalian berikut: 15 x 3 = .....",
+        ans: ["45"],
+        exp: "15 x 3 = (10 x 3) + (5 x 3) = 30 + 15 = 45."
+      },
+      // 5 Uraian
+      {
+        type: "input",
+        q: "16. (Soal Cerita) Kebun sawit A menghasilkan 328 buah dan kebun B menghasilkan 579 buah. Berapakah jumlah seluruh kelapa sawit yang dihasilkan?",
+        ans: ["907", "907 buah"],
+        exp: "328 + 579 = 907 buah kelapa sawit[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "17. (Soal Cerita) SD Pelangi mengirimkan 121 siswa lomba matematika, 29 siswa lomba bahasa inggris, dan 98 siswa lomba sains. Berapa total siswa yang ikut lomba?",
+        ans: ["248", "248 siswa", "248 orang"],
+        exp: "121 + 29 + 98 = 150 + 98 = 248 siswa[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "18. (Soal Cerita) Penjual buah mempunyai 333 apel. Pembeli datang membeli 129 buah apel. Berapakah sisa buah apel milik penjual?",
+        ans: ["204", "204 buah", "204 apel"],
+        exp: "333 - 129 = 204 buah apel[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "19. (Soal Cerita) Hasil panen mangga Pak Joyo 765 buah. Sebanyak 179 buah diantaranya busuk. Berapa banyak mangga yang masih bagus/tersisa?",
+        ans: ["586", "586 buah", "586 mangga"],
+        exp: "765 - 179 = 586 buah mangga[cite: 3]."
+      },
+      {
+        type: "input",
+        q: "20. (Soal Cerita) SD Bangkit berwisata dengan 427 siswa. Sebanyak 218 diantaranya adalah perempuan. Berapakah jumlah siswa laki-laki?",
+        ans: ["209", "209 siswa", "209 orang"],
+        exp: "427 - 218 = 209 siswa laki-laki[cite: 3]."
+      }
+    ];
+
     // ===============================================
-    // DATA KAKAK ANIN (ENGLISH LEVEL 2 - 5 PAKET)
+    // DATA KAKAK ANIN (BAHASA INGGRIS - 5 PAKET)
     // ===============================================
     const dataAninCampuran = [
       {
@@ -1846,20 +2261,35 @@
       scoreBoard.classList.remove("math-theme", "tk-theme");
 
       // Routing Kategori Soal
-      if (type === "anin_campuran") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Paket 1 (Campuran 25 Soal)";
+      if (type === "anin_math1") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Math Paket 1: Nilai Tempat";
+        quizView.classList.add("math-mode");
+        scoreBoard.classList.add("math-theme");
+        activeQuizData = dataAninMath1;
+      } else if (type === "anin_math2") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Math Paket 2: Dekomposisi & Urutan";
+        quizView.classList.add("math-mode");
+        scoreBoard.classList.add("math-theme");
+        activeQuizData = dataAninMath2;
+      } else if (type === "anin_math3") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Math Paket 3: Operasi Hitung";
+        quizView.classList.add("math-mode");
+        scoreBoard.classList.add("math-theme");
+        activeQuizData = dataAninMath3;
+      } else if (type === "anin_campuran") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • English Paket 1 (25 Soal)";
         activeQuizData = dataAninCampuran;
       } else if (type === "anin_esm1") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Babak Penyisihan 1 (10 Soal)";
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • English Penyisihan 1";
         activeQuizData = dataAninESM1;
       } else if (type === "anin_esm2") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Babak Penyisihan 2 (10 Soal)";
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • English Penyisihan 2";
         activeQuizData = dataAninESM2;
       } else if (type === "anin_esm3") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Babak Penyisihan 3 (10 Soal)";
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • English Penyisihan 3";
         activeQuizData = dataAninESM3;
       } else if (type === "anin_esm4") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Babak Penyisihan 4 (10 Soal)";
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • English Penyisihan 4";
         activeQuizData = dataAninESM4;
       } else if (type === "putri_campuran") {
         document.getElementById("quiz-header-title").textContent = "Kakak Putri • Paket 1 (Campuran 25 Soal)";
