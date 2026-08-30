@@ -10,8 +10,8 @@
       --primary-hover: #4338ca;
       --secondary: #0ea5e9;
       --secondary-hover: #0284c7;
-      --accent: #ec4899;
-      --accent-hover: #db2777;
+      --accent: #eab308;
+      --accent-hover: #ca8a04;
       --bg: #f8fafc;
       --card: #ffffff;
       --text: #1e293b;
@@ -110,7 +110,7 @@
 
     .menu-btn.tk:hover {
       border-color: var(--accent);
-      box-shadow: 0 12px 24px -6px rgba(236, 72, 153, 0.18);
+      box-shadow: 0 12px 24px -6px rgba(234, 179, 8, 0.25);
     }
 
     /* Sub-menu Grids */
@@ -154,7 +154,7 @@
 
     .sub-btn.tk-sub:hover {
       border-color: var(--accent);
-      box-shadow: 0 8px 16px -4px rgba(236, 72, 153, 0.15);
+      box-shadow: 0 8px 16px -4px rgba(234, 179, 8, 0.2);
     }
 
     .sub-btn.full-width {
@@ -167,7 +167,7 @@
     }
 
     .sub-btn.math-sub h3 { color: var(--secondary); }
-    .sub-btn.tk-sub h3 { color: var(--accent); }
+    .sub-btn.tk-sub h3 { color: #b45309; }
 
     .sub-btn p {
       font-size: 0.85rem;
@@ -201,7 +201,7 @@
 
     .avatar-anin { height: 160px; width: auto; }
     .avatar-putri { height: 142px; width: auto; }
-    .avatar-sheva { height: 125px; width: auto; }
+    .avatar-sheva { height: 130px; width: auto; }
 
     .menu-btn .badge {
       font-size: 0.75rem;
@@ -214,7 +214,7 @@
 
     .badge-english { background: #e0e7ff; color: var(--primary); }
     .badge-math { background: #e0f2fe; color: var(--secondary); }
-    .badge-tk { background: #fce7f3; color: var(--accent); }
+    .badge-tk { background: #fef08a; color: #854d0e; }
 
     .menu-btn h2 {
       font-size: 1.25rem;
@@ -275,7 +275,7 @@
     }
 
     .score-board.tk-theme {
-      background: linear-gradient(135deg, #ec4899, #f43f5e);
+      background: linear-gradient(135deg, #f59e0b, #d97706);
     }
 
     .score-board h2 {
@@ -308,7 +308,7 @@
     }
 
     .math-mode .q-number { color: var(--secondary); }
-    .tk-mode .q-number { color: var(--accent); }
+    .tk-mode .q-number { color: #b45309; }
 
     .q-text {
       font-size: 1.08rem;
@@ -318,8 +318,8 @@
     }
 
     .visual-box {
-      background: #fdf2f8;
-      border: 2px dashed #f472b6;
+      background: #fefce8;
+      border: 2px dashed #facc15;
       border-radius: 14px;
       padding: 16px;
       text-align: center;
@@ -369,7 +369,7 @@
     }
 
     .math-mode .option-label input { accent-color: var(--secondary); }
-    .tk-mode .option-label input { accent-color: var(--accent); }
+    .tk-mode .option-label input { accent-color: #d97706; }
 
     .input-box {
       padding: 12px 16px;
@@ -378,7 +378,7 @@
       font-size: 1rem;
       outline: none;
       width: 100%;
-      max-width: 400px;
+      max-width: 440px;
       transition: border-color 0.2s;
     }
 
@@ -447,10 +447,11 @@
     .math-mode .btn-submit:hover { background: var(--secondary-hover); }
 
     .tk-mode .btn-submit {
-      background: var(--accent);
-      box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+      background: #eab308;
+      color: #78350f;
+      box-shadow: 0 4px 12px rgba(234, 179, 8, 0.35);
     }
-    .tk-mode .btn-submit:hover { background: var(--accent-hover); }
+    .tk-mode .btn-submit:hover { background: #ca8a04; color: white; }
 
     .btn-retry {
       background: #f1f5f9;
@@ -527,33 +528,42 @@
           </div>
           <span class="badge badge-math">Kelas 2 SD</span>
           <h2>Kakak Putri</h2>
-          <p>Olimpiade Matematika<br>(5 Paket Latihan Soal)</p>
+          <p>Bahasa Indonesia & Matematika<br>(8 Paket Latihan Soal)</p>
         </div>
 
-        <!-- Kartu 3: Adik Sheva -->
+        <!-- Kartu 3: Adik Sheva (Kuning, Rambut Panjang Berponi, Tanpa Kacamata) -->
         <div class="menu-btn tk" onclick="openShevaMenu()">
           <div class="avatar-wrapper">
-            <svg class="avatar-sheva" viewBox="0 0 120 125" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="24" cy="38" r="13" fill="#475569"/>
-              <circle cx="96" cy="38" r="13" fill="#475569"/>
-              <ellipse cx="32" cy="45" rx="5" ry="3.5" fill="#F43F5E"/>
-              <ellipse cx="88" cy="45" rx="5" ry="3.5" fill="#F43F5E"/>
-              <path d="M36 94C36 82 44 76 60 76C76 76 84 82 84 94V125H36V94Z" fill="#F472B6"/>
-              <circle cx="60" cy="76" r="18" fill="#475569"/>
-              <ellipse cx="60" cy="52" rx="26" ry="24" fill="#FDDFCA"/>
-              <circle cx="42" cy="62" r="6" fill="#FCA5A5" opacity="0.8"/>
-              <circle cx="78" cy="62" r="6" fill="#FCA5A5" opacity="0.8"/>
-              <path d="M35 44C42 34 52 32 60 38C68 32 78 34 85 44C80 36 71 28 60 28C49 28 40 36 35 44Z" fill="#475569"/>
-              <ellipse cx="48" cy="51" rx="4" ry="5.5" fill="#1E293B"/>
-              <ellipse cx="72" cy="51" rx="4" ry="5.5" fill="#1E293B"/>
-              <circle cx="50" cy="49" r="2" fill="#FFFFFF"/>
-              <circle cx="74" cy="49" r="2" fill="#FFFFFF"/>
-              <path d="M53 62C53 69 67 69 67 62" fill="#BE123C"/>
+            <svg class="avatar-sheva" viewBox="0 0 120 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Rambut Panjang Terurai Belakang -->
+              <path d="M30 45C30 20 42 12 60 12C78 12 90 20 90 45V105C90 105 84 115 78 115C72 115 70 102 60 102C50 102 48 115 42 115C36 115 30 105 30 105V45Z" fill="#334155"/>
+              <!-- Badan & Baju Kuning Ceria -->
+              <path d="M36 94C36 82 44 76 60 76C76 76 84 82 84 94V135H36V94Z" fill="#FBBF24"/>
+              <!-- Kerah Baju Putih Cantik -->
+              <path d="M50 76C54 84 66 84 70 76" stroke="#FFFFFF" stroke-width="3" fill="#FEF3C7" stroke-linecap="round"/>
+              <!-- Wajah Chubby Imut -->
+              <ellipse cx="60" cy="54" rx="25" ry="23" fill="#FDDFCA"/>
+              <!-- Pipi Gembul Merona -->
+              <circle cx="43" cy="63" r="5.5" fill="#FCA5A5" opacity="0.8"/>
+              <circle cx="77" cy="63" r="5.5" fill="#FCA5A5" opacity="0.8"/>
+              <!-- Rambut Panjang Samping & Poni Depan Rapi -->
+              <path d="M34 50C34 32 44 26 60 26C76 26 86 32 86 50C86 64 84 74 84 74C80 62 76 42 60 42C44 42 40 62 36 74C36 74 34 64 34 50Z" fill="#334155"/>
+              <path d="M42 42C48 34 54 34 60 38C66 34 72 34 78 42C72 38 66 36 60 36C54 36 48 38 42 42Z" fill="#475569"/>
+              <!-- Pita Rambut Kuning Cantik -->
+              <circle cx="34" cy="30" r="4.5" fill="#F59E0B"/>
+              <circle cx="34" cy="30" r="2" fill="#FEF3C7"/>
+              <!-- Mata Ceria Besar Berbinar -->
+              <ellipse cx="48" cy="53" rx="3.8" ry="5" fill="#1E293B"/>
+              <ellipse cx="72" cy="53" rx="3.8" ry="5" fill="#1E293B"/>
+              <circle cx="49.5" cy="51" r="1.8" fill="#FFFFFF"/>
+              <circle cx="73.5" cy="51" r="1.8" fill="#FFFFFF"/>
+              <!-- Senyum Manis -->
+              <path d="M54 64C56.5 68 63.5 68 66 64" stroke="#BE123C" stroke-width="2.5" stroke-linecap="round"/>
             </svg>
           </div>
           <span class="badge badge-tk">Kategori TK</span>
           <h2>Adik Sheva</h2>
-          <p>Belajar Ceria Bergambar<br>(Math & English TK)</p>
+          <p>Belajar Ceria Bergambar<br>(Membaca, Berhitung & English)</p>
         </div>
       </div>
     </div>
@@ -568,21 +578,21 @@
       <p style="margin-bottom: 16px;">Pilih materi latihan yang ingin dipelajari:</p>
 
       <div class="submenu-grid">
-        <div class="category-divider">📘 Latihan Matematika Kelas 4 (Buku Kurikulum Merdeka)</div>
+        <div class="category-divider">📘 Latihan Matematika Kelas 4 (Buku Kurikulum Merdeka)[cite: 3]</div>
 
         <div class="sub-btn" onclick="startQuiz('anin_math1')">
-          <h3>📐 Math Paket 1: Bilangan & Nilai Tempat</h3>
-          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Membaca, Menulis, & Nilai Tempat s.d. 10.000.</p>
+          <h3>📐 Math Paket 1: Bilangan & Nilai Tempat[cite: 3]</h3>
+          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Membaca, Menulis, & Nilai Tempat s.d. 10.000[cite: 3].</p>
         </div>
 
         <div class="sub-btn" onclick="startQuiz('anin_math2')">
-          <h3>📊 Math Paket 2: Urutan, Komposisi & Dekomposisi</h3>
-          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Membandingkan, Mengurutkan, & Uraian Bilangan.</p>
+          <h3>📊 Math Paket 2: Urutan, Komposisi & Dekomposisi[cite: 3]</h3>
+          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Membandingkan, Mengurutkan, & Uraian Bilangan[cite: 3].</p>
         </div>
 
         <div class="sub-btn" onclick="startQuiz('anin_math3')">
-          <h3>➕ Math Paket 3: Operasi Hitung Bilangan Cacah</h3>
-          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Penjumlahan, Pengurangan & Perkalian Donat/Buah.</p>
+          <h3>➕ Math Paket 3: Operasi Hitung Bilangan Cacah[cite: 3]</h3>
+          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Penjumlahan, Pengurangan & Perkalian Donat/Buah[cite: 3].</p>
         </div>
 
         <div class="category-divider">🔤 Latihan Bahasa Inggris & Olimpiade</div>
@@ -593,74 +603,107 @@
         </div>
 
         <div class="sub-btn" onclick="startQuiz('anin_esm1')">
-          <h3>🏆 English Babak Penyisihan 1</h3>
+          <h3>🏆 English Babak Penyisihan 1[cite: 1]</h3>
           <p>10 Soal Pilihan Ganda (ESM Level 2 - AIS Institute) + Kunci & Pembahasan[cite: 1].</p>
         </div>
 
         <div class="sub-btn" onclick="startQuiz('anin_esm2')">
-          <h3>🏆 English Babak Penyisihan 2</h3>
+          <h3>🏆 English Babak Penyisihan 2[cite: 1]</h3>
           <p>10 Soal Pilihan Ganda (ESM Level 2 - AIS Institute) + Kunci & Pembahasan[cite: 1].</p>
         </div>
 
         <div class="sub-btn" onclick="startQuiz('anin_esm3')">
-          <h3>🏆 English Babak Penyisihan 3</h3>
+          <h3>🏆 English Babak Penyisihan 3[cite: 1]</h3>
           <p>10 Soal Pilihan Ganda (ESM Level 2 - AIS Institute) + Kunci & Pembahasan[cite: 1].</p>
         </div>
 
         <div class="sub-btn" onclick="startQuiz('anin_esm4')">
-          <h3>🏆 English Babak Penyisihan 4</h3>
+          <h3>🏆 English Babak Penyisihan 4[cite: 1]</h3>
           <p>10 Soal Pilihan Ganda (ESM Level 2 - AIS Institute) + Kunci & Pembahasan[cite: 1].</p>
         </div>
       </div>
     </div>
 
-    <!-- 3. Sub-Menu Khusus Kakak Putri (5 Menu) -->
+    <!-- 3. Sub-Menu Khusus Kakak Putri (8 Paket) -->
     <div id="putri-category-view" class="home-card" style="display: none;">
-      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
         <button class="back-btn" onclick="goHome()">⬅ Menu Utama</button>
         <span class="badge badge-math">Kakak Putri • Kelas 2 SD</span>
       </div>
-      <h1 style="font-size: 1.6rem; color: var(--secondary);">Paket Latihan Matematika</h1>
-      <p style="margin-bottom: 20px;">Pilih salah satu dari 5 paket latihan matematika di bawah ini:</p>
+      <h1 style="font-size: 1.55rem; color: var(--secondary);">Paket Belajar Kakak Putri</h1>
+      <p style="margin-bottom: 16px;">Pilih materi latihan Bahasa Indonesia atau Matematika:</p>
 
       <div class="submenu-grid">
+        <div class="category-divider">📖 Latihan Bahasa Indonesia Kelas 2 SD (Buku Kurikulum Merdeka)[cite: 4]</div>
+
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_indo1')">
+          <h3>😊 B. Indo Paket 1: Mengenal Perasaan & Puisi[cite: 4]</h3>
+          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Ragam Perasaan, Mimik, Puisi Sampai Jumpa[cite: 4].</p>
+        </div>
+
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_indo2')">
+          <h3>🧸 B. Indo Paket 2: Cerita Mimi Marah & Huruf Kapital[cite: 4]</h3>
+          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Mimi Marah, Kiki & Cici, Huruf Kapital, Tanda Titik[cite: 4].</p>
+        </div>
+
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_indo3')">
+          <h3>📱 B. Indo Paket 3: Menjaga Kesehatan & Kata Tanya[cite: 4]</h3>
+          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Aturan 20-20-20, Arti Gawai, 7 Kata Tanya[cite: 4].</p>
+        </div>
+
+        <div class="category-divider">📐 Latihan Matematika & Olimpiade[cite: 2]</div>
+
         <div class="sub-btn math-sub full-width" onclick="startQuiz('putri_campuran')">
-          <h3>📐 Paket Latihan 1 (Campuran)</h3>
+          <h3>📐 Paket 1: Matematika Campuran</h3>
           <p>25 Soal (18 PG + 7 Isian Singkat: Pola, Logika, Hitung) + Pembahasan.</p>
         </div>
 
         <div class="sub-btn math-sub" onclick="startQuiz('putri_esm1')">
-          <h3>🏆 Babak Penyisihan 1</h3>
+          <h3>🏆 Math Babak Penyisihan 1[cite: 2]</h3>
           <p>10 Soal Pilihan Ganda (ESM Math Level 1 - AIS Institute) + Kunci & Pembahasan[cite: 2].</p>
         </div>
 
         <div class="sub-btn math-sub" onclick="startQuiz('putri_esm2')">
-          <h3>🏆 Babak Penyisihan 2</h3>
+          <h3>🏆 Math Babak Penyisihan 2[cite: 2]</h3>
           <p>10 Soal Pilihan Ganda (ESM Math Level 1 - AIS Institute) + Kunci & Pembahasan[cite: 2].</p>
         </div>
 
         <div class="sub-btn math-sub" onclick="startQuiz('putri_esm3')">
-          <h3>🏆 Babak Penyisihan 3</h3>
+          <h3>🏆 Math Babak Penyisihan 3[cite: 2]</h3>
           <p>10 Soal Cerita & Penalaran (ESM Math Level 1 - AIS Institute) + Kunci & Pembahasan[cite: 2].</p>
         </div>
 
         <div class="sub-btn math-sub" onclick="startQuiz('putri_esm4')">
-          <h3>🏆 Babak Penyisihan 4</h3>
+          <h3>🏆 Math Babak Penyisihan 4[cite: 2]</h3>
           <p>10 Soal Penalaran & Logika (ESM Math Level 1 - AIS Institute) + Kunci & Pembahasan[cite: 2].</p>
         </div>
       </div>
     </div>
 
-    <!-- 4. Sub-Menu Khusus Adik Sheva (2 Menu) -->
+    <!-- 4. Sub-Menu Khusus Adik Sheva (4 Paket: 2 Membaca + 1 Math + 1 English) -->
     <div id="sheva-category-view" class="home-card" style="display: none;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
         <button class="back-btn" onclick="goHome()">⬅ Menu Utama</button>
         <span class="badge badge-tk">Adik Sheva • Kategori TK</span>
       </div>
-      <h1 style="font-size: 1.6rem; color: var(--accent);">Belajar Ceria Adik Sheva</h1>
+      <h1 style="font-size: 1.6rem; color: #b45309;">Belajar Ceria Adik Sheva</h1>
       <p style="margin-bottom: 20px;">Pilih pelajaran seru bergambar di bawah ini:</p>
 
       <div class="submenu-grid">
+        <div class="category-divider">📖 Drilling Belajar Membaca TK (Bahasa Indonesia)</div>
+
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_baca1')">
+          <h3>🔤 Baca Paket 1: Suku Kata & Fonik</h3>
+          <p>10 Soal Drilling Mengeja Suku Kata Sederhana (ba, bi, bu, ca, ci, cu, dll.) + Gambar.</p>
+        </div>
+
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_baca2')">
+          <h3>📚 Baca Paket 2: Kata Dasar & Kalimat Pendek</h3>
+          <p>10 Soal Membaca Kata Utuh & Memahami Kalimat Sederhana 2-3 Kata + Gambar.</p>
+        </div>
+
+        <div class="category-divider">🌟 Berhitung & Bahasa Inggris Ceria</div>
+
         <div class="sub-btn tk-sub" onclick="startQuiz('sheva_math')">
           <h3>🍎 Math Ceria (Berhitung)</h3>
           <p>15 Soal Penjumlahan & Pengurangan Bergambar Lucu.</p>
@@ -697,12 +740,556 @@
 
   <script>
     // =========================================================================
-    // DATA KAKAK ANIN - MATEMATIKA KELAS 4 (KURIKULUM MERDEKA: 3 PAKET @ 20 SOAL)
+    // DATA ADIK SHEVA - DRILLING MEMBACA TK (2 PAKET @ 10 SOAL)
     // =========================================================================
 
-    // MATH PAKET 1: MEMBACA, MENULIS & NILAI TEMPAT (20 SOAL)
+    // PAKET BACA 1: SUKU KATA & FONIK DASAR (10 SOAL)
+    const dataShevaBaca1 = [
+      {
+        type: "mcq",
+        visual: "⚽ ⚽ ⚽",
+        q: "Huruf b - o - l - a jika digabung dibaca menjadi ....",
+        options: ["BOLA", "POLA", "BULU"],
+        ans: 0,
+        exp: "b-o (bo) + l-a (la) = BOLA! ⚽"
+      },
+      {
+        type: "mcq",
+        visual: "📖 ✏️",
+        q: "Lengkapilah suku kata yang hilang pada gambar:\nBU - .....",
+        options: ["KU (Buku)", "KA (Buka)", "KI (Buki)"],
+        ans: 0,
+        exp: "b-u (bu) + k-u (ku) = BUKU! 📖"
+      },
+      {
+        type: "mcq",
+        visual: "🐄 🥛",
+        q: "Kata 'SAPI' terdiri dari gabungan suku kata ....",
+        options: ["SA - PI", "SI - PA", "SO - PI"],
+        ans: 0,
+        exp: "SAPI = SA dan PI (s-a + p-i) 🐄"
+      },
+      {
+        type: "mcq",
+        visual: "🦆 🦆",
+        q: "Manakah tulisan yang tepat untuk mengeja hewan di atas?",
+        options: ["BE - BEK", "KA - TAK", "CI - CAK"],
+        ans: 0,
+        exp: "b-e (be) + b-e-k (bek) = BEBEK! 🦆"
+      },
+      {
+        type: "mcq",
+        visual: "🏠 🏡",
+        q: "Lengkapilah suku kata depan pada gambar rumah:\n..... - MAH",
+        options: ["RU (Rumah)", "MA (Mamah)", "BA (Bamah)"],
+        ans: 0,
+        exp: "r-u (ru) + m-a-h (mah) = RUMAH! 🏠"
+      },
+      {
+        type: "mcq",
+        visual: "🐟 🌊",
+        q: "Huruf awal pada kata 'IKAN' adalah ....",
+        options: ["Huruf I", "Huruf U", "Huruf A"],
+        ans: 0,
+        exp: "IKAN diawali dengan huruf I (I - K - A - N) 🐟"
+      },
+      {
+        type: "mcq",
+        visual: "🐱 🐱",
+        q: "Gabungkan huruf berikut: K - U - C - I - N - G dibaca ....",
+        options: ["KUCING", "KANCING", "KUPING"],
+        ans: 0,
+        exp: "k-u (ku) + c-i-n-g (cing) = KUCING! 🐱"
+      },
+      {
+        type: "mcq",
+        visual: "🍞 🥐",
+        q: "RO - TI dibaca menjadi ....",
+        options: ["ROTI", "RATA", "RATU"],
+        ans: 0,
+        exp: "r-o (ro) + t-i (ti) = ROTI lezat! 🍞"
+      },
+      {
+        type: "mcq",
+        visual: "🚗 🚙",
+        q: "Lengkapilah kata berikut: MO - .....",
+        options: ["BIL (Mobil)", "TOR (Motor)", "DOT (Modot)"],
+        ans: 0,
+        exp: "m-o (mo) + b-i-l (bil) = MOBIL! 🚗"
+      },
+      {
+        type: "mcq",
+        visual: "🍌 🍌",
+        q: "PI - SANG jika dieja terdiri dari huruf ....",
+        options: ["p - i - s - a - n - g", "p - u - s - a - n - g", "b - i - s - a - n - g"],
+        ans: 0,
+        exp: "PISANG = p - i - s - a - n - g! 🍌"
+      }
+    ];
+
+    // PAKET BACA 2: KATA DASAR & MEMBACA KALIMAT PENDEK (10 SOAL)
+    const dataShevaBaca2 = [
+      {
+        type: "mcq",
+        visual: "👩‍🍳 🍞 🥐",
+        q: "Bacalah kalimat pendek ini:\n'Ibu beli roti'\nApa yang dibeli oleh Ibu?",
+        options: ["Beli roti", "Beli baju", "Beli topi"],
+        ans: 0,
+        exp: "Ibu membeli ROTI lezat! 🍞"
+      },
+      {
+        type: "mcq",
+        visual: "🐱 🏃‍♂️ 💨",
+        q: "Bacalah kalimat pendek ini:\n'Kucing lari cepat'\nHewan apa yang sedang lari?",
+        options: ["Kucing", "Kelinci", "Kambing"],
+        ans: 0,
+        exp: "KUCING yang lari cepat! 🐱"
+      },
+      {
+        type: "mcq",
+        visual: "🚲 👧",
+        q: "Bacalah kalimat ini:\n'Sheva suka naik sepeda'\nSheva suka naik apa ya?",
+        options: ["Sepeda", "Mobil", "Becak"],
+        ans: 0,
+        exp: "Sheva suka naik SEPEDA gowes! 🚲"
+      },
+      {
+        type: "mcq",
+        visual: "🍎 😋",
+        q: "Bacalah kalimat ini:\n'Apel merah manis'\nBagaimana rasa buah apel?",
+        options: ["Manis", "Pahit", "Asin"],
+        ans: 0,
+        exp: "Rasa buah apel merah adalah MANIS! 🍎"
+      },
+      {
+        type: "mcq",
+        visual: "⭐ 🌙",
+        q: "Bacalah kalimat ini:\n'Bintang bersinar di malam hari'\nKapan bintang bersinar?",
+        options: ["Malam hari", "Siang hari", "Pagi hari"],
+        ans: 0,
+        exp: "Bintang bersinar di MALAM HARI! ⭐"
+      },
+      {
+        type: "mcq",
+        visual: "🥛 🧒",
+        q: "Bacalah kalimat ini:\n'Adik minum susu putih'\nApa yang diminum adik?",
+        options: ["Susu putih", "Air sirup", "Kopi hangat"],
+        ans: 0,
+        exp: "Adik minum SUSU PUTIH sehat! 🥛"
+      },
+      {
+        type: "mcq",
+        visual: "🌞 🌅",
+        q: "Bacalah kalimat ini:\n'Matahari terbit di pagi hari'\nApa yang terbit di pagi hari?",
+        options: ["Matahari", "Bulan", "Bintang"],
+        ans: 0,
+        exp: "MATAHARI bersinar cerah di pagi hari! 🌞"
+      },
+      {
+        type: "mcq",
+        visual: "🌸 🌷",
+        q: "Bacalah kalimat ini:\n'Bunga mawar harum sekali'\nBunga apa yang baunya harum?",
+        options: ["Bunga mawar", "Bunga plastik", "Pohon mangga"],
+        ans: 0,
+        exp: "BUNGA MAWAR harum sekali! 🌸"
+      },
+      {
+        type: "mcq",
+        visual: "🐟 🏊‍♂️",
+        q: "Bacalah kalimat ini:\n'Ikan mas berenang di kolam'\nDi mana ikan berenang?",
+        options: ["Di kolam", "Di pohon", "Di kasur"],
+        ans: 0,
+        exp: "Ikan berenang di dalam AIR KOLAM! 🐟"
+      },
+      {
+        type: "mcq",
+        visual: "📚 🎒",
+        q: "Bacalah kalimat ini:\n'Budi rajin baca buku'\nAnak yang pintar selalu rajin baca apa?",
+        options: ["Buku", "Sepatu", "Baju"],
+        ans: 0,
+        exp: "Rajin baca BUKU bikin kita pintar! 📚"
+      }
+    ];
+
+    // =========================================================================
+    // DATA KAKAK PUTRI - BAHASA INDONESIA KELAS 2 (KURIKULUM MERDEKA: 3 PAKET @ 20 SOAL)
+    // =========================================================================
+    const dataPutriIndo1 = [
+      {
+        q: "1. Orang yang sedang merasa senang biasanya menunjukkan mimik wajah berupa ....",
+        options: ["Cemberut", "Tersenyum ceria", "Menangis keras", "Mata melotot"],
+        ans: 1,
+        exp: "Orang yang merasa senang biasanya tersenyum manis dan wajahnya tampak berseri-seri[cite: 4]."
+      },
+      {
+        q: "2. Suara petasan yang menggelegar tiba-tiba dapat membuat kita merasa ....",
+        options: ["Bangga", "Kaget / Terkejut", "Malu", "Lega"],
+        ans: 1,
+        exp: "Suara keras yang mengejutkan membuat kita merasa kaget atau terkejut[cite: 4]."
+      },
+      {
+        passage: "Sampai Jumpa\nSaat berpisah telah tiba\nAku harus pindah ke Kota Jakarta\nTiga tahun kita lewati bersama\nDalam tangis dan tawa\nSampai jumpa lagi, kawanku\nAku akan selalu mengingatmu",
+        q: "3. Berdasarkan puisi 'Sampai Jumpa' di atas, ke kota manakah tokoh aku akan pindah?[cite: 4]",
+        options: ["Kota Surabaya", "Kota Bandung", "Kota Jakarta", "Kota Medan"],
+        ans: 2,
+        exp: "Pada baris kedua puisi tertulis: 'Aku harus pindah ke Kota Jakarta'[cite: 4]."
+      },
+      {
+        passage: "Sampai Jumpa\nSaat berpisah telah tiba\nAku harus pindah ke Kota Jakarta\nTiga tahun kita lewati bersama\nDalam tangis dan tawa\nSampai jumpa lagi, kawanku\nAku akan selalu mengingatmu",
+        q: "4. Kepada siapakah puisi 'Sampai Jumpa' tersebut ditujukan?[cite: 4]",
+        options: ["Kepada Guru", "Kepada Kawan / Sahabat", "Kepada Dokter", "Kepada Penjual buku"],
+        ans: 1,
+        exp: "Puisi ditujukan kepada kawannya ('Sampai jumpa lagi, kawanku')[cite: 4]."
+      },
+      {
+        passage: "Sampai Jumpa\nSaat berpisah telah tiba\nAku harus pindah ke Kota Jakarta\nTiga tahun kita lewati bersama\nDalam tangis dan tawa\nSampai jumpa lagi, kawanku\nAku akan selalu mengingatmu",
+        q: "5. Berapa lama tokoh aku telah melewati kebersamaan bersama kawannya?[cite: 4]",
+        options: ["Satu tahun", "Dua tahun", "Tiga tahun", "Empat tahun"],
+        ans: 2,
+        exp: "Tertulis pada puisi: 'Tiga tahun kita lewati bersama'[cite: 4]."
+      },
+      {
+        q: "6. Perasaan yang dialami seseorang saat berhasil memenangkan perlombaan dan dipuji guru adalah ....",
+        options: ["Takut", "Bangga dan senang", "Marah", "Sedih"],
+        ans: 1,
+        exp: "Meraih kemenangan membuat kita merasa bangga dan senang[cite: 4]."
+      },
+      {
+        q: "7. Arti kata 'pindah' dalam kalimat 'Keluarga Adi pindah ke Jakarta' adalah ....[cite: 4]",
+        options: ["Beralih ke tempat lain", "Tidur di kasur", "Berjalan-jalan santai", "Membeli barang baru"],
+        ans: 0,
+        exp: "Pindah berarti beralih atau bertukar tempat tinggal ke lokasi yang baru[cite: 4]."
+      },
+      {
+        q: "8. Ketika kita berpisah dengan teman akrab di sekolah, perasaan yang biasanya kita rasakan adalah ....",
+        options: ["Sedih", "Marah sekali", "Kaget", "Malu"],
+        ans: 0,
+        exp: "Berpisah dengan sahabat karib membuat hati kita merasa sedih dan rindu[cite: 4]."
+      },
+      {
+        q: "9. Di bawah ini yang BUKAN merupakan contoh nama perasaan adalah ....",
+        options: ["Senang", "Bangga", "Bersepeda", "Takut"],
+        ans: 2,
+        exp: "Bersepeda adalah nama kegiatan/aktivitas fisik, bukan nama perasaan[cite: 4]."
+      },
+      {
+        q: "10. Mimik wajah dengan alis bertaut, bibir cemberut, dan mata melotot biasanya menunjukkan perasaan ....",
+        options: ["Marah", "Senang", "Lega", "Bangga"],
+        ans: 0,
+        exp: "Alis bertaut dan mata melotot adalah ekspresi mimik wajah saat sedang marah[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "11. Lengkapilah kalimat berikut:\nHari ini keluarga Adi ..... ke Kota Jakarta.[cite: 4]",
+        ans: ["pindah"],
+        exp: "Kata yang tepat sesuai kosakata Bab 1 adalah 'pindah'[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "12. Lengkapilah kalimat berikut:\nKiki dan Kaka ..... di depan gerbang sekolah sebelum pulang ke rumah masing-masing.[cite: 4]",
+        ans: ["berpisah"],
+        exp: "Kosakata yang tepat adalah 'berpisah'[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "13. Raut atau ekspresi muka yang menunjukkan perasaan seseorang disebut .....",
+        ans: ["mimik", "mimik wajah"],
+        exp: "Ekspresi wajah yang memperlihatkan emosi disebut mimik wajah[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "14. Saat merasa takut, jantung kita biasanya berdegup kencang dan tubuh terasa .....",
+        ans: ["gemetar", "dingin", "lemas"],
+        exp: "Rasa takut membuat tubuh gemetar atau dingin[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "15. Tokoh dalam buku cerita yang harus berobat ke rumah sakit tetapi merasa takut bernama .....[cite: 4]",
+        ans: ["ira"],
+        exp: "Sesuai Jurnal Membaca di buku: buku berjudul 'Ira Tidak Takut'[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "16. (Uraian) Sebutkan 4 contoh nama perasaan yang pernah dialami manusia!",
+        ans: ["senang, sedih, marah, takut", "senang, marah, sedih, takut", "senang, sedih, takut, bangga"],
+        exp: "Contoh nama-nama perasaan: senang, sedih, marah, takut, bangga, malu, kaget, dan lega[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "17. (Uraian) Ceritakan apa yang membuatmu merasa sangat senang di sekolah!",
+        ans: ["bermain bersama teman", "mendapat nilai bagus", "belajar bersama"],
+        exp: "Contoh penyebab senang: bermain bersama sahabat, belajar hal baru, atau mendapat nilai bagus[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "18. (Uraian) Menurut puisi 'Sampai Jumpa', apa yang akan selalu dilakukan tokoh aku setelah pindah ke Jakarta?[cite: 4]",
+        ans: ["selalu mengingat kawannya", "mengingat kawannya", "selalu mengingatmu"],
+        exp: "Pada baris terakhir puisi tertulis: 'Aku akan selalu mengingatmu'[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "19. (Uraian) Apa yang sebaiknya kamu lakukan jika melihat teman sekelasmu menangis karena sedih?",
+        ans: ["menghiburnya", "menemani dan menghibur", "mengajak bermain"],
+        exp: "Saat teman sedih, kita sebaiknya menemani, mendengarkan ceritanya, dan menghiburnya agar tersenyum kembali[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "20. (Uraian) Mengapa tokoh Ira dalam cerita merasa takut saat diajak ke rumah sakit?[cite: 4]",
+        ans: ["karena akan berobat", "karena takut disuntik/berobat", "akan berobat"],
+        exp: "Ira merasa takut karena ia harus berobat dan memeriksakan kesehatannya ke dokter di rumah sakit[cite: 4]."
+      }
+    ];
+
+    const dataPutriIndo2 = [
+      {
+        q: "1. Mengapa Mimi dan adiknya bertengkar dalam cerita 'Mimi Marah'?[cite: 4]",
+        options: ["Berebut makanan kue", "Berebut boneka hingga rusak", "Berebut sepeda baru", "Berebut buku gambar"],
+        ans: 1,
+        exp: "Mimi dan adiknya sama-sama ingin bermain boneka dan tidak ada yang mau mengalah hingga bonekanya rusak[cite: 4]."
+      },
+      {
+        q: "2. Bagaimana cara Mimi meluapkan rasa marahnya saat masuk ke kamar?[cite: 4]",
+        options: ["Membanting pintu lalu tidur", "Berteriak lalu menangis", "Menyanyi lagu keras-keras", "Membuang mainan"],
+        ans: 1,
+        exp: "Di kamarnya, Mimi berteriak lalu menangis hingga perasaannya merasa lebih tenang[cite: 4]."
+      },
+      {
+        q: "3. Apa yang dilakukan adik Mimi saat menunggu di luar kamar?[cite: 4]",
+        options: ["Membeli boneka baru", "Memperbaiki boneka yang rusak", "Mengunci pintu rumah", "Pergi bermain sendiri"],
+        ans: 1,
+        exp: "Adik Mimi menunggu di luar kamar dan sudah memperbaiki boneka yang sempat rusak[cite: 4]."
+      },
+      {
+        q: "4. Setelah saling memaafkan, kegiatan apa yang dilakukan Mimi dan adiknya bersama-sama?[cite: 4]",
+        options: ["Bersepeda bersama", "Menonton televisi", "Bermain layang-layang", "Membeli es krim"],
+        ans: 0,
+        exp: "Setelah berbaikan dan saling meminta maaf, mereka bersepeda bersama dengan ceria[cite: 4]."
+      },
+      {
+        q: "5. Huruf kapital selalu digunakan pada ....[cite: 4]",
+        options: ["Tengah kata benda", "Huruf pertama awal kalimat dan nama orang", "Semua huruf di akhir kalimat", "Hanya huruf vokal"],
+        ans: 1,
+        exp: "Huruf kapital digunakan pada awal kalimat dan huruf pertama unsur nama orang[cite: 4]."
+      },
+      {
+        q: "6. Kalimat pernyataan selalu diakhiri dengan tanda baca ....[cite: 4]",
+        options: ["Tanda tanya (?)", "Tanda seru (!)", "Tanda titik (.)", "Tanda koma (,)"],
+        ans: 2,
+        exp: "Kalimat berita/pernyataan diakhiri dengan tanda titik (.)[cite: 4]."
+      },
+      {
+        q: "7. Dalam cerita 'Kiki dan Cici', apa yang membuat Kiki merasa takut?[cite: 4]",
+        options: ["Balon warna-warni", "Tikus", "Kucing besar", "Suara petir"],
+        ans: 1,
+        exp: "Kiki adalah seekor kucing yang takut pada tikus[cite: 4]."
+      },
+      {
+        q: "8. Dalam cerita 'Kiki dan Cici', apa yang membuat Cici yang usil berteriak ketakutan saat pesta ulang tahun?[cite: 4]",
+        options: ["Kue ulang tahun", "Topi pesta", "Balon", "Lilin"],
+        ans: 2,
+        exp: "Cici mengeong keras dan takut saat melihat ruangan penuh dekorasi balon[cite: 4]."
+      },
+      {
+        q: "9. Arti kata 'usil' pada sifat tokoh Cici adalah ....[cite: 4]",
+        options: ["Suka menolong teman", "Suka mengganggu orang lain", "Rajin belajar", "Pendiam dan pemalu"],
+        ans: 1,
+        exp: "Usil berarti suka usik atau suka mengganggu teman/orang lain[cite: 4]."
+      },
+      {
+        q: "10. Penulisan huruf kapital dan tanda titik yang PALING BENAR di bawah ini adalah ....[cite: 4]",
+        options: ["mimi tidak lagi marah", "Mimi tidak lagi marah.", "mimi Tidak Lagi Marah.", "Mimi tidak lagi marah?"],
+        ans: 1,
+        exp: "Diawali huruf kapital 'Mimi' dan diakhiri tanda titik (.)[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "11. Sikap mau menahan diri dan mendahulukan orang lain saat bermain bersama disebut .....[cite: 4]",
+        ans: ["mengalah"],
+        exp: "Kosakata yang tepat adalah 'mengalah'[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "12. Perasaan tenang dan bebas dari rasa gelisah atau marah disebut rasa .....[cite: 4]",
+        ans: ["lega"],
+        exp: "Perasaan bebas dari beban atau amarah disebut 'lega'[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "13. Ibu membantu Vero ..... buku cerita yang sobek.[cite: 4]",
+        ans: ["memperbaiki"],
+        exp: "Kosakata yang tepat untuk membetulkan barang rusak adalah 'memperbaiki'[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "14. Hiasan ruangan yang dipasang untuk mempercantik pesta ulang tahun disebut .....[cite: 4]",
+        ans: ["dekorasi"],
+        exp: "Hiasan ruangan pesta disebut 'dekorasi'[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "15. Perbaiki penulisan kalimat: 'riri anak yang usil' -> Huruf pertama Riri harus ditulis dengan huruf .....[cite: 4]",
+        ans: ["kapital", "besar", "r kapital"],
+        exp: "Awal kalimat dan nama orang harus memakai huruf kapital[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "16. (Uraian) Mengapa kita harus mau saling mengalah saat bermain dengan saudara atau teman?",
+        ans: ["agar tidak bertengkar", "supaya rukun", "supaya tidak berantem"],
+        exp: "Saling mengalah penting agar permainan tetap menyenangkan, rukun, dan tidak terjadi pertengkaran[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "17. (Uraian) Tuliskan kembali kalimat berikut dengan huruf kapital dan tanda titik yang tepat: 'boneka penguin rusak'[cite: 4]",
+        ans: ["Boneka penguin rusak.", "Boneka penguin rusak"],
+        exp: "Bentuk baku: 'Boneka penguin rusak.' (B huruf kapital, diakhiri titik)[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "18. (Uraian) Sebutkan 2 cara yang sehat untuk menenangkan diri saat merasa marah![cite: 4]",
+        ans: ["menarik napas dalam-dalam dan menyendiri", "tarik napas dan bercerita ke orang tua", "menarik napas dalam-dalam"],
+        exp: "Cara sehat menenangkan diri: menarik napas dalam-dalam, menyendiri sejenak, mendengarkan musik, melukis, atau bercerita ke orang tua[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "19. (Uraian) Tuliskan kembali kalimat berikut dengan memperbaiki huruf kapital pada nama orang: 'titu main dengan tuti'[cite: 4]",
+        ans: ["Titu main dengan Tuti.", "Titu main dengan Tuti"],
+        exp: "Nama orang 'Titu' dan 'Tuti' harus berhuruf awal kapital: 'Titu main dengan Tuti.'[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "20. (Uraian) Apa pesan yang dapat kita pelajari dari cerita kucing Kiki dan Cici?[cite: 4]",
+        ans: ["tidak boleh usil dan saling menghargai", "jangan suka mengganggu teman", "setiap orang punya rasa takut"],
+        exp: "Setiap orang punya kelemahan/rasa takut, maka kita tidak boleh bersikap usil atau suka mengganggu teman[cite: 4]."
+      }
+    ];
+
+    const dataPutriIndo3 = [
+      {
+        q: "1. Terlalu lama menatap layar ponsel atau gawai dapat menyebabkan mata kita menjadi ....[cite: 4]",
+        options: ["Makin jernih", "Lelah dan perih", "Sehat dan kuat", "Bisa melihat dalam gelap"],
+        ans: 1,
+        exp: "Menatap layar gawai terlalu lama tanpa istirahat membuat mata lelah dan kering[cite: 4]."
+      },
+      {
+        q: "2. Pada 'Aturan 20-20-20', kita disarankan berhenti menatap gawai setiap ....[cite: 4]",
+        options: ["20 detik", "20 menit", "20 jam", "20 hari"],
+        ans: 1,
+        exp: "Berhentilah melihat layar gawai setiap 20 menit sekali[cite: 4]."
+      },
+      {
+        q: "3. Berapa jarak benda yang harus kita tatap saat mengistirahatkan mata sesuai aturan 20-20-20?[cite: 4]",
+        options: ["20 sentimeter", "20 kaki (sekitar 6 meter)", "20 meter", "20 kilometer"],
+        ans: 1,
+        exp: "Lihatlah benda yang berjarak sekitar 20 kaki (feet) dari posisi kita[cite: 4]."
+      },
+      {
+        q: "4. Berapa lama waktu yang dibutuhkan untuk menatap benda jauh tersebut?[cite: 4]",
+        options: ["20 detik", "20 menit", "20 jam", "1 detik"],
+        ans: 0,
+        exp: "Tataplah objek jauh tersebut selama 20 detik untuk mengistirahatkan otot mata[cite: 4]."
+      },
+      {
+        q: "5. Kata tanya yang digunakan untuk menanyakan alasan atau sebab terjadinya sesuatu adalah ....[cite: 4]",
+        options: ["Kapan", "Di mana", "Mengapa", "Siapa"],
+        ans: 2,
+        exp: "Kata tanya 'Mengapa' berfungsi menanyakan sebab atau alasan[cite: 4]."
+      },
+      {
+        q: "6. Kata tanya yang digunakan untuk menanyakan waktu terjadinya suatu peristiwa adalah ....[cite: 4]",
+        options: ["Kapan", "Siapa", "Berapa", "Apa"],
+        ans: 0,
+        exp: "'Kapan' digunakan untuk menanyakan keterangan waktu[cite: 4]."
+      },
+      {
+        q: "7. Kata tanya yang digunakan untuk menanyakan orang atau pelaku adalah ....[cite: 4]",
+        options: ["Apa", "Bagaimana", "Siapa", "Di mana"],
+        ans: 2,
+        exp: "'Siapa' digunakan untuk menanyakan orang atau pelaku perbuatan[cite: 4]."
+      },
+      {
+        q: "8. '..... kamu tinggal?'\nKata tanya yang tepat untuk melengkapi kalimat di atas adalah ....[cite: 4]",
+        options: ["Siapa", "Di mana", "Berapa", "Kapan"],
+        ans: 1,
+        exp: "Tempat tinggal ditanyakan menggunakan kata tanya 'Di mana'[cite: 4]."
+      },
+      {
+        q: "9. '..... cara membuat layang-layang?'\nKata tanya yang tepat untuk menanyakan cara/proses adalah ....[cite: 4]",
+        options: ["Bagaimana", "Berapa", "Siapa", "Apa"],
+        ans: 0,
+        exp: "'Bagaimana' digunakan untuk menanyakan cara atau proses terjadinya sesuatu[cite: 4]."
+      },
+      {
+        q: "10. Dalam cerita 'Kacamata Kadek', mengapa dokter menyarankan Kadek memakai kacamata?[cite: 4]",
+        options: ["Supaya terlihat keren", "Karena matanya mengalami gangguan/buram", "Untuk pergi ke pesta", "Sebagai hadiah ulang tahun"],
+        ans: 1,
+        exp: "Kadek memeriksakan mata ke dokter dan disarankan memakai kacamata agar penglihatannya jelas[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "11. Alat elektronik genggam seperti ponsel pintar, komputer tablet, dan laptop disebut .....[cite: 4]",
+        ans: ["gawai", "gadget"],
+        exp: "Gawai adalah padanan kata bahasa Indonesia untuk perangkat elektronik seperti smartphone/tablet[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "12. Kalimat tanya selalu diakhiri dengan tanda baca .....[cite: 4]",
+        ans: ["tanda tanya", "?", "tanya"],
+        exp: "Kalimat tanya diakhiri dengan tanda tanya (?)[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "13. '..... harga buku ceritamu?' -> Kata tanya untuk menanyakan harga atau jumlah bilangan adalah .....[cite: 4]",
+        ans: ["berapa"],
+        exp: "Kata tanya 'Berapa' digunakan untuk menanyakan jumlah, harga, atau kuantitas[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "14. '..... yang mengantarmu ke sekolah hari ini?' -> Kata tanya yang tepat adalah .....[cite: 4]",
+        ans: ["siapa"],
+        exp: "Kata tanya 'Siapa' digunakan untuk menanyakan orang yang mengantar[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "15. '..... adikmu menangis di dalam kamar?' -> Kata tanya untuk menanyakan sebab menangis adalah .....[cite: 4]",
+        ans: ["mengapa", "kenapa"],
+        exp: "Alasan menangis ditanyakan menggunakan kata 'Mengapa'[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "16. (Uraian) Sebutkan 3 contoh benda yang termasuk ke dalam jenis gawai![cite: 4]",
+        ans: ["ponsel, tablet, laptop", "hp, tablet, laptop", "smartphone, tablet, komputer"],
+        exp: "Contoh gawai: handphone (ponsel pintar), tablet, laptop, dan komputer jinjing[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "17. (Uraian) Jelaskan secara singkat apa tujuan dari melakukan 'Aturan 20-20-20'![cite: 4]",
+        ans: ["mengistirahatkan mata", "agar mata tidak lelah", "menjaga kesehatan mata"],
+        exp: "Tujuannya adalah untuk mengistirahatkan otot mata agar tidak lelah dan menjaga kesehatan penglihatan dari radiasi layar gawai[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "18. (Uraian) Buatlah 1 contoh kalimat tanya menggunakan kata 'Kapan'![cite: 4]",
+        ans: ["kapan kamu akan naik ke kelas tiga?", "kapan kita pergi ke sekolah?", "kapan kamu pulang?"],
+        exp: "Contoh kalimat tanya: 'Kapan kamu akan naik ke kelas tiga?' atau 'Kapan kamu pergi ke sekolah?'[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "19. (Uraian) Buatlah 1 contoh kalimat menggunakan kata 'gawai'![cite: 4]",
+        ans: ["saya tidak boleh main gawai terlalu lama", "ayah membeli gawai baru", "kita harus membatasi waktu memakai gawai"],
+        exp: "Contoh: 'Kita harus membatasi waktu bermain gawai agar mata tidak lelah.'[cite: 4]."
+      },
+      {
+        type: "input",
+        q: "20. (Uraian) Sebutkan 7 kata tanya yang telah kamu pelajari di buku![cite: 4]",
+        ans: ["apa, siapa, di mana, kapan, mengapa, bagaimana, berapa", "apa, siapa, dimana, kapan, mengapa, bagaimana, berapa"],
+        exp: "Tujuh kata tanya: Apa, Siapa, Di mana, Kapan, Mengapa, Bagaimana, dan Berapa[cite: 4]."
+      }
+    ];
+
+    // =========================================================================
+    // DATA KAKAK ANIN - MATEMATIKA KELAS 4 (KURIKULUM MERDEKA: 3 PAKET @ 20 SOAL)
+    // =========================================================================
     const dataAninMath1 = [
-      // 10 Pilihan Ganda
       {
         q: "1. Jarak rumah Helen ke minimarket adalah 3.286 meter. Bilangan 3.286 dibaca ....",
         options: ["Tiga ribu dua ratus enam puluh delapan", "Tiga ribu dua ratus delapan puluh enam", "Tiga ribu delapan ratus dua puluh enam", "Tiga ribu enam ratus dua puluh delapan"],
@@ -763,7 +1350,6 @@
         ans: 0,
         exp: "4.884 dibaca: Empat ribu delapan ratus delapan puluh empat[cite: 3]."
       },
-      // 5 Isian Singkat
       {
         type: "input",
         q: "11. Bilangan 1.206 dibaca: .....",
@@ -794,10 +1380,9 @@
         ans: ["9.045", "9045"],
         exp: "9 ribuan, 0 ratusan, 4 puluhan, 5 satuan = 9.045[cite: 3]."
       },
-      // 5 Uraian
       {
         type: "input",
-        q: "16. (Uraian) Slamet membeli makanan ringan di warung seharga Rp7.350,00. Tentukan rincian nilai tempat dari bilangan 7.350! (Tuliskan: angka ribuan, ratusan, puluhan, dan satuan)",
+        q: "16. (Uraian) Slamet membeli makanan ringan di warung seharga Rp7.350,00. Tentukan rincian nilai tempat dari bilangan 7.350!",
         ans: ["7 ribuan, 3 ratusan, 5 puluhan, 0 satuan", "7350", "7 ribuan 3 ratusan 5 puluhan 0 satuan"],
         exp: "Rincian nilai tempat 7.350: Angka 7 menempati ribuan, angka 3 menempati ratusan, angka 5 menempati puluhan, dan angka 0 menempati satuan[cite: 3]."
       },
@@ -827,9 +1412,7 @@
       }
     ];
 
-    // MATH PAKET 2: MEMBANDINGKAN, MENGURUTKAN, KOMPOSISI & DEKOMPOSISI (20 SOAL)
     const dataAninMath2 = [
-      // 10 Pilihan Ganda
       {
         q: "1. Perbandingan yang tepat antara bilangan 8.750 dan 7.500 adalah ....",
         options: ["8.750 < 7.500", "8.750 > 7.500", "8.750 = 7.500", "7.500 > 8.750"],
@@ -890,7 +1473,6 @@
         ans: 0,
         exp: "Urutkan angka dari yang terkecil ke terbesar: 1, 2, 5, 9 = 1.259[cite: 3]."
       },
-      // 5 Isian Singkat
       {
         type: "input",
         q: "11. Isilah titik-titik dengan tanda pembanding (>, <, atau =):\n1.001 ..... 1.002",
@@ -921,7 +1503,6 @@
         ans: ["7"],
         exp: "7.020 memiliki 7 ribuan[cite: 3]."
       },
-      // 5 Uraian
       {
         type: "input",
         q: "16. (Uraian) Urutkan bilangan 7.570, 5.240, 3.041, dan 9.941 dari yang TERKECIL ke TERBESAR!",
@@ -954,9 +1535,7 @@
       }
     ];
 
-    // MATH PAKET 3: OPERASI HITUNG PENJUMLAHAN, PENGURANGAN & PERKALIAN (20 SOAL)
     const dataAninMath3 = [
-      // 10 Pilihan Ganda
       {
         q: "1. Pak Toni mempunyai 131 pohon jeruk di Jember dan 321 pohon jeruk di Banyuwangi. Berapa jumlah seluruh pohon jeruk Pak Toni?",
         options: ["442 pohon", "452 pohon", "462 pohon", "552 pohon"],
@@ -1017,7 +1596,6 @@
         ans: 1,
         exp: "689 - 233 = 456[cite: 3]."
       },
-      // 5 Isian Singkat
       {
         type: "input",
         q: "11. Hasil dari 333 + 519 = .....",
@@ -1048,7 +1626,6 @@
         ans: ["45"],
         exp: "15 x 3 = (10 x 3) + (5 x 3) = 30 + 15 = 45."
       },
-      // 5 Uraian
       {
         type: "input",
         q: "16. (Soal Cerita) Kebun sawit A menghasilkan 328 buah dan kebun B menghasilkan 579 buah. Berapakah jumlah seluruh kelapa sawit yang dihasilkan?",
@@ -1082,7 +1659,7 @@
     ];
 
     // ===============================================
-    // DATA KAKAK ANIN (BAHASA INGGRIS - 5 PAKET)
+    // DATA KAKAK ANIN (ENGLISH - 5 PAKET)
     // ===============================================
     const dataAninCampuran = [
       {
@@ -1985,7 +2562,7 @@
     ];
 
     // ===============================================
-    // DATA ADIK SHEVA (TK MATH & TK ENGLISH)
+    // DATA ADIK SHEVA (MATH & ENGLISH TK)
     // ===============================================
     const dataShevaMath = [
       {
@@ -2291,31 +2868,56 @@
       } else if (type === "anin_esm4") {
         document.getElementById("quiz-header-title").textContent = "Kakak Anin • English Penyisihan 4";
         activeQuizData = dataAninESM4;
+      } else if (type === "putri_indo1") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • B. Indo Paket 1: Mengenal Perasaan";
+        quizView.classList.add("math-mode");
+        scoreBoard.classList.add("math-theme");
+        activeQuizData = dataPutriIndo1;
+      } else if (type === "putri_indo2") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • B. Indo Paket 2: Mimi Marah & Kapital";
+        quizView.classList.add("math-mode");
+        scoreBoard.classList.add("math-theme");
+        activeQuizData = dataPutriIndo2;
+      } else if (type === "putri_indo3") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • B. Indo Paket 3: Menjaga Kesehatan";
+        quizView.classList.add("math-mode");
+        scoreBoard.classList.add("math-theme");
+        activeQuizData = dataPutriIndo3;
       } else if (type === "putri_campuran") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Paket 1 (Campuran 25 Soal)";
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Math Paket 1 (25 Soal)";
         quizView.classList.add("math-mode");
         scoreBoard.classList.add("math-theme");
         activeQuizData = dataPutriCampuran;
       } else if (type === "putri_esm1") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Babak Penyisihan 1 (10 Soal)";
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Math Penyisihan 1";
         quizView.classList.add("math-mode");
         scoreBoard.classList.add("math-theme");
         activeQuizData = dataPutriESM1;
       } else if (type === "putri_esm2") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Babak Penyisihan 2 (10 Soal)";
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Math Penyisihan 2";
         quizView.classList.add("math-mode");
         scoreBoard.classList.add("math-theme");
         activeQuizData = dataPutriESM2;
       } else if (type === "putri_esm3") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Babak Penyisihan 3 (10 Soal)";
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Math Penyisihan 3";
         quizView.classList.add("math-mode");
         scoreBoard.classList.add("math-theme");
         activeQuizData = dataPutriESM3;
       } else if (type === "putri_esm4") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Babak Penyisihan 4 (10 Soal)";
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Math Penyisihan 4";
         quizView.classList.add("math-mode");
         scoreBoard.classList.add("math-theme");
         activeQuizData = dataPutriESM4;
+      } else if (type === "sheva_baca1") {
+        document.getElementById("quiz-header-title").textContent = "Adik Sheva • Baca Paket 1: Suku Kata & Fonik";
+        quizView.classList.add("tk-mode");
+        scoreBoard.classList.add("tk-theme");
+        activeQuizData = dataShevaBaca1;
+      } else if (type === "sheva_baca2") {
+        document.getElementById("quiz-header-title").textContent = "Adik Sheva • Baca Paket 2: Kata & Kalimat Pendek";
+        quizView.classList.add("tk-mode");
+        scoreBoard.classList.add("tk-theme");
+        activeQuizData = dataShevaBaca2;
       } else if (type === "sheva_math") {
         document.getElementById("quiz-header-title").textContent = "Adik Sheva • Math Ceria (15 Soal)";
         quizView.classList.add("tk-mode");
@@ -2346,7 +2948,7 @@
 
         let passageHTML = "";
         if (item.passage) {
-          passageHTML = `<div class="passage-box"><strong>Reading / Short Passage:</strong><br>${item.passage}</div>`;
+          passageHTML = `<div class="passage-box"><strong>Teks Bacaan / Puisi:</strong><br>${item.passage}</div>`;
         }
 
         let visualHTML = "";
