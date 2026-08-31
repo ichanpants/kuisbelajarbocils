@@ -505,7 +505,7 @@
           </div>
           <span class="badge badge-english">Kelas 4 SD</span>
           <h2>Kakak Anin</h2>
-          <p>Bahasa Inggris, Matematika & TIK<br>(10 Paket Latihan Soal)</p>
+          <p>B. Inggris, Math & TIK<br>(10 Paket Latihan Soal)</p>
         </div>
 
         <!-- Kartu 2: Kakak Putri -->
@@ -528,7 +528,7 @@
           </div>
           <span class="badge badge-math">Kelas 2 SD</span>
           <h2>Kakak Putri</h2>
-          <p>Bahasa Indonesia & Matematika<br>(8 Paket Latihan Soal)</p>
+          <p>PAI, B. Indo & Math<br>(10 Paket Latihan Soal)</p>
         </div>
 
         <!-- Kartu 3: Adik Sheva -->
@@ -559,7 +559,7 @@
       </div>
     </div>
 
-    <!-- 2. Sub-Menu Khusus Kakak Anin (10 Paket: 2 TIK + 3 Math + 5 English) -->
+    <!-- 2. Sub-Menu Khusus Kakak Anin (10 Paket) -->
     <div id="anin-category-view" class="home-card" style="display: none;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
         <button class="back-btn" onclick="goHome()">⬅ Menu Utama</button>
@@ -569,16 +569,16 @@
       <p style="margin-bottom: 16px;">Pilih materi latihan yang ingin dipelajari:</p>
 
       <div class="submenu-grid">
-        <div class="category-divider">💻 Latihan TIK / Informatika Kelas 4 SD</div>
+        <div class="category-divider">💻 Latihan TIK & Berpikir Komputasional (Informatika Kelas 4)</div>
 
         <div class="sub-btn" onclick="startQuiz('anin_tik1')">
-          <h3>🖥️ TIK Paket 1: Perangkat Keras Komputer</h3>
-          <p>10 Soal Pilihan Ganda: Hardware Input, Output, CPU & Fungsi Bagian Komputer.</p>
+          <h3>🖥️ TIK Paket 1: Algoritma & Dekomposisi</h3>
+          <p>10 Soal Pilihan Ganda: Konsep Urutan (Sequence), Memecah Masalah, & Flow Kerja.</p>
         </div>
 
         <div class="sub-btn" onclick="startQuiz('anin_tik2')">
-          <h3>📄 TIK Paket 2: Pengolah Kata & Software</h3>
-          <p>10 Soal Pilihan Ganda: Microsoft Word, Ikon Editing, Shortcut & Software Dasar.</p>
+          <h3>🧩 TIK Paket 2: Pengenalan Pola & Abstraksi</h3>
+          <p>10 Soal Pilihan Ganda: Analisis Pola Bilangan/Benda & Abstraksi Informasi.</p>
         </div>
 
         <div class="category-divider">📘 Latihan Matematika Kelas 4 (Buku Kurikulum Merdeka)[cite: 3]</div>
@@ -627,17 +627,29 @@
       </div>
     </div>
 
-    <!-- 3. Sub-Menu Khusus Kakak Putri (8 Paket) -->
+    <!-- 3. Sub-Menu Khusus Kakak Putri (10 Paket) -->
     <div id="putri-category-view" class="home-card" style="display: none;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
         <button class="back-btn" onclick="goHome()">⬅ Menu Utama</button>
         <span class="badge badge-math">Kakak Putri • Kelas 2 SD</span>
       </div>
       <h1 style="font-size: 1.55rem; color: var(--secondary);">Paket Belajar Kakak Putri</h1>
-      <p style="margin-bottom: 16px;">Pilih materi latihan Bahasa Indonesia atau Matematika:</p>
+      <p style="margin-bottom: 16px;">Pilih materi latihan PAI, Bahasa Indonesia, atau Matematika:</p>
 
       <div class="submenu-grid">
-        <div class="category-divider">📖 Latihan Bahasa Indonesia Kelas 2 SD (Buku Kurikulum Merdeka)[cite: 4]</div>
+        <div class="category-divider">🕌 Latihan PAI & Budi Pekerti (Buku Siswa Kelas 2)[cite: 8]</div>
+
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_pai1')">
+          <h3>📖 PAI Paket 1: Ayo Belajar Al-Qur'an[cite: 8]</h3>
+          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) QS. An-Nas & Huruf Hijaiyah Bersambung[cite: 8].</p>
+        </div>
+
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_pai2')">
+          <h3>🤲 PAI Paket 2: Mari Mengenal Allah Swt.[cite: 8]</h3>
+          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Asmaulhusna al-Hafiz, al-Wali, al-'Alim, al-Khabir[cite: 8].</p>
+        </div>
+
+        <div class="category-divider">📖 Latihan Bahasa Indonesia Kelas 2 SD (Kurikulum Merdeka)[cite: 4]</div>
 
         <div class="sub-btn math-sub" onclick="startQuiz('putri_indo1')">
           <h3>😊 B. Indo Paket 1: Mengenal Perasaan & Puisi[cite: 4]</h3>
@@ -743,2163 +755,723 @@
 
   <script>
     // =========================================================================
-    // DATA KAKAK ANIN - TIK / INFORMATIKA KELAS 4 (2 PAKET @ 10 SOAL)
+    // DATA KAKAK ANIN - TIK / INFORMATIKA (BERPIKIR KOMPUTASIONAL) 2 PAKET @ 10 SOAL
     // =========================================================================
-
-    // TIK PAKET 1: PERANGKAT KERAS & DASAR KOMPUTER (10 SOAL)
     const dataAninTIK1 = [
       {
-        q: "1. Perangkat komputer yang berfungsi untuk mengetik huruf, angka, dan simbol adalah ....",
-        options: ["Mouse", "Keyboard (Papan Ketik)", "Monitor", "Speaker"],
-        ans: 1,
-        exp: "Keyboard (papan ketik) adalah perangkat keras masukan (input) yang digunakan untuk mengetik teks dan angka."
-      },
-      {
-        q: "2. Bagian komputer yang berfungsi sebagai 'otak' pemroses seluruh instruksi dan perhitungan adalah ....",
-        options: ["CPU (Central Processing Unit)", "Monitor", "Printer", "Flashdisk"],
+        q: "1. Cara berpikir untuk memecahkan masalah dan membangun solusi mengikuti cara kerja komputer dinamakan ....",
+        options: ["Berpikir Komputasional", "Berpikir Cepat", "Menonton Video", "Menghafal Program"],
         ans: 0,
-        exp: "CPU (Central Processing Unit) merupakan otak komputer yang memproses semua data dan perintah."
+        exp: "Berpikir komputasional adalah cara pikir yang membantu mengatasi masalah dan membangun solusinya dengan mengikuti cara kerja komputer."
       },
       {
-        q: "3. Perangkat keras yang digunakan untuk menggerakkan kursor dan memilih menu pada layar monitor adalah ....",
-        options: ["Scanner", "Mouse", "Keyboard", "Microphone"],
+        q: "2. Langkah-langkah yang berurutan untuk menyelesaikan suatu kegiatan atau masalah disebut ....",
+        options: ["Dekomposisi", "Algoritma", "Abstraksi", "Programmer"],
         ans: 1,
-        exp: "Mouse adalah perangkat penunjuk yang mengendalikan kursor di layar komputer."
+        exp: "Algoritma adalah langkah-langkah yang berurutan (runtut) untuk menyelesaikan suatu kegiatan atau masalah."
       },
       {
-        q: "4. Perangkat keluaran (output device) yang berfungsi menampilkan gambar dan teks di layar adalah ....",
-        options: ["Monitor", "Keyboard", "Mouse", "Harddisk"],
-        ans: 0,
-        exp: "Monitor adalah perangkat output visual yang menampilkan hasil kerja komputer kepada pengguna."
-      },
-      {
-        q: "5. Alat yang digunakan untuk mencetak dokumen tulisan atau gambar dari komputer ke atas kertas adalah ....",
-        options: ["Speaker", "Printer", "Scanner", "Webcam"],
+        q: "3. Orang yang bertugas membuat atau menulis program untuk komputer disebut ....",
+        options: ["Operator", "Programmer", "Teknisi", "Designer"],
         ans: 1,
-        exp: "Printer berfungsi mencetak dokumen digital menjadi bentuk fisik di atas kertas."
+        exp: "Programmer adalah orang yang menulis dan menyusun program komputer."
       },
       {
-        q: "6. Manakah di bawah ini yang merupakan perangkat penyimpanan data portabel (mudah dibawa ke mana-mana)?",
-        options: ["RAM", "Flashdisk (USB Drive)", "Kabel Power", "VGA Card"],
+        q: "4. Urutan pengerjaan dari perintah pertama sampai dengan perintah terakhir dinamakan ....",
+        options: ["Dekomposisi", "Sequence (urutan)", "Abstraksi", "Pola"],
         ans: 1,
-        exp: "Flashdisk (USB flash drive) adalah media penyimpanan data portabel yang praktis dibawa."
+        exp: "Sequence adalah urutan pengerjaan dari perintah pertama sampai dengan perintah terakhir."
       },
       {
-        q: "7. Tombol terpanjang pada keyboard yang berfungsi memberi jarak antarkata adalah ....",
-        options: ["Enter", "Spacebar (Spasi)", "Backspace", "Caps Lock"],
+        q: "5. Perhatikan algoritma mengenakan pakaian seragam sekolah berikut:\n(1) Pakailah kemeja\n(2) Pakailah celana/rok panjang\n(3) Pakailah kaus kaki\n(4) Pakailah sepatu\nApa yang terjadi jika kamu memakai sepatu terlebih dahulu sebelum kaus kaki?",
+        options: ["Sepatu menjadi lebih bersih", "Langkah tidak tepat dan kaus kaki tidak bisa dipakai", "Kaus kaki otomatis terpasang", "Komputer bekerja lebih cepat"],
         ans: 1,
-        exp: "Tombol Spacebar (spasi) terletak di paling bawah dan berukuran paling panjang untuk memberi jarak spasi."
+        exp: "Jika urutan (sequence) terbalik, tujuan tidak akan tercapai dengan benar karena kaus kaki harus dipakai sebelum memakai sepatu."
       },
       {
-        q: "8. Tombol keyboard yang digunakan untuk menghapus satu karakter huruf di sebelah kiri kursor adalah ....",
-        options: ["Backspace", "Delete", "Shift", "Tab"],
+        q: "6. Perhatikan langkah menanam biji bunga matahari:\n(1) Masukkan tanah ke pot\n(2) Letakkan bibit ke dalam tanah\n(3) Siramlah air ke pot berisi bibit\n(4) Letakkan pot di bawah cahaya matahari\nUrutan algoritma yang benar adalah ....",
+        options: ["(1) - (2) - (3) - (4)", "(2) - (1) - (4) - (3)", "(4) - (3) - (2) - (1)", "(3) - (2) - (1) - (4)"],
         ans: 0,
-        exp: "Backspace menghapus huruf di sebelah kiri kursor, sedangkan Delete menghapus di sebelah kanan kursor."
+        exp: "Urutan menanam yang tepat: Tanah dimasukkan pot -> Bibit diletakkan -> Disiram air -> Ditaruh di bawah sinar matahari."
       },
       {
-        q: "9. Untuk membuat seluruh huruf yang diketik menjadi HURUF BESAR (KAPITAL), kita mengaktifkan tombol ....",
-        options: ["Caps Lock", "Ctrl", "Alt", "Esc"],
-        ans: 0,
-        exp: "Caps Lock mengunci ketikan agar selalu menghasilkan huruf kapital (huruf besar)."
+        q: "7. Proses memecah tugas besar atau masalah rumit menjadi potongan-potongan tugas yang lebih kecil dan sederhana disebut ....",
+        options: ["Sequence", "Dekomposisi", "Abstraksi", "Pola"],
+        ans: 1,
+        exp: "Dekomposisi adalah proses memecah tugas besar menjadi bagian-bagian yang lebih kecil agar mudah diselesaikan."
       },
       {
-        q: "10. Perangkat keras komputer yang menghasilkan output berupa suara atau bunyi musik adalah ....",
-        options: ["Speaker", "Monitor", "Webcam", "Mouse"],
+        q: "8. Dalam kegiatan membersihkan piring kotor, Ibu membaginya menjadi 2 potongan tugas kecil: 'Mencuci piring' dan 'Mengeringkan piring'. Ini adalah contoh ....",
+        options: ["Dekomposisi", "Abstraksi", "Algoritma acak", "Pengenalan musik"],
         ans: 0,
-        exp: "Speaker adalah perangkat output audio yang menghasilkan suara."
+        exp: "Membagi pekerjaan besar mencuci piring menjadi mencuci dan mengeringkan adalah contoh penerapan dekomposisi."
+      },
+      {
+        q: "9. Jika programmer memberikan urutan langkah yang SALAH pada komputer, hal yang akan terjadi adalah ....",
+        options: ["Komputer bekerja lebih cepat", "Komputer tidak dapat bekerja dengan benar", "Komputer langsung rusak permanen", "Komputer menyerap energi lebih besar"],
+        ans: 1,
+        exp: "Komputer membutuhkan instruksi dalam urutan yang tepat. Jika salah urutan, komputer tidak dapat menyelesaikan tugasnya."
+      },
+      {
+        q: "10. Agar algoritma dapat dijalankan dengan baik oleh komputer, algoritma tersebut harus ....",
+        options: ["Ditulis dengan rumit", "Dibuat dalam bentuk lagu", "Disusun dengan urutan yang benar", "Ditulis dengan huruf miring"],
+        ans: 2,
+        exp: "Algoritma harus disusun secara runtut dan memiliki urutan yang benar agar komputer dapat mengeksekusinya."
       }
     ];
 
-    // TIK PAKET 2: APLIKASI PENGOLAH KATA & SOFTWARE DASAR (10 SOAL)
     const dataAninTIK2 = [
       {
-        q: "1. Program aplikasi yang paling umum digunakan untuk mengetik dan membuat dokumen surat atau cerita adalah ....",
-        options: ["Microsoft Word", "Paint", "Calculator", "VLC Player"],
+        q: "1. Sesuatu yang berulang secara teratur di sekitar kita atau dalam kode komputer disebut ....",
+        options: ["Pola", "Abstraksi", "Dekomposisi", "Hardware"],
         ans: 0,
-        exp: "Microsoft Word adalah perangkat lunak (software) pengolah kata untuk membuat dokumen dan teks."
+        exp: "Pola adalah keteraturan atau sesuatu yang berulang yang dapat diamati dalam kehidupan sehari-hari maupun kode komputer."
       },
       {
-        q: "2. Ikon berhuruf 'B' tebal (Bold) pada menu Microsoft Word berfungsi untuk ....",
-        options: ["Membuat tulisan miring", "Menebalkan teks/huruf", "Memberi garis bawah teks", "Mengganti warna huruf"],
+        q: "2. Lintang latihan renang setiap hari Sabtu dan bersepeda setiap hari Minggu secara rutin. Kegiatan berulang ini membentuk suatu ....",
+        options: ["Dekomposisi", "Pola kegiatan", "Masalah komputer", "Programmer"],
         ans: 1,
-        exp: "Ikon 'Bold' (B) berfungsi membuat teks menjadi tebal."
+        exp: "Kegiatan rutin yang dilakukan berulang pada waktu yang sama membentuk suatu pola kegiatan."
       },
       {
-        q: "3. Ikon berhuruf 'I' miring (Italic) pada Microsoft Word berfungsi untuk ....",
-        options: ["Membuat tulisan miring", "Menghapus tulisan", "Menebalkan tulisan", "Membuat tulisan bergaris bawah"],
-        ans: 0,
-        exp: "Ikon 'Italic' (I) berfungsi memiringkan teks yang dipilih."
+        q: "3. Perhatikan pola susunan gambar: [Kubis] -> [Wortel] -> [X] -> [Kubis] -> [Wortel] -> [Tomat] -> [Y] -> [Wortel] -> [Tomat]. Gambar untuk mengisi kotak X dan Y adalah ....",
+        options: ["Wortel dan Kubis", "Kubis dan Tomat", "Tomat dan Kubis", "Tomat dan Wortel"],
+        ans: 2,
+        exp: "Pola berulang terdiri dari 3 sayuran: Kubis, Wortel, Tomat. Maka X = Tomat dan Y = Kubis."
       },
       {
-        q: "4. Ikon berhuruf 'U' dengan garis di bawahnya (Underline) digunakan untuk ....",
-        options: ["Menggarisbawahi tulisan", "Memperbesar ukuran kertas", "Mencetak tulisan", "Menyimpan file"],
-        ans: 0,
-        exp: "Ikon 'Underline' (U) memberi garis bawah pada kata atau kalimat."
+        q: "4. Perhatikan pola angka berikut: 3, 6, 9, 12, .... Angka yang tepat untuk melengkapi pola tersebut adalah ....",
+        options: ["13", "14", "15", "16"],
+        ans: 2,
+        exp: "Pola bilangan selalu bertambah +3 (3, 6, 9, 12, 15)."
       },
       {
-        q: "5. Kombinasi tombol shortcut pada keyboard untuk menyimpan (Save) dokumen yang sedang dibuat adalah ....",
-        options: ["Ctrl + C", "Ctrl + S", "Ctrl + V", "Ctrl + P"],
+        q: "5. Proses menemukan informasi yang PENTING untuk menyelesaikan masalah dan mengabaikan informasi yang tidak penting disebut ....",
+        options: ["Dekomposisi", "Abstraksi", "Algoritma", "Sequence"],
         ans: 1,
-        exp: "Ctrl + S (Save) digunakan untuk menyimpan file dokumen dengan cepat."
+        exp: "Abstraksi adalah proses memilah informasi penting dan membuang detail yang tidak diperlukan agar masalah menjadi lebih sederhana."
       },
       {
-        q: "6. Perintah untuk menyalin (Copy) teks atau gambar yang dipilih adalah dengan menekan tombol ....",
-        options: ["Ctrl + C", "Ctrl + X", "Ctrl + Z", "Ctrl + S"],
+        q: "6. Lintang menanyakan letak perpustakaan kepada Hani. Hani memberi tahu bahwa 'perpustakaan ada di lantai 2 sebelah ruang guru' tanpa perlu menyebutkan semua nama ruangan lain yang dilewati. Sikap Hani menerapkan prinsip ....",
+        options: ["Abstraksi", "Dekomposisi", "Pemrograman", "Sequence"],
         ans: 0,
-        exp: "Ctrl + C adalah shortcut keyboard untuk Copy (menyalin teks/objek)."
+        exp: "Hani hanya menyampaikan informasi inti yang penting (letak perpustakaan) dan mengabaikan detail yang tidak perlu (Abstraksi)."
       },
       {
-        q: "7. Setelah menyalin teks dengan Copy, perintah untuk menempelkan (Paste) teks tersebut adalah ....",
-        options: ["Ctrl + V", "Ctrl + P", "Ctrl + A", "Ctrl + N"],
+        q: "7. Pada motif kain batik parang yang memiliki gambar berulang secara teratur, unsur berpikir komputasional yang terlihat adalah ....",
+        options: ["Pola", "Algoritma", "Dekomposisi", "Programmer"],
         ans: 0,
-        exp: "Ctrl + V digunakan untuk Paste (menempelkan teks/gambar yang sudah disalin)."
+        exp: "Motif kain yang memiliki keteraturan gambar berulang menerapkan konsep pengenalan Pola (Pattern Recognition)."
       },
       {
-        q: "8. Ikon bergambar disket kecil di pojok atas Microsoft Word memiliki fungsi untuk ....",
-        options: ["Save (Menyimpan dokumen)", "Print (Mencetak)", "Open (Membuka file)", "Close (Menutup program)"],
-        ans: 0,
-        exp: "Ikon disket adalah simbol standar untuk perintah Save (menyimpan file)."
-      },
-      {
-        q: "9. Fitur perataan teks di Microsoft Word yang membuat tulisan berada tepat di tengah-tengah halaman disebut ....",
-        options: ["Align Left (Rata Kiri)", "Center (Rata Tengah)", "Align Right (Rata Kanan)", "Justify (Rata Kanan Kiri)"],
+        q: "8. Dalam dekomposisi isi akuarium, kita mengelompokkan dan menghitung bagian kecil seperti: 7 ekor ikan, 2 ekor siput, dan 4 tanaman air. Tujuan dekomposisi ini adalah ....",
+        options: ["Membuat akuarium kotor", "Membuat rincian bagian besar menjadi potongan kecil yang jelas", "Membuat ikan berenang lebih cepat", "Menghilangkan air"],
         ans: 1,
-        exp: "Center membuat posisi paragraf atau judul berada persis di tengah halaman."
+        exp: "Dekomposisi membantu mengenali dan merinci setiap elemen pembentuk dari suatu keseluruhan."
       },
       {
-        q: "10. Program aplikasi bawaan sistem operasi Windows yang digunakan untuk menggambar dan mewarnai secara sederhana adalah ....",
-        options: ["Paint", "Microsoft Word", "Google Chrome", "Notepad"],
-        ans: 0,
-        exp: "Paint adalah aplikasi grafis sederhana bawaan Windows untuk menggambar dan mewarnai."
+        q: "9. Sebelum membuat program di komputer, seorang pembuat program menyusun algoritma terlebih dahulu yang berguna untuk ....",
+        options: ["Menemukan masalah baru", "Menyelesaikan masalah secara runtut", "Menghapus data", "Memperlambat komputer"],
+        ans: 1,
+        exp: "Algoritma disusun sebagai panduan langkah demi langkah dalam memecahkan masalah atau mencapai tujuan program."
+      },
+      {
+        q: "10. Empat unsur penting dalam Berpikir Komputasional adalah ....",
+        options: ["Mengetik, menggambar, menonton, bermain game", "Algoritma, dekomposisi, pengenalan pola, dan abstraksi", "CPU, Monitor, Keyboard, dan Mouse", "Kamera, Speaker, Kabel, dan Flashdisk"],
+        ans: 1,
+        exp: "4 pilar dasar berpikir komputasional: Algoritma, Dekomposisi, Pengenalan Pola, dan Abstraksi."
       }
     ];
 
     // =========================================================================
-    // DATA ADIK SHEVA - DRILLING MEMBACA TK (2 PAKET @ 10 SOAL)
+    // DATA KAKAK PUTRI - PAI & BUDI PEKERTI (2 PAKET @ 20 SOAL: 10 PG, 5 ISIAN, 5 URAIAN)
     // =========================================================================
-    const dataShevaBaca1 = [
+    const dataPutriPAI1 = [
+      // 10 Pilihan Ganda
       {
-        type: "mcq",
-        visual: "⚽ ⚽ ⚽",
-        q: "Huruf b - o - l - a jika digabung dibaca menjadi ....",
-        options: ["BOLA", "POLA", "BULU"],
-        ans: 0,
-        exp: "b-o (bo) + l-a (la) = BOLA! ⚽"
+        q: "1. Surah An-Nas terdiri atas .... ayat.",
+        options: ["4 ayat", "5 ayat", "6 ayat", "7 ayat"],
+        ans: 2,
+        exp: "Surah An-Nas terdiri dari 6 ayat[cite: 1, 8]."
       },
       {
-        type: "mcq",
-        visual: "📖 ✏️",
-        q: "Lengkapilah suku kata yang hilang pada gambar:\nBU - .....",
-        options: ["KU (Buku)", "KA (Buka)", "KI (Buki)"],
-        ans: 0,
-        exp: "b-u (bu) + k-u (ku) = BUKU! 📖"
+        q: "2. Arti dari kata 'An-Nas' adalah ....",
+        options: ["Waktu Subuh", "Manusia", "Pertolongan", "Malaikat"],
+        ans: 1,
+        exp: "An-Nas artinya Manusia[cite: 1, 8]."
       },
       {
-        type: "mcq",
-        visual: "🐄 🥛",
-        q: "Kata 'SAPI' terdiri dari gabungan suku kata ....",
-        options: ["SA - PI", "SI - PA", "SO - PI"],
-        ans: 0,
-        exp: "SAPI = SA dan PI (s-a + p-i) 🐄"
+        q: "3. Surah An-Nas adalah surah ke-.... dalam mushaf Al-Qur'an.",
+        options: ["112", "113", "114", "110"],
+        ans: 2,
+        exp: "Surah An-Nas menempati urutan terakhir dalam mushaf Al-Qur'an, yaitu surah ke-114[cite: 1, 8]."
       },
       {
-        type: "mcq",
-        visual: "🦆 🦆",
-        q: "Manakah tulisan yang tepat untuk mengeja hewan di atas?",
-        options: ["BE - BEK", "KA - TAK", "CI - CAK"],
+        q: "4. Membaca Al-Qur'an dengan tenang, perlahan, dan sesuai kaidah tajwid disebut membaca secara ....",
+        options: ["Tartil", "Cepat", "Keras", "Samar"],
         ans: 0,
-        exp: "b-e (be) + b-e-k (bek) = BEBEK! 🦆"
+        exp: "Membaca Al-Qur'an dengan tartil artinya membaca perlahan, jelas makhrajnya, dan benar tajwidnya[cite: 1, 8]."
       },
       {
-        type: "mcq",
-        visual: "🏠 🏡",
-        q: "Lengkapilah suku kata depan pada gambar rumah:\n..... - MAH",
-        options: ["RU (Rumah)", "MA (Mamah)", "BA (Bamah)"],
-        ans: 0,
-        exp: "r-u (ru) + m-a-h (mah) = RUMAH! 🏠"
+        q: "5. Dalam QS. An-Nas, kita diperintahkan untuk memohon perlindungan hanya kepada ....",
+        options: ["Malaikat", "Manusia", "Allah Swt.", "Nabi Muhammad"],
+        ans: 2,
+        exp: "Kita hanya boleh memohon perlindungan dan bergantung kepada Allah Swt. Tuhannya manusia[cite: 1, 8]."
       },
       {
-        type: "mcq",
-        visual: "🐟 🌊",
-        q: "Huruf awal pada kata 'IKAN' adalah ....",
-        options: ["Huruf I", "Huruf U", "Huruf A"],
+        q: "6. Tempat keluarnya huruf hijaiyah saat diucapkan dengan benar disebut ....",
+        options: ["Makhorijul huruf", "Asmaulhusna", "Harakat", "Tajwidul lisani"],
         ans: 0,
-        exp: "IKAN diawali dengan huruf I (I - K - A - N) 🐟"
+        exp: "Tempat keluarnya huruf hijaiyah disebut Makhorijul Huruf[cite: 1, 8]."
       },
       {
-        type: "mcq",
-        visual: "🐱 🐱",
-        q: "Gabungkan huruf berikut: K - U - C - I - N - G dibaca ....",
-        options: ["KUCING", "KANCING", "KUPING"],
-        ans: 0,
-        exp: "k-u (ku) + c-i-n-g (cing) = KUCING! 🐱"
+        q: "7. Bisikan kejahatan yang menyusup ke dalam dada manusia dapat berasal dari golongan ....",
+        options: ["Jin dan Hewan", "Jin dan Manusia", "Tumbuhan dan Manusia", "Hewan dan Malaikat"],
+        ans: 1,
+        exp: "Sesuai ayat terakhir QS. An-Nas: 'Minal jinnati wan-naas' (dari golongan jin dan manusia)[cite: 1, 8]."
       },
       {
-        type: "mcq",
-        visual: "🍞 🥐",
-        q: "RO - TI dibaca menjadi ....",
-        options: ["ROTI", "RATA", "RATU"],
-        ans: 0,
-        exp: "r-o (ro) + t-i (ti) = ROTI lezat! 🍞"
+        q: "8. Lanjutan dari bunyi ayat kedua QS. An-Nas adalah 'Malikin ....'",
+        options: ["Ilah", "Naas", "Waswas", "Khinnaas"],
+        ans: 1,
+        exp: "Bunyi ayat ke-2: 'Malikin-naas' (Raja manusia)[cite: 1, 8]."
       },
       {
-        type: "mcq",
-        visual: "🚗 🚙",
-        q: "Lengkapilah kata berikut: MO - .....",
-        options: ["BIL (Mobil)", "TOR (Motor)", "DOT (Modot)"],
-        ans: 0,
-        exp: "m-o (mo) + b-i-l (bil) = MOBIL! 🚗"
+        q: "9. Huruf hijaiyah berikut yang TIDAK BISA disambung dengan huruf setelahnya adalah ....",
+        options: ["Ba (ب)", "Sin (س)", "Alif (ا)", "Mim (م)"],
+        ans: 2,
+        exp: "Huruf Alif (ا) tidak bisa menyambung huruf di sebelah kirinya/setelahnya[cite: 1, 8]."
       },
       {
-        type: "mcq",
-        visual: "🍌 🍌",
-        q: "PI - SANG jika dieja terdiri dari huruf ....",
-        options: ["p - i - s - a - n - g", "p - u - s - a - n - g", "b - i - s - a - n - g"],
-        ans: 0,
-        exp: "PISANG = p - i - s - a - n - g! 🍌"
+        q: "10. Sikap terpuji yang dicerminkan setelah memahami QS. An-Nas adalah ....",
+        options: ["Takut berlebihan pada setan", "Hanya berlindung dan bergantung kepada Allah", "Sombong merasa hebat sendiri", "Malas beribadah"],
+        ans: 1,
+        exp: "Implementasi QS. An-Nas adalah selalu bersikap tawakal dan memohon perlindungan hanya kepada Allah Swt[cite: 1, 8]."
+      },
+      // 5 Isian Singkat
+      {
+        type: "input",
+        q: "11. Surah An-Nas termasuk golongan surah Makkiyah karena diturunkan di kota .....",
+        ans: ["makkah", "mekkah"],
+        exp: "Surah An-Nas diturunkan di kota Makkah sebelum Nabi hijrah[cite: 1, 8]."
+      },
+      {
+        type: "input",
+        q: "12. 'Raja manusia' adalah arti dari lafal .....",
+        ans: ["malikin naas", "malikin-naas", "malikinnas"],
+        exp: "Ayat ke-2: Malikin-naas artinya Raja manusia[cite: 1, 8]."
+      },
+      {
+        type: "input",
+        q: "13. Huruf Ba (ب) jika diberi tanda harakat dhommah ( ُ ) berbunyi .....",
+        ans: ["bu"],
+        exp: "Harakat dhommah menghasilkan bunyi vokal 'U' (Ba + dhommah = Bu)[cite: 1, 8]."
+      },
+      {
+        type: "input",
+        q: "14. Surah An-Nas dan Surah Al-Falaq sering disebut surah perlindungan atau Al-.....",
+        ans: ["mu'awwidzatain", "muawwidzatain"],
+        exp: "Dua surah perlindungan disebut Al-Mu'awwidzatain[cite: 1, 8]."
+      },
+      {
+        type: "input",
+        q: "15. Sebelum membaca Al-Qur'an kita membaca ta'awudz untuk memohon perlindungan dari godaan .....",
+        ans: ["setan", "iblis", "setan yang terkutuk"],
+        exp: "Ta'awudz (A'udzubillahi minasy-syaithonir rojim) untuk memohon perlindungan dari godaan setan[cite: 1, 8]."
+      },
+      // 5 Uraian
+      {
+        type: "input",
+        q: "16. (Uraian) Tuliskan bunyi ayat pertama Surah An-Nas!",
+        ans: ["qul a'udzu birabbin naas", "qul a'uudzu birabbin-naas", "qul audzu birabbinnas"],
+        exp: "Ayat 1: 'Qul a'uudzu birabbin-naas' (Katakanlah: Aku berlindung kepada Tuhannya manusia)[cite: 1, 8]."
+      },
+      {
+        type: "input",
+        q: "17. (Uraian) Sebutkan pesan pokok yang terkandung dalam QS. An-Nas!",
+        ans: ["perintah berlindung hanya kepada allah", "hanya memohon perlindungan kepada allah", "berlindung kepada allah dari godaan setan"],
+        exp: "Pesan pokok: Perintah untuk selalu memohon perlindungan kepada Allah dari bisikan jahat jin dan manusia[cite: 1, 8]."
+      },
+      {
+        type: "input",
+        q: "18. (Uraian) Mengapa kita harus membaca Al-Qur'an secara tartil?",
+        ans: ["agar bacaan benar dan tartil", "supaya sesuai tajwid dan makhraj", "agar fasih dan benar tajwidnya"],
+        exp: "Agar bacaan benar, fasih, sesuai makhraj dan tajwid, serta mudah diresapi maknanya[cite: 1, 8]."
+      },
+      {
+        type: "input",
+        q: "19. (Uraian) Sebutkan 3 huruf hijaiyah yang tidak dapat menyambung huruf setelahnya!",
+        ans: ["alif, dal, dzal", "alif, ra, zai", "alif, dal, wawu", "alif, dal, dzal, ra, zai, wawu"],
+        exp: "Huruf yang tidak bisa menyambung ke kiri: Alif (ا), Dal (د), Dzal (ذ), Ra (ر), Zai (ز), Wawu (و)[cite: 1, 8]."
+      },
+      {
+        type: "input",
+        q: "20. (Uraian) Dari bisikan jahat siapakah kita memohon perlindungan dalam QS. An-Nas?",
+        ans: ["jin dan manusia", "bangsa jin dan manusia", "setan jin dan manusia"],
+        exp: "Dari bisikan jahat yang bersembunyi dalam dada, baik dari golongan jin maupun manusia[cite: 1, 8]."
       }
     ];
 
-    const dataShevaBaca2 = [
+    const dataPutriPAI2 = [
+      // 10 Pilihan Ganda
       {
-        type: "mcq",
-        visual: "👩‍🍳 🍞 🥐",
-        q: "Bacalah kalimat pendek ini:\n'Ibu beli roti'\nApa yang dibeli oleh Ibu?",
-        options: ["Beli roti", "Beli baju", "Beli topi"],
-        ans: 0,
-        exp: "Ibu membeli ROTI lezat! 🍞"
+        q: "1. Asmaulhusna memiliki arti ....",
+        options: ["Nama-nama nabi yang mulia", "Nama-nama Allah Swt. yang indah dan baik", "Nama-nama malaikat Allah", "Nama-nama kitab suci"],
+        ans: 1,
+        exp: "Asmaulhusna adalah nama-nama Allah Swt. yang agung, baik, dan indah[cite: 1, 8]."
       },
       {
-        type: "mcq",
-        visual: "🐱 🏃‍♂️ 💨",
-        q: "Bacalah kalimat pendek ini:\n'Kucing lari cepat'\nHewan apa yang sedang lari?",
-        options: ["Kucing", "Kelinci", "Kambing"],
+        q: "2. Allah Swt. senantiasa memelihara dan menjaga seluruh alam semesta. Ini adalah bukti bahwa Allah memiliki sifat ....",
+        options: ["al-Hafiz", "al-Wali", "al-'Alim", "al-Khabir"],
         ans: 0,
-        exp: "KUCING yang lari cepat! 🐱"
+        exp: "Al-Hafiz (الْحَفِيظُ) artinya Maha Memelihara / Menjaga[cite: 1, 8]."
       },
       {
-        type: "mcq",
-        visual: "🚲 👧",
-        q: "Bacalah kalimat ini:\n'Sheva suka naik sepeda'\nSheva suka naik apa ya?",
-        options: ["Sepeda", "Mobil", "Becak"],
-        ans: 0,
-        exp: "Sheva suka naik SEPEDA gowes! 🚲"
+        q: "3. Asmaulhusna 'al-Wali' memiliki arti bahwa Allah Swt. Maha ....",
+        options: ["Mengetahui", "Melindungi / Menolong", "Pencipta", "Mendengar"],
+        ans: 1,
+        exp: "Al-Wali (الْوَلِيُّ) artinya Maha Melindungi atau Maha Menolong hamba-Nya[cite: 1, 8]."
       },
       {
-        type: "mcq",
-        visual: "🍎 😋",
-        q: "Bacalah kalimat ini:\n'Apel merah manis'\nBagaimana rasa buah apel?",
-        options: ["Manis", "Pahit", "Asin"],
-        ans: 0,
-        exp: "Rasa buah apel merah adalah MANIS! 🍎"
+        q: "4. Allah mengetahui segala sesuatu yang tampak maupun yang tersembunyi di alam semesta. Ini adalah arti dari sifat ....",
+        options: ["al-Khabir", "al-Hafiz", "al-'Alim", "al-Wali"],
+        ans: 2,
+        exp: "Al-'Alim (الْعَلِيمُ) artinya Maha Mengetahui segala sesuatu[cite: 1, 8]."
       },
       {
-        type: "mcq",
-        visual: "⭐ 🌙",
-        q: "Bacalah kalimat ini:\n'Bintang bersinar di malam hari'\nKapan bintang bersinar?",
-        options: ["Malam hari", "Siang hari", "Pagi hari"],
+        q: "5. Asmaulhusna 'al-Khabir' artinya Allah Maha ....",
+        options: ["Teliti / Waspada / Maha Mengenal hal tersembunyi", "Mendengar suara bisikan", "Merajai hari kiamat", "Maha Kuasa"],
         ans: 0,
-        exp: "Bintang bersinar di MALAM HARI! ⭐"
+        exp: "Al-Khabir (الْخَبِيرُ) artinya Maha Teliti / Maha Waspada / Maha Mengetahui hingga perkara tersembunyi[cite: 1, 8]."
       },
       {
-        type: "mcq",
-        visual: "🥛 🧒",
-        q: "Bacalah kalimat ini:\n'Adik minum susu putih'\nApa yang diminum adik?",
-        options: ["Susu putih", "Air sirup", "Kopi hangat"],
-        ans: 0,
-        exp: "Adik minum SUSU PUTIH sehat! 🥛"
+        q: "6. Sikap seorang siswa yang meneladani asmaulhusna 'al-'Alim' di sekolah tercermin pada ....",
+        options: ["Malas mengerjakan PR", "Semangat belajar dan rajin menuntut ilmu", "Sombong merasa paling pintar", "Suka menyontek teman"],
+        ans: 1,
+        exp: "Meneladani al-'Alim diwujudkan dengan rajin belajar, membaca, dan mencari ilmu yang bermanfaat[cite: 1, 8]."
       },
       {
-        type: "mcq",
-        visual: "🌞 🌅",
-        q: "Bacalah kalimat ini:\n'Matahari terbit di pagi hari'\nApa yang terbit di pagi hari?",
-        options: ["Matahari", "Bulan", "Bintang"],
-        ans: 0,
-        exp: "MATAHARI bersinar cerah di pagi hari! 🌞"
+        q: "7. Merawat buku pelajaran dan menjaga hafalan Al-Qur'an dengan tekun adalah bentuk pengamalan asmaulhusna ....",
+        options: ["al-Wali", "al-Khabir", "al-Hafiz", "al-Quddus"],
+        ans: 2,
+        exp: "Menjaga dan merawat amanah adalah cerminan dari meneladani asmaulhusna al-Hafiz (Maha Memelihara)[cite: 1, 8]."
       },
       {
-        type: "mcq",
-        visual: "🌸 🌷",
-        q: "Bacalah kalimat ini:\n'Bunga mawar harum sekali'\nBunga apa yang baunya harum?",
-        options: ["Bunga mawar", "Bunga plastik", "Pohon mangga"],
+        q: "8. Mengerjakan tugas sekolah dengan teliti, cermat, dan berhati-hati merupakan bentuk meneladani sifat ....",
+        options: ["al-Khabir", "al-Hafiz", "al-Malik", "al-Wali"],
         ans: 0,
-        exp: "BUNGA MAWAR harum sekali! 🌸"
+        exp: "Sikap cermat dan teliti meneladani sifat al-Khabir (Maha Teliti)[cite: 1, 8]."
       },
       {
-        type: "mcq",
-        visual: "🐟 🏊‍♂️",
-        q: "Bacalah kalimat ini:\n'Ikan mas berenang di kolam'\nDi mana ikan berenang?",
-        options: ["Di kolam", "Di pohon", "Di kasur"],
+        q: "9. Menyerahkan segala hasil usaha dan berserah diri kepada Allah setelah berikhtiar sungguh-sungguh dinamakan ....",
+        options: ["Tawakal", "Takabur", "Riya", "Kufur"],
         ans: 0,
-        exp: "Ikan berenang di dalam AIR KOLAM! 🐟"
+        exp: "Tawakal adalah sikap berserah diri atas perlindungan Allah setelah berusaha maksimal[cite: 1, 8]."
       },
       {
-        type: "mcq",
-        visual: "📚 🎒",
-        q: "Bacalah kalimat ini:\n'Budi rajin baca buku'\nAnak yang pintar selalu rajin baca apa?",
-        options: ["Buku", "Sepatu", "Baju"],
-        ans: 0,
-        exp: "Rajin baca BUKU bikin kita pintar! 📚"
+        q: "10. Karya seni tulisan indah huruf Arab yang memuat lafal asmaulhusna disebut ....",
+        options: ["Komik", "Kaligrafi", "Sketsa", "Lukisan dinding"],
+        ans: 1,
+        exp: "Seni menulis indah ayat Al-Qur'an atau Asmaulhusna disebut kaligrafi Islam[cite: 1, 8]."
+      },
+      // 5 Isian Singkat
+      {
+        type: "input",
+        q: "11. Jumlah nama-nama indah Allah (Asmaulhusna) ada ..... nama.",
+        ans: ["99", "sembilan puluh sembilan"],
+        exp: "Asmaulhusna Allah berjumlah 99 nama[cite: 1, 8]."
+      },
+      {
+        type: "input",
+        q: "12. Lafal al-Hafiz (الْحَفِيظُ) memiliki arti Yang Maha .....",
+        ans: ["memelihara", "menjaga", "maha memelihara", "maha menjaga"],
+        exp: "Al-Hafiz artinya Maha Memelihara atau Maha Menjaga[cite: 1, 8]."
+      },
+      {
+        type: "input",
+        q: "13. Menolong teman yang sedang kesusahan dan melindungi adik adalah bentuk meneladani asmaulhusna .....",
+        ans: ["al-wali", "al wali"],
+        exp: "Melindungi dan menolong sesama meneladani sifat al-Wali (Maha Melindungi)[cite: 1, 8]."
+      },
+      {
+        type: "input",
+        q: "14. Tidak berbuat curang saat ujian karena yakin Allah Maha Mengetahui adalah bukti meneladani sifat .....",
+        ans: ["al-'alim", "al alim", "al-alim"],
+        exp: "Keyakinan bahwa Allah tahu segalanya bersumber dari sifat al-'Alim[cite: 1, 8]."
+      },
+      {
+        type: "input",
+        q: "15. Sikap cermat, waspada, dan tidak ceroboh saat belajar menunjukkan pengamalan asmaulhusna .....",
+        ans: ["al-khabir", "al khabir", "al-khabiir"],
+        exp: "Sikap teliti dan cermat meneladani asmaulhusna al-Khabir[cite: 1, 8]."
+      },
+      // 5 Uraian
+      {
+        type: "input",
+        q: "16. (Uraian) Jelaskan arti dari asmaulhusna al-Hafiz!",
+        ans: ["maha memelihara", "allah maha memelihara dan menjaga", "maha menjaga"],
+        exp: "Al-Hafiz artinya Allah Maha Memelihara dan Menjaga seluruh makhluk ciptaan-Nya[cite: 1, 8]."
+      },
+      {
+        type: "input",
+        q: "17. (Uraian) Apa perbedaan makna antara sifat Allah al-'Alim dengan al-Khabir?",
+        ans: ["al-alim maha mengetahui dan al-khabir maha teliti", "al alim maha mengetahui al khabir maha teliti", "mengetahui dan teliti"],
+        exp: "Al-'Alim artinya Maha Mengetahui segala sesuatu secara luas; sedangkan Al-Khabir artinya Maha Teliti hingga ke bagian terkecil/tersembunyi[cite: 1, 8]."
+      },
+      {
+        type: "input",
+        q: "18. (Uraian) Sebutkan contoh sikap seorang siswa yang meneladani asmaulhusna al-Wali di sekolah!",
+        ans: ["menolong teman dan melindungi kawan", "menolong teman yang kesusahan", "membantu kawan yang terjatuh"],
+        exp: "Contoh: Menolong teman yang terjatuh, membela teman yang dizalimi, dan bersikap peduli[cite: 1, 8]."
+      },
+      {
+        type: "input",
+        q: "19. (Uraian) Bagaimana cara adik meneladani sifat al-'Alim dalam kehidupan sehari-hari?",
+        ans: ["rajin belajar dan membaca buku", "semangat menuntut ilmu", "giat belajar"],
+        exp: "Dengan rajin belajar, giat membaca buku, dan selalu mencari ilmu kebaikan[cite: 1, 8]."
+      },
+      {
+        type: "input",
+        q: "20. (Uraian) Mengapa kita tidak boleh sombong atas kepandaian yang kita miliki?",
+        ans: ["karena ilmu adalah titipan allah", "karena semua ilmu berasal dari allah", "ilmu titipan allah"],
+        exp: "Karena ilmu manusia sangat sedikit dan semuanya adalah titipan dari Allah Yang Maha Mengetahui[cite: 1, 8]."
       }
     ];
 
-    // =========================================================================
-    // DATA KAKAK PUTRI - BAHASA INDONESIA KELAS 2 (KURIKULUM MERDEKA: 3 PAKET @ 20 SOAL)
-    // =========================================================================
+    // ===============================================
+    // DATA SEBELUMNYA (BAHASA INDONESIA, MATH, ENGLISH)
+    // ===============================================
     const dataPutriIndo1 = [
-      {
-        q: "1. Orang yang sedang merasa senang biasanya menunjukkan mimik wajah berupa ....",
-        options: ["Cemberut", "Tersenyum ceria", "Menangis keras", "Mata melotot"],
-        ans: 1,
-        exp: "Orang yang merasa senang biasanya tersenyum manis dan wajahnya tampak berseri-seri[cite: 4]."
-      },
-      {
-        q: "2. Suara petasan yang menggelegar tiba-tiba dapat membuat kita merasa ....",
-        options: ["Bangga", "Kaget / Terkejut", "Malu", "Lega"],
-        ans: 1,
-        exp: "Suara keras yang mengejutkan membuat kita merasa kaget atau terkejut[cite: 4]."
-      },
-      {
-        passage: "Sampai Jumpa\nSaat berpisah telah tiba\nAku harus pindah ke Kota Jakarta\nTiga tahun kita lewati bersama\nDalam tangis dan tawa\nSampai jumpa lagi, kawanku\nAku akan selalu mengingatmu",
-        q: "3. Berdasarkan puisi 'Sampai Jumpa' di atas, ke kota manakah tokoh aku akan pindah?[cite: 4]",
-        options: ["Kota Surabaya", "Kota Bandung", "Kota Jakarta", "Kota Medan"],
-        ans: 2,
-        exp: "Pada baris kedua puisi tertulis: 'Aku harus pindah ke Kota Jakarta'[cite: 4]."
-      },
-      {
-        passage: "Sampai Jumpa\nSaat berpisah telah tiba\nAku harus pindah ke Kota Jakarta\nTiga tahun kita lewati bersama\nDalam tangis dan tawa\nSampai jumpa lagi, kawanku\nAku akan selalu mengingatmu",
-        q: "4. Kepada siapakah puisi 'Sampai Jumpa' tersebut ditujukan?[cite: 4]",
-        options: ["Kepada Guru", "Kepada Kawan / Sahabat", "Kepada Dokter", "Kepada Penjual buku"],
-        ans: 1,
-        exp: "Puisi ditujukan kepada kawannya ('Sampai jumpa lagi, kawanku')[cite: 4]."
-      },
-      {
-        passage: "Sampai Jumpa\nSaat berpisah telah tiba\nAku harus pindah ke Kota Jakarta\nTiga tahun kita lewati bersama\nDalam tangis dan tawa\nSampai jumpa lagi, kawanku\nAku akan selalu mengingatmu",
-        q: "5. Berapa lama tokoh aku telah melewati kebersamaan bersama kawannya?[cite: 4]",
-        options: ["Satu tahun", "Dua tahun", "Tiga tahun", "Empat tahun"],
-        ans: 2,
-        exp: "Tertulis pada puisi: 'Tiga tahun kita lewati bersama'[cite: 4]."
-      },
-      {
-        q: "6. Perasaan yang dialami seseorang saat berhasil memenangkan perlombaan dan dipuji guru adalah ....",
-        options: ["Takut", "Bangga dan senang", "Marah", "Sedih"],
-        ans: 1,
-        exp: "Meraih kemenangan membuat kita merasa bangga dan senang[cite: 4]."
-      },
-      {
-        q: "7. Arti kata 'pindah' dalam kalimat 'Keluarga Adi pindah ke Jakarta' adalah ....[cite: 4]",
-        options: ["Beralih ke tempat lain", "Tidur di kasur", "Berjalan-jalan santai", "Membeli barang baru"],
-        ans: 0,
-        exp: "Pindah berarti beralih atau bertukar tempat tinggal ke lokasi yang baru[cite: 4]."
-      },
-      {
-        q: "8. Ketika kita berpisah dengan teman akrab di sekolah, perasaan yang biasanya kita rasakan adalah ....",
-        options: ["Sedih", "Marah sekali", "Kaget", "Malu"],
-        ans: 0,
-        exp: "Berpisah dengan sahabat karib membuat hati kita merasa sedih dan rindu[cite: 4]."
-      },
-      {
-        q: "9. Di bawah ini yang BUKAN merupakan contoh nama perasaan adalah ....",
-        options: ["Senang", "Bangga", "Bersepeda", "Takut"],
-        ans: 2,
-        exp: "Bersepeda adalah nama kegiatan/aktivitas fisik, bukan nama perasaan[cite: 4]."
-      },
-      {
-        q: "10. Mimik wajah dengan alis bertaut, bibir cemberut, dan mata melotot biasanya menunjukkan perasaan ....",
-        options: ["Marah", "Senang", "Lega", "Bangga"],
-        ans: 0,
-        exp: "Alis bertaut dan mata melotot adalah ekspresi mimik wajah saat sedang marah[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "11. Lengkapilah kalimat berikut:\nHari ini keluarga Adi ..... ke Kota Jakarta.[cite: 4]",
-        ans: ["pindah"],
-        exp: "Kata yang tepat sesuai kosakata Bab 1 adalah 'pindah'[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "12. Lengkapilah kalimat berikut:\nKiki dan Kaka ..... di depan gerbang sekolah sebelum pulang ke rumah masing-masing.[cite: 4]",
-        ans: ["berpisah"],
-        exp: "Kosakata yang tepat adalah 'berpisah'[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "13. Raut atau ekspresi muka yang menunjukkan perasaan seseorang disebut .....",
-        ans: ["mimik", "mimik wajah"],
-        exp: "Ekspresi wajah yang memperlihatkan emosi disebut mimik wajah[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "14. Saat merasa takut, jantung kita biasanya berdegup kencang dan tubuh terasa .....",
-        ans: ["gemetar", "dingin", "lemas"],
-        exp: "Rasa takut membuat tubuh gemetar atau dingin[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "15. Tokoh dalam buku cerita yang harus berobat ke rumah sakit tetapi merasa takut bernama .....[cite: 4]",
-        ans: ["ira"],
-        exp: "Sesuai Jurnal Membaca di buku: buku berjudul 'Ira Tidak Takut'[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "16. (Uraian) Sebutkan 4 contoh nama perasaan yang pernah dialami manusia!",
-        ans: ["senang, sedih, marah, takut", "senang, marah, sedih, takut", "senang, sedih, takut, bangga"],
-        exp: "Contoh nama-nama perasaan: senang, sedih, marah, takut, bangga, malu, kaget, dan lega[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "17. (Uraian) Ceritakan apa yang membuatmu merasa sangat senang di sekolah!",
-        ans: ["bermain bersama teman", "mendapat nilai bagus", "belajar bersama"],
-        exp: "Contoh penyebab senang: bermain bersama sahabat, belajar hal baru, atau mendapat nilai bagus[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "18. (Uraian) Menurut puisi 'Sampai Jumpa', apa yang akan selalu dilakukan tokoh aku setelah pindah ke Jakarta?[cite: 4]",
-        ans: ["selalu mengingat kawannya", "mengingat kawannya", "selalu mengingatmu"],
-        exp: "Pada baris terakhir puisi tertulis: 'Aku akan selalu mengingatmu'[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "19. (Uraian) Apa yang sebaiknya kamu lakukan jika melihat teman sekelasmu menangis karena sedih?",
-        ans: ["menghiburnya", "menemani dan menghibur", "mengajak bermain"],
-        exp: "Saat teman sedih, kita sebaiknya menemani, mendengarkan ceritanya, dan menghiburnya agar tersenyum kembali[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "20. (Uraian) Mengapa tokoh Ira dalam cerita merasa takut saat diajak ke rumah sakit?[cite: 4]",
-        ans: ["karena akan berobat", "karena takut disuntik/berobat", "akan berobat"],
-        exp: "Ira merasa takut karena ia harus berobat dan memeriksakan kesehatannya ke dokter di rumah sakit[cite: 4]."
-      }
+      { q: "1. Orang yang sedang merasa senang biasanya menunjukkan mimik wajah berupa ....", options: ["Cemberut", "Tersenyum ceria", "Menangis keras", "Mata melotot"], ans: 1, exp: "Orang senang biasanya tersenyum manis dan wajah berseri-seri[cite: 4]." },
+      { q: "2. Suara petasan yang menggelegar tiba-tiba dapat membuat kita merasa ....", options: ["Bangga", "Kaget / Terkejut", "Malu", "Lega"], ans: 1, exp: "Suara keras mendadak membuat kaget[cite: 4]." },
+      { passage: "Sampai Jumpa\nSaat berpisah telah tiba\nAku harus pindah ke Kota Jakarta\nTiga tahun kita lewati bersama\nDalam tangis dan tawa\nSampai jumpa lagi, kawanku\nAku akan selalu mengingatmu", q: "3. Berdasarkan puisi 'Sampai Jumpa', ke kota manakah tokoh aku akan pindah?[cite: 4]", options: ["Kota Surabaya", "Kota Bandung", "Kota Jakarta", "Kota Medan"], ans: 2, exp: "Tertulis: 'Aku harus pindah ke Kota Jakarta'[cite: 4]." },
+      { passage: "Sampai Jumpa\nSaat berpisah telah tiba\nAku harus pindah ke Kota Jakarta\nTiga tahun kita lewati bersama\nDalam tangis dan tawa\nSampai jumpa lagi, kawanku\nAku akan selalu mengingatmu", q: "4. Kepada siapakah puisi tersebut ditujukan?[cite: 4]", options: ["Kepada Guru", "Kepada Kawan / Sahabat", "Kepada Dokter", "Kepada Penjual buku"], ans: 1, exp: "Ditujukan: 'Sampai jumpa lagi, kawanku'[cite: 4]." },
+      { passage: "Sampai Jumpa\nSaat berpisah telah tiba\nAku harus pindah ke Kota Jakarta\nTiga tahun kita lewati bersama\nDalam tangis dan tawa\nSampai jumpa lagi, kawanku\nAku akan selalu mengingatmu", q: "5. Berapa lama tokoh aku telah melewati kebersamaan bersama kawannya?[cite: 4]", options: ["Satu tahun", "Dua tahun", "Tiga tahun", "Empat tahun"], ans: 2, exp: "Tertulis: 'Tiga tahun kita lewati bersama'[cite: 4]." },
+      { q: "6. Perasaan saat berhasil memenangkan perlombaan dan dipuji guru adalah ....", options: ["Takut", "Bangga dan senang", "Marah", "Sedih"], ans: 1, exp: "Meraih prestasi membuat bangga dan senang[cite: 4]." },
+      { q: "7. Arti kata 'pindah' dalam kalimat 'Keluarga Adi pindah ke Jakarta' adalah ....[cite: 4]", options: ["Beralih ke tempat lain", "Tidur di kasur", "Berjalan santai", "Membeli barang"], ans: 0, exp: "Pindah berarti beralih tempat tinggal[cite: 4]." },
+      { q: "8. Ketika berpisah dengan teman akrab di sekolah, perasaan kita adalah ....", options: ["Sedih", "Marah sekali", "Kaget", "Malu"], ans: 0, exp: "Berpisah dengan sahabat membuat sedih[cite: 4]." },
+      { q: "9. Yang BUKAN merupakan contoh nama perasaan adalah ....", options: ["Senang", "Bangga", "Bersepeda", "Takut"], ans: 2, exp: "Bersepeda adalah aktivitas fisik[cite: 4]." },
+      { q: "10. Mimik wajah dengan alis bertaut dan mata melotot menunjukkan perasaan ....", options: ["Marah", "Senang", "Lega", "Bangga"], ans: 0, exp: "Alis bertaut dan melotot adalah mimik marah[cite: 4]." },
+      { type: "input", q: "11. Hari ini keluarga Adi ..... ke Kota Jakarta.[cite: 4]", ans: ["pindah"], exp: "Kosakata tepat: pindah[cite: 4]." },
+      { type: "input", q: "12. Kiki dan Kaka ..... di depan gerbang sekolah.[cite: 4]", ans: ["berpisah"], exp: "Kosakata: berpisah[cite: 4]." },
+      { type: "input", q: "13. Raut atau ekspresi muka yang menunjukkan perasaan disebut .....", ans: ["mimik", "mimik wajah"], exp: "Ekspresi emosi di wajah disebut mimik[cite: 4]." },
+      { type: "input", q: "14. Saat merasa takut tubuh terasa .....", ans: ["gemetar", "dingin", "lemas"], exp: "Rasa takut membuat tubuh gemetar[cite: 4]." },
+      { type: "input", q: "15. Tokoh cerita yang harus berobat ke rumah sakit tetapi takut bernama .....[cite: 4]", ans: ["ira"], exp: "Buku: 'Ira Tidak Takut'[cite: 4]." },
+      { type: "input", q: "16. (Uraian) Sebutkan 4 contoh nama perasaan!", ans: ["senang, sedih, marah, takut", "senang, marah, sedih, takut"], exp: "Senang, sedih, marah, takut, lega, bangga[cite: 4]." },
+      { type: "input", q: "17. (Uraian) Ceritakan apa yang membuatmu merasa sangat senang di sekolah!", ans: ["bermain bersama teman", "mendapat nilai bagus"], exp: "Bermain bersama sahabat / dapat nilai bagus[cite: 4]." },
+      { type: "input", q: "18. (Uraian) Apa yang akan selalu dilakukan tokoh aku setelah pindah ke Jakarta?[cite: 4]", ans: ["selalu mengingat kawannya", "mengingat kawannya"], exp: "'Aku akan selalu mengingatmu'[cite: 4]." },
+      { type: "input", q: "19. (Uraian) Apa yang sebaiknya dilakukan jika melihat teman menangis karena sedih?", ans: ["menghiburnya", "menemani dan menghibur"], exp: "Menemani dan menghibur teman[cite: 4]." },
+      { type: "input", q: "20. (Uraian) Mengapa Ira merasa takut saat diajak ke rumah sakit?[cite: 4]", ans: ["karena akan berobat", "karena takut berobat"], exp: "Karena harus berobat ke dokter[cite: 4]." }
     ];
 
     const dataPutriIndo2 = [
-      {
-        q: "1. Mengapa Mimi dan adiknya bertengkar dalam cerita 'Mimi Marah'?[cite: 4]",
-        options: ["Berebut makanan kue", "Berebut boneka hingga rusak", "Berebut sepeda baru", "Berebut buku gambar"],
-        ans: 1,
-        exp: "Mimi dan adiknya sama-sama ingin bermain boneka dan tidak ada yang mau mengalah hingga bonekanya rusak[cite: 4]."
-      },
-      {
-        q: "2. Bagaimana cara Mimi meluapkan rasa marahnya saat masuk ke kamar?[cite: 4]",
-        options: ["Membanting pintu lalu tidur", "Berteriak lalu menangis", "Menyanyi lagu keras-keras", "Membuang mainan"],
-        ans: 1,
-        exp: "Di kamarnya, Mimi berteriak lalu menangis hingga perasaannya merasa lebih tenang[cite: 4]."
-      },
-      {
-        q: "3. Apa yang dilakukan adik Mimi saat menunggu di luar kamar?[cite: 4]",
-        options: ["Membeli boneka baru", "Memperbaiki boneka yang rusak", "Mengunci pintu rumah", "Pergi bermain sendiri"],
-        ans: 1,
-        exp: "Adik Mimi menunggu di luar kamar dan sudah memperbaiki boneka yang sempat rusak[cite: 4]."
-      },
-      {
-        q: "4. Setelah saling memaafkan, kegiatan apa yang dilakukan Mimi dan adiknya bersama-sama?[cite: 4]",
-        options: ["Bersepeda bersama", "Menonton televisi", "Bermain layang-layang", "Membeli es krim"],
-        ans: 0,
-        exp: "Setelah berbaikan dan saling meminta maaf, mereka bersepeda bersama dengan ceria[cite: 4]."
-      },
-      {
-        q: "5. Huruf kapital selalu digunakan pada ....[cite: 4]",
-        options: ["Tengah kata benda", "Huruf pertama awal kalimat dan nama orang", "Semua huruf di akhir kalimat", "Hanya huruf vokal"],
-        ans: 1,
-        exp: "Huruf kapital digunakan pada awal kalimat dan huruf pertama unsur nama orang[cite: 4]."
-      },
-      {
-        q: "6. Kalimat pernyataan selalu diakhiri dengan tanda baca ....[cite: 4]",
-        options: ["Tanda tanya (?)", "Tanda seru (!)", "Tanda titik (.)", "Tanda koma (,)"],
-        ans: 2,
-        exp: "Kalimat berita/pernyataan diakhiri dengan tanda titik (.)[cite: 4]."
-      },
-      {
-        q: "7. Dalam cerita 'Kiki dan Cici', apa yang membuat Kiki merasa takut?[cite: 4]",
-        options: ["Balon warna-warni", "Tikus", "Kucing besar", "Suara petir"],
-        ans: 1,
-        exp: "Kiki adalah seekor kucing yang takut pada tikus[cite: 4]."
-      },
-      {
-        q: "8. Dalam cerita 'Kiki dan Cici', apa yang membuat Cici yang usil berteriak ketakutan saat pesta ulang tahun?[cite: 4]",
-        options: ["Kue ulang tahun", "Topi pesta", "Balon", "Lilin"],
-        ans: 2,
-        exp: "Cici mengeong keras dan takut saat melihat ruangan penuh dekorasi balon[cite: 4]."
-      },
-      {
-        q: "9. Arti kata 'usil' pada sifat tokoh Cici adalah ....[cite: 4]",
-        options: ["Suka menolong teman", "Suka mengganggu orang lain", "Rajin belajar", "Pendiam dan pemalu"],
-        ans: 1,
-        exp: "Usil berarti suka usik atau suka mengganggu teman/orang lain[cite: 4]."
-      },
-      {
-        q: "10. Penulisan huruf kapital dan tanda titik yang PALING BENAR di bawah ini adalah ....[cite: 4]",
-        options: ["mimi tidak lagi marah", "Mimi tidak lagi marah.", "mimi Tidak Lagi Marah.", "Mimi tidak lagi marah?"],
-        ans: 1,
-        exp: "Diawali huruf kapital 'Mimi' dan diakhiri tanda titik (.)[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "11. Sikap mau menahan diri dan mendahulukan orang lain saat bermain bersama disebut .....[cite: 4]",
-        ans: ["mengalah"],
-        exp: "Kosakata yang tepat adalah 'mengalah'[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "12. Perasaan tenang dan bebas dari rasa gelisah atau marah disebut rasa .....[cite: 4]",
-        ans: ["lega"],
-        exp: "Perasaan bebas dari beban atau amarah disebut 'lega'[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "13. Ibu membantu Vero ..... buku cerita yang sobek.[cite: 4]",
-        ans: ["memperbaiki"],
-        exp: "Kosakata yang tepat untuk membetulkan barang rusak adalah 'memperbaiki'[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "14. Hiasan ruangan yang dipasang untuk mempercantik pesta ulang tahun disebut .....[cite: 4]",
-        ans: ["dekorasi"],
-        exp: "Hiasan ruangan pesta disebut 'dekorasi'[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "15. Perbaiki penulisan kalimat: 'riri anak yang usil' -> Huruf pertama Riri harus ditulis dengan huruf .....[cite: 4]",
-        ans: ["kapital", "besar", "r kapital"],
-        exp: "Awal kalimat dan nama orang harus memakai huruf kapital[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "16. (Uraian) Mengapa kita harus mau saling mengalah saat bermain dengan saudara atau teman?",
-        ans: ["agar tidak bertengkar", "supaya rukun", "supaya tidak berantem"],
-        exp: "Saling mengalah penting agar permainan tetap menyenangkan, rukun, dan tidak terjadi pertengkaran[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "17. (Uraian) Tuliskan kembali kalimat berikut dengan huruf kapital dan tanda titik yang tepat: 'boneka penguin rusak'[cite: 4]",
-        ans: ["Boneka penguin rusak.", "Boneka penguin rusak"],
-        exp: "Bentuk baku: 'Boneka penguin rusak.' (B huruf kapital, diakhiri titik)[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "18. (Uraian) Sebutkan 2 cara yang sehat untuk menenangkan diri saat merasa marah![cite: 4]",
-        ans: ["menarik napas dalam-dalam dan menyendiri", "tarik napas dan bercerita ke orang tua", "menarik napas dalam-dalam"],
-        exp: "Cara sehat menenangkan diri: menarik napas dalam-dalam, menyendiri sejenak, mendengarkan musik, melukis, atau bercerita ke orang tua[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "19. (Uraian) Tuliskan kembali kalimat berikut dengan memperbaiki huruf kapital pada nama orang: 'titu main dengan tuti'[cite: 4]",
-        ans: ["Titu main dengan Tuti.", "Titu main dengan Tuti"],
-        exp: "Nama orang 'Titu' dan 'Tuti' harus berhuruf awal kapital: 'Titu main dengan Tuti.'[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "20. (Uraian) Apa pesan yang dapat kita pelajari dari cerita kucing Kiki dan Cici?[cite: 4]",
-        ans: ["tidak boleh usil dan saling menghargai", "jangan suka mengganggu teman", "setiap orang punya rasa takut"],
-        exp: "Setiap orang punya kelemahan/rasa takut, maka kita tidak boleh bersikap usil atau suka mengganggu teman[cite: 4]."
-      }
+      { q: "1. Mengapa Mimi dan adiknya bertengkar dalam cerita 'Mimi Marah'?[cite: 4]", options: ["Berebut kue", "Berebut boneka hingga rusak", "Berebut sepeda", "Berebut buku"], ans: 1, exp: "Berebut boneka hingga rusak[cite: 4]." },
+      { q: "2. Bagaimana cara Mimi meluapkan rasa marahnya di kamar?[cite: 4]", options: ["Membanting pintu", "Berteriak lalu menangis", "Menyanyi lagu", "Membuang mainan"], ans: 1, exp: "Mimi berteriak lalu menangis[cite: 4]." },
+      { q: "3. Apa yang dilakukan adik Mimi saat menunggu di luar kamar?[cite: 4]", options: ["Membeli boneka baru", "Memperbaiki boneka yang rusak", "Mengunci pintu", "Pergi main"], ans: 1, exp: "Adik sudah memperbaiki boneka[cite: 4]." },
+      { q: "4. Setelah saling memaafkan, kegiatan apa yang dilakukan Mimi dan adiknya?[cite: 4]", options: ["Bersepeda bersama", "Menonton tv", "Main layangan", "Beli es krim"], ans: 0, exp: "Mereka bersepeda bersama[cite: 4]." },
+      { q: "5. Huruf kapital selalu digunakan pada ....[cite: 4]", options: ["Tengah kata", "Awal kalimat dan nama orang", "Akhir kalimat", "Huruf vokal saja"], ans: 1, exp: "Awal kalimat dan nama orang[cite: 4]." },
+      { q: "6. Kalimat pernyataan diakhiri tanda baca ....[cite: 4]", options: ["Tanda tanya (?)", "Tanda seru (!)", "Tanda titik (.)", "Tanda koma (,)"], ans: 2, exp: "Kalimat berita diakhiri tanda titik (.)[cite: 4]." },
+      { q: "7. Dalam cerita 'Kiki dan Cici', apa yang membuat Kiki takut?[cite: 4]", options: ["Balon", "Tikus", "Kucing besar", "Petir"], ans: 1, exp: "Kiki takut pada tikus[cite: 4]." },
+      { q: "8. Apa yang membuat Cici yang usil berteriak ketakutan saat pesta?[cite: 4]", options: ["Kue ultah", "Topi pesta", "Balon", "Lilin"], ans: 2, exp: "Cici takut pada balon[cite: 4]." },
+      { q: "9. Arti kata 'usil' pada sifat tokoh Cici adalah ....[cite: 4]", options: ["Suka menolong", "Suka mengganggu orang lain", "Rajin belajar", "Pemalu"], ans: 1, exp: "Usil artinya suka mengganggu[cite: 4]." },
+      { q: "10. Penulisan yang PALING BENAR adalah ....[cite: 4]", options: ["mimi tidak lagi marah", "Mimi tidak lagi marah.", "mimi Tidak Lagi Marah.", "Mimi tidak lagi marah?"], ans: 1, exp: "Huruf kapital di awal dan titik di akhir[cite: 4]." },
+      { type: "input", q: "11. Sikap mau menahan diri saat bermain bersama disebut .....[cite: 4]", ans: ["mengalah"], exp: "Kosakata: mengalah[cite: 4]." },
+      { type: "input", q: "12. Perasaan tenang dan bebas dari rasa marah disebut rasa .....[cite: 4]", ans: ["lega"], exp: "Kosakata: lega[cite: 4]." },
+      { type: "input", q: "13. Ibu membantu Vero ..... buku cerita yang sobek.[cite: 4]", ans: ["memperbaiki"], exp: "Kosakata: memperbaiki[cite: 4]." },
+      { type: "input", q: "14. Hiasan ruangan pesta disebut .....[cite: 4]", ans: ["dekorasi"], exp: "Kosakata: dekorasi[cite: 4]." },
+      { type: "input", q: "15. Huruf pertama nama orang harus ditulis dengan huruf .....[cite: 4]", ans: ["kapital", "besar"], exp: "Huruf kapital[cite: 4]." },
+      { type: "input", q: "16. (Uraian) Mengapa kita harus mau saling mengalah saat bermain?", ans: ["agar tidak bertengkar", "supaya rukun"], exp: "Supaya tidak bertengkar dan rukun[cite: 4]." },
+      { type: "input", q: "17. (Uraian) Tuliskan dengan kapital dan titik: 'boneka penguin rusak'[cite: 4]", ans: ["Boneka penguin rusak.", "Boneka penguin rusak"], exp: "Boneka penguin rusak.[cite: 4]" },
+      { type: "input", q: "18. (Uraian) Sebutkan 2 cara sehat menenangkan diri saat marah![cite: 4]", ans: ["menarik napas dalam-dalam dan menyendiri", "tarik napas"], exp: "Tarik napas dalam, menyendiri sejenak[cite: 4]." },
+      { type: "input", q: "19. (Uraian) Perbaiki huruf kapital nama orang: 'titu main dengan tuti'[cite: 4]", ans: ["Titu main dengan Tuti.", "Titu main dengan Tuti"], exp: "Titu main dengan Tuti.[cite: 4]" },
+      { type: "input", q: "20. (Uraian) Pesan dari cerita Kiki dan Cici?[cite: 4]", ans: ["tidak boleh usil dan saling menghargai", "jangan suka mengganggu teman"], exp: "Tidak boleh usil karena setiap orang punya rasa takut[cite: 4]." }
     ];
 
     const dataPutriIndo3 = [
-      {
-        q: "1. Terlalu lama menatap layar ponsel atau gawai dapat menyebabkan mata kita menjadi ....[cite: 4]",
-        options: ["Makin jernih", "Lelah dan perih", "Sehat dan kuat", "Bisa melihat dalam gelap"],
-        ans: 1,
-        exp: "Menatap layar gawai terlalu lama tanpa istirahat membuat mata lelah dan kering[cite: 4]."
-      },
-      {
-        q: "2. Pada 'Aturan 20-20-20', kita disarankan berhenti menatap gawai setiap ....[cite: 4]",
-        options: ["20 detik", "20 menit", "20 jam", "20 hari"],
-        ans: 1,
-        exp: "Berhentilah melihat layar gawai setiap 20 menit sekali[cite: 4]."
-      },
-      {
-        q: "3. Berapa jarak benda yang harus kita tatap saat mengistirahatkan mata sesuai aturan 20-20-20?[cite: 4]",
-        options: ["20 sentimeter", "20 kaki (sekitar 6 meter)", "20 meter", "20 kilometer"],
-        ans: 1,
-        exp: "Lihatlah benda yang berjarak sekitar 20 kaki (feet) dari posisi kita[cite: 4]."
-      },
-      {
-        q: "4. Berapa lama waktu yang dibutuhkan untuk menatap benda jauh tersebut?[cite: 4]",
-        options: ["20 detik", "20 menit", "20 jam", "1 detik"],
-        ans: 0,
-        exp: "Tataplah objek jauh tersebut selama 20 detik untuk mengistirahatkan otot mata[cite: 4]."
-      },
-      {
-        q: "5. Kata tanya yang digunakan untuk menanyakan alasan atau sebab terjadinya sesuatu adalah ....[cite: 4]",
-        options: ["Kapan", "Di mana", "Mengapa", "Siapa"],
-        ans: 2,
-        exp: "Kata tanya 'Mengapa' berfungsi menanyakan sebab atau alasan[cite: 4]."
-      },
-      {
-        q: "6. Kata tanya yang digunakan untuk menanyakan waktu terjadinya suatu peristiwa adalah ....[cite: 4]",
-        options: ["Kapan", "Siapa", "Berapa", "Apa"],
-        ans: 0,
-        exp: "'Kapan' digunakan untuk menanyakan keterangan waktu[cite: 4]."
-      },
-      {
-        q: "7. Kata tanya yang digunakan untuk menanyakan orang atau pelaku adalah ....[cite: 4]",
-        options: ["Apa", "Bagaimana", "Siapa", "Di mana"],
-        ans: 2,
-        exp: "'Siapa' digunakan untuk menanyakan orang atau pelaku perbuatan[cite: 4]."
-      },
-      {
-        q: "8. '..... kamu tinggal?'\nKata tanya yang tepat untuk melengkapi kalimat di atas adalah ....[cite: 4]",
-        options: ["Siapa", "Di mana", "Berapa", "Kapan"],
-        ans: 1,
-        exp: "Tempat tinggal ditanyakan menggunakan kata tanya 'Di mana'[cite: 4]."
-      },
-      {
-        q: "9. '..... cara membuat layang-layang?'\nKata tanya yang tepat untuk menanyakan cara/proses adalah ....[cite: 4]",
-        options: ["Bagaimana", "Berapa", "Siapa", "Apa"],
-        ans: 0,
-        exp: "'Bagaimana' digunakan untuk menanyakan cara atau proses terjadinya sesuatu[cite: 4]."
-      },
-      {
-        q: "10. Dalam cerita 'Kacamata Kadek', mengapa dokter menyarankan Kadek memakai kacamata?[cite: 4]",
-        options: ["Supaya terlihat keren", "Karena matanya mengalami gangguan/buram", "Untuk pergi ke pesta", "Sebagai hadiah ulang tahun"],
-        ans: 1,
-        exp: "Kadek memeriksakan mata ke dokter dan disarankan memakai kacamata agar penglihatannya jelas[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "11. Alat elektronik genggam seperti ponsel pintar, komputer tablet, dan laptop disebut .....[cite: 4]",
-        ans: ["gawai", "gadget"],
-        exp: "Gawai adalah padanan kata bahasa Indonesia untuk perangkat elektronik seperti smartphone/tablet[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "12. Kalimat tanya selalu diakhiri dengan tanda baca .....[cite: 4]",
-        ans: ["tanda tanya", "?", "tanya"],
-        exp: "Kalimat tanya diakhiri dengan tanda tanya (?)[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "13. '..... harga buku ceritamu?' -> Kata tanya untuk menanyakan harga atau jumlah bilangan adalah .....[cite: 4]",
-        ans: ["berapa"],
-        exp: "Kata tanya 'Berapa' digunakan untuk menanyakan jumlah, harga, atau kuantitas[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "14. '..... yang mengantarmu ke sekolah hari ini?' -> Kata tanya yang tepat adalah .....[cite: 4]",
-        ans: ["siapa"],
-        exp: "Kata tanya 'Siapa' digunakan untuk menanyakan orang yang mengantar[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "15. '..... adikmu menangis di dalam kamar?' -> Kata tanya untuk menanyakan sebab menangis adalah .....[cite: 4]",
-        ans: ["mengapa", "kenapa"],
-        exp: "Alasan menangis ditanyakan menggunakan kata 'Mengapa'[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "16. (Uraian) Sebutkan 3 contoh benda yang termasuk ke dalam jenis gawai![cite: 4]",
-        ans: ["ponsel, tablet, laptop", "hp, tablet, laptop", "smartphone, tablet, komputer"],
-        exp: "Contoh gawai: handphone (ponsel pintar), tablet, laptop, dan komputer jinjing[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "17. (Uraian) Jelaskan secara singkat apa tujuan dari melakukan 'Aturan 20-20-20'![cite: 4]",
-        ans: ["mengistirahatkan mata", "agar mata tidak lelah", "menjaga kesehatan mata"],
-        exp: "Tujuannya adalah untuk mengistirahatkan otot mata agar tidak lelah dan menjaga kesehatan penglihatan dari radiasi layar gawai[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "18. (Uraian) Buatlah 1 contoh kalimat tanya menggunakan kata 'Kapan'![cite: 4]",
-        ans: ["kapan kamu akan naik ke kelas tiga?", "kapan kita pergi ke sekolah?", "kapan kamu pulang?"],
-        exp: "Contoh kalimat tanya: 'Kapan kamu akan naik ke kelas tiga?' atau 'Kapan kamu pergi ke sekolah?'[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "19. (Uraian) Buatlah 1 contoh kalimat menggunakan kata 'gawai'![cite: 4]",
-        ans: ["saya tidak boleh main gawai terlalu lama", "ayah membeli gawai baru", "kita harus membatasi waktu memakai gawai"],
-        exp: "Contoh: 'Kita harus membatasi waktu bermain gawai agar mata tidak lelah.'[cite: 4]."
-      },
-      {
-        type: "input",
-        q: "20. (Uraian) Sebutkan 7 kata tanya yang telah kamu pelajari di buku![cite: 4]",
-        ans: ["apa, siapa, di mana, kapan, mengapa, bagaimana, berapa", "apa, siapa, dimana, kapan, mengapa, bagaimana, berapa"],
-        exp: "Tujuh kata tanya: Apa, Siapa, Di mana, Kapan, Mengapa, Bagaimana, dan Berapa[cite: 4]."
-      }
+      { q: "1. Terlalu lama menatap layar gawai menyebabkan mata menjadi ....[cite: 4]", options: ["Jernih", "Lelah dan perih", "Sehat", "Kuat"], ans: 1, exp: "Menatap gawai berlebihan membuat mata lelah[cite: 4]." },
+      { q: "2. Pada 'Aturan 20-20-20', kita berhenti menatap gawai setiap ....[cite: 4]", options: ["20 detik", "20 menit", "20 jam", "20 hari"], ans: 1, exp: "Setiap 20 menit sekali[cite: 4]." },
+      { q: "3. Berapa jarak benda yang ditatap saat istirahat mata?[cite: 4]", options: ["20 sentimeter", "20 kaki (sekitar 6 meter)", "20 meter", "20 km"], ans: 1, exp: "20 kaki (sekitar 6 meter)[cite: 4]." },
+      { q: "4. Berapa lama waktu menatap benda jauh tersebut?[cite: 4]", options: ["20 detik", "20 menit", "20 jam", "1 detik"], ans: 0, exp: "Tatap selama 20 detik[cite: 4]." },
+      { q: "5. Kata tanya untuk menanyakan alasan/sebab adalah ....[cite: 4]", options: ["Kapan", "Di mana", "Mengapa", "Siapa"], ans: 2, exp: "Kata tanya 'Mengapa'[cite: 4]." },
+      { q: "6. Kata tanya untuk menanyakan waktu adalah ....[cite: 4]", options: ["Kapan", "Siapa", "Berapa", "Apa"], ans: 0, exp: "Kata tanya 'Kapan'[cite: 4]." },
+      { q: "7. Kata tanya untuk menanyakan orang/pelaku adalah ....[cite: 4]", options: ["Apa", "Bagaimana", "Siapa", "Di mana"], ans: 2, exp: "Kata tanya 'Siapa'[cite: 4]." },
+      { q: "8. '..... kamu tinggal?' Kata tanya yang tepat adalah ....[cite: 4]", options: ["Siapa", "Di mana", "Berapa", "Kapan"], ans: 1, exp: "Di mana kamu tinggal?[cite: 4]" },
+      { q: "9. '..... cara membuat layang-layang?' Kata tanya yang tepat adalah ....[cite: 4]", options: ["Bagaimana", "Berapa", "Siapa", "Apa"], ans: 0, exp: "Bagaimana cara membuat layang-layang?[cite: 4]" },
+      { q: "10. Dalam cerita 'Kacamata Kadek', mengapa dokter menyarankan kacamata?[cite: 4]", options: ["Biar keren", "Karena matanya buram", "Untuk ke pesta", "Hadiah"], ans: 1, exp: "Karena matanya mengalami gangguan penglihatan[cite: 4]." },
+      { type: "input", q: "11. Alat elektronik seperti smartphone/tablet disebut .....[cite: 4]", ans: ["gawai", "gadget"], exp: "Gawai[cite: 4]." },
+      { type: "input", q: "12. Kalimat tanya diakhiri dengan tanda baca .....[cite: 4]", ans: ["tanda tanya", "?"], exp: "Tanda tanya (?)[cite: 4]." },
+      { type: "input", q: "13. '..... harga buku ceritamu?' Kata tanya yang tepat adalah .....[cite: 4]", ans: ["berapa"], exp: "Berapa[cite: 4]." },
+      { type: "input", q: "14. '..... yang mengantarmu ke sekolah?' Kata tanya yang tepat adalah .....[cite: 4]", ans: ["siapa"], exp: "Siapa[cite: 4]." },
+      { type: "input", q: "15. '..... adikmu menangis?' Kata tanya sebab adalah .....[cite: 4]", ans: ["mengapa", "kenapa"], exp: "Mengapa[cite: 4]." },
+      { type: "input", q: "16. (Uraian) Sebutkan 3 contoh benda jenis gawai![cite: 4]", ans: ["ponsel, tablet, laptop", "hp, tablet, laptop"], exp: "Ponsel/HP, tablet, laptop[cite: 4]." },
+      { type: "input", q: "17. (Uraian) Tujuan dari 'Aturan 20-20-20'?[cite: 4]", ans: ["mengistirahatkan mata", "agar mata tidak lelah"], exp: "Mengistirahatkan mata dari layar gawai[cite: 4]." },
+      { type: "input", q: "18. (Uraian) Buatlah 1 kalimat tanya dengan 'Kapan'![cite: 4]", ans: ["kapan kamu akan naik ke kelas tiga?", "kapan kita pergi ke sekolah?"], exp: "Kapan kamu pergi ke sekolah?[cite: 4]" },
+      { type: "input", q: "19. (Uraian) Buatlah 1 kalimat dengan kata 'gawai'![cite: 4]", ans: ["saya tidak boleh main gawai terlalu lama", "kita harus membatasi waktu memakai gawai"], exp: "Jangan menatap gawai terlalu lama[cite: 4]." },
+      { type: "input", q: "20. (Uraian) Sebutkan 7 kata tanya yang telah dipelajari![cite: 4]", ans: ["apa, siapa, di mana, kapan, mengapa, bagaimana, berapa", "apa, siapa, dimana, kapan, mengapa, bagaimana, berapa"], exp: "Apa, Siapa, Di mana, Kapan, Mengapa, Bagaimana, Berapa[cite: 4]." }
     ];
 
-    // =========================================================================
-    // DATA KAKAK ANIN - MATEMATIKA KELAS 4 (KURIKULUM MERDEKA: 3 PAKET @ 20 SOAL)
-    // =========================================================================
+    // MATH PAKET 1, 2, 3 KELAS 4
     const dataAninMath1 = [
-      {
-        q: "1. Jarak rumah Helen ke minimarket adalah 3.286 meter. Bilangan 3.286 dibaca ....",
-        options: ["Tiga ribu dua ratus enam puluh delapan", "Tiga ribu dua ratus delapan puluh enam", "Tiga ribu delapan ratus dua puluh enam", "Tiga ribu enam ratus dua puluh delapan"],
-        ans: 1,
-        exp: "3.286 = Tiga Ribu Dua Ratus Delapan Puluh Enam[cite: 3]."
-      },
-      {
-        q: "2. Tinggi puncak Mahameru di Gunung Semeru adalah 3.676 meter di atas permukaan laut. Lambang bilangan dari 'tiga ribu enam ratus tujuh puluh enam' adalah ....",
-        options: ["3.667", "3.766", "3.676", "3.776"],
-        ans: 2,
-        exp: "Tiga ribu (3), enam ratus (6), tujuh puluh (7), enam (6) = 3.676[cite: 3]."
-      },
-      {
-        q: "3. Angka 6 pada bilangan 8.463 menempati nilai tempat ....",
-        options: ["Ribuan", "Ratusan", "Puluhan", "Satuan"],
-        ans: 2,
-        exp: "Pada bilangan 8.463: 8 ribuan, 4 ratusan, 6 puluhan, dan 3 satuan[cite: 3]."
-      },
-      {
-        q: "4. Angka 6 pada bilangan 6.789 menempati nilai tempat ....",
-        options: ["Ribuan", "Ratusan", "Puluhan", "Satuan"],
-        ans: 0,
-        exp: "Angka 6 berada paling depan pada bilangan 4 angka, bernilai 6.000 (Ribuan)[cite: 3]."
-      },
-      {
-        q: "5. Bilangan 7.003 dibaca ....",
-        options: ["Tujuh ratus tiga", "Tujuh ribu tiga", "Tujuh ribu tiga puluh", "Tujuh ribu tiga ratus"],
-        ans: 1,
-        exp: "Jika angka pada ratusan dan puluhan bernilai 0, maka tidak dibaca, sehingga dibaca: Tujuh ribu tiga[cite: 3]."
-      },
-      {
-        q: "6. Bilangan 5.091 dibaca ....",
-        options: ["Lima ribu sembilan puluh satu", "Lima ribu sembilan ratus satu", "Lima puluh sembilan satu", "Lima ratus sembilan puluh satu"],
-        ans: 0,
-        exp: "5.091 dibaca: Lima ribu sembilan puluh satu (ratusan 0 tidak dibaca)[cite: 3]."
-      },
-      {
-        q: "7. Luas Pulau Bali adalah 5.780 km². Bilangan 5.780 dibaca ....",
-        options: ["Lima ribu tujuh ratus delapan", "Lima ribu tujuh ratus delapan puluh", "Lima ribu delapan ratus tujuh puluh", "Lima ribu tujuh puluh delapan"],
-        ans: 1,
-        exp: "5.780 dibaca: Lima ribu tujuh ratus delapan puluh[cite: 3]."
-      },
-      {
-        q: "8. Pada bilangan 2.150 yang tertera pada struk belanja, angka 1 menempati nilai tempat ....",
-        options: ["Ribuan", "Ratusan", "Puluhan", "Satuan"],
-        ans: 1,
-        exp: "Pada 2.150: 2 ribuan, 1 ratusan (100), 5 puluhan (50), dan 0 satuan[cite: 3]."
-      },
-      {
-        q: "9. Lambang bilangan dari 'Enam ribu dua' adalah ....",
-        options: ["6.200", "6.020", "6.002", "6.202"],
-        ans: 2,
-        exp: "Enam ribu (6), ratusan dan puluhan nol (00), satuan dua (2) = 6.002[cite: 3]."
-      },
-      {
-        q: "10. Ketinggian Puncak Jaya mencapai 4.884 mdpl. Bilangan 4.884 dibaca ....",
-        options: ["Empat ribu delapan ratus delapan puluh empat", "Empat ribu delapan ratus empat puluh delapan", "Empat ribu empat ratus delapan puluh delapan", "Empat puluh delapan delapan puluh empat"],
-        ans: 0,
-        exp: "4.884 dibaca: Empat ribu delapan ratus delapan puluh empat[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "11. Bilangan 1.206 dibaca: .....",
-        ans: ["seribu dua ratus enam", "satu ribu dua ratus enam"],
-        exp: "1.206 dibaca: Seribu dua ratus enam[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "12. Tuliskan lambang bilangan dari 'tiga ribu dua ratus lima puluh empat': .....",
-        ans: ["3.254", "3254"],
-        exp: "3 ribuan + 2 ratusan + 5 puluhan + 4 satuan = 3.254[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "13. Pada bilangan 4.675, angka 6 menempati nilai tempat: .....",
-        ans: ["ratusan", "ratus"],
-        exp: "Angka 6 pada 4.675 bernilai 600, yaitu Ratusan[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "14. Pada bilangan 1.236, angka 6 menempati nilai tempat: .....",
-        ans: ["satuan"],
-        exp: "Angka 6 berada di posisi paling belakang, yaitu Satuan[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "15. Lambang bilangan dari 'Sembilan ribu empat puluh lima' adalah: .....",
-        ans: ["9.045", "9045"],
-        exp: "9 ribuan, 0 ratusan, 4 puluhan, 5 satuan = 9.045[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "16. (Uraian) Slamet membeli makanan ringan di warung seharga Rp7.350,00. Tentukan rincian nilai tempat dari bilangan 7.350!",
-        ans: ["7 ribuan, 3 ratusan, 5 puluhan, 0 satuan", "7350", "7 ribuan 3 ratusan 5 puluhan 0 satuan"],
-        exp: "Rincian nilai tempat 7.350: Angka 7 menempati ribuan, angka 3 menempati ratusan, angka 5 menempati puluhan, dan angka 0 menempati satuan[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "17. (Uraian) Slamet memiliki uang Rp9.500,00. Bagaimanakah cara membaca bilangan 9.500 tersebut?",
-        ans: ["sembilan ribu lima ratus", "sembilan ribu lima ratus rupiah"],
-        exp: "Bilangan 9.500 dibaca: Sembilan ribu lima ratus[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "18. (Uraian) Sebuah bilangan terdiri atas: 7 ribuan, 8 ratusan, 1 puluhan, dan 2 satuan. Bilangan berapakah yang terbentuk?",
-        ans: ["7.812", "7812"],
-        exp: "7 ribuan + 8 ratusan + 1 puluhan + 2 satuan = 7.812[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "19. (Uraian) Pada bilangan 2.910, sebutkan nilai tempat untuk angka 9 dan angka 1!",
-        ans: ["9 ratusan dan 1 puluhan", "ratusan dan puluhan", "9 ratusan, 1 puluhan"],
-        exp: "Angka 9 menempati nilai tempat ratusan (900) dan angka 1 menempati nilai tempat puluhan (10)[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "20. (Uraian) Helen membeli minuman di minimarket seharga Rp6.750,00. Sebutkan nama bilangan dari 6.750!",
-        ans: ["enam ribu tujuh ratus lima puluh", "enam ribu tujuh ratus lima puluh rupiah"],
-        exp: "6.750 dibaca: Enam ribu tujuh ratus lima puluh[cite: 3]."
-      }
+      { q: "1. Jarak 3.286 meter dibaca ....", options: ["Tiga ribu dua ratus enam puluh delapan", "Tiga ribu dua ratus delapan puluh enam", "Tiga ribu delapan ratus dua puluh enam", "Tiga ribu enam ratus dua puluh delapan"], ans: 1, exp: "Tiga Ribu Dua Ratus Delapan Puluh Enam[cite: 3]." },
+      { q: "2. Tinggi Mahameru 3.676 mdpl ditulis ....", options: ["3.667", "3.766", "3.676", "3.776"], ans: 2, exp: "3.676[cite: 3]." },
+      { q: "3. Angka 6 pada bilangan 8.463 menempati nilai tempat ....", options: ["Ribuan", "Ratusan", "Puluhan", "Satuan"], ans: 2, exp: "Puluhan (60)[cite: 3]." },
+      { q: "4. Angka 6 pada bilangan 6.789 menempati nilai tempat ....", options: ["Ribuan", "Ratusan", "Puluhan", "Satuan"], ans: 0, exp: "Ribuan (6.000)[cite: 3]." },
+      { q: "5. Bilangan 7.003 dibaca ....", options: ["Tujuh ratus tiga", "Tujuh ribu tiga", "Tujuh ribu tiga puluh", "Tujuh ribu tiga ratus"], ans: 1, exp: "Tujuh ribu tiga[cite: 3]." },
+      { q: "6. Bilangan 5.091 dibaca ....", options: ["Lima ribu sembilan puluh satu", "Lima ribu sembilan ratus satu", "Lima puluh sembilan satu", "Lima ratus sembilan puluh satu"], ans: 0, exp: "Lima ribu sembilan puluh satu[cite: 3]." },
+      { q: "7. Luas 5.780 km² dibaca ....", options: ["Lima ribu tujuh ratus delapan", "Lima ribu tujuh ratus delapan puluh", "Lima ribu delapan ratus tujuh puluh", "Lima ribu tujuh puluh delapan"], ans: 1, exp: "Lima ribu tujuh ratus delapan puluh[cite: 3]." },
+      { q: "8. Pada bilangan 2.150, angka 1 menempati nilai tempat ....", options: ["Ribuan", "Ratusan", "Puluhan", "Satuan"], ans: 1, exp: "Ratusan (100)[cite: 3]." },
+      { q: "9. Lambang bilangan 'Enam ribu dua' adalah ....", options: ["6.200", "6.020", "6.002", "6.202"], ans: 2, exp: "6.002[cite: 3]." },
+      { q: "10. Ketinggian 4.884 mdpl dibaca ....", options: ["Empat ribu delapan ratus delapan puluh empat", "Empat ribu delapan ratus empat puluh delapan", "Empat ribu empat ratus delapan puluh delapan", "Empat puluh delapan delapan puluh empat"], ans: 0, exp: "Empat ribu delapan ratus delapan puluh empat[cite: 3]." },
+      { type: "input", q: "11. Bilangan 1.206 dibaca: .....", ans: ["seribu dua ratus enam", "satu ribu dua ratus enam"], exp: "Seribu dua ratus enam[cite: 3]." },
+      { type: "input", q: "12. Tuliskan lambang bilangan dari 'tiga ribu dua ratus lima puluh empat': .....", ans: ["3.254", "3254"], exp: "3.254[cite: 3]." },
+      { type: "input", q: "13. Pada bilangan 4.675, angka 6 menempati nilai tempat: .....", ans: ["ratusan", "ratus"], exp: "Ratusan[cite: 3]." },
+      { type: "input", q: "14. Pada bilangan 1.236, angka 6 menempati nilai tempat: .....", ans: ["satuan"], exp: "Satuan[cite: 3]." },
+      { type: "input", q: "15. Lambang bilangan dari 'Sembilan ribu empat puluh lima' adalah: .....", ans: ["9.045", "9045"], exp: "9.045[cite: 3]." },
+      { type: "input", q: "16. (Uraian) Tentukan rincian nilai tempat dari bilangan 7.350!", ans: ["7 ribuan, 3 ratusan, 5 puluhan, 0 satuan", "7350"], exp: "7 ribuan, 3 ratusan, 5 puluhan, 0 satuan[cite: 3]." },
+      { type: "input", q: "17. (Uraian) Cara membaca bilangan 9.500?", ans: ["sembilan ribu lima ratus"], exp: "Sembilan ribu lima ratus[cite: 3]." },
+      { type: "input", q: "18. (Uraian) Bilangan yang terbentuk dari 7 ribuan + 8 ratusan + 1 puluhan + 2 satuan?", ans: ["7.812", "7812"], exp: "7.812[cite: 3]." },
+      { type: "input", q: "19. (Uraian) Pada 2.910, nilai tempat untuk angka 9 dan 1?", ans: ["9 ratusan dan 1 puluhan", "ratusan dan puluhan"], exp: "9 ratusan dan 1 puluhan[cite: 3]." },
+      { type: "input", q: "20. (Uraian) Nama bilangan dari 6.750?", ans: ["enam ribu tujuh ratus lima puluh"], exp: "Enam ribu tujuh ratus lima puluh[cite: 3]." }
     ];
 
     const dataAninMath2 = [
-      {
-        q: "1. Perbandingan yang tepat antara bilangan 8.750 dan 7.500 adalah ....",
-        options: ["8.750 < 7.500", "8.750 > 7.500", "8.750 = 7.500", "7.500 > 8.750"],
-        ans: 1,
-        exp: "Angka ribuan 8 lebih besar dari 7, maka 8.750 > 7.500[cite: 3]."
-      },
-      {
-        q: "2. Tanda pembanding yang benar untuk 4.352 ... 4.365 adalah ....",
-        options: [">", "<", "=", ">="],
-        ans: 1,
-        exp: "Ribuan dan ratusan sama, pada nilai puluhan 5 kurang dari 6, jadi 4.352 < 4.365[cite: 3]."
-      },
-      {
-        q: "3. Tanda pembanding yang benar untuk 9.999 ... 9.998 adalah ....",
-        options: [">", "<", "=", "<="],
-        ans: 0,
-        exp: "Pada nilai satuan 9 lebih dari 8, sehingga 9.999 > 9.998[cite: 3]."
-      },
-      {
-        q: "4. Ketinggian Gunung Sinabung 2.460 m, Gunung Semeru 3.676 m, dan Gunung Rinjani 3.726 m. Gunung manakah yang paling tinggi?",
-        options: ["Gunung Sinabung", "Gunung Semeru", "Gunung Rinjani", "Semuanya sama"],
-        ans: 2,
-        exp: "3.726 > 3.676 > 2.460. Jadi Gunung Rinjani adalah yang tertinggi[cite: 3]."
-      },
-      {
-        q: "5. Urutan bilangan 3.676, 2.460, dan 3.726 dari yang terkecil ke terbesar adalah ....",
-        options: ["2.460, 3.676, 3.726", "3.726, 3.676, 2.460", "2.460, 3.726, 3.676", "3.676, 2.460, 3.726"],
-        ans: 0,
-        exp: "Urutan dari yang terkecil: 2.460 < 3.676 < 3.726[cite: 3]."
-      },
-      {
-        q: "6. Bentuk komposisi dari: 6 ribuan + 3 ratusan + 4 puluhan + 8 satuan adalah ....",
-        options: ["6.438", "6.348", "6.384", "6.834"],
-        ans: 1,
-        exp: "6.000 + 300 + 40 + 8 = 6.348[cite: 3]."
-      },
-      {
-        q: "7. Bentuk dekomposisi panjang dari bilangan 6.849 adalah ....",
-        options: ["6.000 + 80 + 400 + 9", "6.000 + 800 + 40 + 9", "600 + 80 + 40 + 9", "6.000 + 800 + 90 + 4"],
-        ans: 1,
-        exp: "6.849 = 6.000 + 800 + 40 + 9[cite: 3]."
-      },
-      {
-        q: "8. Bentuk dekomposisi dari bilangan 6.035 adalah ....",
-        options: ["6.000 + 300 + 5", "6.000 + 0 + 30 + 5", "600 + 30 + 5", "6.000 + 30 + 50"],
-        ans: 1,
-        exp: "6.035 = 6 ribuan + 0 ratusan + 3 puluhan + 5 satuan = 6.000 + 0 + 30 + 5[cite: 3]."
-      },
-      {
-        q: "9. Dari angka 1, 5, 9, 2 bilangan terbesar 4 angka yang dapat dibentuk tanpa pengulangan adalah ....",
-        options: ["9.512", "9.521", "9.251", "9.152"],
-        ans: 1,
-        exp: "Urutkan angka dari yang terbesar ke terkecil: 9, 5, 2, 1 = 9.521[cite: 3]."
-      },
-      {
-        q: "10. Dari angka 1, 5, 9, 2 bilangan terkecil 4 angka yang dapat dibentuk tanpa pengulangan adalah ....",
-        options: ["1.259", "1.529", "1.295", "1.592"],
-        ans: 0,
-        exp: "Urutkan angka dari yang terkecil ke terbesar: 1, 2, 5, 9 = 1.259[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "11. Isilah titik-titik dengan tanda pembanding (>, <, atau =):\n1.001 ..... 1.002",
-        ans: ["<", "kurang dari"],
-        exp: "1.001 kurang dari 1.002 (1.001 < 1.002)[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "12. Isilah titik-titik dengan tanda pembanding (>, <, atau =):\n8.765 ..... 8.765",
-        ans: ["=", "sama dengan"],
-        exp: "Nilai kedua bilangan sama persis (8.765 = 8.765)[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "13. Bentuk bilangan dari '6 ribuan + 4 ratusan + 8 puluhan + 2 satuan' adalah: .....",
-        ans: ["6.482", "6482"],
-        exp: "6.000 + 400 + 80 + 2 = 6.482[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "14. Bentuk bilangan dari '6 ribuan + 0 ratusan + 4 puluhan + 0 satuan' adalah: .....",
-        ans: ["6.040", "6040"],
-        exp: "6.000 + 0 + 40 + 0 = 6.040[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "15. Dekomposisi bilangan 7.020 = ..... ribuan + 0 ratusan + 2 puluhan + 0 satuan (tulis angka ribuannya saja)",
-        ans: ["7"],
-        exp: "7.020 memiliki 7 ribuan[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "16. (Uraian) Urutkan bilangan 7.570, 5.240, 3.041, dan 9.941 dari yang TERKECIL ke TERBESAR!",
-        ans: ["3.041, 5.240, 7.570, 9.941", "3041, 5240, 7570, 9941", "3.041,5.240,7.570,9.941"],
-        exp: "Bandingkan angka ribuannya (3 < 5 < 7 < 9). Urutannya: 3.041, 5.240, 7.570, 9.941[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "17. (Uraian) Di kios A harga bengkoang Rp7.500 dan di kios B Rp8.750. Kios manakah yang menawarkan harga lebih murah?",
-        ans: ["kios a", "kios a (rp7.500)", "a"],
-        exp: "Karena 7.500 < 8.750, maka Kios A menjual dengan harga lebih murah[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "18. (Uraian) Tuliskan dekomposisi penjumlahan nilai tempat dari bilangan 2.001!",
-        ans: ["2.000 + 0 + 0 + 1", "2000 + 0 + 0 + 1", "2.000 + 1", "2 ribuan + 1 satuan"],
-        exp: "2.001 = 2 ribuan + 0 ratusan + 0 puluhan + 1 satuan = 2.000 + 0 + 0 + 1[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "19. (Uraian) Jika diberikan angka 1, 5, 9, 2 dan angka BOLEH BERULANG, berapakah bilangan 4 angka terbesar yang dapat dibuat?",
-        ans: ["9.999", "9999"],
-        exp: "Karena boleh berulang, kita ambil angka terbesar (9) sebanyak 4 kali = 9.999[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "20. (Uraian) Tuliskan bentuk penjumlahan nilai tempat dari 9.999!",
-        ans: ["9.000 + 900 + 90 + 9", "9000 + 900 + 90 + 9"],
-        exp: "9.999 = 9.000 + 900 + 90 + 9[cite: 3]."
-      }
+      { q: "1. Perbandingan 8.750 dan 7.500 yang tepat adalah ....", options: ["8.750 < 7.500", "8.750 > 7.500", "8.750 = 7.500", "7.500 > 8.750"], ans: 1, exp: "8.750 > 7.500[cite: 3]." },
+      { q: "2. Tanda pembanding untuk 4.352 ... 4.365 adalah ....", options: [">", "<", "=", ">="], ans: 1, exp: "4.352 < 4.365[cite: 3]." },
+      { q: "3. Tanda pembanding untuk 9.999 ... 9.998 adalah ....", options: [">", "<", "=", "<="], ans: 0, exp: "9.999 > 9.998[cite: 3]." },
+      { q: "4. Sinabung 2.460 m, Semeru 3.676 m, Rinjani 3.726 m. Gunung tertinggi adalah ....", options: ["Sinabung", "Semeru", "Rinjani", "Sama"], ans: 2, exp: "Gunung Rinjani (3.726 m)[cite: 3]." },
+      { q: "5. Urutan 3.676, 2.460, 3.726 dari terkecil ke terbesar adalah ....", options: ["2.460, 3.676, 3.726", "3.726, 3.676, 2.460", "2.460, 3.726, 3.676", "3.676, 2.460, 3.726"], ans: 0, exp: "2.460, 3.676, 3.726[cite: 3]." },
+      { q: "6. Komposisi: 6 ribuan + 3 ratusan + 4 puluhan + 8 satuan adalah ....", options: ["6.438", "6.348", "6.384", "6.834"], ans: 1, exp: "6.348[cite: 3]." },
+      { q: "7. Dekomposisi bilangan 6.849 adalah ....", options: ["6.000 + 80 + 400 + 9", "6.000 + 800 + 40 + 9", "600 + 80 + 40 + 9", "6.000 + 800 + 90 + 4"], ans: 1, exp: "6.000 + 800 + 40 + 9[cite: 3]." },
+      { q: "8. Dekomposisi bilangan 6.035 adalah ....", options: ["6.000 + 300 + 5", "6.000 + 0 + 30 + 5", "600 + 30 + 5", "6.000 + 30 + 50"], ans: 1, exp: "6.000 + 0 + 30 + 5[cite: 3]." },
+      { q: "9. Dari angka 1, 5, 9, 2 bilangan terbesar tanpa pengulangan adalah ....", options: ["9.512", "9.521", "9.251", "9.152"], ans: 1, exp: "9.521[cite: 3]." },
+      { q: "10. Dari angka 1, 5, 9, 2 bilangan terkecil tanpa pengulangan adalah ....", options: ["1.259", "1.529", "1.295", "1.592"], ans: 0, exp: "1.259[cite: 3]." },
+      { type: "input", q: "11. 1.001 ..... 1.002", ans: ["<", "kurang dari"], exp: "1.001 < 1.002[cite: 3]." },
+      { type: "input", q: "12. 8.765 ..... 8.765", ans: ["=", "sama dengan"], exp: "8.765 = 8.765[cite: 3]." },
+      { type: "input", q: "13. 6 ribuan + 4 ratusan + 8 puluhan + 2 satuan = .....", ans: ["6.482", "6482"], exp: "6.482[cite: 3]." },
+      { type: "input", q: "14. 6 ribuan + 0 ratusan + 4 puluhan + 0 satuan = .....", ans: ["6.040", "6040"], exp: "6.040[cite: 3]." },
+      { type: "input", q: "15. 7.020 = ..... ribuan + 0 ratusan + 2 puluhan + 0 satuan", ans: ["7"], exp: "7 ribuan[cite: 3]." },
+      { type: "input", q: "16. (Uraian) Urutkan 7.570, 5.240, 3.041, 9.941 dari terkecil ke terbesar!", ans: ["3.041, 5.240, 7.570, 9.941", "3041, 5240, 7570, 9941"], exp: "3.041, 5.240, 7.570, 9.941[cite: 3]." },
+      { type: "input", q: "17. (Uraian) Kios A Rp7.500 dan Kios B Rp8.750. Kios mana lebih murah?", ans: ["kios a", "a"], exp: "Kios A (Rp7.500)[cite: 3]." },
+      { type: "input", q: "18. (Uraian) Dekomposisi penjumlahan nilai tempat dari 2.001?", ans: ["2.000 + 0 + 0 + 1", "2000 + 0 + 0 + 1", "2.000 + 1"], exp: "2.000 + 0 + 0 + 1[cite: 3]." },
+      { type: "input", q: "19. (Uraian) Angka 1, 5, 9, 2 boleh berulang, bilangan 4 angka terbesar?", ans: ["9.999", "9999"], exp: "9.999[cite: 3]." },
+      { type: "input", q: "20. (Uraian) Penjumlahan nilai tempat dari 9.999?", ans: ["9.000 + 900 + 90 + 9", "9000 + 900 + 90 + 9"], exp: "9.000 + 900 + 90 + 9[cite: 3]." }
     ];
 
     const dataAninMath3 = [
-      {
-        q: "1. Pak Toni mempunyai 131 pohon jeruk di Jember dan 321 pohon jeruk di Banyuwangi. Berapa jumlah seluruh pohon jeruk Pak Toni?",
-        options: ["442 pohon", "452 pohon", "462 pohon", "552 pohon"],
-        ans: 1,
-        exp: "131 + 321 = (100+300) + (30+20) + (1+1) = 400 + 50 + 2 = 452 pohon[cite: 3]."
-      },
-      {
-        q: "2. SD Gebang 1 memiliki 124 buku, SD Gebang 2 memiliki 411 buku, dan SD Gebang 5 memiliki 363 buku. Berapa banyak buku seluruhnya?",
-        options: ["888 buku", "898 buku", "908 buku", "798 buku"],
-        ans: 1,
-        exp: "124 + 411 + 363 = 898 buku[cite: 3]."
-      },
-      {
-        q: "3. Pedagang buah memikul 2 keranjang jeruk. Keranjang 1 berisi 189 jeruk dan keranjang 2 berisi 245 jeruk. Berapa jumlah seluruh jeruk?",
-        options: ["424 jeruk", "434 jeruk", "444 jeruk", "414 jeruk"],
-        ans: 1,
-        exp: "189 + 245 = 434 jeruk (penjumlahan dengan teknik menyimpan)[cite: 3]."
-      },
-      {
-        q: "4. Hasil penjumlahan dari 373 + 208 adalah ....",
-        options: ["571", "581", "583", "591"],
-        ans: 1,
-        exp: "373 + 208 = 581 (3 + 8 = 11, simpan 1; 1 + 7 + 0 = 8; 3 + 2 = 5)[cite: 3]."
-      },
-      {
-        q: "5. Di perpustakaan ada 265 buku pelajaran. Pada tahun ajaran baru dipinjam siswa sebanyak 132 buku. Berapa sisa buku pelajaran?",
-        options: ["123 buku", "133 buku", "143 buku", "135 buku"],
-        ans: 1,
-        exp: "265 - 132 = 133 buku[cite: 3]."
-      },
-      {
-        q: "6. Hasil pengurangan dengan teknik meminjam dari 241 - 175 adalah ....",
-        options: ["66", "76", "166", "56"],
-        ans: 0,
-        exp: "241 - 175 = 66[cite: 3]."
-      },
-      {
-        q: "7. Hasil dari 253 - 176 adalah ....",
-        options: ["67", "77", "87", "97"],
-        ans: 1,
-        exp: "253 - 176 = 77[cite: 3]."
-      },
-      {
-        q: "8. Ada 12 kotak donat. Setiap kotak berisi 4 donat. Berapa jumlah seluruh donat?",
-        options: ["44 donat", "48 donat", "52 donat", "56 donat"],
-        ans: 1,
-        exp: "12 x 4 = (10 x 4) + (2 x 4) = 40 + 8 = 48 donat[cite: 3]."
-      },
-      {
-        q: "9. Hasil dari 629 + 123 adalah ....",
-        options: ["742", "752", "762", "852"],
-        ans: 1,
-        exp: "629 + 123 = 752[cite: 3]."
-      },
-      {
-        q: "10. Hasil dari 689 - 233 adalah ....",
-        options: ["446", "456", "466", "436"],
-        ans: 1,
-        exp: "689 - 233 = 456[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "11. Hasil dari 333 + 519 = .....",
-        ans: ["852"],
-        exp: "333 + 519 = 852[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "12. Hasil dari 821 + 98 = .....",
-        ans: ["919"],
-        exp: "821 + 98 = 919[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "13. Hasil dari 832 - 622 = .....",
-        ans: ["210"],
-        exp: "832 - 622 = 210[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "14. Hasil dari 600 - 235 = .....",
-        ans: ["365"],
-        exp: "600 - 235 = 365[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "15. Hitunglah perkalian berikut: 15 x 3 = .....",
-        ans: ["45"],
-        exp: "15 x 3 = (10 x 3) + (5 x 3) = 30 + 15 = 45."
-      },
-      {
-        type: "input",
-        q: "16. (Soal Cerita) Kebun sawit A menghasilkan 328 buah dan kebun B menghasilkan 579 buah. Berapakah jumlah seluruh kelapa sawit yang dihasilkan?",
-        ans: ["907", "907 buah"],
-        exp: "328 + 579 = 907 buah kelapa sawit[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "17. (Soal Cerita) SD Pelangi mengirimkan 121 siswa lomba matematika, 29 siswa lomba bahasa inggris, dan 98 siswa lomba sains. Berapa total siswa yang ikut lomba?",
-        ans: ["248", "248 siswa", "248 orang"],
-        exp: "121 + 29 + 98 = 150 + 98 = 248 siswa[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "18. (Soal Cerita) Penjual buah mempunyai 333 apel. Pembeli datang membeli 129 buah apel. Berapakah sisa buah apel milik penjual?",
-        ans: ["204", "204 buah", "204 apel"],
-        exp: "333 - 129 = 204 buah apel[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "19. (Soal Cerita) Hasil panen mangga Pak Joyo 765 buah. Sebanyak 179 buah diantaranya busuk. Berapa banyak mangga yang masih bagus/tersisa?",
-        ans: ["586", "586 buah", "586 mangga"],
-        exp: "765 - 179 = 586 buah mangga[cite: 3]."
-      },
-      {
-        type: "input",
-        q: "20. (Soal Cerita) SD Bangkit berwisata dengan 427 siswa. Sebanyak 218 diantaranya adalah perempuan. Berapakah jumlah siswa laki-laki?",
-        ans: ["209", "209 siswa", "209 orang"],
-        exp: "427 - 218 = 209 siswa laki-laki[cite: 3]."
-      }
+      { q: "1. Pak Toni punya 131 pohon jeruk di Jember dan 321 di Banyuwangi. Total pohon jeruk adalah ....", options: ["442", "452", "462", "552"], ans: 1, exp: "131 + 321 = 452 pohon[cite: 3]." },
+      { q: "2. Perpustakaan SD 1 ada 124 buku, SD 2 ada 411 buku, SD 5 ada 363 buku. Total buku adalah ....", options: ["888", "898", "908", "798"], ans: 1, exp: "124 + 411 + 363 = 898 buku[cite: 3]." },
+      { q: "3. Pedagang bawa keranjang isi 189 jeruk dan 245 jeruk. Total jeruk adalah ....", options: ["424", "434", "444", "414"], ans: 1, exp: "189 + 245 = 434 jeruk[cite: 3]." },
+      { q: "4. Hasil dari 373 + 208 adalah ....", options: ["571", "581", "583", "591"], ans: 1, exp: "581[cite: 3]." },
+      { q: "5. Ada 265 buku, dipinjam 132 buku. Sisa buku adalah ....", options: ["123", "133", "143", "135"], ans: 1, exp: "265 - 132 = 133 buku[cite: 3]." },
+      { q: "6. Hasil dari 241 - 175 adalah ....", options: ["66", "76", "166", "56"], ans: 0, exp: "66[cite: 3]." },
+      { q: "7. Hasil dari 253 - 176 adalah ....", options: ["67", "77", "87", "97"], ans: 1, exp: "77[cite: 3]." },
+      { q: "8. Ada 12 kotak donat, tiap kotak berisi 4 donat. Total donat adalah ....", options: ["44", "48", "52", "56"], ans: 1, exp: "12 x 4 = 48 donat[cite: 3]." },
+      { q: "9. Hasil dari 629 + 123 adalah ....", options: ["742", "752", "762", "852"], ans: 1, exp: "752[cite: 3]." },
+      { q: "10. Hasil dari 689 - 233 adalah ....", options: ["446", "456", "466", "436"], ans: 1, exp: "456[cite: 3]." },
+      { type: "input", q: "11. 333 + 519 = .....", ans: ["852"], exp: "852[cite: 3]." },
+      { type: "input", q: "12. 821 + 98 = .....", ans: ["919"], exp: "919[cite: 3]." },
+      { type: "input", q: "13. 832 - 622 = .....", ans: ["210"], exp: "210[cite: 3]." },
+      { type: "input", q: "14. 600 - 235 = .....", ans: ["365"], exp: "365[cite: 3]." },
+      { type: "input", q: "15. 15 x 3 = .....", ans: ["45"], exp: "45." },
+      { type: "input", q: "16. (Soal Cerita) Kebun A 328 buah, kebun B 579 buah. Jumlah sawit?", ans: ["907", "907 buah"], exp: "328 + 579 = 907 buah[cite: 3]." },
+      { type: "input", q: "17. (Soal Cerita) Lomba math 121, b.inggris 29, sains 98. Total siswa?", ans: ["248", "248 siswa"], exp: "121 + 29 + 98 = 248 siswa[cite: 3]." },
+      { type: "input", q: "18. (Soal Cerita) Ada 333 apel, dibeli 129 apel. Sisa apel?", ans: ["204", "204 buah", "204 apel"], exp: "333 - 129 = 204 buah[cite: 3]." },
+      { type: "input", q: "19. (Soal Cerita) Panen 765 mangga, busuk 179 mangga. Sisa mangga?", ans: ["586", "586 buah", "586 mangga"], exp: "765 - 179 = 586 buah[cite: 3]." },
+      { type: "input", q: "20. (Soal Cerita) Wisata 427 siswa, perempuan 218 siswa. Jumlah laki-laki?", ans: ["209", "209 siswa"], exp: "427 - 218 = 209 siswa[cite: 3]." }
     ];
 
-    // ===============================================
-    // DATA KAKAK ANIN (ENGLISH - 5 PAKET)
-    // ===============================================
+    // ENGLISH LEVEL 2 (5 PAKET)
     const dataAninCampuran = [
-      {
-        type: "mcq",
-        q: "Look at the sky! The dark clouds are gathering, it _____ rain soon.",
-        options: ["is going to", "was", "rained", "has"],
-        ans: 0,
-        exp: "Gunakan 'is going to' untuk menyatakan prediksi masa depan yang sudah ada bukti jelas saat ini (awan gelap)."
-      },
-      {
-        type: "mcq",
-        q: "Neither Sarah nor her brother brought _____ umbrella today.",
-        options: ["their", "her", "his", "its"],
-        ans: 0,
-        exp: "Dalam konteks percakapan/modern English untuk gabungan dua orang (Sarah & saudaranya), kata ganti jamak yang umum adalah 'their'."
-      },
-      {
-        type: "mcq",
-        q: "Our English class starts exactly _____ half past eight in the morning.",
-        options: ["on", "in", "at", "to"],
-        ans: 2,
-        exp: "Preposisi waktu untuk jam spesifik / waktu tepat selalu memakai 'at' (contoh: at 8:30)."
-      },
-      {
-        type: "mcq",
-        q: "Mount Everest is the _____ mountain in the world.",
-        options: ["high", "higher", "highest", "most high"],
-        ans: 2,
-        exp: "Superlative (paling tinggi) untuk kata berakhiran satu suku kata menggunakan akhiran '-est' (highest)."
-      },
-      {
-        type: "mcq",
-        q: "You _____ wash your hands before eating to stay healthy.",
-        options: ["must", "might", "would", "could"],
-        ans: 0,
-        exp: "'Must' digunakan untuk menyatakan keharusan atau aturan penting demi kesehatan."
-      },
-      {
-        type: "mcq",
-        q: "The farmer has ten sheep and five _____.",
-        options: ["oxes", "oxen", "oxs", "ox"],
-        ans: 1,
-        exp: "Bentuk jamak tidak beraturan (irregular plural) dari satu 'ox' (lembu) adalah 'oxen'."
-      },
-      {
-        type: "mcq",
-        q: "The brave firefighter rescued the little kitten. The word BRAVE has the same meaning as _____.",
-        options: ["coward", "courageous", "fearful", "weak"],
-        ans: 1,
-        exp: "Sinonim (persamaan kata) dari 'brave' (pemberani) adalah 'courageous'."
-      },
-      {
-        type: "mcq",
-        q: "The room was very NOISY during recess. The opposite of NOISY is _____.",
-        options: ["loud", "busy", "quiet", "crowded"],
-        ans: 2,
-        exp: "Antonim (lawan kata) dari 'noisy' (bising/ramai) adalah 'quiet' (tenang/sunyi)."
-      },
-      {
-        type: "mcq",
-        q: "Tom: 'I won the spelling bee competition yesterday!'\nJerry: '_____! I am so proud of you.'",
-        options: ["Never mind", "Congratulations", "Excuse me", "Good luck"],
-        ans: 1,
-        exp: "Ungkapan yang tepat saat teman meraih kemenangan/prestasi adalah 'Congratulations!' (Selamat!)."
-      },
-      {
-        type: "mcq",
-        q: "A place where historical objects are kept and displayed to the public is a _____.",
-        options: ["library", "museum", "laboratory", "stadium"],
-        ans: 1,
-        exp: "Tempat menyimpan dan memamerkan benda-benda bersejarah adalah 'museum'."
-      },
-      {
-        type: "mcq",
-        q: "Identify the incorrect word:\n'She don't (A) like (B) eating vegetables (C) for dinner (D).'",
-        options: ["don't", "like", "vegetables", "dinner"],
-        ans: 0,
-        exp: "Subjek 'She' adalah orang ketiga tunggal, sehingga harus menggunakan 'doesn't', bukan 'don't'."
-      },
-      {
-        type: "mcq",
-        q: "Identify the incorrect word:\n'There are (A) three (B) childs (C) playing in the park (D).'",
-        options: ["are", "three", "childs", "park"],
-        ans: 2,
-        exp: "Bentuk jamak dari 'child' adalah 'children', bukan 'childs'."
-      },
-      {
-        type: "mcq",
-        q: "Arrange into a correct sentence:\n'always / breakfast / he / eats / at 6 AM'",
-        options: [
-          "He eats always breakfast at 6 AM.",
-          "He always eats breakfast at 6 AM.",
-          "Breakfast he eats always at 6 AM.",
-          "At 6 AM always he eats breakfast."
-        ],
-        ans: 1,
-        exp: "Adverb of frequency 'always' diletakkan sebelum kata kerja utama: Subject + always + Verb (He always eats breakfast at 6 AM)."
-      },
-      {
-        type: "mcq",
-        passage: "The Clever Honeybee: Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
-        q: "What is the main topic of the paragraph?",
-        options: [
-          "How to harvest sweet honey.",
-          "The life and communication of bees.",
-          "Dangerous flying insects in nature.",
-          "Different types of colorful flowers."
-        ],
-        ans: 1,
-        exp: "Paragraf tersebut membahas tentang koloni lebah dan cara mereka berkomunikasi melalui tarian waggle."
-      },
-      {
-        type: "mcq",
-        passage: "The Clever Honeybee: Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
-        q: "How many bees can live together in a single colony?",
-        options: ["Up to 600 bees", "Up to 6,000 bees", "Up to 60,000 bees", "Up to 600,000 bees"],
-        ans: 2,
-        exp: "Sesuai teks: 'A single bee colony can contain up to 60,000 bees'."
-      },
-      {
-        type: "mcq",
-        passage: "The Clever Honeybee: Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
-        q: "What is the 'waggle dance' used for?",
-        options: [
-          "To scare enemies away",
-          "To entertain the queen bee",
-          "To communicate food locations",
-          "To build new honeycombs"
-        ],
-        ans: 2,
-        exp: "Sesuai teks: waggle dance digunakan untuk berbagi informasi arah dan jarak bunga/makanan ('direction and distance to flowers with nectar')."
-      },
-      {
-        type: "mcq",
-        passage: "The Clever Honeybee: Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
-        q: "Why are bees important for nature?",
-        options: [
-          "They help plants and fruits grow through pollination.",
-          "They protect flowers from other insects.",
-          "They clean the forest ground.",
-          "They make the weather warmer."
-        ],
-        ans: 0,
-        exp: "Lebah sangat penting karena membantu proses penyerbukan tanaman dan buah-buahan (pollination)."
-      },
-      {
-        type: "mcq",
-        passage: "The Clever Honeybee: Bees are flying insects known for their role in pollination and producing honey. A single bee colony can contain up to 60,000 bees. They communicate with each other using a special movement called the 'waggle dance' to share information about the direction and distance to flowers with nectar. Without bees, many fruits and flowers would not be able to grow.",
-        q: "Based on the text, which statement is TRUE?",
-        options: [
-          "Bees live alone without colonies.",
-          "Bees communicate through singing.",
-          "Bees do not eat nectar.",
-          "Without bees, many plants would struggle to reproduce."
-        ],
-        ans: 3,
-        exp: "Tanpa bantuan penyerbukan lebah, banyak bunga dan buah tidak akan bisa tumbuh/berkembang biak ('would not be able to grow')."
-      },
-      {
-        type: "input",
-        q: "Unscramble the letters to form a word meaning 'a vehicle that flies into outer space': [ H - P - S - C - E - A - I - S - P ]",
-        ans: ["spaceship", "space ship"],
-        exp: "Huruf-huruf tersebut jika disusun membentuk kata 'SPACESHIP' (pesawat luar angkasa)."
-      },
-      {
-        type: "input",
-        q: "Word Formation: My older sister is a talented _____ (DANCE). She wins many trophies.",
-        ans: ["dancer"],
-        exp: "Kata kerja 'dance' (menari) diubah menjadi kata benda orang / penari dengan menambahkan akhiran -r menjadi 'dancer'."
-      },
-      {
-        type: "input",
-        q: "Irregular Past Tense: Yesterday, my mother _____ (BUY) fresh apples from the supermarket.",
-        ans: ["bought"],
-        exp: "Bentuk lampau (Past Tense / V2) dari kata kerja 'buy' adalah 'bought'."
-      },
-      {
-        type: "input",
-        q: "Preposition: The cat is sleeping comfortably _____ the rug in front of the fireplace.",
-        ans: ["on", "upon"],
-        exp: "Preposisi tempat di atas permukaan karpet menggunakan 'on'."
-      },
-      {
-        type: "input",
-        q: "Spelling & Definition: The fourth month of the year is _____.",
-        ans: ["april"],
-        exp: "Urutan bulan ke-4 dalam kalender Masehi adalah 'April'."
-      },
-      {
-        type: "input",
-        q: "Collective Noun: A group of wolves hunting together is called a _____.",
-        ans: ["pack"],
-        exp: "Sebutan kelompok/kawanan serigala dalam bahasa Inggris adalah 'a pack of wolves'."
-      },
-      {
-        type: "input",
-        q: "Cloze / Logic: Birds use their wings to fly, while fish use their _____ to swim.",
-        ans: ["fins", "fin"],
-        exp: "Burung terbang dengan sayap (wings), sedangkan ikan berenang menggunakan sirip ('fins')."
-      }
+      { type: "mcq", q: "Look at the sky! The dark clouds are gathering, it _____ rain soon.", options: ["is going to", "was", "rained", "has"], ans: 0, exp: "Gunakan 'is going to' untuk prediksi masa depan berdasarkan bukti jelas." },
+      { type: "mcq", q: "Neither Sarah nor her brother brought _____ umbrella today.", options: ["their", "her", "his", "its"], ans: 0, exp: "Kata ganti kepemilikan jamak: 'their'." },
+      { type: "mcq", q: "Our English class starts exactly _____ half past eight in the morning.", options: ["on", "in", "at", "to"], ans: 2, exp: "Preposisi waktu tepat memakai 'at'." },
+      { type: "mcq", q: "Mount Everest is the _____ mountain in the world.", options: ["high", "higher", "highest", "most high"], ans: 2, exp: "Superlative: 'highest'." },
+      { type: "mcq", q: "You _____ wash your hands before eating to stay healthy.", options: ["must", "might", "would", "could"], ans: 0, exp: "'Must' untuk keharusan." },
+      { type: "mcq", q: "The farmer has ten sheep and five _____.", options: ["oxes", "oxen", "oxs", "ox"], ans: 1, exp: "Bentuk jamak dari 'ox' adalah 'oxen'." },
+      { type: "mcq", q: "The brave firefighter rescued the kitten. BRAVE has the same meaning as _____.", options: ["coward", "courageous", "fearful", "weak"], ans: 1, exp: "Sinonim 'brave' adalah 'courageous'." },
+      { type: "mcq", q: "The room was very NOISY. The opposite of NOISY is _____.", options: ["loud", "busy", "quiet", "crowded"], ans: 2, exp: "Lawan kata 'noisy' adalah 'quiet'." },
+      { type: "mcq", q: "Tom: 'I won the spelling bee competition!' Jerry: '_____!'", options: ["Never mind", "Congratulations", "Excuse me", "Good luck"], ans: 1, exp: "Ungkapan selamat: 'Congratulations!'." },
+      { type: "mcq", q: "A place where historical objects are kept and displayed is a _____.", options: ["library", "museum", "laboratory", "stadium"], ans: 1, exp: "Tempat barang bersejarah: 'museum'." },
+      { type: "mcq", q: "Identify the incorrect word: 'She don't (A) like (B) eating vegetables (C) for dinner (D).'", options: ["don't", "like", "vegetables", "dinner"], ans: 0, exp: "Harusnya 'She doesn't'." },
+      { type: "mcq", q: "Identify the incorrect word: 'There are (A) three (B) childs (C) playing in the park (D).'", options: ["are", "three", "childs", "park"], ans: 2, exp: "Bentuk jamak: 'children'." },
+      { type: "mcq", q: "Arrange: 'always / breakfast / he / eats / at 6 AM'", options: ["He eats always breakfast at 6 AM.", "He always eats breakfast at 6 AM.", "Breakfast he eats always at 6 AM.", "At 6 AM always he eats breakfast."], ans: 1, exp: "He always eats breakfast at 6 AM." },
+      { type: "mcq", passage: "The Clever Honeybee: Bees are flying insects known for pollination and honey. A colony has up to 60,000 bees. They communicate with a 'waggle dance' to show food locations. Without bees, many fruits cannot grow.", q: "What is the main topic?", options: ["How to harvest honey.", "The life and communication of bees.", "Dangerous flying insects.", "Different types of flowers."], ans: 1, exp: "The life and communication of bees." },
+      { type: "mcq", passage: "The Clever Honeybee: Bees are flying insects known for pollination and honey. A colony has up to 60,000 bees. They communicate with a 'waggle dance' to show food locations. Without bees, many fruits cannot grow.", q: "How many bees can live in a single colony?", options: ["Up to 600", "Up to 6,000", "Up to 60,000", "Up to 600,000"], ans: 2, exp: "Up to 60,000 bees." },
+      { type: "mcq", passage: "The Clever Honeybee: Bees are flying insects known for pollination and honey. A colony has up to 60,000 bees. They communicate with a 'waggle dance' to show food locations. Without bees, many fruits cannot grow.", q: "What is the 'waggle dance' used for?", options: ["Scare enemies", "Entertain queen", "Communicate food locations", "Build combs"], ans: 2, exp: "Communicate food locations." },
+      { type: "mcq", passage: "The Clever Honeybee: Bees are flying insects known for pollination and honey. A colony has up to 60,000 bees. They communicate with a 'waggle dance' to show food locations. Without bees, many fruits cannot grow.", q: "Why are bees important?", options: ["Help plants grow through pollination.", "Protect flowers.", "Clean forest.", "Make weather warm."], ans: 0, exp: "Help plants grow through pollination." },
+      { type: "mcq", passage: "The Clever Honeybee: Bees are flying insects known for pollination and honey. A colony has up to 60,000 bees. They communicate with a 'waggle dance' to show food locations. Without bees, many fruits cannot grow.", q: "Which statement is TRUE?", options: ["Bees live alone.", "Bees sing.", "Bees do not eat nectar.", "Without bees, plants struggle to reproduce."], ans: 3, exp: "Without bees, plants struggle to reproduce." },
+      { type: "input", q: "Unscramble: [ H - P - S - C - E - A - I - S - P ] -> vehicle to outer space", ans: ["spaceship", "space ship"], exp: "Spaceship." },
+      { type: "input", q: "Word Formation: My sister is a talented _____ (DANCE).", ans: ["dancer"], exp: "Dancer." },
+      { type: "input", q: "Past Tense: Yesterday, my mother _____ (BUY) fresh apples.", ans: ["bought"], exp: "Bought." },
+      { type: "input", q: "Preposition: The cat is sleeping comfortably _____ the rug.", ans: ["on", "upon"], exp: "On." },
+      { type: "input", q: "The fourth month of the year is _____.", ans: ["april"], exp: "April." },
+      { type: "input", q: "A group of wolves hunting together is a _____.", ans: ["pack"], exp: "Pack." },
+      { type: "input", q: "Birds use wings to fly, fish use _____ to swim.", ans: ["fins", "fin"], exp: "Fins." }
     ];
 
     const dataAninESM1 = [
-      {
-        q: "1. Which sentence correctly uses a preposition to show location?[cite: 1]",
-        options: ["The cat sleeps under the chair.", "The cat sleeps quickly the chair.", "The cat sleeps before the chair.", "The cat sleeps happy the chair."],
-        ans: 0,
-        exp: "'Under' adalah kata depan (preposition of location) yang tepat untuk menunjukkan lokasi di bawah kursi[cite: 1]."
-      },
-      {
-        q: "2. What time is shown if the short hand is on 3 and the long hand is on 12?[cite: 1]",
-        options: ["3:00", "12:15", "3:30", "2:45"],
-        ans: 0,
-        exp: "Jarum pendek di angka 3 dan jarum panjang tepat di angka 12 menunjukkan pukul 03.00 (3:00)[cite: 1]."
-      },
-      {
-        q: "3. Choose the sentence that uses the simple present correctly.[cite: 1]",
-        options: ["She go to school every day.", "He plays soccer on Sunday.", "I am go to the park yesterday.", "They is eating lunch now."],
-        ans: 1,
-        exp: "Subjek 'He' (tunggal) menggunakan kata kerja berakhiran -s ('plays'). Pilihan A salah karena harusnya 'She goes'[cite: 1]."
-      },
-      {
-        passage: "Rani left her umbrella at home. The sky was dark and the air smelled wet.[cite: 1]",
-        q: "4. Read the short passage and answer the inference question. What can you infer will probably happen next?[cite: 1]",
-        options: ["Rani will watch a movie indoors.", "It will rain and Rani may get wet.", "Rani will travel to another country.", "The sun will shine brightly."],
-        ans: 1,
-        exp: "Karena Rani meninggalkan payungnya dan langit sudah gelap berbau hujan, kemungkinan besar akan segera turun hujan dan Rani akan basah[cite: 1]."
-      },
-      {
-        q: "5. Choose the best preposition to complete the sentence: 'The bird sat _____ the branch.'[cite: 1]",
-        options: ["on", "to", "for", "by"],
-        ans: 0,
-        exp: "Burung bertengger di atas dahan pohon menggunakan preposisi 'on' (sat on the branch)[cite: 1]."
-      },
-      {
-        q: "6. What time is it if the clock shows the long hand on 6 and short hand halfway between 4 and 5?[cite: 1]",
-        options: ["4:30", "5:15", "4:15", "4:45"],
-        ans: 0,
-        exp: "Jarum panjang di angka 6 (30 menit) dan jarum pendek di antara 4 dan 5 menunjukkan pukul 04.30[cite: 1]."
-      },
-      {
-        q: "7. Select the correct simple present sentence for a habitual action.[cite: 1]",
-        options: ["My father cooks breakfast every morning.", "My father cooked breakfast every morning.", "My father will cook breakfast every morning.", "My father cooking breakfast every morning."],
-        ans: 0,
-        exp: "Kebiasaan rutin setiap pagi (habitual action) menggunakan Simple Present Tense: 'cooks breakfast every morning'[cite: 1]."
-      },
-      {
-        passage: "Tom opened his book and cleaned his glasses before reading. His sister was already at the window watching the rain.[cite: 1]",
-        q: "8. Read the passage and answer: Which sentence is the best inference?[cite: 1]",
-        options: ["Tom likes to read in the rain without glasses.", "Tom cannot read because there is no light.", "Tom will read quietly inside while it rains.", "Tom and his sister will go swimming."],
-        ans: 2,
-        exp: "Tom sudah membersihkan kacamata dan membuka bukunya di dalam rumah saat di luar sedang hujan, maka ia akan membaca dengan tenang di dalam rumah[cite: 1]."
-      },
-      {
-        q: "9. Which sentence uses a preposition of time correctly?[cite: 1]",
-        options: ["We have music class on Monday.", "We have music class under Monday.", "We have music class between Monday.", "We have music class beside Monday."],
-        ans: 0,
-        exp: "Nama hari dalam bahasa Inggris selalu menggunakan preposisi waktu 'on' (on Monday)[cite: 1]."
-      },
-      {
-        q: "10. What time is it when the short hand points to 9 and the long hand points to 3?[cite: 1]",
-        options: ["9:15", "9:45", "3:45", "9:30"],
-        ans: 0,
-        exp: "Jarum pendek di angka 9 dan jarum panjang di angka 3 (15 menit) menunjukkan pukul 09.15 (a quarter past nine)[cite: 1]."
-      }
+      { q: "1. Which sentence correctly uses a preposition to show location?[cite: 1]", options: ["The cat sleeps under the chair.", "The cat sleeps quickly the chair.", "The cat sleeps before the chair.", "The cat sleeps happy the chair."], ans: 0, exp: "'Under' menunjukkan lokasi di bawah kursi[cite: 1]." },
+      { q: "2. What time is shown if the short hand is on 3 and long hand on 12?[cite: 1]", options: ["3:00", "12:15", "3:30", "2:45"], ans: 0, exp: "3:00[cite: 1]." },
+      { q: "3. Choose the sentence that uses the simple present correctly.[cite: 1]", options: ["She go to school every day.", "He plays soccer on Sunday.", "I am go to the park yesterday.", "They is eating lunch now."], ans: 1, exp: "He plays soccer on Sunday[cite: 1]." },
+      { passage: "Rani left her umbrella at home. The sky was dark and the air smelled wet.[cite: 1]", q: "4. What can you infer will probably happen next?[cite: 1]", options: ["Watch movie indoors.", "It will rain and Rani may get wet.", "Travel to another country.", "Sun shine brightly."], ans: 1, exp: "It will rain and Rani may get wet[cite: 1]." },
+      { q: "5. 'The bird sat _____ the branch.'[cite: 1]", options: ["on", "to", "for", "by"], ans: 0, exp: "Sat on the branch[cite: 1]." },
+      { q: "6. Long hand on 6 and short hand halfway between 4 and 5?[cite: 1]", options: ["4:30", "5:15", "4:15", "4:45"], ans: 0, exp: "4:30[cite: 1]." },
+      { q: "7. Simple present for habitual action:[cite: 1]", options: ["My father cooks breakfast every morning.", "My father cooked breakfast.", "My father will cook breakfast.", "My father cooking breakfast."], ans: 0, exp: "My father cooks breakfast every morning[cite: 1]." },
+      { passage: "Tom opened his book and cleaned his glasses before reading. His sister was at the window watching rain.[cite: 1]", q: "8. Best inference:[cite: 1]", options: ["Tom reads in the rain.", "Tom cannot read.", "Tom will read quietly inside while it rains.", "Go swimming."], ans: 2, exp: "Tom will read quietly inside while it rains[cite: 1]." },
+      { q: "9. Preposition of time correctly:[cite: 1]", options: ["We have music class on Monday.", "Under Monday.", "Between Monday.", "Beside Monday."], ans: 0, exp: "On Monday[cite: 1]." },
+      { q: "10. Short hand points to 9 and long hand points to 3?[cite: 1]", options: ["9:15", "9:45", "3:45", "9:30"], ans: 0, exp: "9:15[cite: 1]." }
     ];
 
     const dataAninESM2 = [
-      {
-        q: "1. Choose the correct simple present form to complete the sentence: 'Every evening, Anna _____ her homework.'[cite: 1]",
-        options: ["does", "do", "did", "doing"],
-        ans: 0,
-        exp: "Subjek 'Anna' adalah orang ketiga tunggal, sehingga bentuk kata kerja Simple Present dari 'do' adalah 'does'[cite: 1]."
-      },
-      {
-        passage: "The library bell rang, and Maya hurried to the desk with a big smile and a library card in her hand.[cite: 1]",
-        q: "2. Read and infer: What can you infer about Maya?[cite: 1]",
-        options: ["Maya wants to return a book she hates.", "Maya probably wants to borrow or check out a book.", "Maya is lost and needs directions.", "Maya is angry about the library rules."],
-        ans: 1,
-        exp: "Maya tersenyum lebar sambil memegang kartu perpustakaan (library card) menuju meja petugas, artinya ia ingin meminjam buku[cite: 1]."
-      },
-      {
-        q: "3. Choose the correct preposition: 'The school is _____ the corner of Oak Street.'[cite: 1]",
-        options: ["at", "above", "through", "across"],
-        ans: 0,
-        exp: "Untuk lokasi di sudut jalan, ungkapan preposisi yang tepat adalah 'at the corner of...'[cite: 1]."
-      },
-      {
-        q: "4. What time is shown when the long hand is on 12 and the short hand is a little after 7?[cite: 1]",
-        options: ["About 7:00", "About 7:30", "About 6:00", "About 8:00"],
-        ans: 0,
-        exp: "Jarum panjang di angka 12 dan jarum pendek di dekat angka 7 menunjukkan waktu sekitar pukul 07.00[cite: 1]."
-      },
-      {
-        q: "5. Select the correctly written simple present question.[cite: 1]",
-        options: ["Do she play the piano?", "Does she play the piano?", "Is she plays the piano?", "She does play the piano?"],
-        ans: 1,
-        exp: "Kalimat tanya Simple Present untuk subjek 'she' diawali dengan auxiliary verb 'Does' + Subject + Verb 1 ('Does she play...?')[cite: 1]."
-      },
-      {
-        passage: "A small bowl of seeds sat on the table and the mouse looked at it carefully before it crept closer.[cite: 1]",
-        q: "6. Read and infer: What is likely true?[cite: 1]",
-        options: ["The mouse will cook the seeds.", "The mouse will eat the seeds.", "The mouse will hide the seeds from the cat.", "The mouse will go to school."],
-        ans: 1,
-        exp: "Tikus mendekati mangkuk berisi biji-bijian (makanannya) secara hati-hati untuk memakannya[cite: 1]."
-      },
-      {
-        q: "7. Which sentence correctly uses a preposition to show direction?[cite: 1]",
-        options: ["The dog ran toward the gate.", "The dog ran happy the gate.", "The dog ran besidely the gate.", "The dog ran blue the gate."],
-        ans: 0,
-        exp: "'Toward' (menuju/ke arah) adalah preposisi yang menyatakan arah pergerakan (direction)[cite: 1]."
-      },
-      {
-        q: "8. What time is it when the short hand is on 12 and the long hand is on 6?[cite: 1]",
-        options: ["12:30", "6:00", "12:06", "6:30"],
-        ans: 0,
-        exp: "Jarum pendek di angka 12 dan jarum panjang di angka 6 menunjukkan pukul 12.30 (half past twelve)[cite: 1]."
-      },
-      {
-        q: "9. Choose the correct simple present sentence that describes a general truth.[cite: 1]",
-        options: ["Water boils at 100 degrees Celsius.", "Water boiled at 100 degrees Celsius yesterday.", "Water will boiling at 100 degrees Celsius.", "Water is boil at 100 degrees Celsius."],
-        ans: 0,
-        exp: "Fakta ilmiah / kebenaran umum (general truth) selalu ditulis dalam Simple Present Tense: 'Water boils at 100 degrees Celsius'[cite: 1]."
-      },
-      {
-        passage: "Lina fed the stray dog a bowl of rice and left a blanket by the door. The next morning, she found paw prints on it and the blanket moved slightly.[cite: 1]",
-        q: "10. Read the short paragraph and infer the best answer: What can you infer happened overnight?[cite: 1]",
-        options: ["A bird slept on the blanket.", "The stray dog returned and used the blanket.", "The blanket was stolen by a cat.", "Lina moved the blanket while she slept."],
-        ans: 1,
-        exp: "Adanya jejak telapak kaki anjing (paw prints) di atas selimut menunjukkan bahwa anjing liar tersebut kembali dan tidur menggunakan selimut itu[cite: 1]."
-      }
+      { q: "1. 'Every evening, Anna _____ her homework.'[cite: 1]", options: ["does", "do", "did", "doing"], ans: 0, exp: "Does[cite: 1]." },
+      { passage: "The library bell rang, and Maya hurried to the desk with a big smile and library card.[cite: 1]", q: "2. What can you infer about Maya?[cite: 1]", options: ["Return a book she hates.", "Probably wants to borrow a book.", "Lost and needs directions.", "Angry about rules."], ans: 1, exp: "Wants to borrow a book[cite: 1]." },
+      { q: "3. 'The school is _____ the corner of Oak Street.'[cite: 1]", options: ["at", "above", "through", "across"], ans: 0, exp: "At the corner of[cite: 1]." },
+      { q: "4. Long hand on 12 and short hand a little after 7?[cite: 1]", options: ["About 7:00", "About 7:30", "About 6:00", "About 8:00"], ans: 0, exp: "About 7:00[cite: 1]." },
+      { q: "5. Simple present question:[cite: 1]", options: ["Do she play the piano?", "Does she play the piano?", "Is she plays the piano?", "She does play the piano?"], ans: 1, exp: "Does she play the piano?[cite: 1]" },
+      { passage: "A bowl of seeds sat on the table and the mouse looked carefully before it crept closer.[cite: 1]", q: "6. What is likely true?[cite: 1]", options: ["Cook the seeds.", "Eat the seeds.", "Hide the seeds.", "Go to school."], ans: 1, exp: "The mouse will eat the seeds[cite: 1]." },
+      { q: "7. Preposition of direction:[cite: 1]", options: ["The dog ran toward the gate.", "Ran happy the gate.", "Ran besidely.", "Ran blue the gate."], ans: 0, exp: "Ran toward the gate[cite: 1]." },
+      { q: "8. Short hand on 12 and long hand on 6?[cite: 1]", options: ["12:30", "6:00", "12:06", "6:30"], ans: 0, exp: "12:30[cite: 1]." },
+      { q: "9. General truth:[cite: 1]", options: ["Water boils at 100 degrees Celsius.", "Water boiled yesterday.", "Water will boiling.", "Water is boil."], ans: 0, exp: "Water boils at 100 degrees Celsius[cite: 1]." },
+      { passage: "Lina fed the stray dog and left a blanket. Next morning she found paw prints on it.[cite: 1]", q: "10. What happened overnight?[cite: 1]", options: ["A bird slept.", "The stray dog returned and used the blanket.", "Stolen by cat.", "Lina moved blanket."], ans: 1, exp: "The stray dog returned and used the blanket[cite: 1]." }
     ];
 
     const dataAninESM3 = [
-      {
-        q: "1. Maya looks at the clock and says, 'My dance class starts in 40 minutes.' The clock now shows 2:20. What time will Maya's class begin?[cite: 1]",
-        options: ["2:40", "3:00", "3:10", "3:20"],
-        ans: 1,
-        exp: "2:20 ditambah 40 menit = 2:60 atau tepat pukul 03.00 (3:00)[cite: 1]."
-      },
-      {
-        q: "2. 'Every morning, the sun warms the playground while the children line up.' Which sentence best shows the simple present tense used correctly?[cite: 1]",
-        options: ["The sun warmed the playground every morning.", "Every morning, the sun warms the playground.", "The children will line up every morning.", "The children lining up every morning."],
-        ans: 1,
-        exp: "Pilihan B menggunakan Simple Present Tense yang tepat ('warms') untuk rutinitas 'Every morning'[cite: 1]."
-      },
-      {
-        passage: "Sam left his umbrella under the bench. He runs quickly but comes back soon.[cite: 1]",
-        q: "3. Read: What can you infer about Sam?[cite: 1]",
-        options: ["Sam enjoys sitting on benches.", "Sam forgot his umbrella and returned to get it.", "Sam wanted to buy a new umbrella.", "Sam lost his umbrella on purpose."],
-        ans: 1,
-        exp: "Sam meninggalkan payungnya di bawah bangku lalu berlari kembali dengan cepat untuk mengambil payungnya yang tertinggal[cite: 1]."
-      },
-      {
-        q: "4. Which preposition best completes the sentence? 'The cat slept _____ the table while the family ate.'[cite: 1]",
-        options: ["on", "between", "under", "during"],
-        ans: 2,
-        exp: "Kucing tidur di bawah meja ('under the table') saat keluarga sedang makan di atas meja[cite: 1]."
-      },
-      {
-        q: "5. Lily says, 'I never eat breakfast.' Which choice gives the most likely reason you can infer from that statement?[cite: 1]",
-        options: ["Lily likes to eat many snacks.", "Lily does not feel hungry in the morning.", "Lily always eats breakfast at school.", "Lily cooks breakfast for her family."],
-        ans: 1,
-        exp: "Alasan paling umum seseorang tidak pernah sarapan adalah karena tidak merasa lapar di pagi hari[cite: 1]."
-      },
-      {
-        q: "6. What is the correct time expression for 7:45 in words?[cite: 1]",
-        options: ["Quarter after seven", "Quarter to eight", "Twenty-five to eight", "Fifteen to seven"],
-        ans: 1,
-        exp: "Pukul 07.45 berarti 15 menit menuju jam 8, dibaca 'Quarter to eight'[cite: 1]."
-      },
-      {
-        q: "7. Choose the sentence that uses simple present to describe a habitual action.[cite: 1]",
-        options: ["He is playing soccer now.", "He plays soccer every Saturday.", "He played soccer yesterday.", "He will play soccer tomorrow."],
-        ans: 1,
-        exp: "Kebiasaan rutin setiap hari Sabtu ('every Saturday') menggunakan kata kerja Simple Present 'plays'[cite: 1]."
-      },
-      {
-        passage: "No one saw the broken window except Nora. She kept quiet.[cite: 1]",
-        q: "8. Read: What is the best inference?[cite: 1]",
-        options: ["Nora broke the window for fun.", "Nora was the only witness and chose not to tell.", "Many people saw the window break.", "Nora told everyone about the window."],
-        ans: 1,
-        exp: "Hanya Nora yang melihat jendela pecah (satu-satunya saksi) dan ia memilih untuk diam tidak memberitahu siapa-siapa[cite: 1]."
-      },
-      {
-        q: "9. Which preposition correctly completes: 'The kite flew _____ the tall trees and landed near the road.'[cite: 1]",
-        options: ["in", "above", "into", "below"],
-        ans: 1,
-        exp: "Layang-layang terbang melayang di atas pepohonan yang tinggi menggunakan preposisi 'above'[cite: 1]."
-      },
-      {
-        q: "10. The clock shows 11:10. Which activity most likely fits this time if school starts at 8:00 and lunch is at 12:00?[cite: 1]",
-        options: ["Sleeping at night", "Morning assembly", "Recess or class time before lunch", "After-school club"],
-        ans: 2,
-        exp: "Pukul 11.10 adalah waktu jam pelajaran sekolah atau istirahat menjelang makan siang jam 12.00[cite: 1]."
-      }
+      { q: "1. Dance class starts in 40 mins. Clock shows 2:20. When will it begin?[cite: 1]", options: ["2:40", "3:00", "3:10", "3:20"], ans: 1, exp: "3:00[cite: 1]." },
+      { q: "2. 'Every morning, the sun warms the playground...' Correct simple present:[cite: 1]", options: ["Sun warmed every morning.", "Every morning, the sun warms the playground.", "Children will line up.", "Children lining up."], ans: 1, exp: "Every morning, the sun warms the playground[cite: 1]." },
+      { passage: "Sam left his umbrella under the bench. He runs quickly and comes back soon.[cite: 1]", q: "3. Infer about Sam:[cite: 1]", options: ["Enjoys sitting.", "Forgot umbrella and returned to get it.", "Wanted to buy new.", "Lost on purpose."], ans: 1, exp: "Forgot umbrella and returned to get it[cite: 1]." },
+      { q: "4. 'The cat slept _____ the table while family ate.'[cite: 1]", options: ["on", "between", "under", "during"], ans: 2, exp: "Under the table[cite: 1]." },
+      { q: "5. Lily: 'I never eat breakfast.' Reason:[cite: 1]", options: ["Likes snacks.", "Does not feel hungry in the morning.", "Eats at school.", "Cooks for family."], ans: 1, exp: "Does not feel hungry in the morning[cite: 1]." },
+      { q: "6. Time expression for 7:45:[cite: 1]", options: ["Quarter after seven", "Quarter to eight", "Twenty-five to eight", "Fifteen to seven"], ans: 1, exp: "Quarter to eight[cite: 1]." },
+      { q: "7. Simple present habitual action:[cite: 1]", options: ["He is playing now.", "He plays soccer every Saturday.", "He played yesterday.", "He will play tomorrow."], ans: 1, exp: "He plays soccer every Saturday[cite: 1]." },
+      { passage: "No one saw the broken window except Nora. She kept quiet.[cite: 1]", q: "8. Best inference:[cite: 1]", options: ["Nora broke it for fun.", "Nora was the only witness and chose not to tell.", "Many people saw.", "Nora told everyone."], ans: 1, exp: "Nora was the only witness and chose not to tell[cite: 1]." },
+      { q: "9. 'The kite flew _____ the tall trees.'[cite: 1]", options: ["in", "above", "into", "below"], ans: 1, exp: "Flew above the trees[cite: 1]." },
+      { q: "10. Clock shows 11:10. School 8:00 to 12:00 lunch. Fits:[cite: 1]", options: ["Sleeping.", "Morning assembly.", "Recess or class time before lunch", "After-school."], ans: 2, exp: "Recess or class time before lunch[cite: 1]." }
     ];
 
     const dataAninESM4 = [
-      {
-        passage: "Tom waters the plants on Sundays, but this week he forgot. The plants droop.[cite: 1]",
-        q: "1. Read: What can you infer about the plants?[cite: 1]",
-        options: ["The plants never need water.", "The plants need weekly care and show signs when they do not get it.", "The plants grow faster without water.", "The plants do not belong to Tom."],
-        ans: 1,
-        exp: "Tanaman tersebut layu (droop) saat lupa disiram, menandakan bahwa tanaman butuh perawatan rutin setiap minggu[cite: 1]."
-      },
-      {
-        q: "2. Choose the sentence with the correct preposition: 'The picture of the family hangs _____ the living room wall.'[cite: 1]",
-        options: ["at", "on", "to", "by"],
-        ans: 1,
-        exp: "Foto yang menempel di dinding ruangan menggunakan preposisi 'on' (on the wall)[cite: 1]."
-      },
-      {
-        q: "3. Which question asks for the time shown if the minute hand points at 6 and the hour hand is halfway between 3 and 4?[cite: 1]",
-        options: ["Is it 3:30?", "Is it 3:15?", "Is it 4:30?", "Is it 3:45?"],
-        ans: 0,
-        exp: "Jarum menit di angka 6 dan jarum jam di antara 3 dan 4 menunjukkan waktu 03.30 ('Is it 3:30?')[cite: 1]."
-      },
-      {
-        passage: "Every day, Mei helps her little brother with homework before dinner.[cite: 1]",
-        q: "4. Read: Which statement is a reasonable inference?[cite: 1]",
-        options: ["Mei sometimes helps with chores after dinner.", "Mei never studies herself.", "Mei regularly spends time helping her brother in the evening.", "Mei dislikes children."],
-        ans: 2,
-        exp: "Karena dilakukan setiap hari sebelum makan malam (every day before dinner), Mei secara rutin membantu adiknya belajar di waktu sore/malam[cite: 1]."
-      },
-      {
-        q: "5. Pick the sentence that best uses simple present for a scheduled event.[cite: 1]",
-        options: ["The train arrives at 9:00 every morning.", "The train arrived at 9:00 yesterday.", "The train is arriving now.", "The train will have arrived by noon."],
-        ans: 0,
-        exp: "Jadwal transportasi resmi menggunakan Simple Present Tense: 'The train arrives at 9:00 every morning'[cite: 1]."
-      },
-      {
-        q: "6. Which preposition completes the sentence best? 'The keys are _____ the drawer next to the sink.'[cite: 1]",
-        options: ["inside", "between", "above", "across"],
-        ans: 0,
-        exp: "Kunci berada di dalam laci meja menggunakan preposisi 'inside'[cite: 1]."
-      },
-      {
-        passage: "A dog sits by the door and whines when the mail carrier walks by.[cite: 1]",
-        q: "7. Read: What inference is strongest?[cite: 1]",
-        options: ["The dog is afraid of the mail carrier.", "The dog expects visitors and reacts when someone passes the house.", "The mail carrier brings treats for the dog.", "The dog is sleepy."],
-        ans: 1,
-        exp: "Anjing tersebut selalu duduk di dekat pintu dan merengek/bereaksi setiap ada orang (tukang pos) yang lewat di depan rumah[cite: 1]."
-      },
-      {
-        q: "8. If the clock says quarter past five, what time is it?[cite: 1]",
-        options: ["5:15", "5:45", "4:45", "6:15"],
-        ans: 0,
-        exp: "'Quarter past five' berarti lewat 15 menit dari jam 5, yaitu pukul 05.15[cite: 1]."
-      },
-      {
-        passage: "Carlos studies the map every night before the trip. He asks many questions.[cite: 1]",
-        q: "9. Choose the best inference: What can you infer about Carlos?[cite: 1]",
-        options: ["Carlos dislikes traveling.", "Carlos wants to be well prepared and learn the route.", "Carlos learns maps only in school.", "Carlos plans to change the map."],
-        ans: 1,
-        exp: "Mempelajari peta tiap malam dan banyak bertanya menunjukkan Carlos ingin mempersiapkan rute perjalanannya dengan matang[cite: 1]."
-      },
-      {
-        q: "10. Which sentence uses the correct preposition for movement? 'We walked _____ the bridge to reach the park.'[cite: 1]",
-        options: ["through", "over", "beside", "behind"],
-        ans: 1,
-        exp: "Berjalan melintasi/di atas jembatan menggunakan preposisi pergerakan 'over' (walked over the bridge)[cite: 1]."
-      }
+      { passage: "Tom waters plants on Sundays, but forgot. Plants droop.[cite: 1]", q: "1. Infer about plants:[cite: 1]", options: ["Never need water.", "Need weekly care and show signs when they do not get it.", "Grow faster without water.", "Do not belong to Tom."], ans: 1, exp: "Need weekly care[cite: 1]." },
+      { q: "2. 'The picture hangs _____ the living room wall.'[cite: 1]", options: ["at", "on", "to", "by"], ans: 1, exp: "Hangs on the wall[cite: 1]." },
+      { q: "3. Minute hand on 6, hour hand halfway between 3 and 4?[cite: 1]", options: ["Is it 3:30?", "Is it 3:15?", "Is it 4:30?", "Is it 3:45?"], ans: 0, exp: "Is it 3:30?[cite: 1]" },
+      { passage: "Every day, Mei helps her little brother with homework before dinner.[cite: 1]", q: "4. Reasonable inference:[cite: 1]", options: ["Helps after dinner.", "Never studies.", "Mei regularly spends time helping her brother in the evening.", "Dislikes children."], ans: 2, exp: "Mei regularly spends time helping her brother in the evening[cite: 1]." },
+      { q: "5. Scheduled event:[cite: 1]", options: ["The train arrives at 9:00 every morning.", "Arrived yesterday.", "Arriving now.", "Will have arrived."], ans: 0, exp: "The train arrives at 9:00 every morning[cite: 1]." },
+      { q: "6. 'The keys are _____ the drawer.'[cite: 1]", options: ["inside", "between", "above", "across"], ans: 0, exp: "Inside the drawer[cite: 1]." },
+      { passage: "A dog sits by the door and whines when mail carrier walks by.[cite: 1]", q: "7. Strongest inference:[cite: 1]", options: ["Afraid of mail carrier.", "Expects visitors and reacts when someone passes.", "Brings treats.", "Sleepy."], ans: 1, exp: "Expects visitors and reacts when someone passes[cite: 1]." },
+      { q: "8. Quarter past five:[cite: 1]", options: ["5:15", "5:45", "4:45", "6:15"], ans: 0, exp: "5:15[cite: 1]." },
+      { passage: "Carlos studies the map every night before trip. Asks questions.[cite: 1]", q: "9. Infer about Carlos:[cite: 1]", options: ["Dislikes traveling.", "Wants to be well prepared and learn the route.", "Learns only in school.", "Plans to change map."], ans: 1, exp: "Wants to be well prepared and learn the route[cite: 1]." },
+      { q: "10. 'We walked _____ the bridge to reach the park.'[cite: 1]", options: ["through", "over", "beside", "behind"], ans: 1, exp: "Walked over the bridge[cite: 1]." }
     ];
 
-    // ===============================================
-    // DATA KAKAK PUTRI (MATH LEVEL 1 - 5 PAKET)
-    // ===============================================
+    // MATH LEVEL 1 KELAS 2 SD (5 PAKET)
     const dataPutriCampuran = [
-      {
-        type: "mcq",
-        q: "Perhatikan pola bilangan berikut:\n3, 6, 9, 12, A, 18, B.\nBerapakah nilai dari A + B?",
-        options: ["33", "36", "39", "42"],
-        ans: 1,
-        exp: "Pola selalu bertambah +3.\nA = 12 + 3 = 15.\nB = 18 + 3 = 21.\nMaka A + B = 15 + 21 = 36."
-      },
-      {
-        type: "mcq",
-        q: "Di sebuah peternakan ada 4 ekor ayam dan 3 ekor kambing. Berapa jumlah seluruh kaki hewan tersebut?",
-        options: ["14 kaki", "18 kaki", "20 kaki", "24 kaki"],
-        ans: 2,
-        exp: "Kaki ayam: 4 x 2 = 8 kaki.\nKaki kambing: 3 x 4 = 12 kaki.\nTotal kaki = 8 + 12 = 20 kaki."
-      },
-      {
-        type: "mcq",
-        q: "Jika sekarang hari Selasa, maka 10 hari lagi adalah hari...",
-        options: ["Kamis", "Jumat", "Sabtu", "Minggu"],
-        ans: 1,
-        exp: "Satu minggu ada 7 hari.\n7 hari dari Selasa adalah Selasa lagi.\nSisa 3 hari: Rabu (+1), Kamis (+2), Jumat (+3).\nJadi 10 hari lagi adalah hari Jumat."
-      },
-      {
-        type: "mcq",
-        q: "Sebuah bus membawa 28 penumpang. Di halte pertama turun 9 orang dan naik 5 orang. Berapa banyak penumpang di dalam bus sekarang?",
-        options: ["22 orang", "24 orang", "25 orang", "26 orang"],
-        ans: 1,
-        exp: "Penumpang awal = 28.\nTurun 9 orang = 28 - 9 = 19 orang.\nNaik 5 orang = 19 + 5 = 24 orang."
-      },
-      {
-        type: "mcq",
-        q: "Aku adalah bilangan dua angka. Angka puluhanku adalah 6. Angka satuanku 2 lebih kecil dari angka puluhan. Bilangan berapakah aku?",
-        options: ["68", "64", "46", "62"],
-        ans: 1,
-        exp: "Angka puluhan = 6.\nAngka satuan = 6 - 2 = 4.\nMaka bilangannya adalah 64."
-      },
-      {
-        type: "mcq",
-        q: "Ibu membeli 3 kotak donat. Setiap kotak berisi 6 donat. Donat-donat itu dibagikan sama rata kepada 2 anaknya. Berapa donat yang didapat tiap anak?",
-        options: ["8 donat", "9 donat", "10 donat", "12 donat"],
-        ans: 1,
-        exp: "Total donat = 3 kotak x 6 = 18 donat.\nDibagi 2 anak = 18 : 2 = 9 donat per anak."
-      },
-      {
-        type: "mcq",
-        q: "Bangun datar yang memiliki 3 sisi dan 3 titik sudut adalah...",
-        options: ["Persegi", "Persegi Panjang", "Segitiga", "Lingkaran"],
-        ans: 2,
-        exp: "Segitiga adalah bangun datar yang dibatasi oleh 3 ruas garis (sisi) dan memiliki 3 titik sudut."
-      },
-      {
-        type: "mcq",
-        q: "Jarum panjang menunjuk angka 6 dan jarum pendek berada di antara angka 4 dan 5. Jam berapakah itu?",
-        options: ["Pukul 04.30", "Pukul 05.30", "Pukul 06.20", "Pukul 04.06"],
-        ans: 0,
-        exp: "Jarum pendek di antara 4 dan 5 menunjukkan jam 4 lewat. Jarum panjang di angka 6 menunjukkan 30 menit (6 x 5 = 30). Jadi pukul 04.30."
-      },
-      {
-        type: "mcq",
-        q: "Manakah pecahan yang nilainya PALING BESAR?",
-        options: ["1/2", "1/3", "1/4", "1/5"],
-        ans: 0,
-        exp: "Pada pecahan dengan pembilang sama (angka atas 1), semakin KECIL angka penyebutnya (angka bawah), nilainya justru semakin BESAR. Jadi 1/2 adalah yang terbesar."
-      },
-      {
-        type: "mcq",
-        q: "Budi memiliki 1 lembar uang Rp10.000, 2 lembar uang Rp2.000, dan 3 koin Rp500. Berapa total uang Budi?",
-        options: ["Rp14.500", "Rp15.000", "Rp15.500", "Rp16.000"],
-        ans: 2,
-        exp: "Rp10.000 + (2 x Rp2.000 = Rp4.000) + (3 x Rp500 = Rp1.500) = Rp10.000 + Rp4.000 + Rp1.500 = Rp15.500."
-      },
-      {
-        type: "mcq",
-        q: "Dalam antrean kantin, Alif berada di urutan ke-4 dari depan dan urutan ke-5 dari belakang. Berapa jumlah anak dalam antrean itu?",
-        options: ["7 anak", "8 anak", "9 anak", "10 anak"],
-        ans: 1,
-        exp: "Jumlah = (posisi depan + posisi belakang) - 1.\nJumlah = (4 + 5) - 1 = 9 - 1 = 8 anak.\n(Dikurang 1 karena Alif dihitung 2 kali)."
-      },
-      {
-        type: "mcq",
-        q: "Berapakah hasil dari: 45 + 28 - 19 = ...",
-        options: ["52", "54", "56", "58"],
-        ans: 1,
-        exp: "Langkah 1: 45 + 28 = 73.\nLangkah 2: 73 - 19 = 54."
-      },
-      {
-        type: "mcq",
-        q: "Sebuah tali panjangnya 1 meter. Tali tersebut dipotong 35 cm. Berapa cm sisa tali sekarang?",
-        options: ["55 cm", "65 cm", "75 cm", "135 cm"],
-        ans: 1,
-        exp: "1 meter = 100 cm.\nSisa = 100 cm - 35 cm = 65 cm."
-      },
-      {
-        type: "mcq",
-        q: "Perhatikan perbandingan berikut:\n2 apel = 4 stroberi\n1 apel = ... stroberi?",
-        options: ["1 stroberi", "2 stroberi", "3 stroberi", "4 stroberi"],
-        ans: 1,
-        exp: "Jika 2 apel seberat 4 stroberi, maka 1 apel seberat 4 : 2 = 2 stroberi."
-      },
-      {
-        type: "mcq",
-        q: "Umur Kakak 9 tahun. Umur Adik 4 tahun lebih muda dari Kakak. Berapakah JUMLAH umur mereka berdua?",
-        options: ["13 tahun", "14 tahun", "15 tahun", "18 tahun"],
-        ans: 1,
-        exp: "Umur Kakak = 9 tahun.\nUmur Adik = 9 - 4 = 5 tahun.\nJumlah umur = 9 + 5 = 14 tahun."
-      },
-      {
-        type: "mcq",
-        q: "Manakah operasi hitung di bawah ini yang hasilnya PALING KECIL?",
-        options: ["5 x 4", "30 - 12", "12 + 7", "40 : 2"],
-        ans: 1,
-        exp: "A. 5 x 4 = 20\nB. 30 - 12 = 18\nC. 12 + 7 = 19\nD. 40 : 2 = 20\nHasil paling kecil adalah 18 (Pilihan B)."
-      },
-      {
-        type: "mcq",
-        q: "Sebuah akuarium berisi 15 ikan mas, 12 ikan koki, dan 8 ikan guppy. Berapa jumlah seluruh ikan di akuarium?",
-        options: ["33 ekor", "35 ekor", "37 ekor", "40 ekor"],
-        ans: 1,
-        exp: "15 + 12 + 8 = 15 + 20 = 35 ekor."
-      },
-      {
-        type: "mcq",
-        q: "Perhatikan pola gambar berikut: Segitiga, Lingkaran, Kotak, Segitiga, Lingkaran, Kotak, Segitiga, ...\nBentuk apakah urutan ke-11?",
-        options: ["Segitiga", "Lingkaran", "Kotak", "Bintang"],
-        ans: 1,
-        exp: "Pola berulang tiap 3 bentuk:\n1: Segitiga, 2: Lingkaran, 3: Kotak\n4: Segitiga, 5: Lingkaran, 6: Kotak\n7: Segitiga, 8: Lingkaran, 9: Kotak\n10: Segitiga, 11: Lingkaran.\nJadi bentuk ke-11 adalah Lingkaran."
-      },
-      {
-        type: "input",
-        q: "Isian Singkat: Berapakah hasil dari (7 x 4) + 15 = ...",
-        ans: ["43"],
-        exp: "Kerjakan perkalian dulu: 7 x 4 = 28.\nLalu jumlahkan: 28 + 15 = 43."
-      },
-      {
-        type: "input",
-        q: "Isian Singkat: Aku adalah bilangan ganjil antara 20 dan 30. Jumlah kedua angka penyusun ku adalah 9. Bilangan berapakah aku?",
-        ans: ["27"],
-        exp: "Bilangan antara 20 dan 30 dengan kepala 2. Supaya jumlah angkanya 9, angka satuannya harus 9 - 2 = 7. Bilangan 27 adalah ganjil. Jawabannya: 27."
-      },
-      {
-        type: "input",
-        q: "Isian Singkat: Roni memiliki 24 kelereng. Diberikan kepada adiknya sebanyak 8 kelereng. Lalu ia membeli lagi 6 kelereng. Berapa kelereng Roni sekarang?",
-        ans: ["22"],
-        exp: "24 - 8 = 16 kelereng.\n16 + 6 = 22 kelereng."
-      },
-      {
-        type: "input",
-        q: "Isian Singkat: Sebuah meja persegi memiliki panjang sisi 5 cm. Berapakah keliling meja tersebut? (Tulis angkanya saja)",
-        ans: ["20", "20 cm"],
-        exp: "Keliling persegi = 4 x sisi = 4 x 5 cm = 20 cm."
-      },
-      {
-        type: "input",
-        q: "Isian Singkat: Di rak ada 5 piring. Setiap piring berisi 4 kue nastar. Berapa jumlah semua kue nastar di rak?",
-        ans: ["20"],
-        exp: "5 piring x 4 kue = 20 kue."
-      },
-      {
-        type: "input",
-        q: "Isian Singkat: Ayah berangkat kerja pukul 07.00 pagi dan tiba di kantor pukul 07.45 pagi. Berapa MENIT lama perjalanan Ayah?",
-        ans: ["45", "45 menit"],
-        exp: "Dari pukul 07.00 sampai 07.45 adalah 45 menit."
-      },
-      {
-        type: "input",
-        q: "Isian Singkat: Nilai dari setengah (1/2) dari 18 buah apel adalah ... buah apel.",
-        ans: ["9"],
-        exp: "1/2 dari 18 sama dengan 18 dibagi 2 = 9 buah apel."
-      }
+      { type: "mcq", q: "Pola: 3, 6, 9, 12, A, 18, B. Nilai A + B?", options: ["33", "36", "39", "42"], ans: 1, exp: "A=15, B=21. A+B = 36." },
+      { type: "mcq", q: "Ada 4 ayam dan 3 kambing. Total kaki?", options: ["14", "18", "20", "24"], ans: 2, exp: "8 + 12 = 20 kaki." },
+      { type: "mcq", q: "Sekarang Selasa, 10 hari lagi hari ....", options: ["Kamis", "Jumat", "Sabtu", "Minggu"], ans: 1, exp: "Jumat." },
+      { type: "mcq", q: "Bus isi 28 orang. Turun 9 orang, naik 5 orang. Penumpang sekarang?", options: ["22", "24", "25", "26"], ans: 1, exp: "28 - 9 + 5 = 24 orang." },
+      { type: "mcq", q: "Puluhan = 6. Satuan 2 lebih kecil dari puluhan. Bilangan itu?", options: ["68", "64", "46", "62"], ans: 1, exp: "64." },
+      { type: "mcq", q: "3 kotak donat isi 6 dibagikan ke 2 anak. Tiap anak dapat?", options: ["8", "9", "10", "12"], ans: 1, exp: "18 : 2 = 9 donat." },
+      { type: "mcq", q: "Bangun datar dengan 3 sisi dan 3 sudut adalah ....", options: ["Persegi", "Persegi Panjang", "Segitiga", "Lingkaran"], ans: 2, exp: "Segitiga." },
+      { type: "mcq", q: "Jarum panjang di 6, jarum pendek di antara 4 dan 5?", options: ["04.30", "05.30", "06.20", "04.06"], ans: 0, exp: "Pukul 04.30." },
+      { type: "mcq", q: "Pecahan PALING BESAR?", options: ["1/2", "1/3", "1/4", "1/5"], ans: 0, exp: "1/2." },
+      { type: "mcq", q: "1 lembar Rp10.000 + 2 lembar Rp2.000 + 3 koin Rp500 = ....", options: ["Rp14.500", "Rp15.000", "Rp15.500", "Rp16.000"], ans: 2, exp: "Rp15.500." },
+      { type: "mcq", q: "Alif urutan ke-4 dari depan dan ke-5 dari belakang. Jumlah anak?", options: ["7", "8", "9", "10"], ans: 1, exp: "4 + 5 - 1 = 8 anak." },
+      { type: "mcq", q: "45 + 28 - 19 = ....", options: ["52", "54", "56", "58"], ans: 1, exp: "54." },
+      { type: "mcq", q: "Tali 1 meter dipotong 35 cm. Sisa tali?", options: ["55 cm", "65 cm", "75 cm", "135 cm"], ans: 1, exp: "65 cm." },
+      { type: "mcq", q: "2 apel = 4 stroberi. 1 apel = .... stroberi", options: ["1", "2", "3", "4"], ans: 1, exp: "2 stroberi." },
+      { type: "mcq", q: "Kakak 9 tahun, Adik 4 tahun lebih muda. Jumlah umur berdua?", options: ["13", "14", "15", "18"], ans: 1, exp: "9 + 5 = 14 tahun." },
+      { type: "mcq", q: "Operasi hitung hasil PALING KECIL?", options: ["5 x 4", "30 - 12", "12 + 7", "40 : 2"], ans: 1, exp: "30 - 12 = 18." },
+      { type: "mcq", q: "15 ikan mas + 12 ikan koki + 8 ikan guppy = ....", options: ["33", "35", "37", "40"], ans: 1, exp: "35 ekor." },
+      { type: "mcq", q: "Pola: Segitiga, Lingkaran, Kotak... Bentuk ke-11?", options: ["Segitiga", "Lingkaran", "Kotak", "Bintang"], ans: 1, exp: "Lingkaran." },
+      { type: "input", q: "(7 x 4) + 15 = .....", ans: ["43"], exp: "28 + 15 = 43." },
+      { type: "input", q: "Bilangan ganjil antara 20 dan 30, jumlah angka penyusun 9?", ans: ["27"], exp: "27." },
+      { type: "input", q: "Roni punya 24 kelereng, diberi ke adik 8, beli lagi 6. Sisa?", ans: ["22"], exp: "24 - 8 + 6 = 22." },
+      { type: "input", q: "Keliling meja persegi sisi 5 cm? (tulis angka)", ans: ["20", "20 cm"], exp: "4 x 5 = 20 cm." },
+      { type: "input", q: "5 piring x 4 kue = .....", ans: ["20"], exp: "20 kue." },
+      { type: "input", q: "Berangkat 07.00 sampai 07.45. Lama menit?", ans: ["45", "45 menit"], exp: "45 menit." },
+      { type: "input", q: "Setengah (1/2) dari 18 apel adalah .....", ans: ["9"], exp: "9 buah." }
     ];
 
     const dataPutriESM1 = [
-      {
-        q: "1. Sita mempunyai 28 permen. Ibu memberi lagi 35 permen. Sebelum dimakan, Siti menghitung semua permennya.\nJumlah permen Sita sekarang adalah ....[cite: 2]",
-        options: ["53", "63", "73", "83"],
-        ans: 1,
-        exp: "28 + 35 = 63 permen[cite: 2]."
-      },
-      {
-        q: "2. Di kandang ada 74 ayam. Sebanyak 26 ayam dijual ayah ke pasar.\nSisa ayam adalah ....[cite: 2]",
-        options: ["38", "48", "50", "58"],
-        ans: 1,
-        exp: "74 - 26 = 48 ekor ayam[cite: 2]."
-      },
-      {
-        q: "3. Budi membeli 4 kotak pensil. Setiap kotak berisi 6 pensil.\nJumlah semua pensil adalah ....[cite: 2]",
-        options: ["20", "22", "24", "26"],
-        ans: 2,
-        exp: "4 kotak x 6 pensil = 24 pensil[cite: 2]."
-      },
-      {
-        q: "4. Di perpustakaan terdapat 45 buku cerita dan 37 buku pengetahuan.\nJumlah seluruh buku adalah ....[cite: 2]",
-        options: ["72", "82", "92", "102"],
-        ans: 1,
-        exp: "45 + 37 = 82 buku[cite: 2]."
-      },
-      {
-        q: "5. Ani mempunyai 90 kelereng. Ia memberikan 38 kepada adiknya.\nSisa kelereng Ani adalah ....[cite: 2]",
-        options: ["42", "52", "62", "72"],
-        ans: 1,
-        exp: "90 - 38 = 52 kelereng[cite: 2]."
-      },
-      {
-        q: "6. Setiap rak berisi 8 buku. Ada 5 rak yang sama.\nJumlah buku seluruhnya adalah ....[cite: 2]",
-        options: ["30", "35", "40", "45"],
-        ans: 2,
-        exp: "5 rak x 8 buku = 40 buku[cite: 2]."
-      },
-      {
-        q: "7. Ibu membeli 36 apel dan 29 jeruk.\nJumlah seluruh buah adalah ....[cite: 2]",
-        options: ["55", "65", "75", "85"],
-        ans: 1,
-        exp: "36 + 29 = 65 buah[cite: 2]."
-      },
-      {
-        q: "8. Rina mempunyai 68 stiker. Ia kehilangan 19 stiker.\nSisa stiker Rina adalah ....[cite: 2]",
-        options: ["49", "59", "39", "29"],
-        ans: 0,
-        exp: "68 - 19 = 49 stiker[cite: 2]."
-      },
-      {
-        q: "9. Hari ini hari Senin.\nDua hari setelah Senin adalah ....[cite: 2]",
-        options: ["Selasa", "Rabu", "Kamis", "Jumat"],
-        ans: 1,
-        exp: "Senin -> Selasa (+1) -> Rabu (+2). Jadi dua hari setelah Senin adalah Rabu[cite: 2]."
-      },
-      {
-        q: "10. Hari ini hari Jumat.\nHari sebelumnya adalah ....[cite: 2]",
-        options: ["Rabu", "Kamis", "Sabtu", "Minggu"],
-        ans: 1,
-        exp: "Hari sebelum hari Jumat adalah hari Kamis[cite: 2]."
-      }
+      { q: "1. 28 permen + 35 permen = ....[cite: 2]", options: ["53", "63", "73", "83"], ans: 1, exp: "63[cite: 2]." },
+      { q: "2. 74 ayam dijual 26. Sisa ayam = ....[cite: 2]", options: ["38", "48", "50", "58"], ans: 1, exp: "48[cite: 2]." },
+      { q: "3. 4 kotak pensil isi 6 pensil = ....[cite: 2]", options: ["20", "22", "24", "26"], ans: 2, exp: "24[cite: 2]." },
+      { q: "4. 45 buku cerita + 37 buku pengetahuan = ....[cite: 2]", options: ["72", "82", "92", "102"], ans: 1, exp: "82[cite: 2]." },
+      { q: "5. 90 kelereng diberikan 38 ke adik. Sisa = ....[cite: 2]", options: ["42", "52", "62", "72"], ans: 1, exp: "52[cite: 2]." },
+      { q: "6. 5 rak x 8 buku = ....[cite: 2]", options: ["30", "35", "40", "45"], ans: 2, exp: "40[cite: 2]." },
+      { q: "7. 36 apel + 29 jeruk = ....[cite: 2]", options: ["55", "65", "75", "85"], ans: 1, exp: "65[cite: 2]." },
+      { q: "8. 68 stiker hilang 19. Sisa = ....[cite: 2]", options: ["49", "59", "39", "29"], ans: 0, exp: "49[cite: 2]." },
+      { q: "9. Dua hari setelah Senin = ....[cite: 2]", options: ["Selasa", "Rabu", "Kamis", "Jumat"], ans: 1, exp: "Rabu[cite: 2]." },
+      { q: "10. Hari sebelum Jumat = ....[cite: 2]", options: ["Rabu", "Kamis", "Sabtu", "Minggu"], ans: 1, exp: "Kamis[cite: 2]." }
     ];
 
     const dataPutriESM2 = [
-      {
-        q: "1. Sekolah dimulai pukul 07.00. Jika sekarang pukul 06.45, maka waktu menuju sekolah adalah ....[cite: 2]",
-        options: ["10 menit", "15 menit", "20 menit", "25 menit"],
-        ans: 1,
-        exp: "Dari pukul 06.45 sampai 07.00 ada selisih waktu 15 menit (60 - 45 = 15)[cite: 2]."
-      },
-      {
-        q: "2. Ina pergi ke Jakarta selama 5 minggu. Dalam 5 minggu terdapat ....[cite: 2]",
-        options: ["35 hari", "60 hari", "71 hari", "38 hari"],
-        ans: 0,
-        exp: "1 minggu = 7 hari. Maka 5 minggu = 5 x 7 = 35 hari[cite: 2]."
-      },
-      {
-        q: "3. 3 minggu setelah 14 Agustus adalah ....[cite: 2]",
-        options: ["3 September", "4 September", "5 September", "6 September"],
-        ans: 1,
-        exp: "3 minggu = 21 hari. Bulan Agustus ada 31 hari. 14 + 21 = 35. 35 - 31 = 4 September[cite: 2]."
-      },
-      {
-        q: "4. Bangun datar yang mempunyai 4 sisi sama panjang adalah ....[cite: 2]",
-        options: ["Segitiga", "Persegi", "Lingkaran", "Oval"],
-        ans: 1,
-        exp: "Persegi adalah bangun datar dengan 4 sisi yang sama panjang dan 4 sudut siku-siku[cite: 2]."
-      },
-      {
-        q: "5. Jika pola bangunan ABCD kemudian berubah ke pola kedua yaitu DCBA dan pola ketiga BCDA. Maka pada pola ketiga bangunan yang menempati urutan kedua adalah ....[cite: 2]",
-        options: ["Persegi", "Persegi panjang", "Segitiga", "Lingkaran"],
-        ans: 2,
-        exp: "Pola: A=Persegi, B=Persegi Panjang, C=Segitiga, D=Lingkaran[cite: 2]. Pola ketiga B-C-D-A, posisi kedua ditempati oleh C (Segitiga)[cite: 2]."
-      },
-      {
-        q: "6. Andi mau menggambar benda yang berbentuk seperti bola. Benda yang bentuknya seperti bola adalah ....[cite: 2]",
-        options: ["Buku", "kelereng", "Pintu", "Meja"],
-        ans: 1,
-        exp: "Kelereng memiliki bentuk bulat bola (geometri bola)[cite: 2]."
-      },
-      {
-        q: "7. Perhatikan pola berikut:\n10, 20, 30, 40, ....\nBilangan berikutnya adalah ....[cite: 2]",
-        options: ["45", "50", "55", "60"],
-        ans: 1,
-        exp: "Pola selalu bertambah +10. Maka 40 + 10 = 50[cite: 2]."
-      },
-      {
-        q: "8. Perhatikan pola berikut:\n3, 6, 9, 12, ....\nBilangan berikutnya adalah ....[cite: 2]",
-        options: ["13", "14", "15", "16"],
-        ans: 2,
-        exp: "Pola kelipatan 3 / bertambah +3. Maka 12 + 3 = 15[cite: 2]."
-      },
-      {
-        q: "9. Seekor kelinci berada di depan pohon. Kemudian kelinci berjalan sehingga berada di belakang pohon. Sekarang posisi kelinci adalah ....[cite: 2]",
-        options: ["Di depan pohon", "Di belakang pohon", "Di atas pohon", "Di bawah pohon"],
-        ans: 1,
-        exp: "Kelinci berjalan menuju belakang pohon, jadi posisinya sekarang di belakang pohon[cite: 2]."
-      },
-      {
-        q: "10. Rani berdiri menghadap papan tulis. Lemari berada di sebelah kiri papan tulis. Berarti lemari berada di sebelah .... Rani.[cite: 2]",
-        options: ["kanan", "kiri", "belakang", "depan"],
-        ans: 1,
-        exp: "Karena Rani menghadap lurus ke arah papan tulis, arah kiri papan tulis sama persis dengan arah kiri Rani[cite: 2]."
-      }
+      { q: "1. Sekolah mulai 07.00, sekarang 06.45. Waktu menuju sekolah = ....[cite: 2]", options: ["10 menit", "15 menit", "20 menit", "25 menit"], ans: 1, exp: "15 menit[cite: 2]." },
+      { q: "2. 5 minggu = .... hari[cite: 2]", options: ["35", "60", "71", "38"], ans: 0, exp: "35 hari[cite: 2]." },
+      { q: "3. 3 minggu setelah 14 Agustus = ....[cite: 2]", options: ["3 Sept", "4 Sept", "5 Sept", "6 Sept"], ans: 1, exp: "4 September[cite: 2]." },
+      { q: "4. Bangun datar 4 sisi sama panjang = ....[cite: 2]", options: ["Segitiga", "Persegi", "Lingkaran", "Oval"], ans: 1, exp: "Persegi[cite: 2]." },
+      { q: "5. Pola ABCD, DCBA, BCDA. Urutan kedua pada pola ketiga?[cite: 2]", options: ["Persegi", "Persegi panjang", "Segitiga", "Lingkaran"], ans: 2, exp: "Segitiga[cite: 2]." },
+      { q: "6. Benda berbentuk bola = ....[cite: 2]", options: ["Buku", "Kelereng", "Pintu", "Meja"], ans: 1, exp: "Kelereng[cite: 2]." },
+      { q: "7. Pola: 10, 20, 30, 40, ....[cite: 2]", options: ["45", "50", "55", "60"], ans: 1, exp: "50[cite: 2]." },
+      { q: "8. Pola: 3, 6, 9, 12, ....[cite: 2]", options: ["13", "14", "15", "16"], ans: 2, exp: "15[cite: 2]." },
+      { q: "9. Kelinci jalan ke belakang pohon. Posisi sekarang?[cite: 2]", options: ["Di depan", "Di belakang pohon", "Di atas", "Di bawah"], ans: 1, exp: "Di belakang pohon[cite: 2]." },
+      { q: "10. Rani menghadap papan tulis. Lemari di sebelah kiri papan tulis = sebelah .... Rani[cite: 2]", options: ["kanan", "kiri", "belakang", "depan"], ans: 1, exp: "Kiri[cite: 2]." }
     ];
 
     const dataPutriESM3 = [
-      {
-        q: "1. Pada hari Sabtu, Bu Rina mengajak siswa kelas 2 menanam bunga di taman sekolah. Setiap kelompok mendapat jumlah bibit yang berbeda. Kelompok Merah memiliki 28 bibit. Mereka menanam 15 bibit pada pagi hari. Setelah istirahat, guru memberikan lagi 12 bibit untuk ditanam. Semua bibit harus ditanam sebelum pulang sekolah.\nBerapa jumlah seluruh bibit yang akhirnya ditanam oleh Kelompok Merah?[cite: 2]",
-        options: ["40", "43", "55", "57"],
-        ans: 1,
-        exp: "Bibit awal 28 + tambahan 12 bibit dari guru = 40 (atau 28 - 15 = 13 sisa; 13 + 15 + 12 = 40/43 tergantung total alokasi, kunci resmi: B (43))[cite: 2]."
-      },
-      {
-        q: "2. Hari Minggu, keluarga Nisa berlibur ke kebun binatang. Mereka berangkat pukul 08.00 pagi. Perjalanan memerlukan waktu 1 jam. Setelah tiba, melihat hewan selama 2 jam. Sebelum pulang, istirahat dan makan siang selama 1 jam.\nPukul berapa seluruh kegiatan selesai?[cite: 2]",
-        options: ["10.00", "11.00", "12.00", "13.00"],
-        ans: 2,
-        exp: "08.00 + 1 jam (perjalanan) = 09.00. 09.00 + 2 jam (hewan) = 11.00. 11.00 + 1 jam (makan) = 12.00[cite: 2]."
-      },
-      {
-        q: "3. Pak Guru mengajak siswa mengamati benda di kelas. Papan tulis berbentuk persegi panjang, jam dinding lingkaran, jendela persegi panjang, dan ubin lantai berbentuk persegi.\nBenda manakah yang memiliki empat sisi sama panjang?[cite: 2]",
-        options: ["Jam dinding", "Papan tulis", "Ubin lantai", "Jendela"],
-        ans: 2,
-        exp: "Ubin lantai berbentuk persegi, sehingga memiliki 4 sisi yang sama panjang[cite: 2]."
-      },
-      {
-        q: "4. Ibu membuat hiasan manik-manik dengan pola: 8, 16, 24, 32, ....\nJumlah manik-manik pada rangkaian berikutnya adalah ....[cite: 2]",
-        options: ["36", "38", "40", "42"],
-        ans: 2,
-        exp: "Pola selalu bertambah +8. Maka 32 + 8 = 40[cite: 2]."
-      },
-      {
-        q: "5. Perhatikan pola bangun berselang-seling: Lingkaran, Segitiga, Lingkaran, Segitiga, ....\nPola bangun pada urutan ke-20 adalah bangun ....[cite: 2]",
-        options: ["lingkaran", "segitiga", "lingkaran dan segitiga", "tidak ada pola"],
-        ans: 1,
-        exp: "Urutan ganjil (1, 3, 5, ...) = Lingkaran. Urutan genap (2, 4, 6, ..., 20) = Segitiga. Kunci resmi ESM: Segitiga (B)[cite: 2]."
-      },
-      {
-        q: "6. Di perpustakaan kelas 2 ada 64 buku cerita di rak. Sebanyak 18 buku dipinjam pada pagi hari. Setelah istirahat, petugas mengembalikan 9 buku.\nBerapa jumlah buku di rak perpustakaan sekarang?[cite: 2]",
-        options: ["45", "46", "55", "73"],
-        ans: 2,
-        exp: "64 - 18 = 46 buku. Kemudian 46 + 9 = 55 buku[cite: 2]."
-      },
-      {
-        q: "7. Hari Senin, pelajaran dimulai pukul 07.30. Belajar 2 jam, istirahat 30 menit, lalu belajar lagi 1 jam.\nPukul berapa kegiatan belajar Dito selesai?[cite: 2]",
-        options: ["10.00", "10.30", "11.00", "11.30"],
-        ans: 2,
-        exp: "07.30 + 2 jam = 09.30. 09.30 + 30 menit = 10.00. 10.00 + 1 jam = 11.00[cite: 2]."
-      },
-      {
-        q: "8. Kelompok Sinta ingin membuat kolase gambar rumah dari bangun datar. Bangun datar yang paling tepat digunakan sebagai atap rumah adalah ....[cite: 2]",
-        options: ["Lingkaran", "Segitiga", "Persegi", "Persegi Panjang"],
-        ans: 1,
-        exp: "Bentuk segitiga memiliki sudut lancip ke atas yang paling menyerupai atap rumah[cite: 2]."
-      },
-      {
-        q: "9. Pak Budi menyusun kursi dengan pola: Baris 1 = 5 kursi, Baris 2 = 10 kursi, Baris 3 = 15 kursi, Baris 4 = 20 kursi.\nBerapa jumlah kursi pada baris kelima?[cite: 2]",
-        options: ["22", "24", "25", "30"],
-        ans: 2,
-        exp: "Pola selalu bertambah +5 kursi. Maka baris ke-5 = 20 + 5 = 25 kursi[cite: 2]."
-      },
-      {
-        q: "10. Lani mula-mula berjalan lurus 43 langkah, lalu berbelok kiri 43 langkah, kemudian berbelok kanan 14 langkah.\nBerapa total langkah yang sudah Lani tempuh?[cite: 2]",
-        options: ["98 langkah", "100 langkah", "120 langkah", "90 langkah"],
-        ans: 1,
-        exp: "Total langkah = 43 + 43 + 14 = 100 langkah[cite: 2]."
-      }
+      { q: "1. Kelompok Merah ada 28 bibit, tanam 15 bibit, dapat lagi 12 bibit. Total bibit yang ditanam?[cite: 2]", options: ["40", "43", "55", "57"], ans: 1, exp: "43 (kunci B)[cite: 2]." },
+      { q: "2. Berangkat 08.00, jalan 1 jam, lihat hewan 2 jam, makan 1 jam. Selesai pukul?[cite: 2]", options: ["10.00", "11.00", "12.00", "13.00"], ans: 2, exp: "12.00[cite: 2]." },
+      { q: "3. Benda dengan 4 sisi sama panjang di kelas?[cite: 2]", options: ["Jam dinding", "Papan tulis", "Ubin lantai", "Jendela"], ans: 2, exp: "Ubin lantai[cite: 2]." },
+      { q: "4. Pola manik-manik: 8, 16, 24, 32, ....[cite: 2]", options: ["36", "38", "40", "42"], ans: 2, exp: "40[cite: 2]." },
+      { q: "5. Pola berselang: Lingkaran, Segitiga... Bentuk urutan ke-20?[cite: 2]", options: ["Lingkaran", "Segitiga", "Lingkaran & Segitiga", "Tidak ada pola"], ans: 1, exp: "Segitiga (B)[cite: 2]." },
+      { q: "6. 64 buku dipinjam 18, dikembalikan 9. Sisa di rak?[cite: 2]", options: ["45", "46", "55", "73"], ans: 2, exp: "55[cite: 2]." },
+      { q: "7. Mulai 07.30, belajar 2 jam, istirahat 30 mnt, belajar 1 jam. Selesai pukul?[cite: 2]", options: ["10.00", "10.30", "11.00", "11.30"], ans: 2, exp: "11.00[cite: 2]." },
+      { q: "8. Bangun paling tepat sebagai atap rumah?[cite: 2]", options: ["Lingkaran", "Segitiga", "Persegi", "Persegi Panjang"], ans: 1, exp: "Segitiga[cite: 2]." },
+      { q: "9. Pola baris kursi: 5, 10, 15, 20, .... Baris ke-5?[cite: 2]", options: ["22", "24", "25", "30"], ans: 2, exp: "25[cite: 2]." },
+      { q: "10. Jalan lurus 43 langkah, belok kiri 43 langkah, belok kanan 14 langkah. Total langkah?[cite: 2]", options: ["98", "100", "120", "90"], ans: 1, exp: "100 langkah[cite: 2]." }
     ];
 
     const dataPutriESM4 = [
-      {
-        q: "1. Kelompok Melati mengumpulkan 36 tutup botol pada pagi hari dan 19 tutup botol pada siang hari. Guru menyerahkan lagi 8 tutup botol milik kelompok tersebut yang tertinggal.\nJumlah seluruh tutup botol yang berhasil dikumpulkan adalah ....[cite: 2]",
-        options: ["55", "57", "63", "71"],
-        ans: 2,
-        exp: "36 + 19 + 8 = 63 tutup botol[cite: 2]."
-      },
-      {
-        q: "2. Pada hari Jumat, Edo mulai belajar pukul 07.00. Belajar 1 jam, senam 30 menit, lalu kembali belajar 2 jam.\nPukul berapa seluruh kegiatan selesai?[cite: 2]",
-        options: ["09.30", "10.00", "10.30", "11.00"],
-        ans: 2,
-        exp: "07.00 + 1 jam = 08.00. 08.00 + 30 menit = 08.30. 08.30 + 2 jam = 10.30[cite: 2]."
-      },
-      {
-        q: "3. Bu Guru membawa bola, buku tulis, ubin lantai, dan topi ulang tahun.\nBenda yang paling tepat mewakili bangun datar persegi adalah ....[cite: 2]",
-        options: ["Bola", "Buku tulis", "Ubin lantai", "Topi ulang tahun"],
-        ans: 2,
-        exp: "Ubin lantai memiliki permukaan datar 4 sisi sama panjang (persegi)[cite: 2]."
-      },
-      {
-        q: "4. Di halaman sekolah ada batu hias berbaris dengan jumlah: 12, 18, 24, 30, ....\nJumlah batu pada kelompok berikutnya adalah ....[cite: 2]",
-        options: ["34", "35", "36", "38"],
-        ans: 2,
-        exp: "Pola selalu bertambah +6. Maka 30 + 6 = 36 batu[cite: 2]."
-      },
-      {
-        q: "5. Ada berapa macam bangun datar pada gabungan bentuk dan hitunglah jumlahnya?[cite: 2]",
-        options: [
-          "5 macam bangun jumlahnya 34 bangun",
-          "6 macam bangun dan jumlahnya 35 bangun",
-          "7 macam bangun dan jumlahnya 37 bangun",
-          "28 bangun dan jumlahnya 38 bangun"
-        ],
-        ans: 2,
-        exp: "Sesuai kunci resmi paket ESM Math Level 1 Babak Penyisihan 4 No. 5: 7 macam bangun dan jumlahnya 37 bangun (C)[cite: 2]."
-      },
-      {
-        q: "6. Bu Guru membawa 75 jeruk. Dibagikan 28 jeruk ke kelas 2A, lalu dapat tambahan 15 jeruk dari kantin. Sebelum pulang dibagikan lagi 12 jeruk.\nBerapa jumlah jeruk yang masih tersisa?[cite: 2]",
-        options: ["48", "50", "52", "54"],
-        ans: 1,
-        exp: "75 - 28 = 47. 47 + 15 = 62. 62 - 12 = 50 jeruk[cite: 2]."
-      },
-      {
-        q: "7. Latihan tari dimulai pukul 08.00. Latihan pertama 1 jam, istirahat 30 menit, lalu berlatih lagi 1 jam 30 menit.\nPukul berapa latihan tari selesai?[cite: 2]",
-        options: ["10.00", "10.30", "11.00", "11.30"],
-        ans: 2,
-        exp: "08.00 + 1 jam = 09.00. 09.00 + 30 menit = 09.30. 09.30 + 1 jam 30 menit = 11.00[cite: 2]."
-      },
-      {
-        q: "8. Siswa membuat miniatur kota. Bu Guru meminta memilih bangun datar yang mempunyai empat sisi sama panjang untuk membuat jendela.\nBangun datar yang dipilih adalah ....[cite: 2]",
-        options: ["Segitiga", "Lingkaran", "Persegi", "Persegi Panjang"],
-        ans: 2,
-        exp: "Persegi memiliki 4 sisi yang sama panjang[cite: 2]."
-      },
-      {
-        q: "9. Kakak pembina menyusun bendera kecil dengan pola: 9, 18, 27, 36, ....\nJumlah bendera pada susunan berikutnya adalah ....[cite: 2]",
-        options: ["42", "45", "46", "48"],
-        ans: 1,
-        exp: "Pola kelipatan 9 (selalu bertambah +9). Maka 36 + 9 = 45 bendera[cite: 2]."
-      },
-      {
-        q: "10. Reno mula-mula berjalan lurus menghadap kelas, lalu belok ke kiri. Kemudian ia berbelok lagi ke kiri.\nArah hadap Reno saat berhenti sekarang adalah ....[cite: 2]",
-        options: [
-          "Menghadap ke arah semula",
-          "Berlawanan dengan arah semula",
-          "Menghadap ke kanan dari arah semula",
-          "Menghadap ke kiri dari arah semula"
-        ],
-        ans: 1,
-        exp: "Dua kali belok kiri (90° + 90° = 180°) membuat arah hadap berbalik 180 derajat atau berlawanan arah dengan posisi awal[cite: 2]."
-      }
+      { q: "1. 36 tutup botol pagi + 19 siang + 8 tertinggal = ....[cite: 2]", options: ["55", "57", "63", "71"], ans: 2, exp: "63[cite: 2]." },
+      { q: "2. Mulai 07.00, belajar 1 jam, senam 30 mnt, belajar 2 jam. Selesai pukul?[cite: 2]", options: ["09.30", "10.00", "10.30", "11.00"], ans: 2, exp: "10.30[cite: 2]." },
+      { q: "3. Benda mewakili bangun persegi?[cite: 2]", options: ["Bola", "Buku tulis", "Ubin lantai", "Topi ultah"], ans: 2, exp: "Ubin lantai[cite: 2]." },
+      { q: "4. Pola batu: 12, 18, 24, 30, ....[cite: 2]", options: ["34", "35", "36", "38"], ans: 2, exp: "36[cite: 2]." },
+      { q: "5. Ada berapa macam bangun dan hitung jumlahnya?[cite: 2]", options: ["5 macam, jumlah 34", "6 macam, jumlah 35", "7 macam, jumlah 37", "28 bangun, jumlah 38"], ans: 2, exp: "7 macam bangun, jumlah 37 (C)[cite: 2]." },
+      { q: "6. 75 jeruk dibagikan 28, tambah 15, bagikan lagi 12. Sisa?[cite: 2]", options: ["48", "50", "52", "54"], ans: 1, exp: "50[cite: 2]." },
+      { q: "7. Mulai 08.00, latihan 1 jam, istirahat 30 mnt, latihan 1 jam 30 mnt. Selesai pukul?[cite: 2]", options: ["10.00", "10.30", "11.00", "11.30"], ans: 2, exp: "11.00[cite: 2]." },
+      { q: "8. Bangun 4 sisi sama panjang untuk membuat jendela miniatur?[cite: 2]", options: ["Segitiga", "Lingkaran", "Persegi", "Persegi Panjang"], ans: 2, exp: "Persegi[cite: 2]." },
+      { q: "9. Pola bendera: 9, 18, 27, 36, ....[cite: 2]", options: ["42", "45", "46", "48"], ans: 1, exp: "45[cite: 2]." },
+      { q: "10. Jalan lurus, belok kiri, lalu belok kiri lagi. Arah hadap sekarang?[cite: 2]", options: ["Arah semula", "Berlawanan arah semula", "Kanan", "Kiri"], ans: 1, exp: "Berlawanan dengan arah semula[cite: 2]." }
     ];
 
-    // ===============================================
-    // DATA ADIK SHEVA (MATH & ENGLISH TK)
-    // ===============================================
+    // ADIK SHEVA (MATH & ENGLISH TK)
     const dataShevaMath = [
-      {
-        type: "mcq",
-        visual: "🍎 🍎 🍎  +  🍎 🍎",
-        q: "Hitung jumlah buah apel di atas ya!\n3 apel + 2 apel = ...",
-        options: ["4 apel", "5 apel", "6 apel"],
-        ans: 1,
-        exp: "Ada 3 apel merah ditambah 2 apel merah lagi, jadi totalnya ada 5 apel! 🍎"
-      },
-      {
-        type: "mcq",
-        visual: "⭐ ⭐ ⭐ ⭐ ⭐ ⭐  -  ⭐ ⭐",
-        q: "Ada 6 bintang, lalu hilang 2 bintang. Sisanya tinggal berapa ya?\n6 - 2 = ...",
-        options: ["3 bintang", "4 bintang", "5 bintang"],
-        ans: 1,
-        exp: "6 dikurangi 2 sisanya tinggal 4 bintang! ⭐"
-      },
-      {
-        type: "mcq",
-        visual: "🐥 🐥 🐥 🐥  +  🐥 🐥 🐥",
-        q: "Ada 4 anak ayam bermain dengan 3 anak ayam. Berapa jumlah semua anak ayam?\n4 + 3 = ...",
-        options: ["7 anak ayam", "8 anak ayam", "6 anak ayam"],
-        ans: 0,
-        exp: "4 anak ayam ditambah 3 anak ayam sama dengan 7 anak ayam! 🐥"
-      },
-      {
-        type: "mcq",
-        visual: "🚗 🚗 🚗 🚗 🚗  -  🚗 🚗 🚗",
-        q: "Ada 5 mobil-mobilan, dipinjam teman 3 mobil. Sisa mobil sekarang ada berapa?\n5 - 3 = ...",
-        options: ["1 mobil", "2 mobil", "3 mobil"],
-        ans: 1,
-        exp: "5 mobil dikurangi 3 mobil, sisanya tinggal 2 mobil! 🚗"
-      },
-      {
-        type: "mcq",
-        visual: "🍦  +  🍦 🍦 🍦 🍦 🍦",
-        q: "1 es krim ditambah 5 es krim lezat. Berapa jumlah es krim semuanya?\n1 + 5 = ...",
-        options: ["5 es krim", "6 es krim", "7 es krim"],
-        ans: 1,
-        exp: "1 ditambah 5 hasilnya adalah 6 es krim! 🍦"
-      },
-      {
-        type: "mcq",
-        visual: "🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈  -  🎈 🎈 🎈 🎈",
-        q: "Sheva punya 8 balon, lalu meletus 4 balon. Berapa balon yang masih utuh?\n8 - 4 = ...",
-        options: ["3 balon", "4 balon", "5 balon"],
-        ans: 1,
-        exp: "8 balon dikurang 4 balon yang meletus, sisanya masih ada 4 balon! 🎈"
-      },
-      {
-        type: "mcq",
-        visual: "🐱 🐱 🐱  +  🐱 🐱 🐱",
-        q: "3 kucing lucu ditambah 3 kucing lagi. Berapa kucing semuanya?\n3 + 3 = ...",
-        options: ["5 kucing", "6 kucing", "7 kucing"],
-        ans: 1,
-        exp: "3 + 3 sama dengan 6 kucing yang manis! 🐱"
-      },
-      {
-        type: "mcq",
-        visual: "🍓 🍓 🍓 🍓 🍓 🍓 🍓  -  🍓 🍓 🍓",
-        q: "Ibu punya 7 stroberi, dimakan 3 stroberi. Sisa stroberi ada berapa?\n7 - 3 = ...",
-        options: ["4 stroberi", "5 stroberi", "6 stroberi"],
-        ans: 0,
-        exp: "7 dikurangi 3 hasilnya 4 stroberi! 🍓"
-      },
-      {
-        type: "mcq",
-        visual: "🍩 🍩 🍩 🍩  +  🍩 🍩 🍩 🍩",
-        q: "4 donat manis ditambah 4 donat lagi. Berapa jumlahnya?\n4 + 4 = ...",
-        options: ["7 donat", "8 donat", "9 donat"],
-        ans: 1,
-        exp: "4 ditambah 4 donat sama dengan 8 donat lezat! 🍩"
-      },
-      {
-        type: "mcq",
-        visual: "🍭 🍭 🍭 🍭 🍭 🍭 🍭 🍭 🍭 🍭  -  🍭 🍭",
-        q: "Ada 10 permen lolipop, diberikan ke adik 2. Berapa sisa lolipop?\n10 - 2 = ...",
-        options: ["7 permen", "8 permen", "9 permen"],
-        ans: 1,
-        exp: "10 dikurangi 2 hasilnya 8 permen lolipop! 🍭"
-      },
-      {
-        type: "mcq",
-        visual: "🐠 🐠  +  🐠 🐠 🐠 🐠 🐠 🐠",
-        q: "Di kolam ada 2 ikan mas, lalu dimasukkan 6 ikan lagi. Jumlah ikan jadi berapa?\n2 + 6 = ...",
-        options: ["7 ikan", "8 ikan", "9 ikan"],
-        ans: 1,
-        exp: "2 ditambah 6 ikan sama dengan 8 ikan! 🐠"
-      },
-      {
-        type: "mcq",
-        visual: "🌸 🌸 🌸 🌸 🌸 🌸 🌸 🌸 🌸  -  🌸 🌸 🌸 🌸 🌸",
-        q: "Ada 9 bunga mekar di taman, dipetik 5 bunga. Sisa bunga di taman ada...\n9 - 5 = ...",
-        options: ["4 bunga", "5 bunga", "3 bunga"],
-        ans: 0,
-        exp: "9 bunga dikurangi 5 bunga, sisa di taman ada 4 bunga! 🌸"
-      },
-      {
-        type: "mcq",
-        visual: "🍬 🍬 🍬 🍬 🍬 🍬  +  🍬 🍬 🍬 🍬",
-        q: "6 permen ditambah 4 permen manis. Berapa jumlah semuanya?\n6 + 4 = ...",
-        options: ["9 permen", "10 permen", "11 permen"],
-        ans: 1,
-        exp: "6 ditambah 4 hasilnya tepat 10 permen! 🍬"
-      },
-      {
-        type: "mcq",
-        visual: "🍪 🍪 🍪 🍪 🍪  -  🍪 🍪 🍪 🍪 🍪",
-        q: "Ada 5 keping biskuit, lalu dimakan semua 5 biskuitnya. Sisa biskuit sekarang ada berapa?\n5 - 5 = ...",
-        options: ["0 biskuit (habis)", "1 biskuit", "2 biskuit"],
-        ans: 0,
-        exp: "5 biskuit kalau dimakan semua 5, biskuitnya habis jadi 0! 🍪"
-      },
-      {
-        type: "mcq",
-        visual: "🎁 🎁 🎁 🎁 🎁 🎁 🎁  +  🎁 🎁",
-        q: "Ada 7 kotak kado ulang tahun ditambah dapat kado lagi 2. Berapa total kado?\n7 + 2 = ...",
-        options: ["8 kado", "9 kado", "10 kado"],
-        ans: 1,
-        exp: "7 ditambah 2 sama dengan 9 kotak kado! 🎁"
-      }
+      { type: "mcq", visual: "🍎 🍎 🍎  +  🍎 🍎", q: "3 apel + 2 apel = ...", options: ["4", "5", "6"], ans: 1, exp: "5 apel! 🍎" },
+      { type: "mcq", visual: "⭐ ⭐ ⭐ ⭐ ⭐ ⭐  -  ⭐ ⭐", q: "6 bintang - 2 bintang = ...", options: ["3", "4", "5"], ans: 1, exp: "4 bintang! ⭐" },
+      { type: "mcq", visual: "🐥 🐥 🐥 🐥  +  🐥 🐥 🐥", q: "4 anak ayam + 3 anak ayam = ...", options: ["7", "8", "6"], ans: 0, exp: "7 anak ayam! 🐥" },
+      { type: "mcq", visual: "🚗 🚗 🚗 🚗 🚗  -  🚗 🚗 🚗", q: "5 mobil - 3 mobil = ...", options: ["1", "2", "3"], ans: 1, exp: "2 mobil! 🚗" },
+      { type: "mcq", visual: "🍦  +  🍦 🍦 🍦 🍦 🍦", q: "1 es krim + 5 es krim = ...", options: ["5", "6", "7"], ans: 1, exp: "6 es krim! 🍦" },
+      { type: "mcq", visual: "🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈  -  🎈 🎈 🎈 🎈", q: "8 balon - 4 balon = ...", options: ["3", "4", "5"], ans: 1, exp: "4 balon! 🎈" },
+      { type: "mcq", visual: "🐱 🐱 🐱  +  🐱 🐱 🐱", q: "3 kucing + 3 kucing = ...", options: ["5", "6", "7"], ans: 1, exp: "6 kucing! 🐱" },
+      { type: "mcq", visual: "🍓 🍓 🍓 🍓 🍓 🍓 🍓  -  🍓 🍓 🍓", q: "7 stroberi - 3 stroberi = ...", options: ["4", "5", "6"], ans: 0, exp: "4 stroberi! 🍓" },
+      { type: "mcq", visual: "🍩 🍩 🍩 🍩  +  🍩 🍩 🍩 🍩", q: "4 donat + 4 donat = ...", options: ["7", "8", "9"], ans: 1, exp: "8 donat! 🍩" },
+      { type: "mcq", visual: "🍭 🍭 🍭 🍭 🍭 🍭 🍭 🍭 🍭 🍭  -  🍭 🍭", q: "10 permen - 2 permen = ...", options: ["7", "8", "9"], ans: 1, exp: "8 permen! 🍭" },
+      { type: "mcq", visual: "🐠 🐠  +  🐠 🐠 🐠 🐠 🐠 🐠", q: "2 ikan + 6 ikan = ...", options: ["7", "8", "9"], ans: 1, exp: "8 ikan! 🐠" },
+      { type: "mcq", visual: "🌸 🌸 🌸 🌸 🌸 🌸 🌸 🌸 🌸  -  🌸 🌸 🌸 🌸 🌸", q: "9 bunga - 5 bunga = ...", options: ["4", "5", "3"], ans: 0, exp: "4 bunga! 🌸" },
+      { type: "mcq", visual: "🍬 🍬 🍬 🍬 🍬 🍬  +  🍬 🍬 🍬 🍬", q: "6 permen + 4 permen = ...", options: ["9", "10", "11"], ans: 1, exp: "10 permen! 🍬" },
+      { type: "mcq", visual: "🍪 🍪 🍪 🍪 🍪  -  🍪 🍪 🍪 🍪 🍪", q: "5 biskuit - 5 biskuit = ...", options: ["0 (habis)", "1", "2"], ans: 0, exp: "0 habis! 🍪" },
+      { type: "mcq", visual: "🎁 🎁 🎁 🎁 🎁 🎁 🎁  +  🎁 🎁", q: "7 kado + 2 kado = ...", options: ["8", "9", "10"], ans: 1, exp: "9 kado! 🎁" }
     ];
 
     const dataShevaEnglish = [
-      {
-        type: "mcq",
-        visual: "🍎 🍎 🍎",
-        q: "What fruit is this?\nBuah apakah ini dalam Bahasa Inggris?",
-        options: ["Apple", "Banana", "Orange"],
-        ans: 0,
-        exp: "🍎 adalah Apple (Apel merah manis)!"
-      },
-      {
-        type: "mcq",
-        visual: "🐱 🐱",
-        q: "What animal says 'Meow'?\nHewan apakah ini?",
-        options: ["Dog", "Cat", "Duck"],
-        ans: 1,
-        exp: "🐱 adalah Cat (Kucing lucu yang bersuara meow)!"
-      },
-      {
-        type: "mcq",
-        visual: "🔴 🔴 🔴",
-        q: "What color is this circle?\nWarna apakah lingkaran di atas?",
-        options: ["Blue", "Yellow", "Red"],
-        ans: 2,
-        exp: "🔴 adalah warna Red (Merah)!"
-      },
-      {
-        type: "mcq",
-        visual: "🐶 🦴",
-        q: "What animal is this?\nHewan apakah ini?",
-        options: ["Cat", "Dog", "Fish"],
-        ans: 1,
-        exp: "🐶 adalah Dog (Anjing yang suka tulang)!"
-      },
-      {
-        type: "mcq",
-        visual: "🍌 🍌",
-        q: "What is the color of a ripe banana?\nApa warna buah pisang?",
-        options: ["Yellow", "Red", "Green"],
-        ans: 0,
-        exp: "🍌 Pisang berwarna Yellow (Kuning)!"
-      },
-      {
-        type: "mcq",
-        visual: "🌞 ☀️",
-        q: "What shines brightly in the sky during the day?\nBenda apa yang bersinar di siang hari?",
-        options: ["Moon", "Sun", "Star"],
-        ans: 1,
-        exp: "☀️ adalah Sun (Matahari yang bersinar hangat)!"
-      },
-      {
-        type: "mcq",
-        visual: "⭐ 🌟 ✨",
-        q: "'Twinkle, twinkle, little _____'\nLengkapilah lagu di atas!",
-        options: ["Car", "Star", "Book"],
-        ans: 1,
-        exp: "⭐ Lagu populernya adalah 'Twinkle, twinkle, little Star' (Bintang kecil)!"
-      },
-      {
-        type: "mcq",
-        visual: "📚 ✏️",
-        q: "We read a _____ at school.\nKita membaca apa di sekolah?",
-        options: ["Book", "Shoe", "Hat"],
-        ans: 0,
-        exp: "📚 Kita membaca Book (Buku pelajaran/cerita)!"
-      },
-      {
-        type: "mcq",
-        visual: "🔵 🌊",
-        q: "What color is the sky and the sea?\nApa warna laut dan langit yang cerah?",
-        options: ["Blue", "Pink", "Black"],
-        ans: 0,
-        exp: "🔵 Langit dan laut berwarna Blue (Biru)!"
-      },
-      {
-        type: "mcq",
-        visual: "🦆 🦆",
-        q: "What animal says 'Quack, quack'?\nHewan apa yang bersuara kwek-kwek?",
-        options: ["Duck", "Cow", "Bird"],
-        ans: 0,
-        exp: "🦆 adalah Duck (Bebek lucu yang berenang)!"
-      }
+      { type: "mcq", visual: "🍎 🍎 🍎", q: "What fruit is this?", options: ["Apple", "Banana", "Orange"], ans: 0, exp: "Apple! 🍎" },
+      { type: "mcq", visual: "🐱 🐱", q: "What animal says 'Meow'?", options: ["Dog", "Cat", "Duck"], ans: 1, exp: "Cat! 🐱" },
+      { type: "mcq", visual: "🔴 🔴 🔴", q: "What color is this circle?", options: ["Blue", "Yellow", "Red"], ans: 2, exp: "Red! 🔴" },
+      { type: "mcq", visual: "🐶 🦴", q: "What animal is this?", options: ["Cat", "Dog", "Fish"], ans: 1, exp: "Dog! 🐶" },
+      { type: "mcq", visual: "🍌 🍌", q: "What is the color of a ripe banana?", options: ["Yellow", "Red", "Green"], ans: 0, exp: "Yellow! 🍌" },
+      { type: "mcq", visual: "🌞 ☀️", q: "What shines brightly in the sky?", options: ["Moon", "Sun", "Star"], ans: 1, exp: "Sun! ☀️" },
+      { type: "mcq", visual: "⭐ 🌟 ✨", q: "'Twinkle, twinkle, little _____'", options: ["Car", "Star", "Book"], ans: 1, exp: "Star! ⭐" },
+      { type: "mcq", visual: "📚 ✏️", q: "We read a _____ at school.", options: ["Book", "Shoe", "Hat"], ans: 0, exp: "Book! 📚" },
+      { type: "mcq", visual: "🔵 🌊", q: "What color is the sky and the sea?", options: ["Blue", "Pink", "Black"], ans: 0, exp: "Blue! 🔵" },
+      { type: "mcq", visual: "🦆 🦆", q: "What animal says 'Quack, quack'?", options: ["Duck", "Cow", "Bird"], ans: 0, exp: "Duck! 🦆" }
     ];
 
     let currentQuizType = "";
@@ -2971,10 +1543,10 @@
 
       // Routing Kategori Soal
       if (type === "anin_tik1") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Anin • TIK Paket 1: Hardware & Komputer";
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • TIK: Algoritma & Dekomposisi";
         activeQuizData = dataAninTIK1;
       } else if (type === "anin_tik2") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Anin • TIK Paket 2: Pengolah Kata & Word";
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • TIK: Pola & Abstraksi";
         activeQuizData = dataAninTIK2;
       } else if (type === "anin_math1") {
         document.getElementById("quiz-header-title").textContent = "Kakak Anin • Math Paket 1: Nilai Tempat";
@@ -3006,6 +1578,16 @@
       } else if (type === "anin_esm4") {
         document.getElementById("quiz-header-title").textContent = "Kakak Anin • English Penyisihan 4";
         activeQuizData = dataAninESM4;
+      } else if (type === "putri_pai1") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • PAI Paket 1: QS. An-Nas[cite: 8]";
+        quizView.classList.add("math-mode");
+        scoreBoard.classList.add("math-theme");
+        activeQuizData = dataPutriPAI1;
+      } else if (type === "putri_pai2") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • PAI Paket 2: Asmaulhusna[cite: 8]";
+        quizView.classList.add("math-mode");
+        scoreBoard.classList.add("math-theme");
+        activeQuizData = dataPutriPAI2;
       } else if (type === "putri_indo1") {
         document.getElementById("quiz-header-title").textContent = "Kakak Putri • B. Indo Paket 1: Mengenal Perasaan";
         quizView.classList.add("math-mode");
@@ -3086,7 +1668,7 @@
 
         let passageHTML = "";
         if (item.passage) {
-          passageHTML = `<div class="passage-box"><strong>Teks Bacaan / Puisi:</strong><br>${item.passage}</div>`;
+          passageHTML = `<div class="passage-box"><strong>Teks Bacaan / Petunjuk:</strong><br>${item.passage}</div>`;
         }
 
         let visualHTML = "";
