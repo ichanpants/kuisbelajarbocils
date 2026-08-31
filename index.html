@@ -505,7 +505,7 @@
           </div>
           <span class="badge badge-english">Kelas 4 SD</span>
           <h2>Kakak Anin</h2>
-          <p>Bahasa Inggris & Matematika<br>(8 Paket Latihan Soal)</p>
+          <p>Bahasa Inggris, Matematika & TIK<br>(10 Paket Latihan Soal)</p>
         </div>
 
         <!-- Kartu 2: Kakak Putri -->
@@ -531,33 +531,24 @@
           <p>Bahasa Indonesia & Matematika<br>(8 Paket Latihan Soal)</p>
         </div>
 
-        <!-- Kartu 3: Adik Sheva (Kuning, Rambut Panjang Berponi, Tanpa Kacamata) -->
+        <!-- Kartu 3: Adik Sheva -->
         <div class="menu-btn tk" onclick="openShevaMenu()">
           <div class="avatar-wrapper">
             <svg class="avatar-sheva" viewBox="0 0 120 135" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Rambut Panjang Terurai Belakang -->
               <path d="M30 45C30 20 42 12 60 12C78 12 90 20 90 45V105C90 105 84 115 78 115C72 115 70 102 60 102C50 102 48 115 42 115C36 115 30 105 30 105V45Z" fill="#334155"/>
-              <!-- Badan & Baju Kuning Ceria -->
               <path d="M36 94C36 82 44 76 60 76C76 76 84 82 84 94V135H36V94Z" fill="#FBBF24"/>
-              <!-- Kerah Baju Putih Cantik -->
               <path d="M50 76C54 84 66 84 70 76" stroke="#FFFFFF" stroke-width="3" fill="#FEF3C7" stroke-linecap="round"/>
-              <!-- Wajah Chubby Imut -->
               <ellipse cx="60" cy="54" rx="25" ry="23" fill="#FDDFCA"/>
-              <!-- Pipi Gembul Merona -->
               <circle cx="43" cy="63" r="5.5" fill="#FCA5A5" opacity="0.8"/>
               <circle cx="77" cy="63" r="5.5" fill="#FCA5A5" opacity="0.8"/>
-              <!-- Rambut Panjang Samping & Poni Depan Rapi -->
               <path d="M34 50C34 32 44 26 60 26C76 26 86 32 86 50C86 64 84 74 84 74C80 62 76 42 60 42C44 42 40 62 36 74C36 74 34 64 34 50Z" fill="#334155"/>
               <path d="M42 42C48 34 54 34 60 38C66 34 72 34 78 42C72 38 66 36 60 36C54 36 48 38 42 42Z" fill="#475569"/>
-              <!-- Pita Rambut Kuning Cantik -->
               <circle cx="34" cy="30" r="4.5" fill="#F59E0B"/>
               <circle cx="34" cy="30" r="2" fill="#FEF3C7"/>
-              <!-- Mata Ceria Besar Berbinar -->
               <ellipse cx="48" cy="53" rx="3.8" ry="5" fill="#1E293B"/>
               <ellipse cx="72" cy="53" rx="3.8" ry="5" fill="#1E293B"/>
               <circle cx="49.5" cy="51" r="1.8" fill="#FFFFFF"/>
               <circle cx="73.5" cy="51" r="1.8" fill="#FFFFFF"/>
-              <!-- Senyum Manis -->
               <path d="M54 64C56.5 68 63.5 68 66 64" stroke="#BE123C" stroke-width="2.5" stroke-linecap="round"/>
             </svg>
           </div>
@@ -568,7 +559,7 @@
       </div>
     </div>
 
-    <!-- 2. Sub-Menu Khusus Kakak Anin (8 Paket) -->
+    <!-- 2. Sub-Menu Khusus Kakak Anin (10 Paket: 2 TIK + 3 Math + 5 English) -->
     <div id="anin-category-view" class="home-card" style="display: none;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
         <button class="back-btn" onclick="goHome()">⬅ Menu Utama</button>
@@ -578,6 +569,18 @@
       <p style="margin-bottom: 16px;">Pilih materi latihan yang ingin dipelajari:</p>
 
       <div class="submenu-grid">
+        <div class="category-divider">💻 Latihan TIK / Informatika Kelas 4 SD</div>
+
+        <div class="sub-btn" onclick="startQuiz('anin_tik1')">
+          <h3>🖥️ TIK Paket 1: Perangkat Keras Komputer</h3>
+          <p>10 Soal Pilihan Ganda: Hardware Input, Output, CPU & Fungsi Bagian Komputer.</p>
+        </div>
+
+        <div class="sub-btn" onclick="startQuiz('anin_tik2')">
+          <h3>📄 TIK Paket 2: Pengolah Kata & Software</h3>
+          <p>10 Soal Pilihan Ganda: Microsoft Word, Ikon Editing, Shortcut & Software Dasar.</p>
+        </div>
+
         <div class="category-divider">📘 Latihan Matematika Kelas 4 (Buku Kurikulum Merdeka)[cite: 3]</div>
 
         <div class="sub-btn" onclick="startQuiz('anin_math1')">
@@ -680,7 +683,7 @@
       </div>
     </div>
 
-    <!-- 4. Sub-Menu Khusus Adik Sheva (4 Paket: 2 Membaca + 1 Math + 1 English) -->
+    <!-- 4. Sub-Menu Khusus Adik Sheva (4 Paket) -->
     <div id="sheva-category-view" class="home-card" style="display: none;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
         <button class="back-btn" onclick="goHome()">⬅ Menu Utama</button>
@@ -740,10 +743,140 @@
 
   <script>
     // =========================================================================
-    // DATA ADIK SHEVA - DRILLING MEMBACA TK (2 PAKET @ 10 SOAL)
+    // DATA KAKAK ANIN - TIK / INFORMATIKA KELAS 4 (2 PAKET @ 10 SOAL)
     // =========================================================================
 
-    // PAKET BACA 1: SUKU KATA & FONIK DASAR (10 SOAL)
+    // TIK PAKET 1: PERANGKAT KERAS & DASAR KOMPUTER (10 SOAL)
+    const dataAninTIK1 = [
+      {
+        q: "1. Perangkat komputer yang berfungsi untuk mengetik huruf, angka, dan simbol adalah ....",
+        options: ["Mouse", "Keyboard (Papan Ketik)", "Monitor", "Speaker"],
+        ans: 1,
+        exp: "Keyboard (papan ketik) adalah perangkat keras masukan (input) yang digunakan untuk mengetik teks dan angka."
+      },
+      {
+        q: "2. Bagian komputer yang berfungsi sebagai 'otak' pemroses seluruh instruksi dan perhitungan adalah ....",
+        options: ["CPU (Central Processing Unit)", "Monitor", "Printer", "Flashdisk"],
+        ans: 0,
+        exp: "CPU (Central Processing Unit) merupakan otak komputer yang memproses semua data dan perintah."
+      },
+      {
+        q: "3. Perangkat keras yang digunakan untuk menggerakkan kursor dan memilih menu pada layar monitor adalah ....",
+        options: ["Scanner", "Mouse", "Keyboard", "Microphone"],
+        ans: 1,
+        exp: "Mouse adalah perangkat penunjuk yang mengendalikan kursor di layar komputer."
+      },
+      {
+        q: "4. Perangkat keluaran (output device) yang berfungsi menampilkan gambar dan teks di layar adalah ....",
+        options: ["Monitor", "Keyboard", "Mouse", "Harddisk"],
+        ans: 0,
+        exp: "Monitor adalah perangkat output visual yang menampilkan hasil kerja komputer kepada pengguna."
+      },
+      {
+        q: "5. Alat yang digunakan untuk mencetak dokumen tulisan atau gambar dari komputer ke atas kertas adalah ....",
+        options: ["Speaker", "Printer", "Scanner", "Webcam"],
+        ans: 1,
+        exp: "Printer berfungsi mencetak dokumen digital menjadi bentuk fisik di atas kertas."
+      },
+      {
+        q: "6. Manakah di bawah ini yang merupakan perangkat penyimpanan data portabel (mudah dibawa ke mana-mana)?",
+        options: ["RAM", "Flashdisk (USB Drive)", "Kabel Power", "VGA Card"],
+        ans: 1,
+        exp: "Flashdisk (USB flash drive) adalah media penyimpanan data portabel yang praktis dibawa."
+      },
+      {
+        q: "7. Tombol terpanjang pada keyboard yang berfungsi memberi jarak antarkata adalah ....",
+        options: ["Enter", "Spacebar (Spasi)", "Backspace", "Caps Lock"],
+        ans: 1,
+        exp: "Tombol Spacebar (spasi) terletak di paling bawah dan berukuran paling panjang untuk memberi jarak spasi."
+      },
+      {
+        q: "8. Tombol keyboard yang digunakan untuk menghapus satu karakter huruf di sebelah kiri kursor adalah ....",
+        options: ["Backspace", "Delete", "Shift", "Tab"],
+        ans: 0,
+        exp: "Backspace menghapus huruf di sebelah kiri kursor, sedangkan Delete menghapus di sebelah kanan kursor."
+      },
+      {
+        q: "9. Untuk membuat seluruh huruf yang diketik menjadi HURUF BESAR (KAPITAL), kita mengaktifkan tombol ....",
+        options: ["Caps Lock", "Ctrl", "Alt", "Esc"],
+        ans: 0,
+        exp: "Caps Lock mengunci ketikan agar selalu menghasilkan huruf kapital (huruf besar)."
+      },
+      {
+        q: "10. Perangkat keras komputer yang menghasilkan output berupa suara atau bunyi musik adalah ....",
+        options: ["Speaker", "Monitor", "Webcam", "Mouse"],
+        ans: 0,
+        exp: "Speaker adalah perangkat output audio yang menghasilkan suara."
+      }
+    ];
+
+    // TIK PAKET 2: APLIKASI PENGOLAH KATA & SOFTWARE DASAR (10 SOAL)
+    const dataAninTIK2 = [
+      {
+        q: "1. Program aplikasi yang paling umum digunakan untuk mengetik dan membuat dokumen surat atau cerita adalah ....",
+        options: ["Microsoft Word", "Paint", "Calculator", "VLC Player"],
+        ans: 0,
+        exp: "Microsoft Word adalah perangkat lunak (software) pengolah kata untuk membuat dokumen dan teks."
+      },
+      {
+        q: "2. Ikon berhuruf 'B' tebal (Bold) pada menu Microsoft Word berfungsi untuk ....",
+        options: ["Membuat tulisan miring", "Menebalkan teks/huruf", "Memberi garis bawah teks", "Mengganti warna huruf"],
+        ans: 1,
+        exp: "Ikon 'Bold' (B) berfungsi membuat teks menjadi tebal."
+      },
+      {
+        q: "3. Ikon berhuruf 'I' miring (Italic) pada Microsoft Word berfungsi untuk ....",
+        options: ["Membuat tulisan miring", "Menghapus tulisan", "Menebalkan tulisan", "Membuat tulisan bergaris bawah"],
+        ans: 0,
+        exp: "Ikon 'Italic' (I) berfungsi memiringkan teks yang dipilih."
+      },
+      {
+        q: "4. Ikon berhuruf 'U' dengan garis di bawahnya (Underline) digunakan untuk ....",
+        options: ["Menggarisbawahi tulisan", "Memperbesar ukuran kertas", "Mencetak tulisan", "Menyimpan file"],
+        ans: 0,
+        exp: "Ikon 'Underline' (U) memberi garis bawah pada kata atau kalimat."
+      },
+      {
+        q: "5. Kombinasi tombol shortcut pada keyboard untuk menyimpan (Save) dokumen yang sedang dibuat adalah ....",
+        options: ["Ctrl + C", "Ctrl + S", "Ctrl + V", "Ctrl + P"],
+        ans: 1,
+        exp: "Ctrl + S (Save) digunakan untuk menyimpan file dokumen dengan cepat."
+      },
+      {
+        q: "6. Perintah untuk menyalin (Copy) teks atau gambar yang dipilih adalah dengan menekan tombol ....",
+        options: ["Ctrl + C", "Ctrl + X", "Ctrl + Z", "Ctrl + S"],
+        ans: 0,
+        exp: "Ctrl + C adalah shortcut keyboard untuk Copy (menyalin teks/objek)."
+      },
+      {
+        q: "7. Setelah menyalin teks dengan Copy, perintah untuk menempelkan (Paste) teks tersebut adalah ....",
+        options: ["Ctrl + V", "Ctrl + P", "Ctrl + A", "Ctrl + N"],
+        ans: 0,
+        exp: "Ctrl + V digunakan untuk Paste (menempelkan teks/gambar yang sudah disalin)."
+      },
+      {
+        q: "8. Ikon bergambar disket kecil di pojok atas Microsoft Word memiliki fungsi untuk ....",
+        options: ["Save (Menyimpan dokumen)", "Print (Mencetak)", "Open (Membuka file)", "Close (Menutup program)"],
+        ans: 0,
+        exp: "Ikon disket adalah simbol standar untuk perintah Save (menyimpan file)."
+      },
+      {
+        q: "9. Fitur perataan teks di Microsoft Word yang membuat tulisan berada tepat di tengah-tengah halaman disebut ....",
+        options: ["Align Left (Rata Kiri)", "Center (Rata Tengah)", "Align Right (Rata Kanan)", "Justify (Rata Kanan Kiri)"],
+        ans: 1,
+        exp: "Center membuat posisi paragraf atau judul berada persis di tengah halaman."
+      },
+      {
+        q: "10. Program aplikasi bawaan sistem operasi Windows yang digunakan untuk menggambar dan mewarnai secara sederhana adalah ....",
+        options: ["Paint", "Microsoft Word", "Google Chrome", "Notepad"],
+        ans: 0,
+        exp: "Paint adalah aplikasi grafis sederhana bawaan Windows untuk menggambar dan mewarnai."
+      }
+    ];
+
+    // =========================================================================
+    // DATA ADIK SHEVA - DRILLING MEMBACA TK (2 PAKET @ 10 SOAL)
+    // =========================================================================
     const dataShevaBaca1 = [
       {
         type: "mcq",
@@ -827,7 +960,6 @@
       }
     ];
 
-    // PAKET BACA 2: KATA DASAR & MEMBACA KALIMAT PENDEK (10 SOAL)
     const dataShevaBaca2 = [
       {
         type: "mcq",
@@ -2838,7 +2970,13 @@
       scoreBoard.classList.remove("math-theme", "tk-theme");
 
       // Routing Kategori Soal
-      if (type === "anin_math1") {
+      if (type === "anin_tik1") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • TIK Paket 1: Hardware & Komputer";
+        activeQuizData = dataAninTIK1;
+      } else if (type === "anin_tik2") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • TIK Paket 2: Pengolah Kata & Word";
+        activeQuizData = dataAninTIK2;
+      } else if (type === "anin_math1") {
         document.getElementById("quiz-header-title").textContent = "Kakak Anin • Math Paket 1: Nilai Tempat";
         quizView.classList.add("math-mode");
         scoreBoard.classList.add("math-theme");
