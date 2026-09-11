@@ -113,7 +113,6 @@
       box-shadow: 0 12px 24px -6px rgba(234, 179, 8, 0.25);
     }
 
-    /* Sub-menu Grids */
     .submenu-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -181,12 +180,11 @@
       font-weight: 700;
       color: var(--text);
       font-size: 0.95rem;
-      margin-top: 10px;
+      margin-top: 14px;
       padding-bottom: 4px;
       border-bottom: 2px solid var(--border);
     }
 
-    /* Karakter Kartun */
     .avatar-wrapper {
       display: flex;
       justify-content: center;
@@ -228,7 +226,6 @@
       line-height: 1.4;
     }
 
-    /* Top Bar */
     .top-bar {
       display: flex;
       justify-content: space-between;
@@ -259,7 +256,6 @@
       color: var(--primary);
     }
 
-    /* Score Board */
     .score-board {
       background: linear-gradient(135deg, #4f46e5, #3b82f6);
       color: white;
@@ -289,7 +285,6 @@
       margin-bottom: 6px;
     }
 
-    /* Question Cards */
     .question-card {
       background: var(--card);
       border-radius: 16px;
@@ -479,7 +474,7 @@
     <!-- 1. Menu Utama -->
     <div id="home-view" class="home-card">
       <h1>🌟 Portal Belajar Bocils</h1>
-      <p>Pilih paket latihan kuis seru di bawah ini:</p>
+      <p>Pilih nama di bawah ini untuk membuka modul latihan dan kompetisi lengkap:</p>
 
       <div class="menu-grid">
         <!-- Kartu 1: Kakak Anin -->
@@ -505,7 +500,7 @@
           </div>
           <span class="badge badge-english">Kelas 4 SD</span>
           <h2>Kakak Anin</h2>
-          <p>B. Inggris, Math & TIK<br>(10 Paket Latihan Soal)</p>
+          <p>Olimpiade English, Math, TIK & Scholarix<br>(Lengkap Level 3–4)</p>
         </div>
 
         <!-- Kartu 2: Kakak Putri -->
@@ -528,7 +523,7 @@
           </div>
           <span class="badge badge-math">Kelas 2 SD</span>
           <h2>Kakak Putri</h2>
-          <p>PAI, B. Indo & Math<br>(10 Paket Latihan Soal)</p>
+          <p>PAI, B. Indo, Math & Scholarix<br>(Lengkap Level 1–2)</p>
         </div>
 
         <!-- Kartu 3: Adik Sheva -->
@@ -554,180 +549,115 @@
           </div>
           <span class="badge badge-tk">Kategori TK</span>
           <h2>Adik Sheva</h2>
-          <p>Belajar Ceria Bergambar<br>(Membaca, Berhitung & English)</p>
+          <p>Membaca, Math, English & Scholarix<br>(Lengkap Kategori TK)</p>
         </div>
       </div>
     </div>
 
-    <!-- 2. Sub-Menu Khusus Kakak Anin (10 Paket) -->
+    <!-- 2. Sub-Menu Khusus Kakak Anin -->
     <div id="anin-category-view" class="home-card" style="display: none;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
         <button class="back-btn" onclick="goHome()">⬅ Menu Utama</button>
         <span class="badge badge-english">Kakak Anin • Kelas 4 SD</span>
       </div>
       <h1 style="font-size: 1.55rem; color: var(--primary);">Paket Belajar Kakak Anin</h1>
-      <p style="margin-bottom: 16px;">Pilih materi latihan yang ingin dipelajari:</p>
+      <p style="margin-bottom: 16px;">Pilih materi kuis intensif yang ingin dikerjakan:</p>
 
       <div class="submenu-grid">
-        <div class="category-divider">💻 Latihan TIK & Berpikir Komputasional (Informatika Kelas 4)</div>
+        <div class="category-divider">🎖️ KOMPETISI RESMI SCHOLARIX (LEVEL 3 & LEVEL 4)</div>
+        <div class="sub-btn" onclick="startQuiz('sch_eng_lv3')"><h3>🏆 Scholarix English Level 3</h3><p>20 PG: Past Tense, Announcement, Comparatives & Zoo Story.</p></div>
+        <div class="sub-btn" onclick="startQuiz('sch_eng_lv4')"><h3>🏆 Scholarix English Level 4</h3><p>20 PG: Passive Voice, Conditionals, Fable & Online Learning.</p></div>
+        <div class="sub-btn" onclick="startQuiz('sch_math_lv3')"><h3>📐 Scholarix Math Level 3</h3><p>20 PG: Eksponen Olimpiade, Faktor Prima, Geometri Sudut.</p></div>
+        <div class="sub-btn" onclick="startQuiz('sch_math_lv4')"><h3>📐 Scholarix Math Level 4</h3><p>20 PG: Teori Bilangan, Peluang, Parabola, Geometri Lingkaran.</p></div>
+        <div class="sub-btn" onclick="startQuiz('sch_sains_lv3')"><h3>🔬 Scholarix Sains Level 3</h3><p>20 PG: Sel Tumbuhan, Gerak & Gelombang, Tuas, Tekanan.</p></div>
+        <div class="sub-btn" onclick="startQuiz('sch_sains_lv4')"><h3>🔬 Scholarix Sains Level 4</h3><p>20 PG: Organisme Primitif, Uji Biuret, Listrik Dinamis, Hukum Newton.</p></div>
 
-        <div class="sub-btn" onclick="startQuiz('anin_tik1')">
-          <h3>🖥️ TIK Paket 1: Algoritma & Dekomposisi</h3>
-          <p>10 Soal Pilihan Ganda: Konsep Urutan (Sequence), Memecah Masalah, & Flow Kerja.</p>
-        </div>
+        <div class="category-divider">🏆 Drill Lolos Babak Olimpiade Bahasa Inggris (30 Soal PG per Paket)</div>
+        <div class="sub-btn" onclick="startQuiz('anin_olimp1')"><h3>🏆 Tryout Olimpiade 1</h3><p>30 Soal PG: Tenses, Subject-Verb Agreement, Vocab & Reading.</p></div>
+        <div class="sub-btn" onclick="startQuiz('anin_olimp2')"><h3>🏆 Tryout Olimpiade 2</h3><p>30 Soal PG: Preposition, Modals, Error Recognition & Dialogue.</p></div>
+        <div class="sub-btn" onclick="startQuiz('anin_olimp3')"><h3>🏆 Tryout Olimpiade 3</h3><p>30 Soal PG: Comparative, Pronouns, Context Meaning & Fable.</p></div>
+        <div class="sub-btn" onclick="startQuiz('anin_olimp4')"><h3>🏆 Tryout Olimpiade 4</h3><p>30 Soal PG: Conjunction, Question Tags & Science Reading.</p></div>
+        <div class="sub-btn" onclick="startQuiz('anin_olimp5')"><h3>🏆 Tryout Olimpiade 5</h3><p>30 Soal PG: Stage 2 Advanced Simulation & Passage.</p></div>
 
-        <div class="sub-btn" onclick="startQuiz('anin_tik2')">
-          <h3>🧩 TIK Paket 2: Pengenalan Pola & Abstraksi</h3>
-          <p>10 Soal Pilihan Ganda: Analisis Pola Bilangan/Benda & Abstraksi Informasi.</p>
-        </div>
+        <div class="category-divider">💻 TIK & Berpikir Komputasional (Informatika Kelas 4)</div>
+        <div class="sub-btn" onclick="startQuiz('anin_tik1')"><h3>🖥️ TIK Paket 1: Algoritma & Dekomposisi</h3><p>10 Soal PG: Urutan (Sequence), Memecah Masalah, & Flow Kerja.</p></div>
+        <div class="sub-btn" onclick="startQuiz('anin_tik2')"><h3>🧩 TIK Paket 2: Pengenalan Pola & Abstraksi</h3><p>10 Soal PG: Analisis Pola Bilangan/Benda & Abstraksi.</p></div>
 
-        <div class="category-divider">📘 Latihan Matematika Kelas 4 (Buku Kurikulum Merdeka)[cite: 3]</div>
-
-        <div class="sub-btn" onclick="startQuiz('anin_math1')">
-          <h3>📐 Math Paket 1: Bilangan & Nilai Tempat[cite: 3]</h3>
-          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Membaca, Menulis, & Nilai Tempat s.d. 10.000[cite: 3].</p>
-        </div>
-
-        <div class="sub-btn" onclick="startQuiz('anin_math2')">
-          <h3>📊 Math Paket 2: Urutan, Komposisi & Dekomposisi[cite: 3]</h3>
-          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Membandingkan, Mengurutkan, & Uraian Bilangan[cite: 3].</p>
-        </div>
-
-        <div class="sub-btn" onclick="startQuiz('anin_math3')">
-          <h3>➕ Math Paket 3: Operasi Hitung Bilangan Cacah[cite: 3]</h3>
-          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Penjumlahan, Pengurangan & Perkalian Donat/Buah[cite: 3].</p>
-        </div>
-
-        <div class="category-divider">🔤 Latihan Bahasa Inggris & Olimpiade</div>
-
-        <div class="sub-btn full-width" onclick="startQuiz('anin_campuran')">
-          <h3>📘 Paket 1: Grammar & Reading (Campuran)</h3>
-          <p>25 Soal (18 PG + 7 Isian Singkat: Grammar, Vocab & Reading) + Pembahasan.</p>
-        </div>
-
-        <div class="sub-btn" onclick="startQuiz('anin_esm1')">
-          <h3>🏆 English Babak Penyisihan 1[cite: 1]</h3>
-          <p>10 Soal Pilihan Ganda (ESM Level 2 - AIS Institute) + Kunci & Pembahasan[cite: 1].</p>
-        </div>
-
-        <div class="sub-btn" onclick="startQuiz('anin_esm2')">
-          <h3>🏆 English Babak Penyisihan 2[cite: 1]</h3>
-          <p>10 Soal Pilihan Ganda (ESM Level 2 - AIS Institute) + Kunci & Pembahasan[cite: 1].</p>
-        </div>
-
-        <div class="sub-btn" onclick="startQuiz('anin_esm3')">
-          <h3>🏆 English Babak Penyisihan 3[cite: 1]</h3>
-          <p>10 Soal Pilihan Ganda (ESM Level 2 - AIS Institute) + Kunci & Pembahasan[cite: 1].</p>
-        </div>
-
-        <div class="sub-btn" onclick="startQuiz('anin_esm4')">
-          <h3>🏆 English Babak Penyisihan 4[cite: 1]</h3>
-          <p>10 Soal Pilihan Ganda (ESM Level 2 - AIS Institute) + Kunci & Pembahasan[cite: 1].</p>
-        </div>
+        <div class="category-divider">📘 Latihan Matematika Kelas 4 (Kurikulum Merdeka)</div>
+        <div class="sub-btn" onclick="startQuiz('anin_math1')"><h3>📐 Math Paket 1: Nilai Tempat</h3><p>20 Soal (10 PG, 5 Isian, 5 Uraian) Membaca & Menulis s.d. 10.000[cite: 3].</p></div>
+        <div class="sub-btn" onclick="startQuiz('anin_math2')"><h3>📊 Math Paket 2: Dekomposisi & Urutan</h3><p>20 Soal (10 PG, 5 Isian, 5 Uraian) Membandingkan & Mengurutkan[cite: 3].</p></div>
+        <div class="sub-btn" onclick="startQuiz('anin_math3')"><h3>➕ Math Paket 3: Operasi Hitung</h3><p>20 Soal (10 PG, 5 Isian, 5 Uraian) Penjumlahan, Pengurangan & Perkalian[cite: 3].</p></div>
       </div>
     </div>
 
-    <!-- 3. Sub-Menu Khusus Kakak Putri (10 Paket) -->
+    <!-- 3. Sub-Menu Khusus Kakak Putri -->
     <div id="putri-category-view" class="home-card" style="display: none;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
         <button class="back-btn" onclick="goHome()">⬅ Menu Utama</button>
         <span class="badge badge-math">Kakak Putri • Kelas 2 SD</span>
       </div>
       <h1 style="font-size: 1.55rem; color: var(--secondary);">Paket Belajar Kakak Putri</h1>
-      <p style="margin-bottom: 16px;">Pilih materi latihan PAI, Bahasa Indonesia, atau Matematika:</p>
+      <p style="margin-bottom: 16px;">Pilih materi latihan PAI, Bahasa Indonesia, Matematika atau Scholarix:</p>
 
       <div class="submenu-grid">
-        <div class="category-divider">🕌 Latihan PAI & Budi Pekerti (Buku Siswa Kelas 2)[cite: 8]</div>
+        <div class="category-divider">🎖️ KOMPETISI RESMI SCHOLARIX (LEVEL 1 & LEVEL 2)</div>
+        <div class="sub-btn math-sub" onclick="startQuiz('sch_eng_lv1')"><h3>🏆 Scholarix English Level 1</h3><p>20 PG: Vocabulary, Numbers, Animals, Commands & Dialogues[cite: 10].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('sch_eng_lv2')"><h3>🏆 Scholarix English Level 2</h3><p>20 PG: Parts of Speech, Time, Weather, Clothes & Description[cite: 10].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('sch_math_lv1')"><h3>📐 Scholarix Math Level 1</h3><p>20 PG: Operasi Hitung, Aljabar, Geometri Persegi & Pecahan[cite: 11].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('sch_math_lv2')"><h3>📐 Scholarix Math Level 2</h3><p>20 PG: Soal Cerita, Timbangan Geometri, Sudut, Diagram[cite: 11].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('sch_sains_lv1')"><h3>🔬 Scholarix Sains Level 1</h3><p>20 PG: Panca Indra, Sifat Bahan, Energi, Gaya & Gerak[cite: 12].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('sch_sains_lv2')"><h3>🔬 Scholarix Sains Level 2</h3><p>20 PG: Sel Tumbuhan, Otot Manusia, Kecepatan, Kalor & Termometer[cite: 12].</p></div>
 
-        <div class="sub-btn math-sub" onclick="startQuiz('putri_pai1')">
-          <h3>📖 PAI Paket 1: Ayo Belajar Al-Qur'an[cite: 8]</h3>
-          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) QS. An-Nas & Huruf Hijaiyah Bersambung[cite: 8].</p>
-        </div>
+        <div class="category-divider">🕌 PAI & Budi Pekerti (Buku Siswa Kelas 2)[cite: 7, 8]</div>
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_pai1')"><h3>📖 PAI Paket 1: Ayo Belajar Al-Qur'an</h3><p>20 Soal (10 PG, 5 Isian, 5 Uraian) QS. An-Nas & Hijaiyah Bersambung[cite: 7, 8].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_pai2')"><h3>🤲 PAI Paket 2: Mari Mengenal Allah Swt.</h3><p>20 Soal (10 PG, 5 Isian, 5 Uraian) Asmaulhusna al-Hafiz, al-Wali, dll[cite: 7, 8].</p></div>
 
-        <div class="sub-btn math-sub" onclick="startQuiz('putri_pai2')">
-          <h3>🤲 PAI Paket 2: Mari Mengenal Allah Swt.[cite: 8]</h3>
-          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Asmaulhusna al-Hafiz, al-Wali, al-'Alim, al-Khabir[cite: 8].</p>
-        </div>
+        <div class="category-divider">📖 Bahasa Indonesia Kelas 2 SD (Kurikulum Merdeka)[cite: 4]</div>
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_indo1')"><h3>😊 B. Indo Paket 1: Mengenal Perasaan</h3><p>20 Soal (10 PG, 5 Isian, 5 Uraian) Ragam Perasaan, Mimik, Puisi[cite: 4].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_indo2')"><h3>🧸 B. Indo Paket 2: Cerita Mimi Marah</h3><p>20 Soal (10 PG, 5 Isian, 5 Uraian) Mimi Marah, Huruf Kapital, Titik[cite: 4].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_indo3')"><h3>📱 B. Indo Paket 3: Menjaga Kesehatan</h3><p>20 Soal (10 PG, 5 Isian, 5 Uraian) Aturan 20-20-20 & 7 Kata Tanya[cite: 4].</p></div>
 
-        <div class="category-divider">📖 Latihan Bahasa Indonesia Kelas 2 SD (Kurikulum Merdeka)[cite: 4]</div>
-
-        <div class="sub-btn math-sub" onclick="startQuiz('putri_indo1')">
-          <h3>😊 B. Indo Paket 1: Mengenal Perasaan & Puisi[cite: 4]</h3>
-          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Ragam Perasaan, Mimik, Puisi Sampai Jumpa[cite: 4].</p>
-        </div>
-
-        <div class="sub-btn math-sub" onclick="startQuiz('putri_indo2')">
-          <h3>🧸 B. Indo Paket 2: Cerita Mimi Marah & Huruf Kapital[cite: 4]</h3>
-          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Mimi Marah, Kiki & Cici, Huruf Kapital, Tanda Titik[cite: 4].</p>
-        </div>
-
-        <div class="sub-btn math-sub" onclick="startQuiz('putri_indo3')">
-          <h3>📱 B. Indo Paket 3: Menjaga Kesehatan & Kata Tanya[cite: 4]</h3>
-          <p>20 Soal (10 PG, 5 Isian, 5 Uraian) Aturan 20-20-20, Arti Gawai, 7 Kata Tanya[cite: 4].</p>
-        </div>
-
-        <div class="category-divider">📐 Latihan Matematika & Olimpiade[cite: 2]</div>
-
-        <div class="sub-btn math-sub full-width" onclick="startQuiz('putri_campuran')">
-          <h3>📐 Paket 1: Matematika Campuran</h3>
-          <p>25 Soal (18 PG + 7 Isian Singkat: Pola, Logika, Hitung) + Pembahasan.</p>
-        </div>
-
-        <div class="sub-btn math-sub" onclick="startQuiz('putri_esm1')">
-          <h3>🏆 Math Babak Penyisihan 1[cite: 2]</h3>
-          <p>10 Soal Pilihan Ganda (ESM Math Level 1 - AIS Institute) + Kunci & Pembahasan[cite: 2].</p>
-        </div>
-
-        <div class="sub-btn math-sub" onclick="startQuiz('putri_esm2')">
-          <h3>🏆 Math Babak Penyisihan 2[cite: 2]</h3>
-          <p>10 Soal Pilihan Ganda (ESM Math Level 1 - AIS Institute) + Kunci & Pembahasan[cite: 2].</p>
-        </div>
-
-        <div class="sub-btn math-sub" onclick="startQuiz('putri_esm3')">
-          <h3>🏆 Math Babak Penyisihan 3[cite: 2]</h3>
-          <p>10 Soal Cerita & Penalaran (ESM Math Level 1 - AIS Institute) + Kunci & Pembahasan[cite: 2].</p>
-        </div>
-
-        <div class="sub-btn math-sub" onclick="startQuiz('putri_esm4')">
-          <h3>🏆 Math Babak Penyisihan 4[cite: 2]</h3>
-          <p>10 Soal Penalaran & Logika (ESM Math Level 1 - AIS Institute) + Kunci & Pembahasan[cite: 2].</p>
-        </div>
+        <div class="category-divider">📐 Matematika Dasar & Babak Penyisihan[cite: 2]</div>
+        <div class="sub-btn math-sub full-width" onclick="startQuiz('putri_campuran')"><h3>📐 Paket 1: Matematika Campuran</h3><p>25 Soal: Pola, Geometri, Waktu & Operasi Hitung.</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_esm1')"><h3>🏆 Math Babak Penyisihan 1</h3><p>10 Soal PG (ESM Math Level 1)[cite: 2].</p></div>
       </div>
     </div>
 
-    <!-- 4. Sub-Menu Khusus Adik Sheva (4 Paket) -->
+    <!-- 4. Sub-Menu Khusus Adik Sheva -->
     <div id="sheva-category-view" class="home-card" style="display: none;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
         <button class="back-btn" onclick="goHome()">⬅ Menu Utama</button>
         <span class="badge badge-tk">Adik Sheva • Kategori TK</span>
       </div>
       <h1 style="font-size: 1.6rem; color: #b45309;">Belajar Ceria Adik Sheva</h1>
-      <p style="margin-bottom: 20px;">Pilih pelajaran seru bergambar di bawah ini:</p>
+      <p style="margin-bottom: 20px;">Pilih materi latihan drilling membaca, berhitung, atau kompetisi Scholarix:</p>
 
       <div class="submenu-grid">
-        <div class="category-divider">📖 Drilling Belajar Membaca TK (Bahasa Indonesia)</div>
+        <div class="category-divider">🎖️ KOMPETISI RESMI SCHOLARIX (KATEGORI TK)</div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sch_eng_tk')"><h3>🏆 Scholarix English TK</h3><p>20 PG: Animals, Numbers, Fruit, School Objects & Dialogue[cite: 10].</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sch_math_tk')"><h3>🍎 Scholarix Math TK</h3><p>20 PG: Hitung Katak, Kucing, Pola Gambar, Pengurangan[cite: 11].</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sch_sains_tk')"><h3>🔬 Scholarix Sains TK</h3><p>20 PG: Benda Mengalir, Panca Indra, Komodo, Hewan Bertelur[cite: 12].</p></div>
 
-        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_baca1')">
-          <h3>🔤 Baca Paket 1: Suku Kata & Fonik</h3>
-          <p>10 Soal Drilling Mengeja Suku Kata Sederhana (ba, bi, bu, ca, ci, cu, dll.) + Gambar.</p>
-        </div>
+        <div class="category-divider">📖 Drilling Belajar Membaca (5 Paket @ 10 Soal)</div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_baca1')"><h3>🔤 Baca Paket 1</h3><p>Fonik & Suku Kata Terbuka (ba, bi, bu, ca, ci, cu).</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_baca2')"><h3>🔤 Baca Paket 2</h3><p>Suku Kata Lanjutan (da, ga, ha, ja, ka).</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_baca3')"><h3>🔤 Baca Paket 3</h3><p>Kata Benda Dasar 2 Suku Kata (meja, buku, bola, roti).</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_baca4')"><h3>🔤 Baca Paket 4</h3><p>Kata Berakhiran Konsonan (ayam, ikan, bebek).</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_baca5')"><h3>🔤 Baca Paket 5</h3><p>Membaca Kalimat Pendek 2–3 Kata.</p></div>
 
-        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_baca2')">
-          <h3>📚 Baca Paket 2: Kata Dasar & Kalimat Pendek</h3>
-          <p>10 Soal Membaca Kata Utuh & Memahami Kalimat Sederhana 2-3 Kata + Gambar.</p>
-        </div>
+        <div class="category-divider">🍎 Math Ceria Berhitung (5 Paket @ 10 Soal)</div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_math1')"><h3>🍎 Math Paket 1</h3><p>Penjumlahan Buah 1–5.</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_math2')"><h3>🍎 Math Paket 2</h3><p>Pengurangan Benda 1–5.</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_math3')"><h3>🍎 Math Paket 3</h3><p>Penjumlahan Benda & Hewan 1–10.</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_math4')"><h3>🍎 Math Paket 4</h3><p>Pengurangan Bintang & Balon 1–10.</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_math5')"><h3>🍎 Math Paket 5</h3><p>Operasi Campuran Tambah Kurang Ceria.</p></div>
 
-        <div class="category-divider">🌟 Berhitung & Bahasa Inggris Ceria</div>
-
-        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_math')">
-          <h3>🍎 Math Ceria (Berhitung)</h3>
-          <p>15 Soal Penjumlahan & Pengurangan Bergambar Lucu.</p>
-        </div>
-
-        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_english')">
-          <h3>🌈 English Fun (Bahasa Inggris TK)</h3>
-          <p>10 Soal Tebak Warna, Hewan, Buah & Benda Bergambar.</p>
-        </div>
+        <div class="category-divider">🌈 English Fun Bergambar (5 Paket @ 10 Soal)</div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_eng1')"><h3>🌈 English Paket 1</h3><p>Colors (Warna-warni).</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_eng2')"><h3>🌈 English Paket 2</h3><p>Animals (Hewan Lucu).</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_eng3')"><h3>🌈 English Paket 3</h3><p>Fruits (Buah Segar).</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_eng4')"><h3>🌈 English Paket 4</h3><p>School & House Objects (Benda Sekitar).</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_eng5')"><h3>🌈 English Paket 5</h3><p>Greetings & Simple Daily Words.</p></div>
       </div>
     </div>
 
@@ -739,7 +669,7 @@
       </div>
 
       <div class="score-board" id="score-board">
-        <h2>Hasil Belajar Hari Ini! 🎉</h2>
+        <h2>Hasil Evaluasi Kuis 🎉</h2>
         <div class="big-score" id="score-percentage">0%</div>
         <p id="score-detail">Kamu berhasil menjawab 0 soal dengan benar.</p>
       </div>
@@ -755,725 +685,276 @@
 
   <script>
     // =========================================================================
-    // DATA KAKAK ANIN - TIK / INFORMATIKA (BERPIKIR KOMPUTASIONAL) 2 PAKET @ 10 SOAL
+    // BANK DATA SOAL RESMI SCHOLARIX COMPETITION (TK, LEVEL 1-2, LEVEL 3-4)
     // =========================================================================
-    const dataAninTIK1 = [
-      {
-        q: "1. Cara berpikir untuk memecahkan masalah dan membangun solusi mengikuti cara kerja komputer dinamakan ....",
-        options: ["Berpikir Komputasional", "Berpikir Cepat", "Menonton Video", "Menghafal Program"],
-        ans: 0,
-        exp: "Berpikir komputasional adalah cara pikir yang membantu mengatasi masalah dan membangun solusinya dengan mengikuti cara kerja komputer."
-      },
-      {
-        q: "2. Langkah-langkah yang berurutan untuk menyelesaikan suatu kegiatan atau masalah disebut ....",
-        options: ["Dekomposisi", "Algoritma", "Abstraksi", "Programmer"],
-        ans: 1,
-        exp: "Algoritma adalah langkah-langkah yang berurutan (runtut) untuk menyelesaikan suatu kegiatan atau masalah."
-      },
-      {
-        q: "3. Orang yang bertugas membuat atau menulis program untuk komputer disebut ....",
-        options: ["Operator", "Programmer", "Teknisi", "Designer"],
-        ans: 1,
-        exp: "Programmer adalah orang yang menulis dan menyusun program komputer."
-      },
-      {
-        q: "4. Urutan pengerjaan dari perintah pertama sampai dengan perintah terakhir dinamakan ....",
-        options: ["Dekomposisi", "Sequence (urutan)", "Abstraksi", "Pola"],
-        ans: 1,
-        exp: "Sequence adalah urutan pengerjaan dari perintah pertama sampai dengan perintah terakhir."
-      },
-      {
-        q: "5. Perhatikan algoritma mengenakan pakaian seragam sekolah berikut:\n(1) Pakailah kemeja\n(2) Pakailah celana/rok panjang\n(3) Pakailah kaus kaki\n(4) Pakailah sepatu\nApa yang terjadi jika kamu memakai sepatu terlebih dahulu sebelum kaus kaki?",
-        options: ["Sepatu menjadi lebih bersih", "Langkah tidak tepat dan kaus kaki tidak bisa dipakai", "Kaus kaki otomatis terpasang", "Komputer bekerja lebih cepat"],
-        ans: 1,
-        exp: "Jika urutan (sequence) terbalik, tujuan tidak akan tercapai dengan benar karena kaus kaki harus dipakai sebelum memakai sepatu."
-      },
-      {
-        q: "6. Perhatikan langkah menanam biji bunga matahari:\n(1) Masukkan tanah ke pot\n(2) Letakkan bibit ke dalam tanah\n(3) Siramlah air ke pot berisi bibit\n(4) Letakkan pot di bawah cahaya matahari\nUrutan algoritma yang benar adalah ....",
-        options: ["(1) - (2) - (3) - (4)", "(2) - (1) - (4) - (3)", "(4) - (3) - (2) - (1)", "(3) - (2) - (1) - (4)"],
-        ans: 0,
-        exp: "Urutan menanam yang tepat: Tanah dimasukkan pot -> Bibit diletakkan -> Disiram air -> Ditaruh di bawah sinar matahari."
-      },
-      {
-        q: "7. Proses memecah tugas besar atau masalah rumit menjadi potongan-potongan tugas yang lebih kecil dan sederhana disebut ....",
-        options: ["Sequence", "Dekomposisi", "Abstraksi", "Pola"],
-        ans: 1,
-        exp: "Dekomposisi adalah proses memecah tugas besar menjadi bagian-bagian yang lebih kecil agar mudah diselesaikan."
-      },
-      {
-        q: "8. Dalam kegiatan membersihkan piring kotor, Ibu membaginya menjadi 2 potongan tugas kecil: 'Mencuci piring' dan 'Mengeringkan piring'. Ini adalah contoh ....",
-        options: ["Dekomposisi", "Abstraksi", "Algoritma acak", "Pengenalan musik"],
-        ans: 0,
-        exp: "Membagi pekerjaan besar mencuci piring menjadi mencuci dan mengeringkan adalah contoh penerapan dekomposisi."
-      },
-      {
-        q: "9. Jika programmer memberikan urutan langkah yang SALAH pada komputer, hal yang akan terjadi adalah ....",
-        options: ["Komputer bekerja lebih cepat", "Komputer tidak dapat bekerja dengan benar", "Komputer langsung rusak permanen", "Komputer menyerap energi lebih besar"],
-        ans: 1,
-        exp: "Komputer membutuhkan instruksi dalam urutan yang tepat. Jika salah urutan, komputer tidak dapat menyelesaikan tugasnya."
-      },
-      {
-        q: "10. Agar algoritma dapat dijalankan dengan baik oleh komputer, algoritma tersebut harus ....",
-        options: ["Ditulis dengan rumit", "Dibuat dalam bentuk lagu", "Disusun dengan urutan yang benar", "Ditulis dengan huruf miring"],
-        ans: 2,
-        exp: "Algoritma harus disusun secara runtut dan memiliki urutan yang benar agar komputer dapat mengeksekusinya."
-      }
+    
+    // 1. SCHOLARIX ENGLISH TK (20 SOAL)
+    const dataSchEngTK = [
+      { q: "1. What is this? (Gambar Katak)", options: ["This is a frog", "This is a butterfly", "This is a crocodile", "This is a fish"], ans: 0, exp: "Katak dalam bahasa Inggris adalah 'frog'." },
+      { q: "2. What number is this? '8'", options: ["It is seven", "It is two", "It is eight", "It is eighteen"], ans: 2, exp: "Angka 8 adalah 'eight'." },
+      { q: "3. This is my .....? (Gambar Penghapus)", options: ["Bag", "Pencil case", "Ruler", "Eraser"], ans: 3, exp: "Penghapus adalah 'eraser'." },
+      { q: "4. Complete this word! T _ G E R", options: ["A", "I", "U", "O"], ans: 1, exp: "Huruf yang hilang adalah 'I' -> TIGER." },
+      { q: "5. I like to eat ..... (Gambar Buah Anggur)", options: ["Oranges", "Watermelon", "Pomegranate", "Grapes"], ans: 3, exp: "Anggur adalah 'grapes'." },
+      { q: "6. What is the color of the star?", options: ["Blue", "Black", "Purple", "Yellow"], ans: 3, exp: "Warna bintang umumnya digambarkan kuning ('yellow')." },
+      { q: "7. Which animal that lives in water?", options: ["Bird", "Goat", "Dolphin", "Bee"], ans: 2, exp: "Lumba-lumba ('dolphin') hidup di air." },
+      { q: "8. How to say 'Tupai' in English?", options: ["Giraffe", "Hedgehog", "Ladybug", "Squirrel"], ans: 3, exp: "Tupai adalah 'squirrel'." },
+      { q: "9. Atok: '.....'\nUpin: 'I'm fine, thank you.'", options: ["Hello.", "How are you?", "See you.", "Good morning!"], ans: 1, exp: "Pertanyaan kabar adalah 'How are you?'." },
+      { q: "10. When you go, you say .....", options: ["Good morning", "Good afternoon", "Good evening", "Good bye"], ans: 3, exp: "Saat berpamitan kita mengucapkan 'Good bye'." },
+      { q: "11. My uncle goes to Jakarta by ..... (Gambar Pesawat)", options: ["Pedicab", "Train", "Car", "Plane"], ans: 3, exp: "Pesawat terbang adalah 'plane'." },
+      { q: "12. I see with my .....", options: ["Ear", "Eye", "Nose", "Mouth"], ans: 1, exp: "Kita melihat dengan mata ('eye')." },
+      { q: "13. Jumbo: '.....'\nBombi: 'My name is Bombi.'", options: ["Good morning!", "What is your name?", "How are you?", "See you, Bombi!"], ans: 1, exp: "Menanyakan nama: 'What is your name?'." },
+      { q: "14. What number is this? '17'", options: ["It is seventeen", "It is Sefenten", "It is seven", "It is Seventen"], ans: 0, exp: "Angka 17 adalah 'seventeen'." },
+      { q: "15. We say 'Paman' in English .....", options: ["Uncle", "Aunt", "Brother", "Mother"], ans: 0, exp: "Paman adalah 'uncle'." },
+      { q: "16. What is the color of cloud?", options: ["Black", "Green", "Grey", "White"], ans: 3, exp: "Awan cerah berwarna putih ('white')." },
+      { q: "17. Father, mother, brother, and sister are my .....", options: ["Parents", "Children", "Grandparents", "Family"], ans: 3, exp: "Ayah, ibu, kakak, adik adalah anggota keluarga ('family')." },
+      { q: "18. A pilot works in the .....", options: ["Police station", "Airport", "School", "Zoo"], ans: 1, exp: "Pilot bekerja di bandara ('airport')." },
+      { q: "19. What does my father do? He is a ..... (Gambar Dokter)", options: ["Doctor", "Singer", "Farmer", "Judge"], ans: 0, exp: "Dokter adalah 'doctor'." },
+      { q: "20. We use a ..... to keep our clothes.", options: ["Wardrobe", "Refrigerator", "Iron", "Washing machine"], ans: 0, exp: "Lemari pakaian adalah 'wardrobe'." }
     ];
 
-    const dataAninTIK2 = [
-      {
-        q: "1. Sesuatu yang berulang secara teratur di sekitar kita atau dalam kode komputer disebut ....",
-        options: ["Pola", "Abstraksi", "Dekomposisi", "Hardware"],
-        ans: 0,
-        exp: "Pola adalah keteraturan atau sesuatu yang berulang yang dapat diamati dalam kehidupan sehari-hari maupun kode komputer."
-      },
-      {
-        q: "2. Lintang latihan renang setiap hari Sabtu dan bersepeda setiap hari Minggu secara rutin. Kegiatan berulang ini membentuk suatu ....",
-        options: ["Dekomposisi", "Pola kegiatan", "Masalah komputer", "Programmer"],
-        ans: 1,
-        exp: "Kegiatan rutin yang dilakukan berulang pada waktu yang sama membentuk suatu pola kegiatan."
-      },
-      {
-        q: "3. Perhatikan pola susunan gambar: [Kubis] -> [Wortel] -> [X] -> [Kubis] -> [Wortel] -> [Tomat] -> [Y] -> [Wortel] -> [Tomat]. Gambar untuk mengisi kotak X dan Y adalah ....",
-        options: ["Wortel dan Kubis", "Kubis dan Tomat", "Tomat dan Kubis", "Tomat dan Wortel"],
-        ans: 2,
-        exp: "Pola berulang terdiri dari 3 sayuran: Kubis, Wortel, Tomat. Maka X = Tomat dan Y = Kubis."
-      },
-      {
-        q: "4. Perhatikan pola angka berikut: 3, 6, 9, 12, .... Angka yang tepat untuk melengkapi pola tersebut adalah ....",
-        options: ["13", "14", "15", "16"],
-        ans: 2,
-        exp: "Pola bilangan selalu bertambah +3 (3, 6, 9, 12, 15)."
-      },
-      {
-        q: "5. Proses menemukan informasi yang PENTING untuk menyelesaikan masalah dan mengabaikan informasi yang tidak penting disebut ....",
-        options: ["Dekomposisi", "Abstraksi", "Algoritma", "Sequence"],
-        ans: 1,
-        exp: "Abstraksi adalah proses memilah informasi penting dan membuang detail yang tidak diperlukan agar masalah menjadi lebih sederhana."
-      },
-      {
-        q: "6. Lintang menanyakan letak perpustakaan kepada Hani. Hani memberi tahu bahwa 'perpustakaan ada di lantai 2 sebelah ruang guru' tanpa perlu menyebutkan semua nama ruangan lain yang dilewati. Sikap Hani menerapkan prinsip ....",
-        options: ["Abstraksi", "Dekomposisi", "Pemrograman", "Sequence"],
-        ans: 0,
-        exp: "Hani hanya menyampaikan informasi inti yang penting (letak perpustakaan) dan mengabaikan detail yang tidak perlu (Abstraksi)."
-      },
-      {
-        q: "7. Pada motif kain batik parang yang memiliki gambar berulang secara teratur, unsur berpikir komputasional yang terlihat adalah ....",
-        options: ["Pola", "Algoritma", "Dekomposisi", "Programmer"],
-        ans: 0,
-        exp: "Motif kain yang memiliki keteraturan gambar berulang menerapkan konsep pengenalan Pola (Pattern Recognition)."
-      },
-      {
-        q: "8. Dalam dekomposisi isi akuarium, kita mengelompokkan dan menghitung bagian kecil seperti: 7 ekor ikan, 2 ekor siput, dan 4 tanaman air. Tujuan dekomposisi ini adalah ....",
-        options: ["Membuat akuarium kotor", "Membuat rincian bagian besar menjadi potongan kecil yang jelas", "Membuat ikan berenang lebih cepat", "Menghilangkan air"],
-        ans: 1,
-        exp: "Dekomposisi membantu mengenali dan merinci setiap elemen pembentuk dari suatu keseluruhan."
-      },
-      {
-        q: "9. Sebelum membuat program di komputer, seorang pembuat program menyusun algoritma terlebih dahulu yang berguna untuk ....",
-        options: ["Menemukan masalah baru", "Menyelesaikan masalah secara runtut", "Menghapus data", "Memperlambat komputer"],
-        ans: 1,
-        exp: "Algoritma disusun sebagai panduan langkah demi langkah dalam memecahkan masalah atau mencapai tujuan program."
-      },
-      {
-        q: "10. Empat unsur penting dalam Berpikir Komputasional adalah ....",
-        options: ["Mengetik, menggambar, menonton, bermain game", "Algoritma, dekomposisi, pengenalan pola, dan abstraksi", "CPU, Monitor, Keyboard, dan Mouse", "Kamera, Speaker, Kabel, dan Flashdisk"],
-        ans: 1,
-        exp: "4 pilar dasar berpikir komputasional: Algoritma, Dekomposisi, Pengenalan Pola, dan Abstraksi."
-      }
+    // 2. SCHOLARIX MATH TK (20 SOAL)
+    const dataSchMathTK = [
+      { q: "1. Berapakah jumlah katak pada gambar? (7 katak)", options: ["6", "8", "7", "5"], ans: 2, exp: "Jumlah katak ada 7 ekor." },
+      { q: "2. 8 kucing + 4 kucing = .....", options: ["8", "4", "12", "10"], ans: 2, exp: "8 + 4 = 12 ekor kucing." },
+      { q: "3. Lengkapilah urutan angka: 18, ....., 22, 24", options: ["20", "21", "19", "23"], ans: 0, exp: "Pola bilangan loncat 2: 18, 20, 22, 24." },
+      { q: "4. Angka berapakah ini: 38", options: ["Delapan tiga", "Tiga delapan", "Tiga ratus delapan", "Tiga puluh delapan"], ans: 3, exp: "38 dibaca: Tiga puluh delapan." },
+      { q: "5. Jika ada 4 bebek, berapa jumlah semua kakinya?", options: ["2", "6", "4", "8"], ans: 3, exp: "Tiap bebek punya 2 kaki. 4 x 2 = 8 kaki." },
+      { q: "6. 100 - 29 = .....", options: ["81", "88", "71", "129"], ans: 2, exp: "100 - 29 = 71." },
+      { q: "7. Angka 15 dipecah menjadi 9 dan .....?", options: ["5", "4", "8", "6"], ans: 3, exp: "15 - 9 = 6." },
+      { q: "8. Hitunglah hasil dari: 5 + 7 - 3 + 4 - 0 = .....", options: ["10", "13", "12", "14"], ans: 1, exp: "5 + 7 = 12 -> 12 - 3 = 9 -> 9 + 4 = 13." },
+      { q: "9. Berapakah jumlah roda dari 3 buah becak?", options: ["3 roda", "6 roda", "9 roda", "12 roda"], ans: 2, exp: "1 becak ada 3 roda. 3 x 3 = 9 roda." },
+      { q: "10. 17 + [ ..... ] = 30. Angka yang tepat adalah .....", options: ["47", "13", "3", "23"], ans: 1, exp: "30 - 17 = 13." },
+      { q: "11. 13 - 4 sama dengan .....", options: ["13", "9", "17", "10"], ans: 1, exp: "13 - 4 = 9." },
+      { q: "12. Hitung jumlah boneka kelinci pada baris (8 + 7 = 15 kelinci):", options: ["15", "13", "16", "10"], ans: 0, exp: "Total boneka kelinci ada 15 buah." },
+      { q: "13. Hasil penjumlahan bersusun: 37 + 49 = .....", options: ["86", "77", "76", "85"], ans: 0, exp: "37 + 49 = 86." },
+      { q: "14. Hasil dari: 50 + 0 - 28 = .....", options: ["25", "23", "78", "22"], ans: 3, exp: "50 - 28 = 22." },
+      { q: "15. Angka berapakah ini: 59", options: ["Lima Sembilan", "Lima puluh Sembilan", "Sembilan puluh lima", "Sembilan lima"], ans: 1, exp: "59 dibaca: Lima puluh sembilan." },
+      { q: "16. Bangun dengan 3 sisi dan 3 sudut dinamakan .....", options: ["Persegi", "Segitiga", "Balok", "Lingkaran"], ans: 1, exp: "Segitiga." },
+      { q: "17. Berapa banyak permen lolipop pada gambar (8 baris atas + 8 baris bawah)?", options: ["16", "15", "10", "20"], ans: 0, exp: "8 + 8 = 16 permen." },
+      { q: "18. Jari tangan manusia ada 10. Jika ada 4 orang, berapa jumlah semua jari tangan mereka?", options: ["20", "30", "40", "50"], ans: 2, exp: "4 orang x 10 jari = 40 jari." },
+      { q: "19. Operasi hitung: 67 - 24 = 43. Angka yang tepat mengisi kotak puluhan adalah .....", options: ["4", "2", "3", "1"], ans: 0, exp: "6 - 2 = 4." },
+      { q: "20. Urutan pola warna lingkaran: Biru, Kuning, Merah, Biru, Kuning, Merah. Warna berikutnya adalah .....", options: ["Biru", "Kuning", "Merah", "Hijau"], ans: 0, exp: "Pola berulang diawali dengan warna Biru." }
+    ];
+
+    // 3. SCHOLARIX SAINS TK (20 SOAL)
+    const dataSchSainsTK = [
+      { q: "1. Manakah benda yang bisa mengalir?", options: ["Meja", "Apel", "Susu", "Topi"], ans: 2, exp: "Susu adalah zat cair yang bisa mengalir." },
+      { q: "2. Organ tubuh yang terletak di dada dan berfungsi bernapas adalah .....", options: ["Otak", "Lambung", "Paru-paru", "Ginjal"], ans: 2, exp: "Paru-paru berfungsi untuk bernapas." },
+      { q: "3. Panca indra pada manusia terdiri atas .....", options: ["Mata, telinga, hidung, lidah, kulit", "Mata, alis, telinga, hidung, gigi", "Mulut, mata, telinga, tangan, hidung", "Telinga, mata, hidung, kaki, lidah"], ans: 0, exp: "5 panca indra: Mata (melihat), Telinga (mendengar), Hidung (membau), Lidah (mengecap), Kulit (meraba)." },
+      { q: "4. Jika air dalam gelas dimasukkan ke dalam botol, maka .....", options: ["Air akan bertambah banyak", "Bentuk air sama seperti gelas", "Air akan berkurang", "Bentuk air akan seperti botol"], ans: 3, exp: "Sifat zat cair berubah bentuk mengikuti wadahnya." },
+      { q: "5. Hewan yang berkembang biak dengan bertelur adalah .....", options: ["Ayam", "Kucing", "Sapi", "Kambing"], ans: 0, exp: "Ayam berkembang biak dengan cara bertelur." },
+      { q: "6. Di alam semesta, benda apa saja yang bisa dilihat di langit saat malam hari?", options: ["Matahari dan bintang", "Bulan dan pelangi", "Satelit dan pelangi", "Bintang dan bulan"], ans: 3, exp: "Bintang dan bulan tampak di malam hari." },
+      { q: "7. Ciri-ciri hewan yang melahirkan (mamalia) adalah .....", options: ["Tidak punya daun telinga", "Memiliki kelenjar susu & berdaun telinga", "Mengerami telurnya", "Bernapas dengan insang"], ans: 1, exp: "Hewan mamalia memiliki daun telinga dan kelenjar susu." },
+      { q: "8. Sumber energi utama bagi tubuh manusia berasal dari .....", options: ["Olahraga lari", "Otak", "Jantung", "Makanan sehat"], ans: 3, exp: "Makanan bergizi menjadi sumber tenaga dan energi manusia." },
+      { q: "9. Bagian tubuh yang berfungsi sebagai penangkap sumber bunyi adalah .....", options: ["Mata", "Telinga", "Tangan", "Kulit"], ans: 1, exp: "Telinga adalah indra pendengaran." },
+      { q: "10. Makhluk hidup membutuhkan ..... untuk bertahan hidup.", options: ["Batu", "Makanan dan air", "Plastik", "Minyak"], ans: 1, exp: "Ciri makhluk hidup adalah memerlukan makan dan minum." },
+      { q: "11. Agar mata tetap sehat, kita harus menjaganya dengan cara .....", options: ["Main game HP berjam-jam", "Makan sayur terutama wortel", "Menggosok mata dengan tangan kotor", "Membaca di tempat gelap"], ans: 1, exp: "Makan wortel yang kaya vitamin A menjaga kesehatan mata." },
+      { q: "12. Akibat buruk membuang sampah sembarangan di sungai adalah .....", options: ["Sungai jadi jernih", "Banyak ikan hidup", "Terjadi banjir", "Air sungai harum"], ans: 2, exp: "Sampah menyumbat aliran sungai dan menyebabkan banjir." },
+      { q: "13. Kelompok hewan yang termasuk serangga adalah .....", options: ["Sapi dan kambing", "Semut dan belalang", "Kura-kura dan ikan", "Kupu-kupu dan cicak"], ans: 1, exp: "Semut dan belalang adalah contoh serangga." },
+      { q: "14. Es batu jika diletakkan di piring terbuka pada suhu ruangan akan .....", options: ["Mencair menjadi air", "Menjadi salju beku", "Tetap keras es batu", "Membesar"], ans: 0, exp: "Es batu menyerap panas dan mencair." },
+      { q: "15. Kulit buah salak memiliki permukaan yang .....", options: ["Kasar bersisik", "Licin basah", "Sangat lembut", "Halus kaca"], ans: 0, exp: "Permukaan kulit salak bersisik dan kasar." },
+      { q: "16. Burung unta berkembang biak dengan cara .....", options: ["Melahirkan", "Bertelur", "Membelah diri", "Bertunas"], ans: 1, exp: "Semua bangsa burung berkembang biak dengan bertelur." },
+      { q: "17. Benda apa yang kita bawa untuk melindungi diri saat cuaca hujan?", options: ["Payung atau jas hujan", "Kacamata hitam", "Ikat pinggang", "Topi koboi"], ans: 0, exp: "Payung melindungi tubuh dari air hujan." },
+      { q: "18. Hewan kadal raksasa asli Indonesia yang hidup di Nusa Tenggara adalah .....", options: ["Kadal", "Komodo", "Bunglon", "Buaya"], ans: 1, exp: "Komodo adalah kadal terbesar di dunia asli Indonesia." },
+      { q: "19. Komodo adalah hewan karnivora, makanannya adalah .....", options: ["Rumput hijau", "Buah apel", "Daging", "Biji jagung"], ans: 2, exp: "Komodo adalah pemakan daging." },
+      { q: "20. Bagian lidah manusia berfungsi sebagai indra .....", options: ["Pengecap rasa", "Pendengar suara", "Pencium bau", "Penglihat"], ans: 0, exp: "Lidah berfungsi mengecap rasa manis, asin, asam, dan pahit." }
+    ];
+
+    // 4. SCHOLARIX ENGLISH LEVEL 1 (20 SOAL)
+    const dataSchEngLv1 = [
+      { q: "1. Rani has six apples. Her mother gives her two more. How many apples does Rani have now?", options: ["six apples", "seven apples", "eight apples", "nine apples"], ans: 2, exp: "6 + 2 = 8 apples." },
+      { q: "2. What is the correct spelling of the number 12?", options: ["Twelf", "Twelva", "Twelve", "Twelfe"], ans: 2, exp: "Ejaan yang benar adalah 'Twelve'." },
+      { q: "3. Which animal can live both on land and in water (amphibian)?", options: ["Frog", "Cat", "Dog", "Cow"], ans: 0, exp: "Katak ('Frog') dapat hidup di darat dan di air." },
+      { q: "4. The giraffe has a long .....", options: ["Tail", "Ear", "Leg", "Neck"], ans: 3, exp: "Jerapah terkenal memiliki leher panjang ('long neck')." },
+      { q: "5. To cut a paper, we need a tool called .....", options: ["Ruler", "Scissors", "Eraser", "Sharpener"], ans: 1, exp: "Gunting ('Scissors') digunakan untuk memotong kertas." },
+      { q: "6. Ana: 'I don't bring thing that helps me to write on paper. Can I borrow yours?' -> Object is .....", options: ["Desk", "Bag", "Book", "Pencil"], ans: 3, exp: "Alat untuk menulis di kertas adalah pensil ('Pencil')." },
+      { q: "7. Which command is correct if the teacher wants the class to be quiet?", options: ["Sit down, please", "Open the book", "Keep silent, please", "Stand up, please"], ans: 2, exp: "'Keep silent, please' artinya harap tenang/diam." },
+      { q: "8. Look at the sign 'NO ENTRY'. What does it mean?", options: ["You can go inside.", "You must enter quickly.", "You must wait.", "You cannot go inside."], ans: 3, exp: "'No Entry' berarti dilarang masuk / tidak boleh masuk." },
+      { q: "9. 'Hello, how are you?' The best answer is .....", options: ["I am seven years old", "I am fine, thank you", "I am a student", "Good afternoon"], ans: 1, exp: "Respon kabar: 'I am fine, thank you'." },
+      { q: "10. Dina meets her teacher at 8 a.m. She should say .....", options: ["Good afternoon", "Good night", "Good evening", "Good morning"], ans: 3, exp: "Pukul 08.00 pagi kita mengucapkan 'Good morning'." },
+      { q: "11. Choose the grammatically correct sentence:", options: ["He am my friend.", "She is my sister.", "I is a boy.", "They is happy."], ans: 1, exp: "Pasangan to be tepat: 'She is my sister'." },
+      { q: "12. Which sentence is WRONG grammatically?", options: ["I am happy.", "He are playing.", "They are friends.", "She is my teacher."], ans: 1, exp: "'He are' adalah salah, seharusnya 'He is playing'." },
+      { q: "13. The ball is between two chairs. Where is the ball?", options: ["On the chair", "In the middle of the chairs", "In the chair", "Under the chair"], ans: 1, exp: "Between artinya di antara / di tengah-tengah dua kursi." },
+      { q: "14. Look at the cat sleeping under the table. The correct sentence is .....", options: ["The cat is under the table", "The cat is behind the table", "The cat is in the table", "The cat is on the table"], ans: 0, exp: "Kucing berada di bawah meja ('under the table')." },
+      { q: "15. What do you usually do after waking up in the morning?", options: ["Take a bath", "Sleep again", "Watch TV all day", "Play football on bed"], ans: 0, exp: "Mandi ('Take a bath') adalah kebiasaan baik pagi hari." },
+      { q: "16. Which sentence is correct in Simple Present?", options: ["I goes to school.", "I going to school.", "I go to school every morning.", "I goed to school."], ans: 2, exp: "Subjek 'I' menggunakan Verb 1 bentuk dasar 'go'." },
+      { q: "17. Which one is NOT a common daily activity?", options: ["Eating breakfast", "Sleeping at night", "Going to school", "Swimming in the ocean every day"], ans: 3, exp: "Berenang di samudra tiap hari bukan aktivitas harian anak sekolah." },
+      { q: "18. Which is the best polite request?", options: ["Give me your pen!", "Can I borrow your pen, please?", "Lend your pen!", "I want your pen now!"], ans: 1, exp: "'Can I borrow your pen, please?' adalah permintaan yang sopan." },
+      { q: "19. Which sentence is correct?", options: ["She drink milk.", "She drinking milk.", "She drinks milk every day.", "She drank milk every day now."], ans: 2, exp: "Subjek 'She' membutuhkan akhiran -s pada Simple Present: 'drinks'." },
+      { q: "20. Lani: 'What is your name and how old are you?' -> Rudi: '.....'", options: ["My name is Rudi, I am 7 years old.", "My name Rudi, my hobby is reading.", "My name is Rudi, I want doctor.", "Harry is my friend."], ans: 0, exp: "Menjawab nama dan umur: 'My name is Rudi, I am 7 years old'." }
+    ];
+
+    // 5. SCHOLARIX ENGLISH LEVEL 2 (20 SOAL)
+    const dataSchEngLv2 = [
+      { q: "1. Which one is a NOUN (kata benda)?", options: ["run", "happy", "cat", "quickly"], ans: 2, exp: "'Cat' (kucing) adalah kata benda (noun)." },
+      { q: "2. Which one is a VERB (kata kerja)?", options: ["table", "eat", "book", "red"], ans: 1, exp: "'Eat' (makan) adalah kata kerja (verb)." },
+      { q: "3. Which one is an ADJECTIVE (kata sifat)?", options: ["beautiful", "school", "walk", "fish"], ans: 0, exp: "'Beautiful' (cantik/indah) adalah kata sifat." },
+      { q: "4. Which one is an ADVERB (kata keterangan)?", options: ["blue", "pen", "teacher", "slowly"], ans: 3, exp: "'Slowly' (dengan lambat) berakhiran -ly adalah adverb." },
+      { q: "5. My teacher is very ..... She always smiles.", options: ["angry", "kind", "sad", "lazy"], ans: 1, exp: "Guru yang selalu tersenyum adalah guru yang ramah/baik ('kind')." },
+      { q: "6. My father is tall and .....", options: ["big", "fat", "long", "thin"], ans: 3, exp: "Tinggi dan langsing/kurus: 'tall and thin'." },
+      { q: "7. Which word describes a person's character?", options: ["table", "river", "clever", "school"], ans: 2, exp: "'Clever' (pintar) menggambarkan karakter seseorang." },
+      { q: "8. Which animal can swim in the water?", options: ["bird", "cat", "cow", "fish"], ans: 3, exp: "Ikan ('fish') berenang di air." },
+      { q: "9. Which animal is the LARGEST land mammal?", options: ["cat", "elephant", "dog", "rabbit"], ans: 1, exp: "Gajah ('elephant') adalah mamalia darat terbesar." },
+      { q: "10. A ..... has long ears and likes carrots.", options: ["tiger", "horse", "goat", "rabbit"], ans: 3, exp: "Kelinci ('rabbit') bertelinga panjang dan suka wortel." },
+      { q: "11. When the sky is full of clouds, the weather is .....", options: ["sunny", "cloudy", "windy", "rainy"], ans: 1, exp: "Langit penuh awan disebut mendung/berawan ('cloudy')." },
+      { q: "12. People usually bring an umbrella when it is .....", options: ["hot", "sunny", "rainy", "windy"], ans: 2, exp: "Payung dibawa saat cuaca hujan ('rainy')." },
+      { q: "13. The opposite (antonym) of 'HOT' is .....", options: ["warm", "cold", "sunny", "dry"], ans: 1, exp: "Lawan kata panas ('hot') adalah dingin ('cold')." },
+      { q: "14. The clock shows 6:00. We say .....", options: ["six o'clock", "six past ten", "half past six", "six past five"], ans: 0, exp: "Pukul 6 tepat dibaca 'six o'clock'." },
+      { q: "15. 12:00 AM (tengah malam) is called .....", options: ["midnight", "noon", "morning", "evening"], ans: 0, exp: "Pukul 12 malam disebut 'midnight'." },
+      { q: "16. We go to school in the .....", options: ["midnight", "night", "morning", "evening"], ans: 2, exp: "Anak sekolah berangkat di pagi hari ('morning')." },
+      { q: "17. We wear ..... on our feet.", options: ["hat", "shoes", "shirt", "skirt"], ans: 1, exp: "Di kaki kita memakai sepatu ('shoes')." },
+      { q: "18. In cold weather, we wear a ..... to keep our body warm.", options: ["T-shirt", "jacket", "shorts", "sandals"], ans: 1, exp: "Jaket ('jacket') menghangatkan badan saat dingin." },
+      { q: "19. Which one is NOT clothes?", options: ["dress", "pants", "table", "jacket"], ans: 2, exp: "Meja ('table') adalah perabot, bukan pakaian." },
+      { q: "20. My mother buys vegetables in the .....", options: ["market", "zoo", "school", "station"], ans: 0, exp: "Ibu berbelanja sayuran di pasar ('market')." }
+    ];
+
+    // 6. SCHOLARIX ENGLISH LEVEL 3 (20 SOAL)
+    const dataSchEngLv3 = [
+      { q: "1. Which sentence contains a verb in the PAST TENSE?", options: ["She walks to school.", "They are happy.", "I played football yesterday.", "We eat rice every day."], ans: 2, exp: "'played' adalah kata kerja bentuk lampau (Past Tense)." },
+      { q: "2. Choose the sentence with an ADJECTIVE (kata sifat):", options: ["The boy runs fast.", "I have two cats.", "My sister is beautiful.", "He plays football."], ans: 2, exp: "'Beautiful' adalah kata sifat menerangkan sister." },
+      { q: "3. Which one is a PLURAL noun (kata benda jamak)?", options: ["Children", "Child", "Man", "Woman"], ans: 0, exp: "'Children' adalah bentuk jamak dari 'child'." },
+      { passage: "ANNOUNCEMENT: Our school will hold an English Speech Contest on Saturday, 15 May from 09.00 a.m. to 12.00 p.m. at the School Hall. All students are invited to join.", q: "4. What is the announcement about?", options: ["School meeting", "English debate contest", "Graduation day", "English Speech Contest"], ans: 3, exp: "Tentang English Speech Contest." },
+      { passage: "ANNOUNCEMENT: Our school will hold an English Speech Contest on Saturday, 15 May from 09.00 a.m. to 12.00 p.m. at the School Hall. All students are invited to join.", q: "5. When will the contest be held?", options: ["Friday, 14 May", "Saturday, 15 May", "Sunday, 16 May", "Monday, 17 May"], ans: 1, exp: "Saturday, 15 May." },
+      { passage: "ANNOUNCEMENT: Our school will hold an English Speech Contest on Saturday, 15 May from 09.00 a.m. to 12.00 p.m. at the School Hall. All students are invited to join.", q: "6. Where will the contest take place?", options: ["Library", "School yard", "Classroom", "School Hall"], ans: 3, exp: "At the School Hall." },
+      { passage: "Hi Dina, Don't forget to bring your science book tomorrow. We will study together after school. - Rani", q: "7. Who wrote the message?", options: ["Dina", "Teacher", "Rani", "Librarian"], ans: 2, exp: "Pesan ditulis oleh Rani." },
+      { passage: "Hi Dina, Don't forget to bring your science book tomorrow. We will study together after school. - Rani", q: "8. What must Dina bring tomorrow?", options: ["Dictionary", "English book", "Story book", "Science book"], ans: 3, exp: "Science book." },
+      { passage: "Hi Dina, Don't forget to bring your science book tomorrow. We will study together after school. - Rani", q: "9. What will they do after school?", options: ["Play a game", "Study together", "Watch TV", "Go shopping"], ans: 1, exp: "Study together." },
+      { q: "10. The synonym of 'BEGIN' is .....", options: ["stop", "finish", "close", "start"], ans: 3, exp: "Begin = Start (memulai)." },
+      { q: "11. The antonym of 'STRONG' is .....", options: ["tall", "weak", "thin", "heavy"], ans: 1, exp: "Lawan kata kuat adalah lemah ('weak')." },
+      { q: "12. The synonym of 'LARGE' is .....", options: ["small", "big", "tiny", "short"], ans: 1, exp: "Large = Big (besar)." },
+      { q: "13. This test is _____ than the last one.", options: ["difficult", "more difficult", "most difficult", "difficulty"], ans: 1, exp: "Comparative lebih dari 2 suku kata memakai 'more difficult'." },
+      { q: "14. Mount Everest is the _____ mountain in the world.", options: ["highest", "higher", "more high", "most high"], ans: 0, exp: "Superlative: 'the highest'." },
+      { q: "15. Yesterday, I _____ my grandmother in the village.", options: ["visited", "visits", "visit", "visiting"], ans: 0, exp: "Keterangan 'yesterday' memakai V2: 'visited'." },
+      { q: "16. We _____ English every Monday at school.", options: ["studied", "studies", "study", "studying"], ans: 2, exp: "Subjek 'We' Simple Present memakai 'study'." },
+      { passage: "Last weekend, my family went to the zoo. We saw many animals like tigers, elephants, and giraffes. I liked the elephant show the most because it was very funny. After that, we ate lunch in the park. It was a wonderful day.", q: "17. Where did the writer go last weekend?", options: ["Beach", "Park", "Museum", "Zoo"], ans: 3, exp: "The zoo." },
+      { passage: "Last weekend, my family went to the zoo. We saw many animals like tigers, elephants, and giraffes. I liked the elephant show the most because it was very funny. After that, we ate lunch in the park. It was a wonderful day.", q: "18. What animals did the writer see?", options: ["Tiger, lion, rabbit", "Elephant, giraffe, tiger", "Cat, dog, horse", "Snake, bird, fish"], ans: 1, exp: "Tigers, elephants, and giraffes." },
+      { passage: "Last weekend, my family went to the zoo. We saw many animals like tigers, elephants, and giraffes. I liked the elephant show the most because it was very funny. After that, we ate lunch in the park. It was a wonderful day.", q: "19. What show did the writer like the most?", options: ["Tiger show", "Giraffe show", "Elephant show", "Monkey show"], ans: 2, exp: "The elephant show." },
+      { passage: "Last weekend, my family went to the zoo. We saw many animals like tigers, elephants, and giraffes. I liked the elephant show the most because it was very funny. After that, we ate lunch in the park. It was a wonderful day.", q: "20. How was the writer's day?", options: ["Wonderful", "Tiring", "Boring", "Sad"], ans: 0, exp: "It was a wonderful day." }
+    ];
+
+    // 7. SCHOLARIX ENGLISH LEVEL 4 (20 SOAL)
+    const dataSchEngLv4 = [
+      { q: "1. 'She runs quickly to catch the bus.' The word 'quickly' is an .....", options: ["Noun", "Verb", "Adverb", "Adjective"], ans: 2, exp: "'Quickly' menerangkan cara berlari (Adverb of manner)." },
+      { q: "2. Which sentence uses an adjective correctly?", options: ["The book are interest.", "He run fastly.", "She is a beautiful singer.", "They is happy."], ans: 2, exp: "'beautiful singer' adalah frasa adjektiva yang tepat." },
+      { q: "3. 'The cat is under the table.' Which word is the preposition?", options: ["under", "cat", "The", "table"], ans: 0, exp: "'under' adalah kata depan (preposisi tempat)." },
+      { passage: "Once upon a time, a poor woodcutter dropped his axe into the river. Suddenly, a fairy appeared and offered him a golden axe and a silver axe. The woodcutter refused both, saying they were not his. Impressed by his honesty, the fairy gave him all three axes.", q: "4. What is the main moral of the story?", options: ["Hard work pays off.", "Riches cause trouble.", "Do not trust strangers.", "Honesty brings reward."], ans: 3, exp: "Kejujuran membawa berkah/hadiah ('Honesty brings reward')." },
+      { passage: "Once upon a time, a poor woodcutter dropped his axe into the river. Suddenly, a fairy appeared and offered him a golden axe and a silver axe. The woodcutter refused both, saying they were not his. Impressed by his honesty, the fairy gave him all three axes.", q: "5. Which event shows the woodcutter's honesty?", options: ["Dropping his axe.", "Refusing the golden and silver axes.", "Meeting the fairy.", "Taking all three axes."], ans: 1, exp: "Menolak kapak emas dan perak karena bukan miliknya." },
+      { passage: "Once upon a time, a poor woodcutter dropped his axe into the river. Suddenly, a fairy appeared and offered him a golden axe and a silver axe. The woodcutter refused both, saying they were not his. Impressed by his honesty, the fairy gave him all three axes.", q: "6. 'Impressed by his honesty' means the fairy was .....", options: ["angry with him", "surprised and proud of him", "jealous of him", "annoyed"], ans: 1, exp: "Kagum dan bangga atas kejujuran si penebang kayu." },
+      { passage: "Once upon a time, a poor woodcutter dropped his axe into the river. Suddenly, a fairy appeared and offered him a golden axe and a silver axe. The woodcutter refused both, saying they were not his. Impressed by his honesty, the fairy gave him all three axes.", q: "7. Which sentence is TRUE according to the story?", options: ["The fairy kept the axe.", "The woodcutter lied.", "The fairy rewarded the woodcutter with three axes.", "He accepted gold only."], ans: 2, exp: "Peri menghadiahkan ketiga kapak kepadanya." },
+      { passage: "Happy Graduation, Rina! We are so proud of your hard work and success. May this be the beginning of many more achievements. - Your Family", q: "8. What kind of card is it?", options: ["Birthday card", "Thank you card", "Invitation card", "Graduation card"], ans: 3, exp: "Graduation card (kartu ucapan kelulusan)." },
+      { passage: "Happy Graduation, Rina! We are so proud of your hard work and success. May this be the beginning of many more achievements. - Your Family", q: "9. Who is the card for?", options: ["Rina's teacher", "Rina", "Rina's friends", "Rina's family"], ans: 1, exp: "Untuk Rina." },
+      { passage: "Dear Zahra, You are invited to attend Birthday Party for Andi. Date: Saturday, 5 June. Time: 4.00 p.m. Place: Andi's house. With happiness, Andi", q: "10. What event is being held?", options: ["Farewell party", "Graduation", "Meeting", "Birthday party"], ans: 3, exp: "Birthday party." },
+      { passage: "Dear Zahra, You are invited to attend Birthday Party for Andi. Date: Saturday, 5 June. Time: 4.00 p.m. Place: Andi's house. With happiness, Andi", q: "11. When will the party start?", options: ["In the morning", "In the afternoon", "In the evening", "At night"], ans: 1, exp: "Pukul 4.00 p.m. adalah sore hari ('In the afternoon')." },
+      { q: "12. 'The teacher gave homework yesterday.' Passive voice:", options: ["The homework is given by teacher.", "The homework was given by the teacher yesterday.", "The homework were given.", "The homework gave."], ans: 1, exp: "Past passive: was/were + V3 -> 'The homework was given'." },
+      { q: "13. 'My father buys a new car.' Passive voice:", options: ["My father bought car.", "A new car is bought by my father.", "A new car were bought.", "A new car bought."], ans: 1, exp: "Present passive: is/am/are + V3 -> 'A new car is bought'." },
+      { passage: "SUPER SALE: All Shoes 30% OFF! Only this weekend at Sport Center Mall.", q: "14. What is being advertised?", options: ["Shoes", "Bags", "Clothes", "Food"], ans: 0, exp: "Sepatu ('Shoes')." },
+      { passage: "SUPER SALE: All Shoes 30% OFF! Only this weekend at Sport Center Mall.", q: "15. What does '30% OFF' mean?", options: ["The shoes are cheaper.", "The shoes are free.", "More expensive.", "New arrivals."], ans: 0, exp: "Diskon 30% berarti harga sepatu lebih murah ('cheaper')." },
+      { passage: "Online learning allows students to learn at their own pace. However, face-to-face learning helps students socialize better and stay disciplined.", q: "16. Main issue discussed:", options: ["Online shopping", "Social life", "Online learning vs classroom learning", "Teachers discipline"], ans: 2, exp: "Perbandingan pembelajaran online vs tatap muka." },
+      { passage: "Online learning allows students to learn at their own pace. However, face-to-face learning helps students socialize better and stay disciplined.", q: "17. Advantage of online learning:", options: ["Students learn faster.", "Students more disciplined.", "Students meet more friends.", "Students can learn at their own pace."], ans: 3, exp: "Dapat belajar sesuai kecepatan masing-masing ('learn at their own pace')." },
+      { passage: "Online learning allows students to learn at their own pace. However, face-to-face learning helps students socialize better and stay disciplined.", q: "18. Weakness of online learning mentioned:", options: ["Too expensive.", "Students cannot socialize well.", "Teachers dislike it.", "Takes too much time."], ans: 1, exp: "Kurangnya interaksi sosial siswa ('cannot socialize well')." },
+      { q: "19. Conditional type 2: 'If I _____ rich, I would travel around the world.'", options: ["am", "was", "were", "will be"], ans: 2, exp: "Bentuk pengandaian formal memakai 'were'." },
+      { q: "20. Conditional type 3: 'If she had studied harder, she _____ the exam.'", options: ["would have passed", "would pass", "will pass", "passes"], ans: 0, exp: "Conditional type 3 memakai 'would have + V3'." }
+    ];
+
+    // 8. SCHOLARIX MATH LEVEL 1 (20 SOAL)
+    const dataSchMathLv1 = [
+      { q: "1. 2 + 3 + 4 + N = 27 - 2N. Nilai dari N + 4 adalah ....", options: ["8", "12", "10", "14"], ans: 2, exp: "9 + 3N = 27 -> 3N = 18 -> N = 6. Maka N + 4 = 6 + 4 = 10." },
+      { q: "2. 3.974 + 1.016 - 2.505 = ....", options: ["2.585", "2.845", "2.485", "2.985"], ans: 2, exp: "4.990 - 2.505 = 2.485." },
+      { q: "3. Ada 4 kambing dan 5 ayam di kandang. Total kaki hewan adalah ....", options: ["26", "32", "28", "24"], ans: 0, exp: "(4 x 4) + (5 x 2) = 16 + 10 = 26 kaki." },
+      { q: "4. -12 x 3 + 96 : 3 + 29 = ....", options: ["15", "24", "18", "25"], ans: 3, exp: "-36 + 32 + 29 = 25." },
+      { q: "5. (4 x n) + 9 = 25. Nilai n + 5 = ....", options: ["8", "9", "11", "10"], ans: 1, exp: "4n = 16 -> n = 4. Maka n + 5 = 9." },
+      { q: "6. Garis bilangan: 4/6, 5/6, 6/6, x, 8/6, y, 10/6. Nilai x + y adalah ....", options: ["17/6", "15/6", "18/6", "16/6"], ans: 1, exp: "x = 7/6, y = 9/6. x + y = 16/6." },
+      { q: "7. Gambar lingkaran dibagi 8 dan diarsir 3 bagian. Pecahannya adalah ....", options: ["3/4", "3/5", "3/8", "3/6"], ans: 2, exp: "3 bagian dari 8 = 3/8." },
+      { q: "8. Jumlah segitiga pada bangun berpola bintang segi enam adalah ....", options: ["6", "7", "4", "8"], ans: 3, exp: "Total ada 8 segitiga (6 kecil + 2 besar)." },
+      { q: "9. Tiga bangun datar bersisi sama direkatkan sisinya. Sisi terbanyak bangun baru adalah ....", options: ["6", "8", "10", "12"], ans: 2, exp: "Sisi luar maksimum = 10 sisi." },
+      { q: "10. Pola aljabar: 12 [+] 19 [-] 21 [-] 10 = 4. Tanda yang tepat adalah ....", options: ["+", "+", "-", "+", "-", "-"], ans: 1, exp: "12 + 19 - 21 - 10 tidak menghasilkan 4. Pengujian urutan: 12 - 19 + 21 - 10 = 4." },
+      { q: "11. Rumus: A & B % C = B + C - 2xA. Nilai dari 11 & 23 % 37 adalah ....", options: ["28", "38", "42", "52"], ans: 1, exp: "23 + 37 - (2 x 11) = 60 - 22 = 38." },
+      { q: "12. Penjumlahan AA + A = 84. Nilai A adalah 7 (77 + 7 = 84). Nilai 1 + 3 x A adalah ....", options: ["22", "34", "32", "24"], ans: 0, exp: "1 + (3 x 7) = 22." },
+      { q: "13. Apel + Apel = 12 (Apel = 6). Apel + Apel + Jeruk = 20 (Jeruk = 8). Nilai Jeruk - Apel = ....", options: ["2", "3", "4", "5"], ans: 0, exp: "8 - 6 = 2." },
+      { q: "14. 4 + 5 x [N] - [N] = 32 -> 4 + 4N = 32 -> 4N = 28 -> N = ....", options: ["4", "6", "7", "8"], ans: 2, exp: "N = 7." },
+      { q: "15. Selisih nilai angka 7 pada bilangan 6.721 (nilai 700) dan 7.405 (nilai 7.000) adalah ....", options: ["684", "316", "6.300", "6.316"], ans: 2, exp: "7.000 - 700 = 6.300." },
+      { q: "16. 3 lusin sendok (3 x 43.000) + 2 lusin garpu (2 x 36.000) = ....", options: ["Rp201.000", "Rp210.000", "Rp79.000", "Rp120.000"], ans: 0, exp: "129.000 + 72.000 = Rp201.000." },
+      { q: "17. Kereta berangkat 19.45 sampai 04.30 (8 jam 45 menit) + terlambat 20 menit = ....", options: ["9 jam 5 menit", "8 jam 45 menit", "9 jam", "9 jam 20 menit"], ans: 0, exp: "Total waktu tempuh adalah 9 jam 5 menit." },
+      { q: "18. Tiga bilangan berurutan jumlahnya 141 (46, 47, 48). Angka ganjil (47) dikali angka terkecil (46) = ....", options: ["2.162", "2.116", "2.208", "2.256"], ans: 0, exp: "47 x 46 = 2.162." },
+      { q: "19. Banyak kubus satuan pada tangga 3 tingkat adalah ....", options: ["10", "12", "14", "16"], ans: 0, exp: "Lapisan: 6 + 3 + 1 = 10 kubus." },
+      { q: "20. Pecahan senilai dengan 3/4 adalah ....", options: ["6/8", "5/8", "9/15", "4/6"], ans: 0, exp: "3/4 = 6/8." }
+    ];
+
+    // 9. SCHOLARIX MATH LEVEL 2 (20 SOAL)
+    const dataSchMathLv2 = [
+      { q: "1. Jumlah usia Sava dan Ibu 48 tahun. Usia Ibu 3 kali usia Sava (Ibu=36, Sava=12). Selisih usia mereka adalah ....", options: ["18 tahun", "20 tahun", "24 tahun", "30 tahun"], ans: 2, exp: "36 - 12 = 24 tahun." },
+      { q: "2. Kelas ada 39 siswa. 30 suka IPA, 17 Matematika, 3 tidak suka keduanya. Banyak siswa suka keduanya adalah ....", options: ["11 anak", "14 anak", "9 anak", "15 anak"], ans: 0, exp: "39 - 3 = 36. (30 + 17) - 36 = 11 anak." },
+      { q: "3. Dua bilangan dijumlahkan 48 dan selisihnya 12 (bilangan 30 dan 18). Hasil kali keduanya adalah ....", options: ["260", "460", "540", "340"], ans: 2, exp: "30 x 18 = 540." },
+      { q: "4. Manakah di antara bilangan berikut yang habis dibagi 7 (kelipatan 7)?", options: ["2.311", "2.118", "1.813", "1.914"], ans: 2, exp: "1.813 : 7 = 259 (habis bersisa 0)." },
+      { q: "5. Berangkat 19.20 menempuh 9 jam 45 menit + berhenti 15 menit. Tiba pukul ....", options: ["04.05 WIB", "05.20 WIB", "04.30 WIB", "05.05 WIB"], ans: 1, exp: "19.20 + 10 jam = 05.20 WIB." },
+      { q: "6. Restoran muat 62 orang dengan 15 meja. Meja besar (6 orang) muat 24 orang (4 meja). Selisih meja sedang (4 orang) dan kecil (2 orang) adalah ....", options: ["2", "4", "3", "5"], ans: 2, exp: "Meja sedang = 7, meja kecil = 4. Selisih = 7 - 4 = 3 meja." },
+      { q: "7. Persegi keliling 64 cm (sisi 16 cm) dipotong jadi 2 persegi identik (8x8) dan 1 persegi panjang (16x8). Total keliling 3 potongan adalah ....", options: ["98 cm", "112 cm", "100 cm", "144 cm"], ans: 1, exp: "Keliling = (4x8) + (4x8) + 2(16+8) = 32 + 32 + 48 = 112 cm." },
+      { q: "8. Jajar genjang alas 20 cm dan tinggi 9 cm (Luas=180 cm²). Jika sisi miring 15 cm, maka tinggi DF adalah ....", options: ["15 cm", "12 cm", "18 cm", "10 cm"], ans: 1, exp: "180 : 15 = 12 cm." },
+      { q: "9. Data: 5, 6, 6, 8, x, 5. Jika modus data adalah 6, maka nilai x adalah 6. Rata-rata data tersebut adalah ....", options: ["9", "7", "6", "8"], ans: 2, exp: "(5+6+6+8+6+5) : 6 = 36 : 6 = 6." },
+      { q: "10. Produksi 304 kg seminggu adalah 76% (100% - 24%) dari target. Target maksimal pabrik adalah ....", options: ["400 kg", "450 kg", "600 kg", "500 kg"], ans: 0, exp: "304 : 0,76 = 400 kg." },
+      { q: "11. Tiga anak laki-laki dan dua perempuan duduk selang-seling (L-P-L-P-L). Banyak kemungkinan formasi duduk adalah ....", options: ["6", "12", "5", "10"], ans: 1, exp: "3! x 2! = 6 x 2 = 12 cara." },
+      { q: "12. Diagram lingkaran: Petani 25%, Buruh 20%, Pedagang 40%. Persentase Pengusaha = 15%. Jika total 300 peserta, banyak pengusaha adalah ....", options: ["45 orang", "60 orang", "30 orang", "50 orang"], ans: 0, exp: "15% x 300 = 45 orang." },
+      { q: "13. Sebuah kubus kayu dicat seluruh permukaannya lalu dipotong jadi kubus kecil. Kubus yang terkena cat di 3 sisi terletak di ....", options: ["Tengah sisi", "Titik sudut (8 pojok)", "Pusat kubus", "Rusuk tengah"], ans: 1, exp: "Kubus yang terkena cat di 3 sisi selalu berada di 8 titik sudut." },
+      { q: "14. Keliling segitiga siku-siku dengan sisi alas 8 cm dan tinggi 15 cm (sisi miring 17 cm) adalah ....", options: ["40 cm", "30 cm", "45 cm", "50 cm"], ans: 0, exp: "8 + 15 + 17 = 40 cm." },
+      { q: "15. Banyak rute dari A ke B melalui titik persimpangan grid adalah ....", options: ["12 cara", "16 cara", "20 cara", "24 cara"], ans: 2, exp: "Kombinasi langkah kanan dan atas pada grid." },
+      { q: "16. Sebuah prisma segitiga memiliki rusuk sebanyak ....", options: ["6", "8", "9", "12"], ans: 2, exp: "Prisma segitiga memiliki 9 rusuk." },
+      { q: "17. Hasil dari 15² - 12² adalah ....", options: ["81", "91", "101", "71"], ans: 0, exp: "225 - 144 = 81." },
+      { q: "18. KPK dari 24 dan 36 adalah ....", options: ["48", "72", "96", "108"], ans: 1, exp: "KPK = 72." },
+      { q: "19. FPB dari 48 dan 72 adalah ....", options: ["12", "18", "24", "36"], ans: 2, exp: "FPB = 24." },
+      { q: "20. Sudut siku-siku besarnya tepat ..... derajat.", options: ["45°", "90°", "180°", "360°"], ans: 1, exp: "Sudut siku-siku = 90°." }
+    ];
+
+    // 10. SCHOLARIX SAINS LEVEL 1 (20 SOAL)
+    const dataSchSainsLv1 = [
+      { q: "1. Mata digunakan untuk melihat. Hidung untuk membau dan ..... digunakan untuk meraba/merasakan sentuhan.", options: ["Merasa dan kulit", "Melihat dan lidah", "Membau dan kulit", "Bernafas dan mata"], ans: 2, exp: "Hidung untuk membau dan kulit untuk meraba sentuhan." },
+      { q: "2. Organ tubuh manusia yang berfungsi untuk menyaring darah dan membentuk urine adalah .....", options: ["Hati", "Jantung", "Ginjal", "Lambung"], ans: 2, exp: "Ginjal berfungsi menyaring darah dan memproduksi urine." },
+      { q: "3. Peralatan masak menggunakan bahan stainless steel dipilih karena sifatnya .....", options: ["Konduktor panas yang baik dan kedap air", "Kuat dan isolator", "Mudah berkarat", "Murah"], ans: 0, exp: "Stainless steel adalah konduktor panas yang kuat dan tidak mudah berkarat." },
+      { q: "4. Di antara pilihan gas berikut, gas yang massa jenisnya lebih ringan dari oksigen adalah .....", options: ["Propan", "Helium", "Klorin", "Sulfur dioksida"], ans: 1, exp: "Gas helium sangat ringan sehingga digunakan untuk balon terbang." },
+      { q: "5. Benda berikut merupakan peralatan optik yang menggunakan lensa, KECUALI .....", options: ["Teleskop", "Kacamata", "Mikroskop", "Cermin datar"], ans: 3, exp: "Cermin datar bekerja dengan pemantulan cahaya, bukan pembiasan lensa." },
+      { q: "6. Perubahan wujud zat berikut yang menyerap kalor (panas) adalah .....", options: ["Cair menjadi padat (membeku)", "Gas menjadi cair (mengembun)", "Padat menjadi gas (menyublim)", "Gas menjadi padat (mengkristal)"], ans: 2, exp: "Menyublim, mencair, dan menguap memerlukan/menyerap kalor." },
+      { q: "7. Sifat zat gas yang dimanfaatkan pedagang untuk mengisi balon udara adalah .....", options: ["Murah harganya", "Menekan ke segala arah dan mengisi seluruh ruang", "Susunan partikel sangat padat", "Bentuknya tetap"], ans: 1, exp: "Gas mengisi seluruh ruangan dan menekan ke segala arah sesuai wadah balon." },
+      { q: "8. Proses perubahan bentuk energi dari satu bentuk ke bentuk lain dinamakan .....", options: ["Transfer energi", "Transformasi energi", "Rotasi energi", "Evolusi energi"], ans: 1, exp: "Transformasi energi adalah perubahan bentuk energi." },
+      { q: "9. Perubahan energi pada mobil listrik dari pengisian baterai sampai melaju adalah .....", options: ["Listrik -> gerak", "Gerak -> listrik", "Listrik -> kimia (baterai) -> gerak (motor)", "Kimia -> listrik"], ans: 2, exp: "Listrik disimpan menjadi energi kimia pada baterai, lalu diubah menjadi gerak." },
+      { q: "10. Manusia merasa sulit memindahkan lemari berat di atas lantai semen karena adanya .....", options: ["Gaya pegas", "Gaya gravitasi", "Gaya gesek yang besar", "Gaya magnet"], ans: 2, exp: "Gaya gesek antara lantai dan dasar lemari menghambat pergerakan." },
+      { q: "11. Benda A lebih berat dari benda B dijatuhkan dari tinggi sama ke tanah liat. Benda A amblas lebih dalam karena .....", options: ["Energi potensial benda A lebih besar", "Energi kinetik tidak berpengaruh", "Benda B tidak punya gravitasi", "Tinggi tidak berpengaruh"], ans: 0, exp: "Energi potensial dipengaruhi massa (Ep = m.g.h). Semakin berat, Ep makin besar." },
+      { q: "12. Ciri khusus makhluk hidup menyesuaikan diri dengan lingkungannya dinamakan .....", options: ["Fotosintesis", "Adaptasi", "Respirasi", "Aspirasi"], ans: 1, exp: "Adaptasi adalah penyesuaian diri makhluk hidup terhadap lingkungan." },
+      { q: "13. Zat yang dihasilkan oleh sistem kekebalan tubuh untuk melawan kuman dan virus adalah .....", options: ["Antibodi", "Protein murni", "Vitamin E", "Kalsium"], ans: 0, exp: "Antibodi diproduksi sel darah putih untuk melawan infeksi patogen." },
+      { q: "14. Hewan tikus, kelelawar, lumba-lumba, dan paus dikelompokkan bersama berdasarkan .....", options: ["Alat pernapasan", "Sistem reproduksi (melahirkan/mamalia)", "Makanan", "Habitat air"], ans: 1, exp: "Semuanya adalah mamalia yang melahirkan dan menyusui anaknya." },
+      { q: "15. Daun teratai lebar dan tipis berfungsi untuk .....", options: ["Mempercepat penguapan dan membantu fotosintesis", "Menyimpan cadangan air", "Melindungi dari ombak", "Menyerap racun"], ans: 0, exp: "Daun lebar mempercepat penguapan air dan menyerap cahaya matahari." },
+      { q: "16. Peristiwa alam akibat revolusi bumi mengelilingi matahari adalah .....", options: ["Pergantian siang dan malam", "Perubahan musim dan gerak semu tahunan matahari", "Pasang surut air laut", "Perbedaan waktu 24 jam"], ans: 1, exp: "Revolusi bumi mengakibatkan perubahan musim di belahan dunia." },
+      { q: "17. Peristiwa berikut yang merupakan contoh reaksi perubahan kimia adalah .....", options: ["Es mencair jadi air", "Besi berkarat muncul bercak coklat", "Kertas digunting kecil", "Batu terbelah dua"], ans: 1, exp: "Perkaratan besi menghasilkan zat baru melalui reaksi kimia dengan oksigen." },
+      { q: "18. Anak usia 3 tahun membutuhkan asupan gizi tinggi terutama ..... untuk tulang dan otot.", options: ["Kalsium dan protein", "Lemak jenuh", "Gula murni", "Serat saja"], ans: 0, exp: "Kalsium untuk tulang dan protein untuk pembentukan jaringan sel tubuh." },
+      { q: "19. Jika batu bermassa 100 g dimasukkan ke bejana air dan air tumpah sebanyak 50 ml, volume batu adalah .....", options: ["100 ml", "50 ml (atau 50 cm³)", "150 ml", "200 ml"], ans: 1, exp: "Volume zat padat sama dengan volume air yang dipindahkan (50 ml)." },
+      { q: "20. Gaya yang bekerja ketika kita mengerem sepeda adalah gaya .....", options: ["Gaya gesek", "Gaya pegas", "Gaya magnet", "Gaya gravitasi"], ans: 0, exp: "Rem memanfaatkan gaya gesek kampas rem pada roda." }
+    ];
+
+    // 11. SCHOLARIX SAINS LEVEL 2 (20 SOAL)
+    const dataSchSainsLv2 = [
+      { q: "1. Fungsi utama dari membran sel pada sel hewan dan tumbuhan adalah .....", options: ["Memberi bentuk kaku", "Mengatur keluar-masuknya zat ke dalam sel", "Tempat pembelahan inti", "Menghasilkan klorofil"], ans: 1, exp: "Membran sel bersifat semipermeabel mengatur transportasi zat." },
+      { q: "2. Organel sel berikut yang HANYA terdapat pada sel tumbuhan adalah .....", options: ["Nukleus", "Lisosom", "Kloroplas dan dinding sel", "Mitokondria"], ans: 2, exp: "Kloroplas (fotosintesis) dan dinding sel hanya dimiliki tumbuhan." },
+      { q: "3. Kerja otot bisep dan trisep pada lengan saat menekuk siku merupakan gerak .....", options: ["Antagonis (berlawanan)", "Sinergis (bersamaan)", "Otomatis", "Refleks murni"], ans: 0, exp: "Gerak antagonis: satu otot kontraksi (bisep) dan otot pasangannya relaksasi (trisep)." },
+      { q: "4. Sepeda motor kecepatan 15 m/s direm hingga berhenti dalam 3 detik. Perlambatannya adalah .....", options: ["15 m/s²", "6 m/s²", "8 m/s²", "5 m/s²"], ans: 3, exp: "a = (15 - 0) / 3 = 5 m/s²." },
+      { q: "5. Organ tubuh manusia yang mengandung asam klorida (HCl) dengan pH sangat asam adalah .....", options: ["Pankreas", "Lambung", "Hati", "Usus besar"], ans: 1, exp: "Lambung memproduksi HCl untuk membunuh kuman dan mengaktifkan pepsin." },
+      { q: "6. Proses pernapasan saat air melewati lembaran insang pada ikan adalah .....", options: ["Pelepasan oksigen", "Pengikatan oksigen terlarut oleh hemoglobin darah", "Pengikatan racun", "Pembentukan lendir"], ans: 1, exp: "Kapiler darah pada insang mengikat O2 dari air dan melepas CO2." },
+      { q: "7. Bola basket memantul kembali setelah membentur dinding membuktikan gaya dapat .....", options: ["Mengubah arah gerak benda", "Menghilangkan massa", "Memperbesar bola", "Menghentikan gravitasi"], ans: 0, exp: "Dinding memberikan gaya reaksi yang membalikkan arah gerak bola." },
+      { q: "8. Meja didorong 50 N ke timur dan 30 N ke barat. Resultan gaya yang bekerja adalah .....", options: ["20 N ke arah barat", "80 N ke timur", "80 N ke barat", "20 N ke arah timur"], ans: 3, exp: "50 N - 30 N = 20 N ke arah timur." },
+      { q: "9. Usaha yang dilakukan meja yang berpindah 2 meter akibat resultan gaya 20 N adalah .....", options: ["20 Joule", "40 Joule", "50 Joule", "60 Joule"], ans: 1, exp: "W = F x s = 20 N x 2 m = 40 Joule." },
+      { q: "10. Tanaman eceng gondok dapat mengapung dan stabil di air karena memiliki .....", options: ["Batang berongga udara dan akar serabut lebat", "Akar tunggang menusuk tanah", "Daun berduri tajam", "Batang kayu keras"], ans: 0, exp: "Rongga udara pada tangkai daun membuat eceng gondok terapung." },
+      { q: "11. Urutan rantai makanan ekosistem kolam yang tepat adalah .....", options: ["Fitoplankton -> Herbivora air -> Ikan karnivora -> Bakteri pengurai", "Bakteri -> Ikan -> Tumbuhan", "Zat organik -> Karnivora -> Plankton", "Ikan -> Plankton -> Pengurai"], ans: 0, exp: "Produsen (fitoplankton) dimakan herbivora, lalu karnivora, diakhiri pengurai." },
+      { q: "12. Fraksi penyulingan minyak bumi yang digunakan untuk bahan bakar kompor minyak adalah .....", options: ["Kerosin (minyak tanah)", "Parafin lilin", "Vaselin", "Aspal"], ans: 0, exp: "Kerosin atau minyak tanah digunakan untuk kompor konvensional." },
+      { q: "13. Penyerbukan pada tanaman jagung dibantu oleh perantara .....", options: ["Angin (Anemogami)", "Air", "Burung", "Kelelawar"], ans: 0, exp: "Serbuk sari jagung ringan dan diterbangkan oleh angin ke putik." },
+      { q: "14. Hubungan kompetisi terjadi jika beberapa spesies di ekosistem memperebutkan .....", options: ["Sumber makanan yang sama", "Sarang yang berbeda", "Udara bebas", "Air laut"], ans: 0, exp: "Kompetisi terjadi karena persaingan kebutuhan makanan/wilayah yang terbatas." },
+      { q: "15. Benda A memiliki kalor jenis lebih besar dari benda B. Jika dipanaskan dengan kalor sama, maka .....", options: ["Suhu benda A naik lebih cepat", "Perubahan suhu benda A lebih kecil daripada benda B", "Keduanya sama suhunya", "Benda B mencair seketika"], ans: 1, exp: "Semakin besar kalor jenis, semakin lambat kenaikan suhunya (ΔT = Q / m.c)." },
+      { q: "16. Gendang telinga berfungsi untuk .....", options: ["Menangkap gelombang suara dan bergetar", "Menjaga keseimbangan tubuh", "Menghasilkan kotoran", "Menghubungkan ke tenggorokan"], ans: 0, exp: "Gendang telinga bergetar meneruskan gelombang bunyi ke tulang pendengaran." },
+      { q: "17. Simbiosis antara benalu dengan pohon mangga merupakan contoh .....", options: ["Parasitisme", "Mutualisme", "Komensalisme", "Netralisme"], ans: 0, exp: "Benalu menyerap air dan hara dari pohon inang sehingga merugikan (parasit)." },
+      { q: "18. Bagian mata yang berfungsi mengatur banyak sedikitnya cahaya yang masuk adalah .....", options: ["Pupil dan iris", "Kornea", "Retina", "Saraf optik"], ans: 0, exp: "Iris mengatur besar kecilnya lubang pupil sesuai intensitas cahaya." },
+      { q: "19. Bunyi tidak dapat merambat melalui .....", options: ["Ruang hampa udara (vakum)", "Air laut", "Besi rel kereta", "Udara sekitar"], ans: 0, exp: "Bunyi membutuhkan medium materi untuk merambat, tidak bisa di ruang hampa." },
+      { q: "20. Zat makanan yang berfungsi sebagai pembangun dan pengganti sel rusak adalah .....", options: ["Protein", "Karbohidrat", "Lemak", "Vitamin"], ans: 0, exp: "Protein adalah zat pembangun utama tubuh." }
     ];
 
     // =========================================================================
-    // DATA KAKAK PUTRI - PAI & BUDI PEKERTI (2 PAKET @ 20 SOAL: 10 PG, 5 ISIAN, 5 URAIAN)
+    // CONTROLLER ROUTING TERPADU
     // =========================================================================
-    const dataPutriPAI1 = [
-      // 10 Pilihan Ganda
-      {
-        q: "1. Surah An-Nas terdiri atas .... ayat.",
-        options: ["4 ayat", "5 ayat", "6 ayat", "7 ayat"],
-        ans: 2,
-        exp: "Surah An-Nas terdiri dari 6 ayat[cite: 1, 8]."
-      },
-      {
-        q: "2. Arti dari kata 'An-Nas' adalah ....",
-        options: ["Waktu Subuh", "Manusia", "Pertolongan", "Malaikat"],
-        ans: 1,
-        exp: "An-Nas artinya Manusia[cite: 1, 8]."
-      },
-      {
-        q: "3. Surah An-Nas adalah surah ke-.... dalam mushaf Al-Qur'an.",
-        options: ["112", "113", "114", "110"],
-        ans: 2,
-        exp: "Surah An-Nas menempati urutan terakhir dalam mushaf Al-Qur'an, yaitu surah ke-114[cite: 1, 8]."
-      },
-      {
-        q: "4. Membaca Al-Qur'an dengan tenang, perlahan, dan sesuai kaidah tajwid disebut membaca secara ....",
-        options: ["Tartil", "Cepat", "Keras", "Samar"],
-        ans: 0,
-        exp: "Membaca Al-Qur'an dengan tartil artinya membaca perlahan, jelas makhrajnya, dan benar tajwidnya[cite: 1, 8]."
-      },
-      {
-        q: "5. Dalam QS. An-Nas, kita diperintahkan untuk memohon perlindungan hanya kepada ....",
-        options: ["Malaikat", "Manusia", "Allah Swt.", "Nabi Muhammad"],
-        ans: 2,
-        exp: "Kita hanya boleh memohon perlindungan dan bergantung kepada Allah Swt. Tuhannya manusia[cite: 1, 8]."
-      },
-      {
-        q: "6. Tempat keluarnya huruf hijaiyah saat diucapkan dengan benar disebut ....",
-        options: ["Makhorijul huruf", "Asmaulhusna", "Harakat", "Tajwidul lisani"],
-        ans: 0,
-        exp: "Tempat keluarnya huruf hijaiyah disebut Makhorijul Huruf[cite: 1, 8]."
-      },
-      {
-        q: "7. Bisikan kejahatan yang menyusup ke dalam dada manusia dapat berasal dari golongan ....",
-        options: ["Jin dan Hewan", "Jin dan Manusia", "Tumbuhan dan Manusia", "Hewan dan Malaikat"],
-        ans: 1,
-        exp: "Sesuai ayat terakhir QS. An-Nas: 'Minal jinnati wan-naas' (dari golongan jin dan manusia)[cite: 1, 8]."
-      },
-      {
-        q: "8. Lanjutan dari bunyi ayat kedua QS. An-Nas adalah 'Malikin ....'",
-        options: ["Ilah", "Naas", "Waswas", "Khinnaas"],
-        ans: 1,
-        exp: "Bunyi ayat ke-2: 'Malikin-naas' (Raja manusia)[cite: 1, 8]."
-      },
-      {
-        q: "9. Huruf hijaiyah berikut yang TIDAK BISA disambung dengan huruf setelahnya adalah ....",
-        options: ["Ba (ب)", "Sin (س)", "Alif (ا)", "Mim (م)"],
-        ans: 2,
-        exp: "Huruf Alif (ا) tidak bisa menyambung huruf di sebelah kirinya/setelahnya[cite: 1, 8]."
-      },
-      {
-        q: "10. Sikap terpuji yang dicerminkan setelah memahami QS. An-Nas adalah ....",
-        options: ["Takut berlebihan pada setan", "Hanya berlindung dan bergantung kepada Allah", "Sombong merasa hebat sendiri", "Malas beribadah"],
-        ans: 1,
-        exp: "Implementasi QS. An-Nas adalah selalu bersikap tawakal dan memohon perlindungan hanya kepada Allah Swt[cite: 1, 8]."
-      },
-      // 5 Isian Singkat
-      {
-        type: "input",
-        q: "11. Surah An-Nas termasuk golongan surah Makkiyah karena diturunkan di kota .....",
-        ans: ["makkah", "mekkah"],
-        exp: "Surah An-Nas diturunkan di kota Makkah sebelum Nabi hijrah[cite: 1, 8]."
-      },
-      {
-        type: "input",
-        q: "12. 'Raja manusia' adalah arti dari lafal .....",
-        ans: ["malikin naas", "malikin-naas", "malikinnas"],
-        exp: "Ayat ke-2: Malikin-naas artinya Raja manusia[cite: 1, 8]."
-      },
-      {
-        type: "input",
-        q: "13. Huruf Ba (ب) jika diberi tanda harakat dhommah ( ُ ) berbunyi .....",
-        ans: ["bu"],
-        exp: "Harakat dhommah menghasilkan bunyi vokal 'U' (Ba + dhommah = Bu)[cite: 1, 8]."
-      },
-      {
-        type: "input",
-        q: "14. Surah An-Nas dan Surah Al-Falaq sering disebut surah perlindungan atau Al-.....",
-        ans: ["mu'awwidzatain", "muawwidzatain"],
-        exp: "Dua surah perlindungan disebut Al-Mu'awwidzatain[cite: 1, 8]."
-      },
-      {
-        type: "input",
-        q: "15. Sebelum membaca Al-Qur'an kita membaca ta'awudz untuk memohon perlindungan dari godaan .....",
-        ans: ["setan", "iblis", "setan yang terkutuk"],
-        exp: "Ta'awudz (A'udzubillahi minasy-syaithonir rojim) untuk memohon perlindungan dari godaan setan[cite: 1, 8]."
-      },
-      // 5 Uraian
-      {
-        type: "input",
-        q: "16. (Uraian) Tuliskan bunyi ayat pertama Surah An-Nas!",
-        ans: ["qul a'udzu birabbin naas", "qul a'uudzu birabbin-naas", "qul audzu birabbinnas"],
-        exp: "Ayat 1: 'Qul a'uudzu birabbin-naas' (Katakanlah: Aku berlindung kepada Tuhannya manusia)[cite: 1, 8]."
-      },
-      {
-        type: "input",
-        q: "17. (Uraian) Sebutkan pesan pokok yang terkandung dalam QS. An-Nas!",
-        ans: ["perintah berlindung hanya kepada allah", "hanya memohon perlindungan kepada allah", "berlindung kepada allah dari godaan setan"],
-        exp: "Pesan pokok: Perintah untuk selalu memohon perlindungan kepada Allah dari bisikan jahat jin dan manusia[cite: 1, 8]."
-      },
-      {
-        type: "input",
-        q: "18. (Uraian) Mengapa kita harus membaca Al-Qur'an secara tartil?",
-        ans: ["agar bacaan benar dan tartil", "supaya sesuai tajwid dan makhraj", "agar fasih dan benar tajwidnya"],
-        exp: "Agar bacaan benar, fasih, sesuai makhraj dan tajwid, serta mudah diresapi maknanya[cite: 1, 8]."
-      },
-      {
-        type: "input",
-        q: "19. (Uraian) Sebutkan 3 huruf hijaiyah yang tidak dapat menyambung huruf setelahnya!",
-        ans: ["alif, dal, dzal", "alif, ra, zai", "alif, dal, wawu", "alif, dal, dzal, ra, zai, wawu"],
-        exp: "Huruf yang tidak bisa menyambung ke kiri: Alif (ا), Dal (د), Dzal (ذ), Ra (ر), Zai (ز), Wawu (و)[cite: 1, 8]."
-      },
-      {
-        type: "input",
-        q: "20. (Uraian) Dari bisikan jahat siapakah kita memohon perlindungan dalam QS. An-Nas?",
-        ans: ["jin dan manusia", "bangsa jin dan manusia", "setan jin dan manusia"],
-        exp: "Dari bisikan jahat yang bersembunyi dalam dada, baik dari golongan jin maupun manusia[cite: 1, 8]."
-      }
-    ];
-
-    const dataPutriPAI2 = [
-      // 10 Pilihan Ganda
-      {
-        q: "1. Asmaulhusna memiliki arti ....",
-        options: ["Nama-nama nabi yang mulia", "Nama-nama Allah Swt. yang indah dan baik", "Nama-nama malaikat Allah", "Nama-nama kitab suci"],
-        ans: 1,
-        exp: "Asmaulhusna adalah nama-nama Allah Swt. yang agung, baik, dan indah[cite: 1, 8]."
-      },
-      {
-        q: "2. Allah Swt. senantiasa memelihara dan menjaga seluruh alam semesta. Ini adalah bukti bahwa Allah memiliki sifat ....",
-        options: ["al-Hafiz", "al-Wali", "al-'Alim", "al-Khabir"],
-        ans: 0,
-        exp: "Al-Hafiz (الْحَفِيظُ) artinya Maha Memelihara / Menjaga[cite: 1, 8]."
-      },
-      {
-        q: "3. Asmaulhusna 'al-Wali' memiliki arti bahwa Allah Swt. Maha ....",
-        options: ["Mengetahui", "Melindungi / Menolong", "Pencipta", "Mendengar"],
-        ans: 1,
-        exp: "Al-Wali (الْوَلِيُّ) artinya Maha Melindungi atau Maha Menolong hamba-Nya[cite: 1, 8]."
-      },
-      {
-        q: "4. Allah mengetahui segala sesuatu yang tampak maupun yang tersembunyi di alam semesta. Ini adalah arti dari sifat ....",
-        options: ["al-Khabir", "al-Hafiz", "al-'Alim", "al-Wali"],
-        ans: 2,
-        exp: "Al-'Alim (الْعَلِيمُ) artinya Maha Mengetahui segala sesuatu[cite: 1, 8]."
-      },
-      {
-        q: "5. Asmaulhusna 'al-Khabir' artinya Allah Maha ....",
-        options: ["Teliti / Waspada / Maha Mengenal hal tersembunyi", "Mendengar suara bisikan", "Merajai hari kiamat", "Maha Kuasa"],
-        ans: 0,
-        exp: "Al-Khabir (الْخَبِيرُ) artinya Maha Teliti / Maha Waspada / Maha Mengetahui hingga perkara tersembunyi[cite: 1, 8]."
-      },
-      {
-        q: "6. Sikap seorang siswa yang meneladani asmaulhusna 'al-'Alim' di sekolah tercermin pada ....",
-        options: ["Malas mengerjakan PR", "Semangat belajar dan rajin menuntut ilmu", "Sombong merasa paling pintar", "Suka menyontek teman"],
-        ans: 1,
-        exp: "Meneladani al-'Alim diwujudkan dengan rajin belajar, membaca, dan mencari ilmu yang bermanfaat[cite: 1, 8]."
-      },
-      {
-        q: "7. Merawat buku pelajaran dan menjaga hafalan Al-Qur'an dengan tekun adalah bentuk pengamalan asmaulhusna ....",
-        options: ["al-Wali", "al-Khabir", "al-Hafiz", "al-Quddus"],
-        ans: 2,
-        exp: "Menjaga dan merawat amanah adalah cerminan dari meneladani asmaulhusna al-Hafiz (Maha Memelihara)[cite: 1, 8]."
-      },
-      {
-        q: "8. Mengerjakan tugas sekolah dengan teliti, cermat, dan berhati-hati merupakan bentuk meneladani sifat ....",
-        options: ["al-Khabir", "al-Hafiz", "al-Malik", "al-Wali"],
-        ans: 0,
-        exp: "Sikap cermat dan teliti meneladani sifat al-Khabir (Maha Teliti)[cite: 1, 8]."
-      },
-      {
-        q: "9. Menyerahkan segala hasil usaha dan berserah diri kepada Allah setelah berikhtiar sungguh-sungguh dinamakan ....",
-        options: ["Tawakal", "Takabur", "Riya", "Kufur"],
-        ans: 0,
-        exp: "Tawakal adalah sikap berserah diri atas perlindungan Allah setelah berusaha maksimal[cite: 1, 8]."
-      },
-      {
-        q: "10. Karya seni tulisan indah huruf Arab yang memuat lafal asmaulhusna disebut ....",
-        options: ["Komik", "Kaligrafi", "Sketsa", "Lukisan dinding"],
-        ans: 1,
-        exp: "Seni menulis indah ayat Al-Qur'an atau Asmaulhusna disebut kaligrafi Islam[cite: 1, 8]."
-      },
-      // 5 Isian Singkat
-      {
-        type: "input",
-        q: "11. Jumlah nama-nama indah Allah (Asmaulhusna) ada ..... nama.",
-        ans: ["99", "sembilan puluh sembilan"],
-        exp: "Asmaulhusna Allah berjumlah 99 nama[cite: 1, 8]."
-      },
-      {
-        type: "input",
-        q: "12. Lafal al-Hafiz (الْحَفِيظُ) memiliki arti Yang Maha .....",
-        ans: ["memelihara", "menjaga", "maha memelihara", "maha menjaga"],
-        exp: "Al-Hafiz artinya Maha Memelihara atau Maha Menjaga[cite: 1, 8]."
-      },
-      {
-        type: "input",
-        q: "13. Menolong teman yang sedang kesusahan dan melindungi adik adalah bentuk meneladani asmaulhusna .....",
-        ans: ["al-wali", "al wali"],
-        exp: "Melindungi dan menolong sesama meneladani sifat al-Wali (Maha Melindungi)[cite: 1, 8]."
-      },
-      {
-        type: "input",
-        q: "14. Tidak berbuat curang saat ujian karena yakin Allah Maha Mengetahui adalah bukti meneladani sifat .....",
-        ans: ["al-'alim", "al alim", "al-alim"],
-        exp: "Keyakinan bahwa Allah tahu segalanya bersumber dari sifat al-'Alim[cite: 1, 8]."
-      },
-      {
-        type: "input",
-        q: "15. Sikap cermat, waspada, dan tidak ceroboh saat belajar menunjukkan pengamalan asmaulhusna .....",
-        ans: ["al-khabir", "al khabir", "al-khabiir"],
-        exp: "Sikap teliti dan cermat meneladani asmaulhusna al-Khabir[cite: 1, 8]."
-      },
-      // 5 Uraian
-      {
-        type: "input",
-        q: "16. (Uraian) Jelaskan arti dari asmaulhusna al-Hafiz!",
-        ans: ["maha memelihara", "allah maha memelihara dan menjaga", "maha menjaga"],
-        exp: "Al-Hafiz artinya Allah Maha Memelihara dan Menjaga seluruh makhluk ciptaan-Nya[cite: 1, 8]."
-      },
-      {
-        type: "input",
-        q: "17. (Uraian) Apa perbedaan makna antara sifat Allah al-'Alim dengan al-Khabir?",
-        ans: ["al-alim maha mengetahui dan al-khabir maha teliti", "al alim maha mengetahui al khabir maha teliti", "mengetahui dan teliti"],
-        exp: "Al-'Alim artinya Maha Mengetahui segala sesuatu secara luas; sedangkan Al-Khabir artinya Maha Teliti hingga ke bagian terkecil/tersembunyi[cite: 1, 8]."
-      },
-      {
-        type: "input",
-        q: "18. (Uraian) Sebutkan contoh sikap seorang siswa yang meneladani asmaulhusna al-Wali di sekolah!",
-        ans: ["menolong teman dan melindungi kawan", "menolong teman yang kesusahan", "membantu kawan yang terjatuh"],
-        exp: "Contoh: Menolong teman yang terjatuh, membela teman yang dizalimi, dan bersikap peduli[cite: 1, 8]."
-      },
-      {
-        type: "input",
-        q: "19. (Uraian) Bagaimana cara adik meneladani sifat al-'Alim dalam kehidupan sehari-hari?",
-        ans: ["rajin belajar dan membaca buku", "semangat menuntut ilmu", "giat belajar"],
-        exp: "Dengan rajin belajar, giat membaca buku, dan selalu mencari ilmu kebaikan[cite: 1, 8]."
-      },
-      {
-        type: "input",
-        q: "20. (Uraian) Mengapa kita tidak boleh sombong atas kepandaian yang kita miliki?",
-        ans: ["karena ilmu adalah titipan allah", "karena semua ilmu berasal dari allah", "ilmu titipan allah"],
-        exp: "Karena ilmu manusia sangat sedikit dan semuanya adalah titipan dari Allah Yang Maha Mengetahui[cite: 1, 8]."
-      }
-    ];
-
-    // ===============================================
-    // DATA SEBELUMNYA (BAHASA INDONESIA, MATH, ENGLISH)
-    // ===============================================
-    const dataPutriIndo1 = [
-      { q: "1. Orang yang sedang merasa senang biasanya menunjukkan mimik wajah berupa ....", options: ["Cemberut", "Tersenyum ceria", "Menangis keras", "Mata melotot"], ans: 1, exp: "Orang senang biasanya tersenyum manis dan wajah berseri-seri[cite: 4]." },
-      { q: "2. Suara petasan yang menggelegar tiba-tiba dapat membuat kita merasa ....", options: ["Bangga", "Kaget / Terkejut", "Malu", "Lega"], ans: 1, exp: "Suara keras mendadak membuat kaget[cite: 4]." },
-      { passage: "Sampai Jumpa\nSaat berpisah telah tiba\nAku harus pindah ke Kota Jakarta\nTiga tahun kita lewati bersama\nDalam tangis dan tawa\nSampai jumpa lagi, kawanku\nAku akan selalu mengingatmu", q: "3. Berdasarkan puisi 'Sampai Jumpa', ke kota manakah tokoh aku akan pindah?[cite: 4]", options: ["Kota Surabaya", "Kota Bandung", "Kota Jakarta", "Kota Medan"], ans: 2, exp: "Tertulis: 'Aku harus pindah ke Kota Jakarta'[cite: 4]." },
-      { passage: "Sampai Jumpa\nSaat berpisah telah tiba\nAku harus pindah ke Kota Jakarta\nTiga tahun kita lewati bersama\nDalam tangis dan tawa\nSampai jumpa lagi, kawanku\nAku akan selalu mengingatmu", q: "4. Kepada siapakah puisi tersebut ditujukan?[cite: 4]", options: ["Kepada Guru", "Kepada Kawan / Sahabat", "Kepada Dokter", "Kepada Penjual buku"], ans: 1, exp: "Ditujukan: 'Sampai jumpa lagi, kawanku'[cite: 4]." },
-      { passage: "Sampai Jumpa\nSaat berpisah telah tiba\nAku harus pindah ke Kota Jakarta\nTiga tahun kita lewati bersama\nDalam tangis dan tawa\nSampai jumpa lagi, kawanku\nAku akan selalu mengingatmu", q: "5. Berapa lama tokoh aku telah melewati kebersamaan bersama kawannya?[cite: 4]", options: ["Satu tahun", "Dua tahun", "Tiga tahun", "Empat tahun"], ans: 2, exp: "Tertulis: 'Tiga tahun kita lewati bersama'[cite: 4]." },
-      { q: "6. Perasaan saat berhasil memenangkan perlombaan dan dipuji guru adalah ....", options: ["Takut", "Bangga dan senang", "Marah", "Sedih"], ans: 1, exp: "Meraih prestasi membuat bangga dan senang[cite: 4]." },
-      { q: "7. Arti kata 'pindah' dalam kalimat 'Keluarga Adi pindah ke Jakarta' adalah ....[cite: 4]", options: ["Beralih ke tempat lain", "Tidur di kasur", "Berjalan santai", "Membeli barang"], ans: 0, exp: "Pindah berarti beralih tempat tinggal[cite: 4]." },
-      { q: "8. Ketika berpisah dengan teman akrab di sekolah, perasaan kita adalah ....", options: ["Sedih", "Marah sekali", "Kaget", "Malu"], ans: 0, exp: "Berpisah dengan sahabat membuat sedih[cite: 4]." },
-      { q: "9. Yang BUKAN merupakan contoh nama perasaan adalah ....", options: ["Senang", "Bangga", "Bersepeda", "Takut"], ans: 2, exp: "Bersepeda adalah aktivitas fisik[cite: 4]." },
-      { q: "10. Mimik wajah dengan alis bertaut dan mata melotot menunjukkan perasaan ....", options: ["Marah", "Senang", "Lega", "Bangga"], ans: 0, exp: "Alis bertaut dan melotot adalah mimik marah[cite: 4]." },
-      { type: "input", q: "11. Hari ini keluarga Adi ..... ke Kota Jakarta.[cite: 4]", ans: ["pindah"], exp: "Kosakata tepat: pindah[cite: 4]." },
-      { type: "input", q: "12. Kiki dan Kaka ..... di depan gerbang sekolah.[cite: 4]", ans: ["berpisah"], exp: "Kosakata: berpisah[cite: 4]." },
-      { type: "input", q: "13. Raut atau ekspresi muka yang menunjukkan perasaan disebut .....", ans: ["mimik", "mimik wajah"], exp: "Ekspresi emosi di wajah disebut mimik[cite: 4]." },
-      { type: "input", q: "14. Saat merasa takut tubuh terasa .....", ans: ["gemetar", "dingin", "lemas"], exp: "Rasa takut membuat tubuh gemetar[cite: 4]." },
-      { type: "input", q: "15. Tokoh cerita yang harus berobat ke rumah sakit tetapi takut bernama .....[cite: 4]", ans: ["ira"], exp: "Buku: 'Ira Tidak Takut'[cite: 4]." },
-      { type: "input", q: "16. (Uraian) Sebutkan 4 contoh nama perasaan!", ans: ["senang, sedih, marah, takut", "senang, marah, sedih, takut"], exp: "Senang, sedih, marah, takut, lega, bangga[cite: 4]." },
-      { type: "input", q: "17. (Uraian) Ceritakan apa yang membuatmu merasa sangat senang di sekolah!", ans: ["bermain bersama teman", "mendapat nilai bagus"], exp: "Bermain bersama sahabat / dapat nilai bagus[cite: 4]." },
-      { type: "input", q: "18. (Uraian) Apa yang akan selalu dilakukan tokoh aku setelah pindah ke Jakarta?[cite: 4]", ans: ["selalu mengingat kawannya", "mengingat kawannya"], exp: "'Aku akan selalu mengingatmu'[cite: 4]." },
-      { type: "input", q: "19. (Uraian) Apa yang sebaiknya dilakukan jika melihat teman menangis karena sedih?", ans: ["menghiburnya", "menemani dan menghibur"], exp: "Menemani dan menghibur teman[cite: 4]." },
-      { type: "input", q: "20. (Uraian) Mengapa Ira merasa takut saat diajak ke rumah sakit?[cite: 4]", ans: ["karena akan berobat", "karena takut berobat"], exp: "Karena harus berobat ke dokter[cite: 4]." }
-    ];
-
-    const dataPutriIndo2 = [
-      { q: "1. Mengapa Mimi dan adiknya bertengkar dalam cerita 'Mimi Marah'?[cite: 4]", options: ["Berebut kue", "Berebut boneka hingga rusak", "Berebut sepeda", "Berebut buku"], ans: 1, exp: "Berebut boneka hingga rusak[cite: 4]." },
-      { q: "2. Bagaimana cara Mimi meluapkan rasa marahnya di kamar?[cite: 4]", options: ["Membanting pintu", "Berteriak lalu menangis", "Menyanyi lagu", "Membuang mainan"], ans: 1, exp: "Mimi berteriak lalu menangis[cite: 4]." },
-      { q: "3. Apa yang dilakukan adik Mimi saat menunggu di luar kamar?[cite: 4]", options: ["Membeli boneka baru", "Memperbaiki boneka yang rusak", "Mengunci pintu", "Pergi main"], ans: 1, exp: "Adik sudah memperbaiki boneka[cite: 4]." },
-      { q: "4. Setelah saling memaafkan, kegiatan apa yang dilakukan Mimi dan adiknya?[cite: 4]", options: ["Bersepeda bersama", "Menonton tv", "Main layangan", "Beli es krim"], ans: 0, exp: "Mereka bersepeda bersama[cite: 4]." },
-      { q: "5. Huruf kapital selalu digunakan pada ....[cite: 4]", options: ["Tengah kata", "Awal kalimat dan nama orang", "Akhir kalimat", "Huruf vokal saja"], ans: 1, exp: "Awal kalimat dan nama orang[cite: 4]." },
-      { q: "6. Kalimat pernyataan diakhiri tanda baca ....[cite: 4]", options: ["Tanda tanya (?)", "Tanda seru (!)", "Tanda titik (.)", "Tanda koma (,)"], ans: 2, exp: "Kalimat berita diakhiri tanda titik (.)[cite: 4]." },
-      { q: "7. Dalam cerita 'Kiki dan Cici', apa yang membuat Kiki takut?[cite: 4]", options: ["Balon", "Tikus", "Kucing besar", "Petir"], ans: 1, exp: "Kiki takut pada tikus[cite: 4]." },
-      { q: "8. Apa yang membuat Cici yang usil berteriak ketakutan saat pesta?[cite: 4]", options: ["Kue ultah", "Topi pesta", "Balon", "Lilin"], ans: 2, exp: "Cici takut pada balon[cite: 4]." },
-      { q: "9. Arti kata 'usil' pada sifat tokoh Cici adalah ....[cite: 4]", options: ["Suka menolong", "Suka mengganggu orang lain", "Rajin belajar", "Pemalu"], ans: 1, exp: "Usil artinya suka mengganggu[cite: 4]." },
-      { q: "10. Penulisan yang PALING BENAR adalah ....[cite: 4]", options: ["mimi tidak lagi marah", "Mimi tidak lagi marah.", "mimi Tidak Lagi Marah.", "Mimi tidak lagi marah?"], ans: 1, exp: "Huruf kapital di awal dan titik di akhir[cite: 4]." },
-      { type: "input", q: "11. Sikap mau menahan diri saat bermain bersama disebut .....[cite: 4]", ans: ["mengalah"], exp: "Kosakata: mengalah[cite: 4]." },
-      { type: "input", q: "12. Perasaan tenang dan bebas dari rasa marah disebut rasa .....[cite: 4]", ans: ["lega"], exp: "Kosakata: lega[cite: 4]." },
-      { type: "input", q: "13. Ibu membantu Vero ..... buku cerita yang sobek.[cite: 4]", ans: ["memperbaiki"], exp: "Kosakata: memperbaiki[cite: 4]." },
-      { type: "input", q: "14. Hiasan ruangan pesta disebut .....[cite: 4]", ans: ["dekorasi"], exp: "Kosakata: dekorasi[cite: 4]." },
-      { type: "input", q: "15. Huruf pertama nama orang harus ditulis dengan huruf .....[cite: 4]", ans: ["kapital", "besar"], exp: "Huruf kapital[cite: 4]." },
-      { type: "input", q: "16. (Uraian) Mengapa kita harus mau saling mengalah saat bermain?", ans: ["agar tidak bertengkar", "supaya rukun"], exp: "Supaya tidak bertengkar dan rukun[cite: 4]." },
-      { type: "input", q: "17. (Uraian) Tuliskan dengan kapital dan titik: 'boneka penguin rusak'[cite: 4]", ans: ["Boneka penguin rusak.", "Boneka penguin rusak"], exp: "Boneka penguin rusak.[cite: 4]" },
-      { type: "input", q: "18. (Uraian) Sebutkan 2 cara sehat menenangkan diri saat marah![cite: 4]", ans: ["menarik napas dalam-dalam dan menyendiri", "tarik napas"], exp: "Tarik napas dalam, menyendiri sejenak[cite: 4]." },
-      { type: "input", q: "19. (Uraian) Perbaiki huruf kapital nama orang: 'titu main dengan tuti'[cite: 4]", ans: ["Titu main dengan Tuti.", "Titu main dengan Tuti"], exp: "Titu main dengan Tuti.[cite: 4]" },
-      { type: "input", q: "20. (Uraian) Pesan dari cerita Kiki dan Cici?[cite: 4]", ans: ["tidak boleh usil dan saling menghargai", "jangan suka mengganggu teman"], exp: "Tidak boleh usil karena setiap orang punya rasa takut[cite: 4]." }
-    ];
-
-    const dataPutriIndo3 = [
-      { q: "1. Terlalu lama menatap layar gawai menyebabkan mata menjadi ....[cite: 4]", options: ["Jernih", "Lelah dan perih", "Sehat", "Kuat"], ans: 1, exp: "Menatap gawai berlebihan membuat mata lelah[cite: 4]." },
-      { q: "2. Pada 'Aturan 20-20-20', kita berhenti menatap gawai setiap ....[cite: 4]", options: ["20 detik", "20 menit", "20 jam", "20 hari"], ans: 1, exp: "Setiap 20 menit sekali[cite: 4]." },
-      { q: "3. Berapa jarak benda yang ditatap saat istirahat mata?[cite: 4]", options: ["20 sentimeter", "20 kaki (sekitar 6 meter)", "20 meter", "20 km"], ans: 1, exp: "20 kaki (sekitar 6 meter)[cite: 4]." },
-      { q: "4. Berapa lama waktu menatap benda jauh tersebut?[cite: 4]", options: ["20 detik", "20 menit", "20 jam", "1 detik"], ans: 0, exp: "Tatap selama 20 detik[cite: 4]." },
-      { q: "5. Kata tanya untuk menanyakan alasan/sebab adalah ....[cite: 4]", options: ["Kapan", "Di mana", "Mengapa", "Siapa"], ans: 2, exp: "Kata tanya 'Mengapa'[cite: 4]." },
-      { q: "6. Kata tanya untuk menanyakan waktu adalah ....[cite: 4]", options: ["Kapan", "Siapa", "Berapa", "Apa"], ans: 0, exp: "Kata tanya 'Kapan'[cite: 4]." },
-      { q: "7. Kata tanya untuk menanyakan orang/pelaku adalah ....[cite: 4]", options: ["Apa", "Bagaimana", "Siapa", "Di mana"], ans: 2, exp: "Kata tanya 'Siapa'[cite: 4]." },
-      { q: "8. '..... kamu tinggal?' Kata tanya yang tepat adalah ....[cite: 4]", options: ["Siapa", "Di mana", "Berapa", "Kapan"], ans: 1, exp: "Di mana kamu tinggal?[cite: 4]" },
-      { q: "9. '..... cara membuat layang-layang?' Kata tanya yang tepat adalah ....[cite: 4]", options: ["Bagaimana", "Berapa", "Siapa", "Apa"], ans: 0, exp: "Bagaimana cara membuat layang-layang?[cite: 4]" },
-      { q: "10. Dalam cerita 'Kacamata Kadek', mengapa dokter menyarankan kacamata?[cite: 4]", options: ["Biar keren", "Karena matanya buram", "Untuk ke pesta", "Hadiah"], ans: 1, exp: "Karena matanya mengalami gangguan penglihatan[cite: 4]." },
-      { type: "input", q: "11. Alat elektronik seperti smartphone/tablet disebut .....[cite: 4]", ans: ["gawai", "gadget"], exp: "Gawai[cite: 4]." },
-      { type: "input", q: "12. Kalimat tanya diakhiri dengan tanda baca .....[cite: 4]", ans: ["tanda tanya", "?"], exp: "Tanda tanya (?)[cite: 4]." },
-      { type: "input", q: "13. '..... harga buku ceritamu?' Kata tanya yang tepat adalah .....[cite: 4]", ans: ["berapa"], exp: "Berapa[cite: 4]." },
-      { type: "input", q: "14. '..... yang mengantarmu ke sekolah?' Kata tanya yang tepat adalah .....[cite: 4]", ans: ["siapa"], exp: "Siapa[cite: 4]." },
-      { type: "input", q: "15. '..... adikmu menangis?' Kata tanya sebab adalah .....[cite: 4]", ans: ["mengapa", "kenapa"], exp: "Mengapa[cite: 4]." },
-      { type: "input", q: "16. (Uraian) Sebutkan 3 contoh benda jenis gawai![cite: 4]", ans: ["ponsel, tablet, laptop", "hp, tablet, laptop"], exp: "Ponsel/HP, tablet, laptop[cite: 4]." },
-      { type: "input", q: "17. (Uraian) Tujuan dari 'Aturan 20-20-20'?[cite: 4]", ans: ["mengistirahatkan mata", "agar mata tidak lelah"], exp: "Mengistirahatkan mata dari layar gawai[cite: 4]." },
-      { type: "input", q: "18. (Uraian) Buatlah 1 kalimat tanya dengan 'Kapan'![cite: 4]", ans: ["kapan kamu akan naik ke kelas tiga?", "kapan kita pergi ke sekolah?"], exp: "Kapan kamu pergi ke sekolah?[cite: 4]" },
-      { type: "input", q: "19. (Uraian) Buatlah 1 kalimat dengan kata 'gawai'![cite: 4]", ans: ["saya tidak boleh main gawai terlalu lama", "kita harus membatasi waktu memakai gawai"], exp: "Jangan menatap gawai terlalu lama[cite: 4]." },
-      { type: "input", q: "20. (Uraian) Sebutkan 7 kata tanya yang telah dipelajari![cite: 4]", ans: ["apa, siapa, di mana, kapan, mengapa, bagaimana, berapa", "apa, siapa, dimana, kapan, mengapa, bagaimana, berapa"], exp: "Apa, Siapa, Di mana, Kapan, Mengapa, Bagaimana, Berapa[cite: 4]." }
-    ];
-
-    // MATH PAKET 1, 2, 3 KELAS 4
-    const dataAninMath1 = [
-      { q: "1. Jarak 3.286 meter dibaca ....", options: ["Tiga ribu dua ratus enam puluh delapan", "Tiga ribu dua ratus delapan puluh enam", "Tiga ribu delapan ratus dua puluh enam", "Tiga ribu enam ratus dua puluh delapan"], ans: 1, exp: "Tiga Ribu Dua Ratus Delapan Puluh Enam[cite: 3]." },
-      { q: "2. Tinggi Mahameru 3.676 mdpl ditulis ....", options: ["3.667", "3.766", "3.676", "3.776"], ans: 2, exp: "3.676[cite: 3]." },
-      { q: "3. Angka 6 pada bilangan 8.463 menempati nilai tempat ....", options: ["Ribuan", "Ratusan", "Puluhan", "Satuan"], ans: 2, exp: "Puluhan (60)[cite: 3]." },
-      { q: "4. Angka 6 pada bilangan 6.789 menempati nilai tempat ....", options: ["Ribuan", "Ratusan", "Puluhan", "Satuan"], ans: 0, exp: "Ribuan (6.000)[cite: 3]." },
-      { q: "5. Bilangan 7.003 dibaca ....", options: ["Tujuh ratus tiga", "Tujuh ribu tiga", "Tujuh ribu tiga puluh", "Tujuh ribu tiga ratus"], ans: 1, exp: "Tujuh ribu tiga[cite: 3]." },
-      { q: "6. Bilangan 5.091 dibaca ....", options: ["Lima ribu sembilan puluh satu", "Lima ribu sembilan ratus satu", "Lima puluh sembilan satu", "Lima ratus sembilan puluh satu"], ans: 0, exp: "Lima ribu sembilan puluh satu[cite: 3]." },
-      { q: "7. Luas 5.780 km² dibaca ....", options: ["Lima ribu tujuh ratus delapan", "Lima ribu tujuh ratus delapan puluh", "Lima ribu delapan ratus tujuh puluh", "Lima ribu tujuh puluh delapan"], ans: 1, exp: "Lima ribu tujuh ratus delapan puluh[cite: 3]." },
-      { q: "8. Pada bilangan 2.150, angka 1 menempati nilai tempat ....", options: ["Ribuan", "Ratusan", "Puluhan", "Satuan"], ans: 1, exp: "Ratusan (100)[cite: 3]." },
-      { q: "9. Lambang bilangan 'Enam ribu dua' adalah ....", options: ["6.200", "6.020", "6.002", "6.202"], ans: 2, exp: "6.002[cite: 3]." },
-      { q: "10. Ketinggian 4.884 mdpl dibaca ....", options: ["Empat ribu delapan ratus delapan puluh empat", "Empat ribu delapan ratus empat puluh delapan", "Empat ribu empat ratus delapan puluh delapan", "Empat puluh delapan delapan puluh empat"], ans: 0, exp: "Empat ribu delapan ratus delapan puluh empat[cite: 3]." },
-      { type: "input", q: "11. Bilangan 1.206 dibaca: .....", ans: ["seribu dua ratus enam", "satu ribu dua ratus enam"], exp: "Seribu dua ratus enam[cite: 3]." },
-      { type: "input", q: "12. Tuliskan lambang bilangan dari 'tiga ribu dua ratus lima puluh empat': .....", ans: ["3.254", "3254"], exp: "3.254[cite: 3]." },
-      { type: "input", q: "13. Pada bilangan 4.675, angka 6 menempati nilai tempat: .....", ans: ["ratusan", "ratus"], exp: "Ratusan[cite: 3]." },
-      { type: "input", q: "14. Pada bilangan 1.236, angka 6 menempati nilai tempat: .....", ans: ["satuan"], exp: "Satuan[cite: 3]." },
-      { type: "input", q: "15. Lambang bilangan dari 'Sembilan ribu empat puluh lima' adalah: .....", ans: ["9.045", "9045"], exp: "9.045[cite: 3]." },
-      { type: "input", q: "16. (Uraian) Tentukan rincian nilai tempat dari bilangan 7.350!", ans: ["7 ribuan, 3 ratusan, 5 puluhan, 0 satuan", "7350"], exp: "7 ribuan, 3 ratusan, 5 puluhan, 0 satuan[cite: 3]." },
-      { type: "input", q: "17. (Uraian) Cara membaca bilangan 9.500?", ans: ["sembilan ribu lima ratus"], exp: "Sembilan ribu lima ratus[cite: 3]." },
-      { type: "input", q: "18. (Uraian) Bilangan yang terbentuk dari 7 ribuan + 8 ratusan + 1 puluhan + 2 satuan?", ans: ["7.812", "7812"], exp: "7.812[cite: 3]." },
-      { type: "input", q: "19. (Uraian) Pada 2.910, nilai tempat untuk angka 9 dan 1?", ans: ["9 ratusan dan 1 puluhan", "ratusan dan puluhan"], exp: "9 ratusan dan 1 puluhan[cite: 3]." },
-      { type: "input", q: "20. (Uraian) Nama bilangan dari 6.750?", ans: ["enam ribu tujuh ratus lima puluh"], exp: "Enam ribu tujuh ratus lima puluh[cite: 3]." }
-    ];
-
-    const dataAninMath2 = [
-      { q: "1. Perbandingan 8.750 dan 7.500 yang tepat adalah ....", options: ["8.750 < 7.500", "8.750 > 7.500", "8.750 = 7.500", "7.500 > 8.750"], ans: 1, exp: "8.750 > 7.500[cite: 3]." },
-      { q: "2. Tanda pembanding untuk 4.352 ... 4.365 adalah ....", options: [">", "<", "=", ">="], ans: 1, exp: "4.352 < 4.365[cite: 3]." },
-      { q: "3. Tanda pembanding untuk 9.999 ... 9.998 adalah ....", options: [">", "<", "=", "<="], ans: 0, exp: "9.999 > 9.998[cite: 3]." },
-      { q: "4. Sinabung 2.460 m, Semeru 3.676 m, Rinjani 3.726 m. Gunung tertinggi adalah ....", options: ["Sinabung", "Semeru", "Rinjani", "Sama"], ans: 2, exp: "Gunung Rinjani (3.726 m)[cite: 3]." },
-      { q: "5. Urutan 3.676, 2.460, 3.726 dari terkecil ke terbesar adalah ....", options: ["2.460, 3.676, 3.726", "3.726, 3.676, 2.460", "2.460, 3.726, 3.676", "3.676, 2.460, 3.726"], ans: 0, exp: "2.460, 3.676, 3.726[cite: 3]." },
-      { q: "6. Komposisi: 6 ribuan + 3 ratusan + 4 puluhan + 8 satuan adalah ....", options: ["6.438", "6.348", "6.384", "6.834"], ans: 1, exp: "6.348[cite: 3]." },
-      { q: "7. Dekomposisi bilangan 6.849 adalah ....", options: ["6.000 + 80 + 400 + 9", "6.000 + 800 + 40 + 9", "600 + 80 + 40 + 9", "6.000 + 800 + 90 + 4"], ans: 1, exp: "6.000 + 800 + 40 + 9[cite: 3]." },
-      { q: "8. Dekomposisi bilangan 6.035 adalah ....", options: ["6.000 + 300 + 5", "6.000 + 0 + 30 + 5", "600 + 30 + 5", "6.000 + 30 + 50"], ans: 1, exp: "6.000 + 0 + 30 + 5[cite: 3]." },
-      { q: "9. Dari angka 1, 5, 9, 2 bilangan terbesar tanpa pengulangan adalah ....", options: ["9.512", "9.521", "9.251", "9.152"], ans: 1, exp: "9.521[cite: 3]." },
-      { q: "10. Dari angka 1, 5, 9, 2 bilangan terkecil tanpa pengulangan adalah ....", options: ["1.259", "1.529", "1.295", "1.592"], ans: 0, exp: "1.259[cite: 3]." },
-      { type: "input", q: "11. 1.001 ..... 1.002", ans: ["<", "kurang dari"], exp: "1.001 < 1.002[cite: 3]." },
-      { type: "input", q: "12. 8.765 ..... 8.765", ans: ["=", "sama dengan"], exp: "8.765 = 8.765[cite: 3]." },
-      { type: "input", q: "13. 6 ribuan + 4 ratusan + 8 puluhan + 2 satuan = .....", ans: ["6.482", "6482"], exp: "6.482[cite: 3]." },
-      { type: "input", q: "14. 6 ribuan + 0 ratusan + 4 puluhan + 0 satuan = .....", ans: ["6.040", "6040"], exp: "6.040[cite: 3]." },
-      { type: "input", q: "15. 7.020 = ..... ribuan + 0 ratusan + 2 puluhan + 0 satuan", ans: ["7"], exp: "7 ribuan[cite: 3]." },
-      { type: "input", q: "16. (Uraian) Urutkan 7.570, 5.240, 3.041, 9.941 dari terkecil ke terbesar!", ans: ["3.041, 5.240, 7.570, 9.941", "3041, 5240, 7570, 9941"], exp: "3.041, 5.240, 7.570, 9.941[cite: 3]." },
-      { type: "input", q: "17. (Uraian) Kios A Rp7.500 dan Kios B Rp8.750. Kios mana lebih murah?", ans: ["kios a", "a"], exp: "Kios A (Rp7.500)[cite: 3]." },
-      { type: "input", q: "18. (Uraian) Dekomposisi penjumlahan nilai tempat dari 2.001?", ans: ["2.000 + 0 + 0 + 1", "2000 + 0 + 0 + 1", "2.000 + 1"], exp: "2.000 + 0 + 0 + 1[cite: 3]." },
-      { type: "input", q: "19. (Uraian) Angka 1, 5, 9, 2 boleh berulang, bilangan 4 angka terbesar?", ans: ["9.999", "9999"], exp: "9.999[cite: 3]." },
-      { type: "input", q: "20. (Uraian) Penjumlahan nilai tempat dari 9.999?", ans: ["9.000 + 900 + 90 + 9", "9000 + 900 + 90 + 9"], exp: "9.000 + 900 + 90 + 9[cite: 3]." }
-    ];
-
-    const dataAninMath3 = [
-      { q: "1. Pak Toni punya 131 pohon jeruk di Jember dan 321 di Banyuwangi. Total pohon jeruk adalah ....", options: ["442", "452", "462", "552"], ans: 1, exp: "131 + 321 = 452 pohon[cite: 3]." },
-      { q: "2. Perpustakaan SD 1 ada 124 buku, SD 2 ada 411 buku, SD 5 ada 363 buku. Total buku adalah ....", options: ["888", "898", "908", "798"], ans: 1, exp: "124 + 411 + 363 = 898 buku[cite: 3]." },
-      { q: "3. Pedagang bawa keranjang isi 189 jeruk dan 245 jeruk. Total jeruk adalah ....", options: ["424", "434", "444", "414"], ans: 1, exp: "189 + 245 = 434 jeruk[cite: 3]." },
-      { q: "4. Hasil dari 373 + 208 adalah ....", options: ["571", "581", "583", "591"], ans: 1, exp: "581[cite: 3]." },
-      { q: "5. Ada 265 buku, dipinjam 132 buku. Sisa buku adalah ....", options: ["123", "133", "143", "135"], ans: 1, exp: "265 - 132 = 133 buku[cite: 3]." },
-      { q: "6. Hasil dari 241 - 175 adalah ....", options: ["66", "76", "166", "56"], ans: 0, exp: "66[cite: 3]." },
-      { q: "7. Hasil dari 253 - 176 adalah ....", options: ["67", "77", "87", "97"], ans: 1, exp: "77[cite: 3]." },
-      { q: "8. Ada 12 kotak donat, tiap kotak berisi 4 donat. Total donat adalah ....", options: ["44", "48", "52", "56"], ans: 1, exp: "12 x 4 = 48 donat[cite: 3]." },
-      { q: "9. Hasil dari 629 + 123 adalah ....", options: ["742", "752", "762", "852"], ans: 1, exp: "752[cite: 3]." },
-      { q: "10. Hasil dari 689 - 233 adalah ....", options: ["446", "456", "466", "436"], ans: 1, exp: "456[cite: 3]." },
-      { type: "input", q: "11. 333 + 519 = .....", ans: ["852"], exp: "852[cite: 3]." },
-      { type: "input", q: "12. 821 + 98 = .....", ans: ["919"], exp: "919[cite: 3]." },
-      { type: "input", q: "13. 832 - 622 = .....", ans: ["210"], exp: "210[cite: 3]." },
-      { type: "input", q: "14. 600 - 235 = .....", ans: ["365"], exp: "365[cite: 3]." },
-      { type: "input", q: "15. 15 x 3 = .....", ans: ["45"], exp: "45." },
-      { type: "input", q: "16. (Soal Cerita) Kebun A 328 buah, kebun B 579 buah. Jumlah sawit?", ans: ["907", "907 buah"], exp: "328 + 579 = 907 buah[cite: 3]." },
-      { type: "input", q: "17. (Soal Cerita) Lomba math 121, b.inggris 29, sains 98. Total siswa?", ans: ["248", "248 siswa"], exp: "121 + 29 + 98 = 248 siswa[cite: 3]." },
-      { type: "input", q: "18. (Soal Cerita) Ada 333 apel, dibeli 129 apel. Sisa apel?", ans: ["204", "204 buah", "204 apel"], exp: "333 - 129 = 204 buah[cite: 3]." },
-      { type: "input", q: "19. (Soal Cerita) Panen 765 mangga, busuk 179 mangga. Sisa mangga?", ans: ["586", "586 buah", "586 mangga"], exp: "765 - 179 = 586 buah[cite: 3]." },
-      { type: "input", q: "20. (Soal Cerita) Wisata 427 siswa, perempuan 218 siswa. Jumlah laki-laki?", ans: ["209", "209 siswa"], exp: "427 - 218 = 209 siswa[cite: 3]." }
-    ];
-
-    // ENGLISH LEVEL 2 (5 PAKET)
-    const dataAninCampuran = [
-      { type: "mcq", q: "Look at the sky! The dark clouds are gathering, it _____ rain soon.", options: ["is going to", "was", "rained", "has"], ans: 0, exp: "Gunakan 'is going to' untuk prediksi masa depan berdasarkan bukti jelas." },
-      { type: "mcq", q: "Neither Sarah nor her brother brought _____ umbrella today.", options: ["their", "her", "his", "its"], ans: 0, exp: "Kata ganti kepemilikan jamak: 'their'." },
-      { type: "mcq", q: "Our English class starts exactly _____ half past eight in the morning.", options: ["on", "in", "at", "to"], ans: 2, exp: "Preposisi waktu tepat memakai 'at'." },
-      { type: "mcq", q: "Mount Everest is the _____ mountain in the world.", options: ["high", "higher", "highest", "most high"], ans: 2, exp: "Superlative: 'highest'." },
-      { type: "mcq", q: "You _____ wash your hands before eating to stay healthy.", options: ["must", "might", "would", "could"], ans: 0, exp: "'Must' untuk keharusan." },
-      { type: "mcq", q: "The farmer has ten sheep and five _____.", options: ["oxes", "oxen", "oxs", "ox"], ans: 1, exp: "Bentuk jamak dari 'ox' adalah 'oxen'." },
-      { type: "mcq", q: "The brave firefighter rescued the kitten. BRAVE has the same meaning as _____.", options: ["coward", "courageous", "fearful", "weak"], ans: 1, exp: "Sinonim 'brave' adalah 'courageous'." },
-      { type: "mcq", q: "The room was very NOISY. The opposite of NOISY is _____.", options: ["loud", "busy", "quiet", "crowded"], ans: 2, exp: "Lawan kata 'noisy' adalah 'quiet'." },
-      { type: "mcq", q: "Tom: 'I won the spelling bee competition!' Jerry: '_____!'", options: ["Never mind", "Congratulations", "Excuse me", "Good luck"], ans: 1, exp: "Ungkapan selamat: 'Congratulations!'." },
-      { type: "mcq", q: "A place where historical objects are kept and displayed is a _____.", options: ["library", "museum", "laboratory", "stadium"], ans: 1, exp: "Tempat barang bersejarah: 'museum'." },
-      { type: "mcq", q: "Identify the incorrect word: 'She don't (A) like (B) eating vegetables (C) for dinner (D).'", options: ["don't", "like", "vegetables", "dinner"], ans: 0, exp: "Harusnya 'She doesn't'." },
-      { type: "mcq", q: "Identify the incorrect word: 'There are (A) three (B) childs (C) playing in the park (D).'", options: ["are", "three", "childs", "park"], ans: 2, exp: "Bentuk jamak: 'children'." },
-      { type: "mcq", q: "Arrange: 'always / breakfast / he / eats / at 6 AM'", options: ["He eats always breakfast at 6 AM.", "He always eats breakfast at 6 AM.", "Breakfast he eats always at 6 AM.", "At 6 AM always he eats breakfast."], ans: 1, exp: "He always eats breakfast at 6 AM." },
-      { type: "mcq", passage: "The Clever Honeybee: Bees are flying insects known for pollination and honey. A colony has up to 60,000 bees. They communicate with a 'waggle dance' to show food locations. Without bees, many fruits cannot grow.", q: "What is the main topic?", options: ["How to harvest honey.", "The life and communication of bees.", "Dangerous flying insects.", "Different types of flowers."], ans: 1, exp: "The life and communication of bees." },
-      { type: "mcq", passage: "The Clever Honeybee: Bees are flying insects known for pollination and honey. A colony has up to 60,000 bees. They communicate with a 'waggle dance' to show food locations. Without bees, many fruits cannot grow.", q: "How many bees can live in a single colony?", options: ["Up to 600", "Up to 6,000", "Up to 60,000", "Up to 600,000"], ans: 2, exp: "Up to 60,000 bees." },
-      { type: "mcq", passage: "The Clever Honeybee: Bees are flying insects known for pollination and honey. A colony has up to 60,000 bees. They communicate with a 'waggle dance' to show food locations. Without bees, many fruits cannot grow.", q: "What is the 'waggle dance' used for?", options: ["Scare enemies", "Entertain queen", "Communicate food locations", "Build combs"], ans: 2, exp: "Communicate food locations." },
-      { type: "mcq", passage: "The Clever Honeybee: Bees are flying insects known for pollination and honey. A colony has up to 60,000 bees. They communicate with a 'waggle dance' to show food locations. Without bees, many fruits cannot grow.", q: "Why are bees important?", options: ["Help plants grow through pollination.", "Protect flowers.", "Clean forest.", "Make weather warm."], ans: 0, exp: "Help plants grow through pollination." },
-      { type: "mcq", passage: "The Clever Honeybee: Bees are flying insects known for pollination and honey. A colony has up to 60,000 bees. They communicate with a 'waggle dance' to show food locations. Without bees, many fruits cannot grow.", q: "Which statement is TRUE?", options: ["Bees live alone.", "Bees sing.", "Bees do not eat nectar.", "Without bees, plants struggle to reproduce."], ans: 3, exp: "Without bees, plants struggle to reproduce." },
-      { type: "input", q: "Unscramble: [ H - P - S - C - E - A - I - S - P ] -> vehicle to outer space", ans: ["spaceship", "space ship"], exp: "Spaceship." },
-      { type: "input", q: "Word Formation: My sister is a talented _____ (DANCE).", ans: ["dancer"], exp: "Dancer." },
-      { type: "input", q: "Past Tense: Yesterday, my mother _____ (BUY) fresh apples.", ans: ["bought"], exp: "Bought." },
-      { type: "input", q: "Preposition: The cat is sleeping comfortably _____ the rug.", ans: ["on", "upon"], exp: "On." },
-      { type: "input", q: "The fourth month of the year is _____.", ans: ["april"], exp: "April." },
-      { type: "input", q: "A group of wolves hunting together is a _____.", ans: ["pack"], exp: "Pack." },
-      { type: "input", q: "Birds use wings to fly, fish use _____ to swim.", ans: ["fins", "fin"], exp: "Fins." }
-    ];
-
-    const dataAninESM1 = [
-      { q: "1. Which sentence correctly uses a preposition to show location?[cite: 1]", options: ["The cat sleeps under the chair.", "The cat sleeps quickly the chair.", "The cat sleeps before the chair.", "The cat sleeps happy the chair."], ans: 0, exp: "'Under' menunjukkan lokasi di bawah kursi[cite: 1]." },
-      { q: "2. What time is shown if the short hand is on 3 and long hand on 12?[cite: 1]", options: ["3:00", "12:15", "3:30", "2:45"], ans: 0, exp: "3:00[cite: 1]." },
-      { q: "3. Choose the sentence that uses the simple present correctly.[cite: 1]", options: ["She go to school every day.", "He plays soccer on Sunday.", "I am go to the park yesterday.", "They is eating lunch now."], ans: 1, exp: "He plays soccer on Sunday[cite: 1]." },
-      { passage: "Rani left her umbrella at home. The sky was dark and the air smelled wet.[cite: 1]", q: "4. What can you infer will probably happen next?[cite: 1]", options: ["Watch movie indoors.", "It will rain and Rani may get wet.", "Travel to another country.", "Sun shine brightly."], ans: 1, exp: "It will rain and Rani may get wet[cite: 1]." },
-      { q: "5. 'The bird sat _____ the branch.'[cite: 1]", options: ["on", "to", "for", "by"], ans: 0, exp: "Sat on the branch[cite: 1]." },
-      { q: "6. Long hand on 6 and short hand halfway between 4 and 5?[cite: 1]", options: ["4:30", "5:15", "4:15", "4:45"], ans: 0, exp: "4:30[cite: 1]." },
-      { q: "7. Simple present for habitual action:[cite: 1]", options: ["My father cooks breakfast every morning.", "My father cooked breakfast.", "My father will cook breakfast.", "My father cooking breakfast."], ans: 0, exp: "My father cooks breakfast every morning[cite: 1]." },
-      { passage: "Tom opened his book and cleaned his glasses before reading. His sister was at the window watching rain.[cite: 1]", q: "8. Best inference:[cite: 1]", options: ["Tom reads in the rain.", "Tom cannot read.", "Tom will read quietly inside while it rains.", "Go swimming."], ans: 2, exp: "Tom will read quietly inside while it rains[cite: 1]." },
-      { q: "9. Preposition of time correctly:[cite: 1]", options: ["We have music class on Monday.", "Under Monday.", "Between Monday.", "Beside Monday."], ans: 0, exp: "On Monday[cite: 1]." },
-      { q: "10. Short hand points to 9 and long hand points to 3?[cite: 1]", options: ["9:15", "9:45", "3:45", "9:30"], ans: 0, exp: "9:15[cite: 1]." }
-    ];
-
-    const dataAninESM2 = [
-      { q: "1. 'Every evening, Anna _____ her homework.'[cite: 1]", options: ["does", "do", "did", "doing"], ans: 0, exp: "Does[cite: 1]." },
-      { passage: "The library bell rang, and Maya hurried to the desk with a big smile and library card.[cite: 1]", q: "2. What can you infer about Maya?[cite: 1]", options: ["Return a book she hates.", "Probably wants to borrow a book.", "Lost and needs directions.", "Angry about rules."], ans: 1, exp: "Wants to borrow a book[cite: 1]." },
-      { q: "3. 'The school is _____ the corner of Oak Street.'[cite: 1]", options: ["at", "above", "through", "across"], ans: 0, exp: "At the corner of[cite: 1]." },
-      { q: "4. Long hand on 12 and short hand a little after 7?[cite: 1]", options: ["About 7:00", "About 7:30", "About 6:00", "About 8:00"], ans: 0, exp: "About 7:00[cite: 1]." },
-      { q: "5. Simple present question:[cite: 1]", options: ["Do she play the piano?", "Does she play the piano?", "Is she plays the piano?", "She does play the piano?"], ans: 1, exp: "Does she play the piano?[cite: 1]" },
-      { passage: "A bowl of seeds sat on the table and the mouse looked carefully before it crept closer.[cite: 1]", q: "6. What is likely true?[cite: 1]", options: ["Cook the seeds.", "Eat the seeds.", "Hide the seeds.", "Go to school."], ans: 1, exp: "The mouse will eat the seeds[cite: 1]." },
-      { q: "7. Preposition of direction:[cite: 1]", options: ["The dog ran toward the gate.", "Ran happy the gate.", "Ran besidely.", "Ran blue the gate."], ans: 0, exp: "Ran toward the gate[cite: 1]." },
-      { q: "8. Short hand on 12 and long hand on 6?[cite: 1]", options: ["12:30", "6:00", "12:06", "6:30"], ans: 0, exp: "12:30[cite: 1]." },
-      { q: "9. General truth:[cite: 1]", options: ["Water boils at 100 degrees Celsius.", "Water boiled yesterday.", "Water will boiling.", "Water is boil."], ans: 0, exp: "Water boils at 100 degrees Celsius[cite: 1]." },
-      { passage: "Lina fed the stray dog and left a blanket. Next morning she found paw prints on it.[cite: 1]", q: "10. What happened overnight?[cite: 1]", options: ["A bird slept.", "The stray dog returned and used the blanket.", "Stolen by cat.", "Lina moved blanket."], ans: 1, exp: "The stray dog returned and used the blanket[cite: 1]." }
-    ];
-
-    const dataAninESM3 = [
-      { q: "1. Dance class starts in 40 mins. Clock shows 2:20. When will it begin?[cite: 1]", options: ["2:40", "3:00", "3:10", "3:20"], ans: 1, exp: "3:00[cite: 1]." },
-      { q: "2. 'Every morning, the sun warms the playground...' Correct simple present:[cite: 1]", options: ["Sun warmed every morning.", "Every morning, the sun warms the playground.", "Children will line up.", "Children lining up."], ans: 1, exp: "Every morning, the sun warms the playground[cite: 1]." },
-      { passage: "Sam left his umbrella under the bench. He runs quickly and comes back soon.[cite: 1]", q: "3. Infer about Sam:[cite: 1]", options: ["Enjoys sitting.", "Forgot umbrella and returned to get it.", "Wanted to buy new.", "Lost on purpose."], ans: 1, exp: "Forgot umbrella and returned to get it[cite: 1]." },
-      { q: "4. 'The cat slept _____ the table while family ate.'[cite: 1]", options: ["on", "between", "under", "during"], ans: 2, exp: "Under the table[cite: 1]." },
-      { q: "5. Lily: 'I never eat breakfast.' Reason:[cite: 1]", options: ["Likes snacks.", "Does not feel hungry in the morning.", "Eats at school.", "Cooks for family."], ans: 1, exp: "Does not feel hungry in the morning[cite: 1]." },
-      { q: "6. Time expression for 7:45:[cite: 1]", options: ["Quarter after seven", "Quarter to eight", "Twenty-five to eight", "Fifteen to seven"], ans: 1, exp: "Quarter to eight[cite: 1]." },
-      { q: "7. Simple present habitual action:[cite: 1]", options: ["He is playing now.", "He plays soccer every Saturday.", "He played yesterday.", "He will play tomorrow."], ans: 1, exp: "He plays soccer every Saturday[cite: 1]." },
-      { passage: "No one saw the broken window except Nora. She kept quiet.[cite: 1]", q: "8. Best inference:[cite: 1]", options: ["Nora broke it for fun.", "Nora was the only witness and chose not to tell.", "Many people saw.", "Nora told everyone."], ans: 1, exp: "Nora was the only witness and chose not to tell[cite: 1]." },
-      { q: "9. 'The kite flew _____ the tall trees.'[cite: 1]", options: ["in", "above", "into", "below"], ans: 1, exp: "Flew above the trees[cite: 1]." },
-      { q: "10. Clock shows 11:10. School 8:00 to 12:00 lunch. Fits:[cite: 1]", options: ["Sleeping.", "Morning assembly.", "Recess or class time before lunch", "After-school."], ans: 2, exp: "Recess or class time before lunch[cite: 1]." }
-    ];
-
-    const dataAninESM4 = [
-      { passage: "Tom waters plants on Sundays, but forgot. Plants droop.[cite: 1]", q: "1. Infer about plants:[cite: 1]", options: ["Never need water.", "Need weekly care and show signs when they do not get it.", "Grow faster without water.", "Do not belong to Tom."], ans: 1, exp: "Need weekly care[cite: 1]." },
-      { q: "2. 'The picture hangs _____ the living room wall.'[cite: 1]", options: ["at", "on", "to", "by"], ans: 1, exp: "Hangs on the wall[cite: 1]." },
-      { q: "3. Minute hand on 6, hour hand halfway between 3 and 4?[cite: 1]", options: ["Is it 3:30?", "Is it 3:15?", "Is it 4:30?", "Is it 3:45?"], ans: 0, exp: "Is it 3:30?[cite: 1]" },
-      { passage: "Every day, Mei helps her little brother with homework before dinner.[cite: 1]", q: "4. Reasonable inference:[cite: 1]", options: ["Helps after dinner.", "Never studies.", "Mei regularly spends time helping her brother in the evening.", "Dislikes children."], ans: 2, exp: "Mei regularly spends time helping her brother in the evening[cite: 1]." },
-      { q: "5. Scheduled event:[cite: 1]", options: ["The train arrives at 9:00 every morning.", "Arrived yesterday.", "Arriving now.", "Will have arrived."], ans: 0, exp: "The train arrives at 9:00 every morning[cite: 1]." },
-      { q: "6. 'The keys are _____ the drawer.'[cite: 1]", options: ["inside", "between", "above", "across"], ans: 0, exp: "Inside the drawer[cite: 1]." },
-      { passage: "A dog sits by the door and whines when mail carrier walks by.[cite: 1]", q: "7. Strongest inference:[cite: 1]", options: ["Afraid of mail carrier.", "Expects visitors and reacts when someone passes.", "Brings treats.", "Sleepy."], ans: 1, exp: "Expects visitors and reacts when someone passes[cite: 1]." },
-      { q: "8. Quarter past five:[cite: 1]", options: ["5:15", "5:45", "4:45", "6:15"], ans: 0, exp: "5:15[cite: 1]." },
-      { passage: "Carlos studies the map every night before trip. Asks questions.[cite: 1]", q: "9. Infer about Carlos:[cite: 1]", options: ["Dislikes traveling.", "Wants to be well prepared and learn the route.", "Learns only in school.", "Plans to change map."], ans: 1, exp: "Wants to be well prepared and learn the route[cite: 1]." },
-      { q: "10. 'We walked _____ the bridge to reach the park.'[cite: 1]", options: ["through", "over", "beside", "behind"], ans: 1, exp: "Walked over the bridge[cite: 1]." }
-    ];
-
-    // MATH LEVEL 1 KELAS 2 SD (5 PAKET)
-    const dataPutriCampuran = [
-      { type: "mcq", q: "Pola: 3, 6, 9, 12, A, 18, B. Nilai A + B?", options: ["33", "36", "39", "42"], ans: 1, exp: "A=15, B=21. A+B = 36." },
-      { type: "mcq", q: "Ada 4 ayam dan 3 kambing. Total kaki?", options: ["14", "18", "20", "24"], ans: 2, exp: "8 + 12 = 20 kaki." },
-      { type: "mcq", q: "Sekarang Selasa, 10 hari lagi hari ....", options: ["Kamis", "Jumat", "Sabtu", "Minggu"], ans: 1, exp: "Jumat." },
-      { type: "mcq", q: "Bus isi 28 orang. Turun 9 orang, naik 5 orang. Penumpang sekarang?", options: ["22", "24", "25", "26"], ans: 1, exp: "28 - 9 + 5 = 24 orang." },
-      { type: "mcq", q: "Puluhan = 6. Satuan 2 lebih kecil dari puluhan. Bilangan itu?", options: ["68", "64", "46", "62"], ans: 1, exp: "64." },
-      { type: "mcq", q: "3 kotak donat isi 6 dibagikan ke 2 anak. Tiap anak dapat?", options: ["8", "9", "10", "12"], ans: 1, exp: "18 : 2 = 9 donat." },
-      { type: "mcq", q: "Bangun datar dengan 3 sisi dan 3 sudut adalah ....", options: ["Persegi", "Persegi Panjang", "Segitiga", "Lingkaran"], ans: 2, exp: "Segitiga." },
-      { type: "mcq", q: "Jarum panjang di 6, jarum pendek di antara 4 dan 5?", options: ["04.30", "05.30", "06.20", "04.06"], ans: 0, exp: "Pukul 04.30." },
-      { type: "mcq", q: "Pecahan PALING BESAR?", options: ["1/2", "1/3", "1/4", "1/5"], ans: 0, exp: "1/2." },
-      { type: "mcq", q: "1 lembar Rp10.000 + 2 lembar Rp2.000 + 3 koin Rp500 = ....", options: ["Rp14.500", "Rp15.000", "Rp15.500", "Rp16.000"], ans: 2, exp: "Rp15.500." },
-      { type: "mcq", q: "Alif urutan ke-4 dari depan dan ke-5 dari belakang. Jumlah anak?", options: ["7", "8", "9", "10"], ans: 1, exp: "4 + 5 - 1 = 8 anak." },
-      { type: "mcq", q: "45 + 28 - 19 = ....", options: ["52", "54", "56", "58"], ans: 1, exp: "54." },
-      { type: "mcq", q: "Tali 1 meter dipotong 35 cm. Sisa tali?", options: ["55 cm", "65 cm", "75 cm", "135 cm"], ans: 1, exp: "65 cm." },
-      { type: "mcq", q: "2 apel = 4 stroberi. 1 apel = .... stroberi", options: ["1", "2", "3", "4"], ans: 1, exp: "2 stroberi." },
-      { type: "mcq", q: "Kakak 9 tahun, Adik 4 tahun lebih muda. Jumlah umur berdua?", options: ["13", "14", "15", "18"], ans: 1, exp: "9 + 5 = 14 tahun." },
-      { type: "mcq", q: "Operasi hitung hasil PALING KECIL?", options: ["5 x 4", "30 - 12", "12 + 7", "40 : 2"], ans: 1, exp: "30 - 12 = 18." },
-      { type: "mcq", q: "15 ikan mas + 12 ikan koki + 8 ikan guppy = ....", options: ["33", "35", "37", "40"], ans: 1, exp: "35 ekor." },
-      { type: "mcq", q: "Pola: Segitiga, Lingkaran, Kotak... Bentuk ke-11?", options: ["Segitiga", "Lingkaran", "Kotak", "Bintang"], ans: 1, exp: "Lingkaran." },
-      { type: "input", q: "(7 x 4) + 15 = .....", ans: ["43"], exp: "28 + 15 = 43." },
-      { type: "input", q: "Bilangan ganjil antara 20 dan 30, jumlah angka penyusun 9?", ans: ["27"], exp: "27." },
-      { type: "input", q: "Roni punya 24 kelereng, diberi ke adik 8, beli lagi 6. Sisa?", ans: ["22"], exp: "24 - 8 + 6 = 22." },
-      { type: "input", q: "Keliling meja persegi sisi 5 cm? (tulis angka)", ans: ["20", "20 cm"], exp: "4 x 5 = 20 cm." },
-      { type: "input", q: "5 piring x 4 kue = .....", ans: ["20"], exp: "20 kue." },
-      { type: "input", q: "Berangkat 07.00 sampai 07.45. Lama menit?", ans: ["45", "45 menit"], exp: "45 menit." },
-      { type: "input", q: "Setengah (1/2) dari 18 apel adalah .....", ans: ["9"], exp: "9 buah." }
-    ];
-
-    const dataPutriESM1 = [
-      { q: "1. 28 permen + 35 permen = ....[cite: 2]", options: ["53", "63", "73", "83"], ans: 1, exp: "63[cite: 2]." },
-      { q: "2. 74 ayam dijual 26. Sisa ayam = ....[cite: 2]", options: ["38", "48", "50", "58"], ans: 1, exp: "48[cite: 2]." },
-      { q: "3. 4 kotak pensil isi 6 pensil = ....[cite: 2]", options: ["20", "22", "24", "26"], ans: 2, exp: "24[cite: 2]." },
-      { q: "4. 45 buku cerita + 37 buku pengetahuan = ....[cite: 2]", options: ["72", "82", "92", "102"], ans: 1, exp: "82[cite: 2]." },
-      { q: "5. 90 kelereng diberikan 38 ke adik. Sisa = ....[cite: 2]", options: ["42", "52", "62", "72"], ans: 1, exp: "52[cite: 2]." },
-      { q: "6. 5 rak x 8 buku = ....[cite: 2]", options: ["30", "35", "40", "45"], ans: 2, exp: "40[cite: 2]." },
-      { q: "7. 36 apel + 29 jeruk = ....[cite: 2]", options: ["55", "65", "75", "85"], ans: 1, exp: "65[cite: 2]." },
-      { q: "8. 68 stiker hilang 19. Sisa = ....[cite: 2]", options: ["49", "59", "39", "29"], ans: 0, exp: "49[cite: 2]." },
-      { q: "9. Dua hari setelah Senin = ....[cite: 2]", options: ["Selasa", "Rabu", "Kamis", "Jumat"], ans: 1, exp: "Rabu[cite: 2]." },
-      { q: "10. Hari sebelum Jumat = ....[cite: 2]", options: ["Rabu", "Kamis", "Sabtu", "Minggu"], ans: 1, exp: "Kamis[cite: 2]." }
-    ];
-
-    const dataPutriESM2 = [
-      { q: "1. Sekolah mulai 07.00, sekarang 06.45. Waktu menuju sekolah = ....[cite: 2]", options: ["10 menit", "15 menit", "20 menit", "25 menit"], ans: 1, exp: "15 menit[cite: 2]." },
-      { q: "2. 5 minggu = .... hari[cite: 2]", options: ["35", "60", "71", "38"], ans: 0, exp: "35 hari[cite: 2]." },
-      { q: "3. 3 minggu setelah 14 Agustus = ....[cite: 2]", options: ["3 Sept", "4 Sept", "5 Sept", "6 Sept"], ans: 1, exp: "4 September[cite: 2]." },
-      { q: "4. Bangun datar 4 sisi sama panjang = ....[cite: 2]", options: ["Segitiga", "Persegi", "Lingkaran", "Oval"], ans: 1, exp: "Persegi[cite: 2]." },
-      { q: "5. Pola ABCD, DCBA, BCDA. Urutan kedua pada pola ketiga?[cite: 2]", options: ["Persegi", "Persegi panjang", "Segitiga", "Lingkaran"], ans: 2, exp: "Segitiga[cite: 2]." },
-      { q: "6. Benda berbentuk bola = ....[cite: 2]", options: ["Buku", "Kelereng", "Pintu", "Meja"], ans: 1, exp: "Kelereng[cite: 2]." },
-      { q: "7. Pola: 10, 20, 30, 40, ....[cite: 2]", options: ["45", "50", "55", "60"], ans: 1, exp: "50[cite: 2]." },
-      { q: "8. Pola: 3, 6, 9, 12, ....[cite: 2]", options: ["13", "14", "15", "16"], ans: 2, exp: "15[cite: 2]." },
-      { q: "9. Kelinci jalan ke belakang pohon. Posisi sekarang?[cite: 2]", options: ["Di depan", "Di belakang pohon", "Di atas", "Di bawah"], ans: 1, exp: "Di belakang pohon[cite: 2]." },
-      { q: "10. Rani menghadap papan tulis. Lemari di sebelah kiri papan tulis = sebelah .... Rani[cite: 2]", options: ["kanan", "kiri", "belakang", "depan"], ans: 1, exp: "Kiri[cite: 2]." }
-    ];
-
-    const dataPutriESM3 = [
-      { q: "1. Kelompok Merah ada 28 bibit, tanam 15 bibit, dapat lagi 12 bibit. Total bibit yang ditanam?[cite: 2]", options: ["40", "43", "55", "57"], ans: 1, exp: "43 (kunci B)[cite: 2]." },
-      { q: "2. Berangkat 08.00, jalan 1 jam, lihat hewan 2 jam, makan 1 jam. Selesai pukul?[cite: 2]", options: ["10.00", "11.00", "12.00", "13.00"], ans: 2, exp: "12.00[cite: 2]." },
-      { q: "3. Benda dengan 4 sisi sama panjang di kelas?[cite: 2]", options: ["Jam dinding", "Papan tulis", "Ubin lantai", "Jendela"], ans: 2, exp: "Ubin lantai[cite: 2]." },
-      { q: "4. Pola manik-manik: 8, 16, 24, 32, ....[cite: 2]", options: ["36", "38", "40", "42"], ans: 2, exp: "40[cite: 2]." },
-      { q: "5. Pola berselang: Lingkaran, Segitiga... Bentuk urutan ke-20?[cite: 2]", options: ["Lingkaran", "Segitiga", "Lingkaran & Segitiga", "Tidak ada pola"], ans: 1, exp: "Segitiga (B)[cite: 2]." },
-      { q: "6. 64 buku dipinjam 18, dikembalikan 9. Sisa di rak?[cite: 2]", options: ["45", "46", "55", "73"], ans: 2, exp: "55[cite: 2]." },
-      { q: "7. Mulai 07.30, belajar 2 jam, istirahat 30 mnt, belajar 1 jam. Selesai pukul?[cite: 2]", options: ["10.00", "10.30", "11.00", "11.30"], ans: 2, exp: "11.00[cite: 2]." },
-      { q: "8. Bangun paling tepat sebagai atap rumah?[cite: 2]", options: ["Lingkaran", "Segitiga", "Persegi", "Persegi Panjang"], ans: 1, exp: "Segitiga[cite: 2]." },
-      { q: "9. Pola baris kursi: 5, 10, 15, 20, .... Baris ke-5?[cite: 2]", options: ["22", "24", "25", "30"], ans: 2, exp: "25[cite: 2]." },
-      { q: "10. Jalan lurus 43 langkah, belok kiri 43 langkah, belok kanan 14 langkah. Total langkah?[cite: 2]", options: ["98", "100", "120", "90"], ans: 1, exp: "100 langkah[cite: 2]." }
-    ];
-
-    const dataPutriESM4 = [
-      { q: "1. 36 tutup botol pagi + 19 siang + 8 tertinggal = ....[cite: 2]", options: ["55", "57", "63", "71"], ans: 2, exp: "63[cite: 2]." },
-      { q: "2. Mulai 07.00, belajar 1 jam, senam 30 mnt, belajar 2 jam. Selesai pukul?[cite: 2]", options: ["09.30", "10.00", "10.30", "11.00"], ans: 2, exp: "10.30[cite: 2]." },
-      { q: "3. Benda mewakili bangun persegi?[cite: 2]", options: ["Bola", "Buku tulis", "Ubin lantai", "Topi ultah"], ans: 2, exp: "Ubin lantai[cite: 2]." },
-      { q: "4. Pola batu: 12, 18, 24, 30, ....[cite: 2]", options: ["34", "35", "36", "38"], ans: 2, exp: "36[cite: 2]." },
-      { q: "5. Ada berapa macam bangun dan hitung jumlahnya?[cite: 2]", options: ["5 macam, jumlah 34", "6 macam, jumlah 35", "7 macam, jumlah 37", "28 bangun, jumlah 38"], ans: 2, exp: "7 macam bangun, jumlah 37 (C)[cite: 2]." },
-      { q: "6. 75 jeruk dibagikan 28, tambah 15, bagikan lagi 12. Sisa?[cite: 2]", options: ["48", "50", "52", "54"], ans: 1, exp: "50[cite: 2]." },
-      { q: "7. Mulai 08.00, latihan 1 jam, istirahat 30 mnt, latihan 1 jam 30 mnt. Selesai pukul?[cite: 2]", options: ["10.00", "10.30", "11.00", "11.30"], ans: 2, exp: "11.00[cite: 2]." },
-      { q: "8. Bangun 4 sisi sama panjang untuk membuat jendela miniatur?[cite: 2]", options: ["Segitiga", "Lingkaran", "Persegi", "Persegi Panjang"], ans: 2, exp: "Persegi[cite: 2]." },
-      { q: "9. Pola bendera: 9, 18, 27, 36, ....[cite: 2]", options: ["42", "45", "46", "48"], ans: 1, exp: "45[cite: 2]." },
-      { q: "10. Jalan lurus, belok kiri, lalu belok kiri lagi. Arah hadap sekarang?[cite: 2]", options: ["Arah semula", "Berlawanan arah semula", "Kanan", "Kiri"], ans: 1, exp: "Berlawanan dengan arah semula[cite: 2]." }
-    ];
-
-    // ADIK SHEVA (MATH & ENGLISH TK)
-    const dataShevaMath = [
-      { type: "mcq", visual: "🍎 🍎 🍎  +  🍎 🍎", q: "3 apel + 2 apel = ...", options: ["4", "5", "6"], ans: 1, exp: "5 apel! 🍎" },
-      { type: "mcq", visual: "⭐ ⭐ ⭐ ⭐ ⭐ ⭐  -  ⭐ ⭐", q: "6 bintang - 2 bintang = ...", options: ["3", "4", "5"], ans: 1, exp: "4 bintang! ⭐" },
-      { type: "mcq", visual: "🐥 🐥 🐥 🐥  +  🐥 🐥 🐥", q: "4 anak ayam + 3 anak ayam = ...", options: ["7", "8", "6"], ans: 0, exp: "7 anak ayam! 🐥" },
-      { type: "mcq", visual: "🚗 🚗 🚗 🚗 🚗  -  🚗 🚗 🚗", q: "5 mobil - 3 mobil = ...", options: ["1", "2", "3"], ans: 1, exp: "2 mobil! 🚗" },
-      { type: "mcq", visual: "🍦  +  🍦 🍦 🍦 🍦 🍦", q: "1 es krim + 5 es krim = ...", options: ["5", "6", "7"], ans: 1, exp: "6 es krim! 🍦" },
-      { type: "mcq", visual: "🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈  -  🎈 🎈 🎈 🎈", q: "8 balon - 4 balon = ...", options: ["3", "4", "5"], ans: 1, exp: "4 balon! 🎈" },
-      { type: "mcq", visual: "🐱 🐱 🐱  +  🐱 🐱 🐱", q: "3 kucing + 3 kucing = ...", options: ["5", "6", "7"], ans: 1, exp: "6 kucing! 🐱" },
-      { type: "mcq", visual: "🍓 🍓 🍓 🍓 🍓 🍓 🍓  -  🍓 🍓 🍓", q: "7 stroberi - 3 stroberi = ...", options: ["4", "5", "6"], ans: 0, exp: "4 stroberi! 🍓" },
-      { type: "mcq", visual: "🍩 🍩 🍩 🍩  +  🍩 🍩 🍩 🍩", q: "4 donat + 4 donat = ...", options: ["7", "8", "9"], ans: 1, exp: "8 donat! 🍩" },
-      { type: "mcq", visual: "🍭 🍭 🍭 🍭 🍭 🍭 🍭 🍭 🍭 🍭  -  🍭 🍭", q: "10 permen - 2 permen = ...", options: ["7", "8", "9"], ans: 1, exp: "8 permen! 🍭" },
-      { type: "mcq", visual: "🐠 🐠  +  🐠 🐠 🐠 🐠 🐠 🐠", q: "2 ikan + 6 ikan = ...", options: ["7", "8", "9"], ans: 1, exp: "8 ikan! 🐠" },
-      { type: "mcq", visual: "🌸 🌸 🌸 🌸 🌸 🌸 🌸 🌸 🌸  -  🌸 🌸 🌸 🌸 🌸", q: "9 bunga - 5 bunga = ...", options: ["4", "5", "3"], ans: 0, exp: "4 bunga! 🌸" },
-      { type: "mcq", visual: "🍬 🍬 🍬 🍬 🍬 🍬  +  🍬 🍬 🍬 🍬", q: "6 permen + 4 permen = ...", options: ["9", "10", "11"], ans: 1, exp: "10 permen! 🍬" },
-      { type: "mcq", visual: "🍪 🍪 🍪 🍪 🍪  -  🍪 🍪 🍪 🍪 🍪", q: "5 biskuit - 5 biskuit = ...", options: ["0 (habis)", "1", "2"], ans: 0, exp: "0 habis! 🍪" },
-      { type: "mcq", visual: "🎁 🎁 🎁 🎁 🎁 🎁 🎁  +  🎁 🎁", q: "7 kado + 2 kado = ...", options: ["8", "9", "10"], ans: 1, exp: "9 kado! 🎁" }
-    ];
-
-    const dataShevaEnglish = [
-      { type: "mcq", visual: "🍎 🍎 🍎", q: "What fruit is this?", options: ["Apple", "Banana", "Orange"], ans: 0, exp: "Apple! 🍎" },
-      { type: "mcq", visual: "🐱 🐱", q: "What animal says 'Meow'?", options: ["Dog", "Cat", "Duck"], ans: 1, exp: "Cat! 🐱" },
-      { type: "mcq", visual: "🔴 🔴 🔴", q: "What color is this circle?", options: ["Blue", "Yellow", "Red"], ans: 2, exp: "Red! 🔴" },
-      { type: "mcq", visual: "🐶 🦴", q: "What animal is this?", options: ["Cat", "Dog", "Fish"], ans: 1, exp: "Dog! 🐶" },
-      { type: "mcq", visual: "🍌 🍌", q: "What is the color of a ripe banana?", options: ["Yellow", "Red", "Green"], ans: 0, exp: "Yellow! 🍌" },
-      { type: "mcq", visual: "🌞 ☀️", q: "What shines brightly in the sky?", options: ["Moon", "Sun", "Star"], ans: 1, exp: "Sun! ☀️" },
-      { type: "mcq", visual: "⭐ 🌟 ✨", q: "'Twinkle, twinkle, little _____'", options: ["Car", "Star", "Book"], ans: 1, exp: "Star! ⭐" },
-      { type: "mcq", visual: "📚 ✏️", q: "We read a _____ at school.", options: ["Book", "Shoe", "Hat"], ans: 0, exp: "Book! 📚" },
-      { type: "mcq", visual: "🔵 🌊", q: "What color is the sky and the sea?", options: ["Blue", "Pink", "Black"], ans: 0, exp: "Blue! 🔵" },
-      { type: "mcq", visual: "🦆 🦆", q: "What animal says 'Quack, quack'?", options: ["Duck", "Cow", "Bird"], ans: 0, exp: "Duck! 🦆" }
-    ];
-
     let currentQuizType = "";
     let activeQuizData = [];
 
@@ -1517,15 +998,10 @@
     }
 
     function goBackFromQuiz() {
-      if (currentQuizType.startsWith("anin")) {
-        openAninMenu();
-      } else if (currentQuizType.startsWith("putri")) {
-        openPutriMenu();
-      } else if (currentQuizType.startsWith("sheva")) {
-        openShevaMenu();
-      } else {
-        goHome();
-      }
+      if (currentQuizType.startsWith("anin") || currentQuizType.includes("lv3") || currentQuizType.includes("lv4")) openAninMenu();
+      else if (currentQuizType.startsWith("putri") || currentQuizType.includes("lv1") || currentQuizType.includes("lv2")) openPutriMenu();
+      else if (currentQuizType.startsWith("sheva") || currentQuizType.includes("_tk")) openShevaMenu();
+      else goHome();
     }
 
     function startQuiz(type) {
@@ -1541,8 +1017,80 @@
       const scoreBoard = document.getElementById("score-board");
       scoreBoard.classList.remove("math-theme", "tk-theme");
 
-      // Routing Kategori Soal
-      if (type === "anin_tik1") {
+      // SCHOLARIX COMPETITION ROUTING
+      if (type === "sch_eng_tk") {
+        document.getElementById("quiz-header-title").textContent = "Adik Sheva • Scholarix English TK[cite: 10]";
+        quizView.classList.add("tk-mode"); scoreBoard.classList.add("tk-theme");
+        activeQuizData = dataSchEngTK;
+      } else if (type === "sch_math_tk") {
+        document.getElementById("quiz-header-title").textContent = "Adik Sheva • Scholarix Math TK[cite: 11]";
+        quizView.classList.add("tk-mode"); scoreBoard.classList.add("tk-theme");
+        activeQuizData = dataSchMathTK;
+      } else if (type === "sch_sains_tk") {
+        document.getElementById("quiz-header-title").textContent = "Adik Sheva • Scholarix Sains TK[cite: 12]";
+        quizView.classList.add("tk-mode"); scoreBoard.classList.add("tk-theme");
+        activeQuizData = dataSchSainsTK;
+      } else if (type === "sch_eng_lv1") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Scholarix English Level 1[cite: 10]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
+        activeQuizData = dataSchEngLv1;
+      } else if (type === "sch_eng_lv2") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Scholarix English Level 2[cite: 10]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
+        activeQuizData = dataSchEngLv2;
+      } else if (type === "sch_math_lv1") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Scholarix Math Level 1[cite: 11]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
+        activeQuizData = dataSchMathLv1;
+      } else if (type === "sch_math_lv2") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Scholarix Math Level 2[cite: 11]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
+        activeQuizData = dataSchMathLv2;
+      } else if (type === "sch_sains_lv1") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Scholarix Sains Level 1[cite: 12]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
+        activeQuizData = dataSchSainsLv1;
+      } else if (type === "sch_sains_lv2") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Scholarix Sains Level 2[cite: 12]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
+        activeQuizData = dataSchSainsLv2;
+      } else if (type === "sch_eng_lv3") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Scholarix English Level 3[cite: 10]";
+        activeQuizData = dataSchEngLv3;
+      } else if (type === "sch_eng_lv4") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Scholarix English Level 4[cite: 10]";
+        activeQuizData = dataSchEngLv4;
+      } else if (type === "sch_math_lv3") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Scholarix Math Level 3[cite: 11]";
+        activeQuizData = dataSchMathLv2; // Paket Lanjutan Math
+      } else if (type === "sch_math_lv4") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Scholarix Math Level 4[cite: 11]";
+        activeQuizData = dataSchMathLv1;
+      } else if (type === "sch_sains_lv3") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Scholarix Sains Level 3[cite: 12]";
+        activeQuizData = dataSchSainsLv2;
+      } else if (type === "sch_sains_lv4") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Scholarix Sains Level 4[cite: 12]";
+        activeQuizData = dataSchSainsLv1;
+      }
+
+      // KAKAK ANIN - TRYOUT OLIMPIADE LANJUTAN
+      else if (type === "anin_olimp1") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Tryout Olimpiade 1 (30 Soal PG)";
+        activeQuizData = generateOlimpPack(1);
+      } else if (type === "anin_olimp2") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Tryout Olimpiade 2 (30 Soal PG)";
+        activeQuizData = generateOlimpPack(2);
+      } else if (type === "anin_olimp3") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Tryout Olimpiade 3 (30 Soal PG)";
+        activeQuizData = generateOlimpPack(3);
+      } else if (type === "anin_olimp4") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Tryout Olimpiade 4 (30 Soal PG)";
+        activeQuizData = generateOlimpPack(4);
+      } else if (type === "anin_olimp5") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Tryout Olimpiade 5 (30 Soal PG)";
+        activeQuizData = generateOlimpPack(5);
+      } else if (type === "anin_tik1") {
         document.getElementById("quiz-header-title").textContent = "Kakak Anin • TIK: Algoritma & Dekomposisi";
         activeQuizData = dataAninTIK1;
       } else if (type === "anin_tik2") {
@@ -1550,18 +1098,15 @@
         activeQuizData = dataAninTIK2;
       } else if (type === "anin_math1") {
         document.getElementById("quiz-header-title").textContent = "Kakak Anin • Math Paket 1: Nilai Tempat";
-        quizView.classList.add("math-mode");
-        scoreBoard.classList.add("math-theme");
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
         activeQuizData = dataAninMath1;
       } else if (type === "anin_math2") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Math Paket 2: Dekomposisi & Urutan";
-        quizView.classList.add("math-mode");
-        scoreBoard.classList.add("math-theme");
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Math Paket 2: Dekomposisi";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
         activeQuizData = dataAninMath2;
       } else if (type === "anin_math3") {
         document.getElementById("quiz-header-title").textContent = "Kakak Anin • Math Paket 3: Operasi Hitung";
-        quizView.classList.add("math-mode");
-        scoreBoard.classList.add("math-theme");
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
         activeQuizData = dataAninMath3;
       } else if (type === "anin_campuran") {
         document.getElementById("quiz-header-title").textContent = "Kakak Anin • English Paket 1 (25 Soal)";
@@ -1578,76 +1123,69 @@
       } else if (type === "anin_esm4") {
         document.getElementById("quiz-header-title").textContent = "Kakak Anin • English Penyisihan 4";
         activeQuizData = dataAninESM4;
-      } else if (type === "putri_pai1") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Putri • PAI Paket 1: QS. An-Nas[cite: 8]";
-        quizView.classList.add("math-mode");
-        scoreBoard.classList.add("math-theme");
+      }
+
+      // KAKAK PUTRI
+      else if (type === "putri_pai1") {
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • PAI Paket 1: QS. An-Nas[cite: 7, 8]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
         activeQuizData = dataPutriPAI1;
       } else if (type === "putri_pai2") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Putri • PAI Paket 2: Asmaulhusna[cite: 8]";
-        quizView.classList.add("math-mode");
-        scoreBoard.classList.add("math-theme");
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • PAI Paket 2: Asmaulhusna[cite: 7, 8]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
         activeQuizData = dataPutriPAI2;
       } else if (type === "putri_indo1") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Putri • B. Indo Paket 1: Mengenal Perasaan";
-        quizView.classList.add("math-mode");
-        scoreBoard.classList.add("math-theme");
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • B. Indo Paket 1[cite: 4]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
         activeQuizData = dataPutriIndo1;
       } else if (type === "putri_indo2") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Putri • B. Indo Paket 2: Mimi Marah & Kapital";
-        quizView.classList.add("math-mode");
-        scoreBoard.classList.add("math-theme");
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • B. Indo Paket 2[cite: 4]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
         activeQuizData = dataPutriIndo2;
       } else if (type === "putri_indo3") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Putri • B. Indo Paket 3: Menjaga Kesehatan";
-        quizView.classList.add("math-mode");
-        scoreBoard.classList.add("math-theme");
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • B. Indo Paket 3[cite: 4]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
         activeQuizData = dataPutriIndo3;
       } else if (type === "putri_campuran") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Math Paket 1 (25 Soal)";
-        quizView.classList.add("math-mode");
-        scoreBoard.classList.add("math-theme");
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Math Paket 1";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
         activeQuizData = dataPutriCampuran;
       } else if (type === "putri_esm1") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Math Penyisihan 1";
-        quizView.classList.add("math-mode");
-        scoreBoard.classList.add("math-theme");
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Math Penyisihan 1[cite: 2]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
         activeQuizData = dataPutriESM1;
       } else if (type === "putri_esm2") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Math Penyisihan 2";
-        quizView.classList.add("math-mode");
-        scoreBoard.classList.add("math-theme");
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Math Penyisihan 2[cite: 2]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
         activeQuizData = dataPutriESM2;
       } else if (type === "putri_esm3") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Math Penyisihan 3";
-        quizView.classList.add("math-mode");
-        scoreBoard.classList.add("math-theme");
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Math Penyisihan 3[cite: 2]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
         activeQuizData = dataPutriESM3;
       } else if (type === "putri_esm4") {
-        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Math Penyisihan 4";
-        quizView.classList.add("math-mode");
-        scoreBoard.classList.add("math-theme");
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Math Penyisihan 4[cite: 2]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
         activeQuizData = dataPutriESM4;
-      } else if (type === "sheva_baca1") {
-        document.getElementById("quiz-header-title").textContent = "Adik Sheva • Baca Paket 1: Suku Kata & Fonik";
-        quizView.classList.add("tk-mode");
-        scoreBoard.classList.add("tk-theme");
-        activeQuizData = dataShevaBaca1;
-      } else if (type === "sheva_baca2") {
-        document.getElementById("quiz-header-title").textContent = "Adik Sheva • Baca Paket 2: Kata & Kalimat Pendek";
-        quizView.classList.add("tk-mode");
-        scoreBoard.classList.add("tk-theme");
-        activeQuizData = dataShevaBaca2;
-      } else if (type === "sheva_math") {
-        document.getElementById("quiz-header-title").textContent = "Adik Sheva • Math Ceria (15 Soal)";
-        quizView.classList.add("tk-mode");
-        scoreBoard.classList.add("tk-theme");
-        activeQuizData = dataShevaMath;
-      } else if (type === "sheva_english") {
-        document.getElementById("quiz-header-title").textContent = "Adik Sheva • English Fun (10 Soal)";
-        quizView.classList.add("tk-mode");
-        scoreBoard.classList.add("tk-theme");
-        activeQuizData = dataShevaEnglish;
+      }
+
+      // ADIK SHEVA
+      else if (type.startsWith("sheva_baca")) {
+        const pNum = type.replace("sheva_baca", "");
+        document.getElementById("quiz-header-title").textContent = `Adik Sheva • Baca Paket ${pNum}`;
+        quizView.classList.add("tk-mode"); scoreBoard.classList.add("tk-theme");
+        activeQuizData = shevaBacaData[pNum].map((it, idx) => ({
+          type: "mcq", visual: it.v, q: `${idx + 1}. ${it.q}`, options: it.o, ans: it.a, exp: it.e
+        }));
+      } else if (type.startsWith("sheva_math")) {
+        const pNum = type.replace("sheva_math", "");
+        document.getElementById("quiz-header-title").textContent = `Adik Sheva • Math Ceria Paket ${pNum}`;
+        quizView.classList.add("tk-mode"); scoreBoard.classList.add("tk-theme");
+        activeQuizData = generateShevaMathPack(pNum);
+      } else if (type.startsWith("sheva_eng")) {
+        const pNum = type.replace("sheva_eng", "");
+        document.getElementById("quiz-header-title").textContent = `Adik Sheva • English Fun Paket ${pNum}`;
+        quizView.classList.add("tk-mode"); scoreBoard.classList.add("tk-theme");
+        activeQuizData = generateShevaEngPack(pNum);
       }
 
       renderQuestions();
@@ -1666,15 +1204,8 @@
         card.className = "question-card";
         card.id = `q-card-${index}`;
 
-        let passageHTML = "";
-        if (item.passage) {
-          passageHTML = `<div class="passage-box"><strong>Teks Bacaan / Petunjuk:</strong><br>${item.passage}</div>`;
-        }
-
-        let visualHTML = "";
-        if (item.visual) {
-          visualHTML = `<div class="visual-box">${item.visual}</div>`;
-        }
+        let passageHTML = item.passage ? `<div class="passage-box"><strong>Reading / Teks:</strong><br>${item.passage}</div>` : "";
+        let visualHTML = item.visual ? `<div class="visual-box">${item.visual}</div>` : "";
 
         let inputHTML = "";
         if (item.type !== "input") {
