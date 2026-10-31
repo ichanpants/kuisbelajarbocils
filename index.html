@@ -12,9 +12,9 @@
       --secondary-hover: #0284c7;
       --accent: #eab308;
       --accent-hover: #ca8a04;
-      --bg: #f8fafc;
+      --bg: #f1f5f9;
       --card: #ffffff;
-      --text: #1e293b;
+      --text: #0f172a;
       --text-muted: #64748b;
       --correct-bg: #ecfdf5;
       --correct-border: #10b981;
@@ -23,19 +23,24 @@
       --wrong-border: #ef4444;
       --wrong-text: #991b1b;
       --border: #e2e8f0;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 20px 25px -5px rgba(79, 70, 229, 0.15), 0 8px 10px -6px rgba(79, 70, 229, 0.1);
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
     body {
-      background-color: var(--bg);
+      background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
       color: var(--text);
-      padding: 20px 14px 60px;
+      padding: 24px 14px 60px;
       display: flex;
       justify-content: center;
       min-height: 100vh;
@@ -43,37 +48,42 @@
 
     .container {
       width: 100%;
-      max-width: 860px;
+      max-width: 880px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 24px;
     }
 
     .home-card {
-      background: var(--card);
-      border-radius: 24px;
-      padding: 36px 20px;
-      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.06);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: var(--radius-lg);
+      padding: 36px 24px;
+      box-shadow: var(--shadow-md);
       text-align: center;
     }
 
     .home-card h1 {
-      font-size: 2rem;
-      color: var(--primary);
+      font-size: 2.1rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 8px;
     }
 
     .home-card p {
       color: var(--text-muted);
       font-size: 1rem;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
     }
 
     .menu-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 18px;
-      align-items: end;
+      gap: 20px;
+      align-items: stretch;
     }
 
     @media (min-width: 720px) {
@@ -83,41 +93,42 @@
     }
 
     .menu-btn {
-      background: #f8fafc;
+      background: #ffffff;
       border: 2px solid var(--border);
-      border-radius: 20px;
-      padding: 24px 14px 20px;
+      border-radius: var(--radius-lg);
+      padding: 24px 16px;
       text-align: center;
       cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: var(--shadow-sm);
     }
 
     .menu-btn:hover {
       border-color: var(--primary);
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px -6px rgba(79, 70, 229, 0.18);
-      background: #fff;
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: var(--shadow-hover);
     }
 
     .menu-btn.math:hover {
       border-color: var(--secondary);
-      box-shadow: 0 12px 24px -6px rgba(14, 165, 233, 0.18);
+      box-shadow: 0 20px 25px -5px rgba(14, 165, 233, 0.18);
     }
 
     .menu-btn.tk:hover {
       border-color: var(--accent);
-      box-shadow: 0 12px 24px -6px rgba(234, 179, 8, 0.25);
+      box-shadow: 0 20px 25px -5px rgba(234, 179, 8, 0.25);
     }
 
     .submenu-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 14px;
-      margin-top: 10px;
+      margin-top: 14px;
     }
 
     @media (min-width: 600px) {
@@ -127,9 +138,9 @@
     }
 
     .sub-btn {
-      background: #f8fafc;
+      background: #ffffff;
       border: 2px solid var(--border);
-      border-radius: 16px;
+      border-radius: var(--radius-md);
       padding: 18px 20px;
       text-align: left;
       cursor: pointer;
@@ -137,23 +148,24 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
+      box-shadow: var(--shadow-sm);
     }
 
     .sub-btn:hover {
       border-color: var(--primary);
-      background: #fff;
+      background: #ffffff;
       transform: translateY(-3px);
-      box-shadow: 0 8px 16px -4px rgba(79, 70, 229, 0.15);
+      box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.15);
     }
 
     .sub-btn.math-sub:hover {
       border-color: var(--secondary);
-      box-shadow: 0 8px 16px -4px rgba(14, 165, 233, 0.15);
+      box-shadow: 0 10px 20px -5px rgba(14, 165, 233, 0.15);
     }
 
     .sub-btn.tk-sub:hover {
       border-color: var(--accent);
-      box-shadow: 0 8px 16px -4px rgba(234, 179, 8, 0.2);
+      box-shadow: 0 10px 20px -5px rgba(234, 179, 8, 0.2);
     }
 
     .sub-btn.full-width {
@@ -162,6 +174,7 @@
 
     .sub-btn h3 {
       font-size: 1.05rem;
+      font-weight: 700;
       color: var(--primary);
     }
 
@@ -169,43 +182,45 @@
     .sub-btn.tk-sub h3 { color: #b45309; }
 
     .sub-btn p {
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
       margin: 0;
+      line-height: 1.4;
     }
 
     .category-divider {
       grid-column: 1 / -1;
       text-align: left;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--text);
       font-size: 0.95rem;
-      margin-top: 14px;
-      padding-bottom: 4px;
-      border-bottom: 2px solid var(--border);
+      margin-top: 18px;
+      padding-bottom: 6px;
+      border-bottom: 2px dashed var(--border);
+      letter-spacing: 0.5px;
     }
 
     .avatar-wrapper {
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       transition: transform 0.3s ease;
     }
 
     .menu-btn:hover .avatar-wrapper {
-      transform: scale(1.06);
+      transform: scale(1.08);
     }
 
-    .avatar-anin { height: 160px; width: auto; }
-    .avatar-putri { height: 142px; width: auto; }
-    .avatar-sheva { height: 130px; width: auto; }
+    .avatar-anin { height: 150px; width: auto; }
+    .avatar-putri { height: 135px; width: auto; }
+    .avatar-sheva { height: 125px; width: auto; }
 
     .menu-btn .badge {
       font-size: 0.75rem;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 20px;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 999px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
@@ -215,7 +230,8 @@
     .badge-tk { background: #fef08a; color: #854d0e; }
 
     .menu-btn h2 {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
+      font-weight: 700;
       color: var(--text);
     }
 
@@ -231,38 +247,40 @@
       justify-content: space-between;
       align-items: center;
       background: var(--card);
-      padding: 16px 20px;
-      border-radius: 14px;
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      padding: 16px 22px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
     }
 
     .back-btn {
       background: #f1f5f9;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-size: 0.88rem;
-      font-weight: 600;
+      border: 1px solid var(--border);
+      padding: 9px 16px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
       color: var(--text);
       cursor: pointer;
       transition: 0.2s;
     }
 
-    .back-btn:hover { background: #e2e8f0; }
+    .back-btn:hover { background: #e2e8f0; transform: translateX(-2px); }
 
     .quiz-title {
-      font-size: 1.05rem;
-      font-weight: 700;
+      font-size: 1.1rem;
+      font-weight: 800;
       color: var(--primary);
     }
 
     .score-board {
       background: linear-gradient(135deg, #4f46e5, #3b82f6);
       color: white;
-      border-radius: 16px;
-      padding: 24px;
+      border-radius: var(--radius-lg);
+      padding: 28px 20px;
       text-align: center;
       display: none;
+      box-shadow: var(--shadow-md);
       animation: fadeIn 0.4s ease;
     }
 
@@ -275,57 +293,65 @@
     }
 
     .score-board h2 {
-      font-size: 1.5rem;
-      margin-bottom: 8px;
-    }
-
-    .score-board .big-score {
-      font-size: 3rem;
+      font-size: 1.6rem;
       font-weight: 800;
       margin-bottom: 6px;
     }
 
+    .score-board .big-score {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+      letter-spacing: -1px;
+    }
+
     .sync-status {
-      font-size: 0.82rem;
-      opacity: 0.9;
-      margin-top: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 6px 14px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-top: 10px;
     }
 
     .question-card {
       background: var(--card);
-      border-radius: 16px;
-      padding: 22px;
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 16px;
     }
 
     .q-number {
       font-size: 0.85rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--primary);
       text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .math-mode .q-number { color: var(--secondary); }
     .tk-mode .q-number { color: #b45309; }
 
     .q-text {
-      font-size: 1.08rem;
+      font-size: 1.1rem;
       font-weight: 600;
-      line-height: 1.5;
+      line-height: 1.6;
       white-space: pre-line;
     }
 
     .visual-box {
       background: #fefce8;
       border: 2px dashed #facc15;
-      border-radius: 14px;
-      padding: 16px;
+      border-radius: 16px;
+      padding: 18px;
       text-align: center;
-      font-size: 2.3rem;
-      letter-spacing: 4px;
+      font-size: 2.5rem;
+      letter-spacing: 6px;
       margin: 4px 0 8px;
       user-select: none;
     }
@@ -333,10 +359,10 @@
     .passage-box {
       background-color: #f8fafc;
       border-left: 4px solid var(--primary);
-      padding: 12px 16px;
-      border-radius: 0 8px 8px 0;
-      font-size: 0.95rem;
-      line-height: 1.5;
+      padding: 14px 18px;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.98rem;
+      line-height: 1.6;
       color: #334155;
     }
 
@@ -349,72 +375,75 @@
     .option-label {
       display: flex;
       align-items: center;
-      padding: 13px 16px;
+      padding: 14px 18px;
       border: 2px solid var(--border);
-      border-radius: 12px;
+      border-radius: 14px;
       cursor: pointer;
-      font-size: 1rem;
-      transition: all 0.2s;
+      font-size: 1.02rem;
+      transition: all 0.2s ease;
+      background: #ffffff;
     }
 
     .option-label:hover {
       background: #f8fafc;
       border-color: #cbd5e1;
+      transform: translateX(4px);
     }
 
     .option-label input {
-      margin-right: 12px;
+      margin-right: 14px;
       accent-color: var(--primary);
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
     }
 
     .math-mode .option-label input { accent-color: var(--secondary); }
     .tk-mode .option-label input { accent-color: #d97706; }
 
     .input-box {
-      padding: 12px 16px;
+      padding: 14px 18px;
       border: 2px solid var(--border);
-      border-radius: 10px;
+      border-radius: 12px;
       font-size: 1rem;
       outline: none;
       width: 100%;
-      max-width: 440px;
+      max-width: 460px;
       transition: border-color 0.2s;
     }
 
-    .input-box:focus { border-color: var(--primary); }
-    .math-mode .input-box:focus { border-color: var(--secondary); }
+    .input-box:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15); }
+    .math-mode .input-box:focus { border-color: var(--secondary); box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15); }
 
     .explanation-box {
       margin-top: 10px;
-      padding: 14px 16px;
-      border-radius: 10px;
-      font-size: 0.94rem;
-      line-height: 1.5;
+      padding: 16px 18px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      line-height: 1.6;
       display: none;
     }
 
     .explanation-box.correct {
       background: var(--correct-bg);
-      border: 1px solid var(--correct-border);
+      border: 1.5px solid var(--correct-border);
       color: var(--correct-text);
     }
 
     .explanation-box.wrong {
       background: var(--wrong-bg);
-      border: 1px solid var(--wrong-border);
+      border: 1.5px solid var(--wrong-border);
       color: var(--wrong-text);
     }
 
     .explanation-title {
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 4px;
       display: block;
     }
 
     .submit-container {
-      margin-top: 10px;
+      margin-top: 12px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -425,48 +454,50 @@
       background: var(--primary);
       color: white;
       border: none;
-      padding: 16px 36px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      border-radius: 14px;
+      padding: 18px 36px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      border-radius: 16px;
       cursor: pointer;
       width: 100%;
-      max-width: 340px;
-      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
-      transition: all 0.2s;
+      max-width: 360px;
+      box-shadow: 0 6px 16px rgba(79, 70, 229, 0.3);
+      transition: all 0.25s ease;
     }
 
     .btn-submit:hover {
       background: var(--primary-hover);
       transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(79, 70, 229, 0.4);
     }
 
     .math-mode .btn-submit {
       background: var(--secondary);
-      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+      box-shadow: 0 6px 16px rgba(14, 165, 233, 0.3);
     }
     .math-mode .btn-submit:hover { background: var(--secondary-hover); }
 
     .tk-mode .btn-submit {
       background: #eab308;
       color: #78350f;
-      box-shadow: 0 4px 12px rgba(234, 179, 8, 0.35);
+      box-shadow: 0 6px 16px rgba(234, 179, 8, 0.35);
     }
     .tk-mode .btn-submit:hover { background: #ca8a04; color: white; }
 
     .btn-retry {
-      background: #f1f5f9;
+      background: #ffffff;
       color: var(--text);
       border: 2px solid var(--border);
-      padding: 12px 24px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      border-radius: 10px;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 12px;
       cursor: pointer;
       display: none;
+      transition: all 0.2s;
     }
 
-    .btn-retry:hover { background: #e2e8f0; }
+    .btn-retry:hover { background: #f8fafc; border-color: #cbd5e1; }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-8px); }
@@ -474,7 +505,7 @@
     }
   </style>
 
-  <!-- SDK Firebase Compatible Version untuk Browser -->
+  <!-- SDK Firebase Compatible Version -->
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
 </head>
@@ -575,12 +606,35 @@
 
       <div class="submenu-grid">
         <div class="category-divider">🎖️ KOMPETISI RESMI SCHOLARIX (LEVEL 3 & LEVEL 4)</div>
-        <div class="sub-btn" onclick="startQuiz('sch_eng_lv3')"><h3>🏆 Scholarix English Level 3</h3><p>20 PG: Past Tense, Announcement, Comparatives & Zoo Story[cite: 10].</p></div>
-        <div class="sub-btn" onclick="startQuiz('sch_eng_lv4')"><h3>🏆 Scholarix English Level 4</h3><p>20 PG: Passive Voice, Conditionals, Fable & Online Learning[cite: 10].</p></div>
-        <div class="sub-btn" onclick="startQuiz('sch_math_lv3')"><h3>📐 Scholarix Math Level 3</h3><p>20 PG: Eksponen Olimpiade, Faktor Prima, Geometri Sudut[cite: 11].</p></div>
-        <div class="sub-btn" onclick="startQuiz('sch_math_lv4')"><h3>📐 Scholarix Math Level 4</h3><p>20 PG: Teori Bilangan, Peluang, Parabola, Geometri Lingkaran[cite: 11].</p></div>
-        <div class="sub-btn" onclick="startQuiz('sch_sains_lv3')"><h3>🔬 Scholarix Sains Level 3</h3><p>20 PG: Sel Tumbuhan, Gerak & Gelombang, Tuas, Tekanan[cite: 12].</p></div>
-        <div class="sub-btn" onclick="startQuiz('sch_sains_lv4')"><h3>🔬 Scholarix Sains Level 4</h3><p>20 PG: Organisme Primitif, Uji Biuret, Listrik Dinamis, Hukum Newton[cite: 12].</p></div>
+        <div class="sub-btn" onclick="startQuiz('sch_eng_lv3')"><h3>🏆 Scholarix English Level 3</h3><p>20 PG: Past Tense, Announcement, Comparatives & Zoo Story[cite: 152].</p></div>
+        <div class="sub-btn" onclick="startQuiz('sch_eng_lv4')"><h3>🏆 Scholarix English Level 4</h3><p>20 PG: Passive Voice, Conditionals, Fable & Online Learning[cite: 152].</p></div>
+        <div class="sub-btn" onclick="startQuiz('sch_math_lv3')"><h3>📐 Scholarix Math Level 3</h3><p>20 PG: Eksponen Olimpiade, Faktor Prima, Geometri Sudut[cite: 152].</p></div>
+        <div class="sub-btn" onclick="startQuiz('sch_math_lv4')"><h3>📐 Scholarix Math Level 4</h3><p>20 PG: Teori Bilangan, Peluang, Parabola, Geometri Lingkaran[cite: 152].</p></div>
+        <div class="sub-btn" onclick="startQuiz('sch_sains_lv3')"><h3>🔬 Scholarix Sains Level 3</h3><p>20 PG: Sel Tumbuhan, Gerak & Gelombang, Tuas, Tekanan[cite: 152].</p></div>
+        <div class="sub-btn" onclick="startQuiz('sch_sains_lv4')"><h3>🔬 Scholarix Sains Level 4</h3><p>20 PG: Organisme Primitif, Uji Biuret, Listrik Dinamis, Hukum Newton[cite: 152].</p></div>
+
+        <div class="category-divider">🏆 Drill Lolos Babak Olimpiade Bahasa Inggris (30 Soal PG per Paket)</div>
+        <div class="sub-btn" onclick="startQuiz('anin_olimp1')"><h3>🏆 Tryout Olimpiade 1</h3><p>30 Soal PG: Tenses, Subject-Verb Agreement, Vocab & Reading[cite: 152].</p></div>
+        <div class="sub-btn" onclick="startQuiz('anin_olimp2')"><h3>🏆 Tryout Olimpiade 2</h3><p>30 Soal PG: Preposition, Modals, Error Recognition & Dialogue[cite: 152].</p></div>
+        <div class="sub-btn" onclick="startQuiz('anin_olimp3')"><h3>🏆 Tryout Olimpiade 3</h3><p>30 Soal PG: Comparative, Pronouns, Context Meaning & Fable[cite: 152].</p></div>
+        <div class="sub-btn" onclick="startQuiz('anin_olimp4')"><h3>🏆 Tryout Olimpiade 4</h3><p>30 Soal PG: Conjunction, Question Tags & Science Reading[cite: 152].</p></div>
+        <div class="sub-btn" onclick="startQuiz('anin_olimp5')"><h3>🏆 Tryout Olimpiade 5</h3><p>30 Soal PG: Stage 2 Advanced Simulation & Passage[cite: 152].</p></div>
+
+        <div class="category-divider">💻 TIK & Berpikir Komputasional (Informatika Kelas 4)</div>
+        <div class="sub-btn" onclick="startQuiz('anin_tik1')"><h3>🖥️ TIK Paket 1: Algoritma & Dekomposisi</h3><p>10 Soal PG: Urutan (Sequence), Memecah Masalah, & Flow Kerja[cite: 152].</p></div>
+        <div class="sub-btn" onclick="startQuiz('anin_tik2')"><h3>🧩 TIK Paket 2: Pengenalan Pola & Abstraksi</h3><p>10 Soal PG: Analisis Pola Bilangan/Benda & Abstraksi[cite: 152].</p></div>
+
+        <div class="category-divider">📘 Latihan Matematika Kelas 4 (Kurikulum Merdeka)</div>
+        <div class="sub-btn" onclick="startQuiz('anin_math1')"><h3>📐 Math Paket 1: Nilai Tempat</h3><p>20 Soal (10 PG, 5 Isian, 5 Uraian) Membaca & Menulis s.d. 10.000[cite: 152].</p></div>
+        <div class="sub-btn" onclick="startQuiz('anin_math2')"><h3>📊 Math Paket 2: Dekomposisi & Urutan</h3><p>20 Soal (10 PG, 5 Isian, 5 Uraian) Membandingkan & Mengurutkan[cite: 152].</p></div>
+        <div class="sub-btn" onclick="startQuiz('anin_math3')"><h3>➕ Math Paket 3: Operasi Hitung</h3><p>20 Soal (10 PG, 5 Isian, 5 Uraian) Penjumlahan, Pengurangan & Perkalian[cite: 152].</p></div>
+
+        <div class="category-divider">🔤 Latihan Bahasa Inggris Babak Awal (Penyisihan ESM)</div>
+        <div class="sub-btn full-width" onclick="startQuiz('anin_campuran')"><h3>📘 Paket 1: Campuran (25 Soal)</h3><p>18 PG + 7 Isian Singkat: Grammar, Vocab & Reading[cite: 152].</p></div>
+        <div class="sub-btn" onclick="startQuiz('anin_esm1')"><h3>🏆 English Penyisihan 1</h3><p>10 Soal PG (ESM Level 2 - AIS Institute)[cite: 152].</p></div>
+        <div class="sub-btn" onclick="startQuiz('anin_esm2')"><h3>🏆 English Penyisihan 2</h3><p>10 Soal PG (ESM Level 2 - AIS Institute)[cite: 152].</p></div>
+        <div class="sub-btn" onclick="startQuiz('anin_esm3')"><h3>🏆 English Penyisihan 3</h3><p>10 Soal PG (ESM Level 2 - AIS Institute)[cite: 152].</p></div>
+        <div class="sub-btn" onclick="startQuiz('anin_esm4')"><h3>🏆 English Penyisihan 4</h3><p>10 Soal PG (ESM Level 2 - AIS Institute)[cite: 152].</p></div>
       </div>
     </div>
 
@@ -591,19 +645,35 @@
         <span class="badge badge-math">Kakak Putri • Kelas 2 SD</span>
       </div>
       <h1 style="font-size: 1.55rem; color: var(--secondary);">Paket Belajar Kakak Putri</h1>
-      <p style="margin-bottom: 16px;">Pilih materi latihan Sains, PAI, B. Indonesia, Math atau Scholarix:</p>
+      <p style="margin-bottom: 16px;">Pilih materi latihan PAI, B. Indonesia, Matematika, Sains atau Scholarix:</p>
 
       <div class="submenu-grid">
-        <div class="category-divider">🔬 SAINS & IPA LEVEL 1 (BARU KISI-KISI SCHOLARIX)</div>
+        <div class="category-divider">🔬 SAINS & IPA LEVEL 1 (40 SOAL PRESISI KISI-KISI)</div>
         <div class="sub-btn math-sub full-width" onclick="startQuiz('putri_sains_kisi')"><h3>🌿 40 Soal Sains Level 1 Presisi Kisi-Kisi</h3><p>40 PG: Makhluk Hidup, Adaptasi, Wujud Benda, Suhu, Gaya, Cahaya & Tata Surya.</p></div>
 
         <div class="category-divider">🎖️ KOMPETISI RESMI SCHOLARIX (LEVEL 1 & LEVEL 2)</div>
-        <div class="sub-btn math-sub" onclick="startQuiz('sch_eng_lv1')"><h3>🏆 Scholarix English Level 1</h3><p>20 PG: Vocabulary, Numbers, Animals, Commands & Dialogues[cite: 10].</p></div>
-        <div class="sub-btn math-sub" onclick="startQuiz('sch_eng_lv2')"><h3>🏆 Scholarix English Level 2</h3><p>20 PG: Parts of Speech, Time, Weather, Clothes & Description[cite: 10].</p></div>
-        <div class="sub-btn math-sub" onclick="startQuiz('sch_math_lv1')"><h3>📐 Scholarix Math Level 1</h3><p>20 PG: Operasi Hitung, Aljabar, Geometri Persegi & Pecahan[cite: 11].</p></div>
-        <div class="sub-btn math-sub" onclick="startQuiz('sch_math_lv2')"><h3>📐 Scholarix Math Level 2</h3><p>20 PG: Soal Cerita, Timbangan Geometri, Sudut, Diagram[cite: 11].</p></div>
-        <div class="sub-btn math-sub" onclick="startQuiz('sch_sains_lv1')"><h3>🔬 Scholarix Sains Level 1</h3><p>20 PG: Panca Indra, Sifat Bahan, Energi, Gaya & Gerak[cite: 12].</p></div>
-        <div class="sub-btn math-sub" onclick="startQuiz('sch_sains_lv2')"><h3>🔬 Scholarix Sains Level 2</h3><p>20 PG: Sel Tumbuhan, Otot Manusia, Kecepatan, Kalor & Termometer[cite: 12].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('sch_eng_lv1')"><h3>🏆 Scholarix English Level 1</h3><p>20 PG: Vocabulary, Numbers, Animals, Commands & Dialogues[cite: 152].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('sch_eng_lv2')"><h3>🏆 Scholarix English Level 2</h3><p>20 PG: Parts of Speech, Time, Weather, Clothes & Description[cite: 152].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('sch_math_lv1')"><h3>📐 Scholarix Math Level 1</h3><p>20 PG: Operasi Hitung, Aljabar, Geometri Persegi & Pecahan[cite: 152].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('sch_math_lv2')"><h3>📐 Scholarix Math Level 2</h3><p>20 PG: Soal Cerita, Timbangan Geometri, Sudut, Diagram[cite: 152].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('sch_sains_lv1')"><h3>🔬 Scholarix Sains Level 1</h3><p>20 PG: Panca Indra, Sifat Bahan, Energi, Gaya & Gerak[cite: 152].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('sch_sains_lv2')"><h3>🔬 Scholarix Sains Level 2</h3><p>20 PG: Sel Tumbuhan, Otot Manusia, Kecepatan, Kalor & Termometer[cite: 152].</p></div>
+
+        <div class="category-divider">🕌 PAI & Budi Pekerti (Buku Siswa Kelas 2)</div>
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_pai1')"><h3>📖 PAI Paket 1: Ayo Belajar Al-Qur'an</h3><p>20 Soal (10 PG, 5 Isian, 5 Uraian) QS. An-Nas & Hijaiyah Bersambung[cite: 152].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_pai2')"><h3>🤲 PAI Paket 2: Mari Mengenal Allah Swt.</h3><p>20 Soal (10 PG, 5 Isian, 5 Uraian) Asmaulhusna al-Hafiz, al-Wali, dll[cite: 152].</p></div>
+
+        <div class="category-divider">📖 Bahasa Indonesia Kelas 2 SD (Kurikulum Merdeka)</div>
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_indo1')"><h3>😊 B. Indo Paket 1: Mengenal Perasaan</h3><p>20 Soal (10 PG, 5 Isian, 5 Uraian) Ragam Perasaan, Mimik, Puisi[cite: 152].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_indo2')"><h3>🧸 B. Indo Paket 2: Cerita Mimi Marah</h3><p>20 Soal (10 PG, 5 Isian, 5 Uraian) Mimi Marah, Huruf Kapital, Titik[cite: 152].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_indo3')"><h3>📱 B. Indo Paket 3: Menjaga Kesehatan</h3><p>20 Soal (10 PG, 5 Isian, 5 Uraian) Aturan 20-20-20 & 7 Kata Tanya[cite: 152].</p></div>
+
+        <div class="category-divider">📐 Matematika Dasar & Babak Penyisihan</div>
+        <div class="sub-btn math-sub full-width" onclick="startQuiz('putri_campuran')"><h3>📐 Paket 1: Matematika Campuran</h3><p>25 Soal: Pola, Geometri, Waktu & Operasi Hitung[cite: 152].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_esm1')"><h3>🏆 Math Babak Penyisihan 1</h3><p>10 Soal PG (ESM Math Level 1)[cite: 152].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_esm2')"><h3>🏆 Math Babak Penyisihan 2</h3><p>10 Soal PG (ESM Math Level 1)[cite: 152].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_esm3')"><h3>🏆 Math Babak Penyisihan 3</h3><p>10 Soal Cerita & Penalaran (ESM Math Level 1)[cite: 152].</p></div>
+        <div class="sub-btn math-sub" onclick="startQuiz('putri_esm4')"><h3>🏆 Math Babak Penyisihan 4</h3><p>10 Soal Penalaran & Logika (ESM Math Level 1)[cite: 152].</p></div>
       </div>
     </div>
 
@@ -618,9 +688,30 @@
 
       <div class="submenu-grid">
         <div class="category-divider">🎖️ KOMPETISI RESMI SCHOLARIX (KATEGORI TK)</div>
-        <div class="sub-btn tk-sub" onclick="startQuiz('sch_eng_tk')"><h3>🏆 Scholarix English TK</h3><p>20 PG: Animals, Numbers, Fruit, School Objects & Dialogue[cite: 10].</p></div>
-        <div class="sub-btn tk-sub" onclick="startQuiz('sch_math_tk')"><h3>🍎 Scholarix Math TK</h3><p>20 PG: Hitung Katak, Kucing, Pola Gambar, Pengurangan[cite: 11].</p></div>
-        <div class="sub-btn tk-sub" onclick="startQuiz('sch_sains_tk')"><h3>🔬 Scholarix Sains TK</h3><p>20 PG: Benda Mengalir, Panca Indra, Komodo, Hewan Bertelur[cite: 12].</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sch_eng_tk')"><h3>🏆 Scholarix English TK</h3><p>20 PG: Animals, Numbers, Fruit, School Objects & Dialogue[cite: 152].</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sch_math_tk')"><h3>🍎 Scholarix Math TK</h3><p>20 PG: Hitung Katak, Kucing, Pola Gambar, Pengurangan[cite: 152].</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sch_sains_tk')"><h3>🔬 Scholarix Sains TK</h3><p>20 PG: Benda Mengalir, Panca Indra, Komodo, Hewan Bertelur[cite: 152].</p></div>
+
+        <div class="category-divider">📖 Drilling Belajar Membaca (5 Paket @ 10 Soal)</div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_baca1')"><h3>🔤 Baca Paket 1</h3><p>Fonik & Suku Kata Terbuka (ba, bi, bu, ca, ci, cu)[cite: 152].</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_baca2')"><h3>🔤 Baca Paket 2</h3><p>Suku Kata Lanjutan (da, ga, ha, ja, ka)[cite: 152].</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_baca3')"><h3>🔤 Baca Paket 3</h3><p>Kata Benda Dasar 2 Suku Kata (meja, buku, bola, roti)[cite: 152].</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_baca4')"><h3>🔤 Baca Paket 4</h3><p>Kata Berakhiran Konsonan (ayam, ikan, bebek)[cite: 152].</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_baca5')"><h3>🔤 Baca Paket 5</h3><p>Membaca Kalimat Pendek 2–3 Kata[cite: 152].</p></div>
+
+        <div class="category-divider">🍎 Math Ceria Berhitung (5 Paket @ 10 Soal)</div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_math1')"><h3>🍎 Math Paket 1</h3><p>Penjumlahan Buah 1–5[cite: 152].</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_math2')"><h3>🍎 Math Paket 2</h3><p>Pengurangan Benda 1–5[cite: 152].</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_math3')"><h3>🍎 Math Paket 3</h3><p>Penjumlahan Benda & Hewan 1–10[cite: 152].</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_math4')"><h3>🍎 Math Paket 4</h3><p>Pengurangan Bintang & Balon 1–10[cite: 152].</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_math5')"><h3>🍎 Math Paket 5</h3><p>Operasi Campuran Tambah Kurang Ceria[cite: 152].</p></div>
+
+        <div class="category-divider">🌈 English Fun Bergambar (5 Paket @ 10 Soal)</div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_eng1')"><h3>🌈 English Paket 1</h3><p>Colors (Warna-warni)[cite: 152].</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_eng2')"><h3>🌈 English Paket 2</h3><p>Animals (Hewan Lucu)[cite: 152].</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_eng3')"><h3>🌈 English Paket 3</h3><p>Fruits (Buah Segar)[cite: 152].</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_eng4')"><h3>🌈 English Paket 4</h3><p>School & House Objects (Benda Sekitar)[cite: 152].</p></div>
+        <div class="sub-btn tk-sub" onclick="startQuiz('sheva_eng5')"><h3>🌈 English Paket 5</h3><p>Greetings & Simple Daily Words[cite: 152].</p></div>
       </div>
     </div>
 
@@ -666,74 +757,406 @@
     const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzg-p2DoL8Gk7-opEQlktKgwd8A5ZprT4PCS7qpbfNsITPGatHATMwzVSAlIPM1b1cJ/exec";
 
     // =========================================================================
-    // 2. DATA 40 SOAL SAINS LEVEL 1 PRESISI KISI-KISI (KAKAK PUTRI)
+    // 2. BANK SOAL LENGKAP UTUH (KUIS SCHOLARIX, DRILL, & 40 SOAL SAINS KISI-KISI)
     // =========================================================================
-    const dataPutriSains40 = [
-      // 1. Makhluk Hidup
-      { q: "1. Manusia, hewan, dan tumbuhan memerlukan makanan untuk .....", options: ["Bertambah banyak", "Menghasilkan energi dan bertahan hidup", "Mengubah warna kulit", "Bermain"], ans: 1, exp: "Makanan adalah sumber energi utama makhluk hidup." },
-      { q: "2. Ciri makhluk hidup yang ditunjukkan dengan bertambahnya tinggi dan berat badan adalah .....", options: ["Tumbuh", "Bernapas", "Peka terhadap rangsangan", "Bergerak"], ans: 0, exp: "Pertumbuhan ditandai dengan bertambahnya ukuran, tinggi, dan berat." },
-      { q: "3. Tumbuhan putri malu yang menguncup saat disentuh membuktikan bahwa tumbuhan .....", options: ["Memerlukan air", "Bernapas dengan daun", "Peka terhadap rangsangan", "Tumbuh tinggi"], ans: 2, exp: "Respon menguncup saat disentuh adalah ciri iritabilitas (peka terhadap rangsangan)." },
-      { q: "4. Alat pernapasan pada ikan yang hidup di dalam air adalah .....", options: ["Paru-paru", "Insang", "Trakea", "Kulit"], ans: 1, exp: "Ikan bernapas menggunakan insang untuk menyerap oksigen terlarut dalam air." },
-
-      // 2. Hewan, Tumbuhan dan Adaptasi
-      { q: "5. Bentuk paruh burung elang yang tajam dan bengkok berfungsi untuk .....", options: ["Mencari cacing di lumpur", "Mencabik daging mangsa", "Mengisap madu bunga", "Memecahkan biji-bijian"], ans: 1, exp: "Paruh elang tajam dan kuat khusus untuk mencabik daging mangsa." },
-      { q: "6. Pohon jati menggugurkan daunnya pada musim kemarau bertujuan untuk .....", options: ["Mempercepat fotosintesis", "Mengurangi penguapan air", "Memperbanyak bunga", "Menarik serangga"], ans: 1, exp: "Menggugurkan daun (meranggas) dilakukan untuk mengurangi penguapan saat kemarau." },
-      { q: "7. Cicak memutuskan ekornya saat terdesak bahaya musuh. Kemampuan ini disebut .....", options: ["Autotomi", "Mimikri", "Kamuflase", "Hibernasi"], ans: 0, exp: "Autotomi adalah tindakan melepas anggota tubuh (ekor) untuk mengelabui pemangsa." },
-      { q: "8. Kaktus memiliki daun berbentuk duri yang berguna untuk .....", options: ["Menyimpan air", "Mengurangi penguapan air", "Menyerap cahaya matahari", "Menarik perhatian kupu-kupu"], ans: 1, exp: "Daun berbentuk duri mengurangi luas permukaan penguapan di daerah kering." },
-
-      // 3. Tubuh dan Kesehatan
-      { q: "9. Karbohidrat sangat dibutuhkan oleh tubuh kita sebagai .....", options: ["Zat pembangun sel", "Sumber energi utama", "Zat pengatur suhu", "Pelarut vitamin"], ans: 1, exp: "Karbohidrat (seperti nasi dan roti) adalah sumber energi utama tubuh." },
-      { q: "10. Protein sangat penting bagi anak-anak pada masa pertumbuhan karena berfungsi sebagai .....", options: ["Zat pembangun dan pengganti sel rusak", "Cadangan energi utama", "Pencegah aus pada tulang", "Penyerap air"], ans: 0, exp: "Protein berfungsi sebagai zat pembangun pertumbuhan sel baru." },
-      { q: "11. Untuk menjaga kesehatan mata, kita dianjurkan banyak mengonsumsi makanan yang mengandung .....", options: ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"], ans: 0, exp: "Vitamin A (banyak terdapat pada wortel) berfungsi menjaga kesehatan mata." },
-      { q: "12. Kekurangan Vitamin C dalam tubuh dapat menyebabkan gangguan kesehatan berupa .....", options: ["Sariawan dan gusi berdarah", "Tulang rapuh", "Kebutaan malam", "Darah sukar membeku"], ans: 0, exp: "Kekurangan vitamin C memicu sariawan dan gusi berdarah." },
-
-      // 4. Benda dan Perubahan Wujud
-      { q: "13. Es batu yang dibiarkan di udara terbuka lama-kelamaan akan berubah menjadi air. Proses ini disebut .....", options: ["Membeku", "Mencair", "Menguap", "Mengembun"], ans: 1, exp: "Perubahan wujud padat menjadi cair disebut mencair." },
-      { q: "14. Titik-titik air yang menempel di dinding luar gelas berisi es batu merupakan contoh peristiwa .....", options: ["Menguap", "Mengembun", "Menyublim", "Membeku"], ans: 1, exp: "Mengembun adalah perubahan wujud dari gas (uap air udara) menjadi titik cair." },
-      { q: "15. Kamper atau kapur barus yang diletakkan di dalam lemari pakaian lama-lama habis. Perubahan wujud ini disebut .....", options: ["Mengkristal", "Menyublim", "Menguap", "Mencair"], ans: 1, exp: "Menyublim adalah perubahan wujud padat langsung menjadi gas." },
-      { q: "16. Benda yang memiliki bentuk dan volume tetap walaupun dipindahkan ke mana saja adalah benda .....", options: ["Cair", "Gas", "Padat", "Plasma"], ans: 2, exp: "Benda padat memiliki bentuk dan volume yang konstan." },
-
-      // 5. Pengukuran dan Suhu
-      { q: "17. Alat yang digunakan untuk mengukur suhu tubuh secara akurat adalah .....", options: ["Stetoskop", "Termometer", "Meteran", "Timbangan"], ans: 1, exp: "Termometer adalah alat pengukur suhu." },
-      { q: "18. Satuan baku yang digunakan untuk menyatakan suhu di Indonesia adalah .....", options: ["Joule", "Meter", "Celsius (°C)", "Kilogram"], ans: 2, exp: "Skala baku suhu di Indonesia adalah derajat Celsius." },
-      { q: "19. Air murni akan mendidih pada suhu standar sebesar .....", options: ["0 °C", "50 °C", "100 °C", "120 °C"], ans: 2, exp: "Titik didih air pada tekanan standar adalah 100 °C." },
-      { q: "20. Penggaris dan meteran roll merupakan alat yang digunakan untuk mengukur besaran .....", options: ["Massa", "Panjang", "Waktu", "Suhu"], ans: 1, exp: "Penggaris dan meteran digunakan mengukur panjang." },
-
-      // 6. Gaya, Gerak, Energi dan Pemanfaatannya
-      { q: "21. Saat kita melempar bola ke atas, bola akan jatuh kembali ke bumi karena pengaruh .....", options: ["Gaya pegas", "Gaya gravitasi", "Gaya gesek", "Gaya magnet"], ans: 1, exp: "Gaya gravitasi bumi menarik benda jatuh ke bawah." },
-      { q: "22. Sepeda yang direm akan melambat lalu berhenti karena adanya .....", options: ["Gaya gesek antara ban/rem dan velg", "Gaya otot", "Gaya magnet", "Gaya gravitasi"], ans: 0, exp: "Gaya gesek menahan laju putaran roda." },
-      { q: "23. Perubahan energi yang terjadi pada kipas angin listrik yang bernyala adalah .....", options: ["Energi listrik menjadi energi gerak", "Energi listrik menjadi panas", "Energi kimia menjadi listrik", "Energi gerak menjadi bunyi"], ans: 0, exp: "Listrik menggerakkan motor kipas angin." },
-      { q: "24. Pada alat setrika listrik terjadi perubahan dari energi listrik menjadi energi .....", options: ["Cahaya", "Panas (kalor)", "Bunyi", "Gerak"], ans: 1, exp: "Setrika memanfaatkan energi listrik menjadi energi panas." },
-
-      // 7. Bunyi dan Cahaya
-      { q: "25. Bunyi dihasilkan oleh benda yang .....", options: ["Diam", "Bergetar", "Dingin", "Bening"], ans: 1, exp: "Semua sumber bunyi berasal dari benda yang bergetar." },
-      { q: "26. Peristiwa pembentukan bayangan pada cermin datar membuktikan sifat cahaya yaitu .....", options: ["Dapat dipantulkan", "Dapat dibiaskan", "Merambat lurus saja", "Menembus benda gelap"], ans: 0, exp: "Cermin datar memantulkan cahaya membentuk bayangan serupa." },
-      { q: "27. Pensil yang dimasukkan ke dalam gelas berisi air bening terlihat seperti patah karena cahaya .....", options: ["Dipantulkan", "Dibiaskan (dibiaskan/dibengkokkan)", "Diserap", "Dipancarkan"], ans: 1, exp: "Pembiasan terjadi ketika cahaya melewati dua medium yang berbeda kerapatannya." },
-      { q: "28. Bunyi tidak dapat merambat di ruang hampa udara karena bunyi membutuhkan .....", options: ["Cahaya", "Medium/zat perantara", "Suhu panas", "Listrik"], ans: 1, exp: "Bunyi membutuhkan medium perantara (padat, cair, gas) untuk merambat." },
-
-      // 8. Lingkungan, Cuaca, dan Sumber Daya Alam
-      { q: "29. Sumber energi terbesar dan utama bagi kehidupan di bumi adalah .....", options: ["Minyak bumi", "Matahari", "Batu bara", "Angin"], ans: 1, exp: "Matahari adalah sumber energi utama bumi." },
-      { q: "30. Berikut ini yang termasuk kelompok sumber daya alam yang dapat diperbarui adalah .....", options: ["Minyak bumi dan emas", "Tumbuhan, hewan, dan air", "Batu bara dan besi", "Gas alam dan tembaga"], ans: 1, exp: "Tumbuhan, hewan, dan air dapat diproduksi/dipulihkan kembali oleh alam." },
-      { q: "31. Penanaman kembali hutan yang gundul untuk mencegah tanah longsor dan banjir disebut .....", options: ["Reboisasi", "Erosi", "Irigasi", "Rehabilitasi"], ans: 0, exp: "Reboisasi adalah penanaman kembali hutan yang gundul." },
-      { q: "32. Keadaan udara pada suatu tempat yang sempit dan dalam waktu yang singkat disebut .....", options: ["Musim", "Iklim", "Cuaca", "Suhu"], ans: 2, exp: "Cuaca berlangsung singkat dan mencakup wilayah yang relatif sempit." },
-
-      // 9. Bumi dan Tata Surya
-      { q: "33. Pusat tata surya yang dikelilingi oleh planet-planet adalah .....", options: ["Bumi", "Matahari", "Bulan", "Yupiter"], ans: 1, exp: "Matahari adalah pusat dari sistem Tata Surya." },
-      { q: "34. Planet yang terdekat jaraknya dengan matahari adalah planet .....", options: ["Venus", "Merkurius", "Mars", "Bumi"], ans: 1, exp: "Merkurius adalah planet pertama paling dekat dari Matahari." },
-      { q: "35. Gerakan bumi berputar pada porosnya sendiri dinamakan .....", options: ["Rotasi bumi", "Revolusi bumi", "Orbit", "Eklips"], ans: 0, exp: "Rotasi adalah perputaran bumi pada porosnya." },
-      { q: "36. Peristiwa pergantian siang dan malam di bumi disebabkan oleh .....", options: ["Revolusi bumi", "Rotasi bumi", "Rotasi bulan", "Revolusi bulan"], ans: 1, exp: "Rotasi bumi (24 jam) menyebabkan terjadinya pergantian siang dan malam." },
-      { q: "37. Waktu yang dibutuhkan oleh bumi untuk sekali mengelilingi matahari (revolusi bumi) adalah .....", options: ["1 hari", "30 hari", "1 tahun (365¼ hari)", "10 tahun"], ans: 2, exp: "Revolusi bumi memerlukan waktu 1 tahun / 365,25 hari." },
-      { q: "38. Satelit alami yang dimiliki oleh planet Bumi adalah .....", options: ["Matahari", "Bulan", "Titan", "Ganymede"], ans: 1, exp: "Bulan adalah satu-satunya satelit alami bumi." },
-      { q: "39. Planet yang dijuluki sebagai 'Planet Merah' adalah .....", options: ["Mars", "Venus", "Yupiter", "Saturnus"], ans: 0, exp: "Mars dijuluki Planet Merah karena permukaan batuan/debunya berkarat besi." },
-      { q: "40. Planet terbesar dalam sistem Tata Surya kita adalah .....", options: ["Saturnus", "Neptunus", "Yupiter", "Uranus"], ans: 2, exp: "Yupiter adalah planet terbesar di Tata Surya." }
-    ];
-
-    // Data Tambahan Lainnya
     const dataSchEngTK = [
       { visual: "🐸", q: "1. What is this?", options: ["This is a frog", "This is a butterfly", "This is a crocodile", "This is a fish"], ans: 0, exp: "🐸 Katak = 'frog'." },
-      { visual: "8️⃣", q: "2. What number is this?", options: ["It is seven", "It is two", "It is eight", "It is eighteen"], ans: 2, exp: "8 = 'eight'." }
+      { visual: "8️⃣", q: "2. What number is this?", options: ["It is seven", "It is two", "It is eight", "It is eighteen"], ans: 2, exp: "8 = 'eight'." },
+      { visual: "🧹 ✏️ 🧼", q: "3. This is my .....? (Penghapus)", options: ["Bag", "Pencil case", "Ruler", "Eraser"], ans: 3, exp: "Penghapus = 'eraser'." },
+      { visual: "🐯", q: "4. Complete this word! T _ G E R", options: ["A", "I", "U", "O"], ans: 1, exp: "TIGER." },
+      { visual: "🍇 🍇", q: "5. I like to eat .....", options: ["Oranges", "Watermelon", "Pomegranate", "Grapes"], ans: 3, exp: "🍇 Anggur = 'grapes'." },
+      { visual: "⭐ 🌟", q: "6. What is the color of the star?", options: ["Blue", "Black", "Purple", "Yellow"], ans: 3, exp: "⭐ Kuning = 'yellow'." },
+      { visual: "🐬 🌊", q: "7. Animal that lives in water?", options: ["Bird", "Goat", "Dolphin", "Bee"], ans: 2, exp: "🐬 Dolphin = lumba-lumba." },
+      { visual: "🐿️", q: "8. How to say 'Tupai' in English?", options: ["Giraffe", "Hedgehog", "Ladybug", "Squirrel"], ans: 3, exp: "Tupai = 'squirrel'." },
+      { visual: "👋 😊", q: "9. Atok: '.....'\nUpin: 'I'm fine, thank you.'", options: ["Hello.", "How are you?", "See you.", "Good morning!"], ans: 1, exp: "How are you?" },
+      { visual: "🚪 👋", q: "10. When you go, you say .....", options: ["Good morning", "Good afternoon", "Good evening", "Good bye"], ans: 3, exp: "Good bye." },
+      { visual: "✈️ ☁️", q: "11. My uncle goes to Jakarta by .....", options: ["Pedicab", "Train", "Car", "Plane"], ans: 3, exp: "Pesawat = 'plane'." },
+      { visual: "👁️ 👁️", q: "12. I see with my .....", options: ["Ear", "Eye", "Nose", "Mouth"], ans: 1, exp: "Mata = 'eye'." },
+      { visual: "👦 💬", q: "13. Jumbo: '.....'\nBombi: 'My name is Bombi.'", options: ["Good morning!", "What is your name?", "How are you?", "See you, Bombi!"], ans: 1, exp: "What is your name?" },
+      { visual: "1️⃣7️⃣", q: "14. What number is this?", options: ["It is seventeen", "It is Sefenten", "It is seven", "It is Seventen"], ans: 0, exp: "17 = 'seventeen'." },
+      { visual: "👨 🧔", q: "15. 'Paman' in English is .....", options: ["Uncle", "Aunt", "Brother", "Mother"], ans: 0, exp: "Paman = 'uncle'." },
+      { visual: "☁️ ⛅", q: "16. Color of cloud is .....", options: ["Black", "Green", "Grey", "White"], ans: 3, exp: "Putih = 'white'." },
+      { visual: "👨‍👩‍👧‍👦 🏡", q: "17. Father, mother, brother, sister are my .....", options: ["Parents", "Children", "Grandparents", "Family"], ans: 3, exp: "Family." },
+      { visual: "🛫 👨‍✈️", q: "18. A pilot works in the .....", options: ["Police station", "Airport", "School", "Zoo"], ans: 1, exp: "Bandara = 'airport'." },
+      { visual: "👨‍⚕️ 🩺", q: "19. He is a .....", options: ["Doctor", "Singer", "Farmer", "Judge"], ans: 0, exp: "Dokter = 'doctor'." },
+      { visual: "🚪 👗", q: "20. We keep our clothes in a .....", options: ["Wardrobe", "Refrigerator", "Iron", "Washing machine"], ans: 0, exp: "Lemari pakaian = 'wardrobe'." }
     ];
 
+    const dataSchMathTK = [
+      { visual: "🐸 🐸 🐸 🐸<br>🐸 🐸 🐸", q: "1. Berapakah jumlah katak di atas?", options: ["6", "8", "7", "5"], ans: 2, exp: "Ada 7 ekor katak! 🐸" },
+      { visual: "🐱 🐱 🐱 🐱 🐱 🐱 🐱 🐱<br>➕<br>🐱 🐱 🐱 🐱", q: "2. 8 kucing + 4 kucing = .....", options: ["8", "4", "12", "10"], ans: 2, exp: "8 + 4 = 12 kucing! 🐱" },
+      { visual: "1️⃣8️⃣ ➡️ ❓ ➡️ 2️⃣2️⃣ ➡️ 2️⃣4️⃣", q: "3. Lengkapilah urutan angka!", options: ["20", "21", "19", "23"], ans: 0, exp: "Pola loncat 2: 18, 20, 22, 24." },
+      { visual: "3️⃣8️⃣", q: "4. Angka berapakah ini?", options: ["Delapan tiga", "Tiga delapan", "Tiga ratus delapan", "Tiga puluh delapan"], ans: 3, exp: "Tiga puluh delapan." },
+      { visual: "🦆 🦆 🦆 🦆", q: "5. Ada 4 bebek, berapa jumlah semua kakinya?", options: ["2", "6", "4", "8"], ans: 3, exp: "4 bebek x 2 kaki = 8 kaki! 🦆" },
+      { visual: "💯 ➖ 2️⃣9️⃣", q: "6. 100 - 29 = .....", options: ["81", "88", "71", "129"], ans: 2, exp: "100 - 29 = 71." },
+      { visual: "1️⃣5️⃣<br>↙️ ↘️<br>9️⃣ &nbsp; ❓", q: "7. Angka 15 dipecah jadi 9 dan .....?", options: ["5", "4", "8", "6"], ans: 3, exp: "15 - 9 = 6." },
+      { visual: "5️⃣ ➕ 7️⃣ ➖ 3️⃣ ➕ 4️⃣", q: "8. 5 + 7 - 3 + 4 - 0 = .....", options: ["10", "13", "12", "14"], ans: 1, exp: "12 - 3 = 9 -> 9 + 4 = 13." },
+      { visual: "🛺 🛺 🛺", q: "9. Jumlah roda dari 3 becak?", options: ["3", "6", "9", "12"], ans: 2, exp: "3 becak x 3 roda = 9 roda." },
+      { visual: "1️⃣7️⃣ ➕ ❓ 🟰 3️⃣0️⃣", q: "10. 17 + [ ..... ] = 30", options: ["47", "13", "3", "23"], ans: 1, exp: "30 - 17 = 13." },
+      { visual: "1️⃣3️⃣ ➖ 4️⃣", q: "11. 13 - 4 sama dengan .....", options: ["13", "9", "17", "10"], ans: 1, exp: "13 - 4 = 9." },
+      { visual: "🐰 🐰 🐰 🐰 🐰 🐰 🐰 🐰<br>🐰 🐰 🐰 🐰 🐰 🐰 🐰", q: "12. Hitung jumlah kelinci!", options: ["15", "13", "16", "10"], ans: 0, exp: "8 + 7 = 15 kelinci! 🐰" },
+      { visual: "3️⃣7️⃣ ➕ 4️⃣9️⃣", q: "13. Hasil dari: 37 + 49 = .....", options: ["86", "77", "76", "85"], ans: 0, exp: "37 + 49 = 86." },
+      { visual: "5️⃣0️⃣ ➖ 2️⃣8️⃣", q: "14. Hasil dari: 50 + 0 - 28 = .....", options: ["25", "23", "78", "22"], ans: 3, exp: "50 - 28 = 22." },
+      { visual: "5️⃣9️⃣", q: "15. Angka berapakah ini?", options: ["Lima Sembilan", "Lima puluh Sembilan", "Sembilan puluh lima", "Sembilan lima"], ans: 1, exp: "Lima puluh sembilan." },
+      { visual: "🔺 📐", q: "16. Bangun dengan 3 sisi dan 3 sudut adalah .....", options: ["Persegi", "Segitiga", "Balok", "Lingkaran"], ans: 1, exp: "Segitiga." },
+      { visual: "🍭 🍭 🍭 🍭 🍭 🍭 🍭 🍭<br>🍭 🍭 🍭 🍭 🍭 🍭 🍭 🍭", q: "17. Berapa banyak permen lolipop di atas?", options: ["16", "15", "10", "20"], ans: 0, exp: "8 + 8 = 16 permen! 🍭" },
+      { visual: "🖐️ 🖐️ 🖐️ 🖐️", q: "18. Jari tangan ada 10 tiap orang. Jika 4 orang?", options: ["20", "30", "40", "50"], ans: 2, exp: "4 x 10 = 40 jari." },
+      { visual: "6️⃣ 7️⃣<br>2️⃣ 🟧 ➖<br>🟦 3️⃣", q: "19. Angka kotak oranye [ 7 - ... = 3 ] adalah .....", options: ["4", "2", "3", "1"], ans: 0, exp: "7 - 4 = 3." },
+      { visual: "🔵 🟡 🔴 🔵 🟡 🔴 ➡️ ❓", q: "20. Warna lingkaran berikutnya adalah .....", options: ["Biru", "Kuning", "Merah", "Hijau"], ans: 0, exp: "Kembali ke Biru 🔵" }
+    ];
+
+    const dataSchSainsTK = [
+      { visual: "🥛 💧 🌊", q: "1. Benda yang bisa mengalir adalah .....", options: ["Meja", "Apel", "Susu", "Topi"], ans: 2, exp: "Susu adalah zat cair." },
+      { visual: "🫁 🌬️", q: "2. Organ tubuh bernapas di dada adalah .....", options: ["Otak", "Lambung", "Paru-paru", "Ginjal"], ans: 2, exp: "Paru-paru." },
+      { visual: "👁️ 👂 👃 👅 ✋", q: "3. Panca indra manusia terdiri dari .....", options: ["Mata, telinga, hidung, lidah, kulit", "Mata, alis, gigi", "Mulut, mata, telinga", "Kaki, tangan"], ans: 0, exp: "5 panca indra manusia." },
+      { visual: "🥛 ➡️ 🍾", q: "4. Air gelas dituang ke botol bentuknya .....", options: ["Makin banyak", "Sama seperti gelas", "Berkurang", "Seperti botol"], ans: 3, exp: "Bentuk zat cair ikuti wadahnya." },
+      { visual: "🐔 🥚", q: "5. Hewan yang bertelur adalah .....", options: ["Ayam", "Kucing", "Sapi", "Kambing"], ans: 0, exp: "Ayam bertelur." },
+      { visual: "🌙 🌟 ✨", q: "6. Benda langit di malam hari adalah .....", options: ["Matahari", "Pelangi", "Satelit", "Bintang dan bulan"], ans: 3, exp: "Bintang dan bulan." },
+      { visual: "🐄 🐕 🐈", q: "7. Ciri hewan melahirkan adalah .....", options: ["Tidak ada daun telinga", "Punya kelenjar susu & daun telinga", "Mengerami telur", "Insang"], ans: 1, exp: "Punya kelenjar susu." },
+      { visual: "🥗 🍚 🍎", q: "8. Sumber energi tubuh berasal dari .....", options: ["Olahraga", "Otak", "Jantung", "Makanan sehat"], ans: 3, exp: "Makanan sehat bergizi." },
+      { visual: "👂 🎶", q: "9. Penangkap sumber suara adalah .....", options: ["Mata", "Telinga", "Tangan", "Kulit"], ans: 1, exp: "Telinga." },
+      { visual: "🌱 🐱 🚶‍♂️", q: "10. Makhluk hidup butuh ..... untuk hidup.", options: ["Batu", "Makanan dan air", "Plastik", "Minyak"], ans: 1, exp: "Makanan dan air." },
+      { visual: "🥕 👁️", q: "11. Mata sehat dijaga dengan makan .....", options: ["Game HP lama", "Sayur terutama wortel", "Kucek mata", "Baca gelap"], ans: 1, exp: "Makan wortel kaya vitamin A." },
+      { visual: "🗑️ 🚯 🌊", q: "12. Buang sampah ke sungai menyebabkan .....", options: ["Sungai jernih", "Ikan hidup", "Banjir", "Air harum"], ans: 2, exp: "Banjir." },
+      { visual: "🐜 🦗 🦋", q: "13. Hewan serangga adalah .....", options: ["Sapi", "Semut dan belalang", "Kura-kura", "Cicak"], ans: 1, exp: "Semut dan belalang." },
+      { visual: "🧊 ☀️ ➡️ 💧", q: "14. Es batu di suhu ruang akan .....", options: ["Mencair jadi air", "Salju", "Tetap es batu", "Membesar"], ans: 0, exp: "Mencair." },
+      { visual: "🍍 🍈", q: "15. Kulit buah salak/nanas permukaannya .....", options: ["Kasar", "Licin", "Sangat lembut", "Halus kaca"], ans: 0, exp: "Kasar bersisik." },
+      { visual: "🦤 🥚", q: "16. Burung unta beranak dengan cara .....", options: ["Melahirkan", "Bertelur", "Membelah diri", "Bertunas"], ans: 1, exp: "Bertelur." },
+      { visual: "🌧️ ☔ 🧥", q: "17. Dipakai saat cuaca hujan adalah .....", options: ["Payung atau jas hujan", "Kacamata hitam", "Ikat pinggang", "Topi koboi"], ans: 0, exp: "Payung / jas hujan." },
+      { visual: "🦎 🦖", q: "18. Kadal raksasa asli Indonesia adalah .....", options: ["Kadal", "Komodo", "Bunglon", "Buaya"], ans: 1, exp: "Komodo." },
+      { visual: "🥩 🍖", q: "19. Komodo adalah karnivora pemakan .....", options: ["Rumput", "Buah", "Daging", "Sayur"], ans: 2, exp: "Daging." },
+      { visual: "👅 🍭", q: "20. Lidah manusia untuk mengecap .....", options: ["Rasa makanan", "Suara", "Bau", "Cahaya"], ans: 0, exp: "Rasa makanan." }
+    ];
+
+    const dataSchEngLv1 = [
+      { q: "1. Rani has 6 apples, given 2 more. Total?[cite: 152]", options: ["6", "7", "8 apples", "9"], ans: 2, exp: "6 + 2 = 8[cite: 152]." },
+      { q: "2. Correct spelling of 12?[cite: 152]", options: ["Twelf", "Twelva", "Twelve", "Twelfe"], ans: 2, exp: "Twelve[cite: 152]." },
+      { q: "3. Animal lives both land and water?[cite: 152]", options: ["Frog", "Cat", "Dog", "Cow"], ans: 0, exp: "Frog[cite: 152]." },
+      { q: "4. Giraffe has a long .....[cite: 152]", options: ["Tail", "Ear", "Leg", "Neck"], ans: 3, exp: "Neck[cite: 152]." },
+      { q: "5. Tool to cut paper?[cite: 152]", options: ["Ruler", "Scissors", "Eraser", "Sharpener"], ans: 1, exp: "Scissors[cite: 152]." },
+      { q: "6. Thing to write on paper?[cite: 152]", options: ["Desk", "Bag", "Book", "Pencil"], ans: 3, exp: "Pencil[cite: 152]." },
+      { q: "7. Teacher wants class quiet:[cite: 152]", options: ["Sit down", "Open book", "Keep silent, please", "Stand up"], ans: 2, exp: "Keep silent[cite: 152]." },
+      { q: "8. Sign 'NO ENTRY' means:[cite: 152]", options: ["Can go inside", "Enter quickly", "Wait", "You cannot go inside"], ans: 3, exp: "Cannot go inside[cite: 152]." },
+      { q: "9. 'Hello, how are you?' Answer:[cite: 152]", options: ["7 years old", "I am fine, thank you", "A student", "Good afternoon"], ans: 1, exp: "I am fine, thank you[cite: 152]." },
+      { q: "10. Meet teacher at 8 a.m.:[cite: 152]", options: ["Good afternoon", "Good night", "Good evening", "Good morning"], ans: 3, exp: "Good morning[cite: 152]." },
+      { q: "11. Correct sentence:[cite: 152]", options: ["He am", "She is my sister.", "I is", "They is"], ans: 1, exp: "She is my sister[cite: 152]." },
+      { q: "12. WRONG sentence:[cite: 152]", options: ["I am happy.", "He are playing.", "They are friends.", "She is teacher."], ans: 1, exp: "He are playing (salah)[cite: 152]." },
+      { q: "13. Ball is between two chairs:[cite: 152]", options: ["On chair", "In the middle of the chairs", "In chair", "Under"], ans: 1, exp: "In the middle[cite: 152]." },
+      { q: "14. Cat sleeping under table:[cite: 152]", options: ["The cat is under the table", "Behind", "In table", "On table"], ans: 0, exp: "Under the table[cite: 152]." },
+      { q: "15. After waking up in morning:[cite: 152]", options: ["Take a bath", "Sleep again", "Watch TV", "Football"], ans: 0, exp: "Take a bath[cite: 152]." },
+      { q: "16. Correct simple present:[cite: 152]", options: ["I goes", "I going", "I go to school every morning.", "I goed"], ans: 2, exp: "I go to school[cite: 152]." },
+      { q: "17. NOT a daily activity:[cite: 152]", options: ["Breakfast", "Sleeping", "School", "Swimming in ocean every day"], ans: 3, exp: "Swimming in ocean every day[cite: 152]." },
+      { q: "18. Polite request:[cite: 152]", options: ["Give me pen!", "Can I borrow your pen, please?", "Lend pen!", "Want pen!"], ans: 1, exp: "Can I borrow your pen, please?[cite: 152]" },
+      { q: "19. Correct sentence:[cite: 152]", options: ["She drink", "She drinking", "She drinks milk every day.", "She drank now"], ans: 2, exp: "She drinks milk[cite: 152]." },
+      { q: "20. Name and age response:[cite: 152]", options: ["My name is Rudi, I am 7 years old.", "My name Rudi", "Doctor", "Friend"], ans: 0, exp: "My name is Rudi, I am 7 years old[cite: 152]." }
+    ];
+
+    const dataSchEngLv2 = [
+      { q: "1. NOUN (kata benda):[cite: 152]", options: ["run", "happy", "cat", "quickly"], ans: 2, exp: "Cat[cite: 152]." },
+      { q: "2. VERB (kata kerja):[cite: 152]", options: ["table", "eat", "book", "red"], ans: 1, exp: "Eat[cite: 152]." },
+      { q: "3. ADJECTIVE (kata sifat):[cite: 152]", options: ["beautiful", "school", "walk", "fish"], ans: 0, exp: "Beautiful[cite: 152]." },
+      { q: "4. ADVERB (keterangan):[cite: 152]", options: ["blue", "pen", "teacher", "slowly"], ans: 3, exp: "Slowly[cite: 152]." },
+      { q: "5. Always smiles means teacher is .....[cite: 152]", options: ["angry", "kind", "sad", "lazy"], ans: 1, exp: "Kind[cite: 152]." },
+      { q: "6. Father is tall and .....[cite: 152]", options: ["big", "fat", "long", "thin"], ans: 3, exp: "Thin[cite: 152]." },
+      { q: "7. Describes a person:[cite: 152]", options: ["table", "river", "clever", "school"], ans: 2, exp: "Clever[cite: 152]." },
+      { q: "8. Animal that can swim:[cite: 152]", options: ["bird", "cat", "cow", "fish"], ans: 3, exp: "Fish[cite: 152]." },
+      { q: "9. Largest animal:[cite: 152]", options: ["cat", "elephant", "dog", "rabbit"], ans: 1, exp: "Elephant[cite: 152]." },
+      { q: "10. Long ears and likes carrots:[cite: 152]", options: ["tiger", "horse", "goat", "rabbit"], ans: 3, exp: "Rabbit[cite: 152]." },
+      { q: "11. Sky full of clouds:[cite: 152]", options: ["sunny", "cloudy", "windy", "rainy"], ans: 1, exp: "Cloudy[cite: 152]." },
+      { q: "12. Bring umbrella when:[cite: 152]", options: ["hot", "sunny", "rainy", "windy"], ans: 2, exp: "Rainy[cite: 152]." },
+      { q: "13. Opposite of HOT:[cite: 152]", options: ["warm", "cold", "sunny", "dry"], ans: 1, exp: "Cold[cite: 152]." },
+      { q: "14. Clock shows 6:00:[cite: 152]", options: ["six o'clock", "six past ten", "half past six", "five"], ans: 0, exp: "Six o'clock[cite: 152]." },
+      { q: "15. 12:00 AM is called .....[cite: 152]", options: ["midnight", "noon", "morning", "evening"], ans: 0, exp: "Midnight[cite: 152]." },
+      { q: "16. Go to school in the .....[cite: 152]", options: ["midnight", "night", "morning", "evening"], ans: 2, exp: "Morning[cite: 152]." },
+      { q: "17. Wear on feet:[cite: 152]", options: ["hat", "shoes", "shirt", "skirt"], ans: 1, exp: "Shoes[cite: 152]." },
+      { q: "18. Wear in cold weather:[cite: 152]", options: ["T-shirt", "jacket", "shorts", "sandals"], ans: 1, exp: "Jacket[cite: 152]." },
+      { q: "19. NOT clothes:[cite: 152]", options: ["dress", "pants", "table", "jacket"], ans: 2, exp: "Table[cite: 152]." },
+      { q: "20. Buys vegetables in the .....[cite: 152]", options: ["market", "zoo", "school", "station"], ans: 0, exp: "Market[cite: 152]." }
+    ];
+
+    const dataSchEngLv3 = [
+      { q: "1. Verb in PAST TENSE:[cite: 152]", options: ["She walks", "They are", "I played football yesterday.", "We eat"], ans: 2, exp: "played[cite: 152]." },
+      { q: "2. Sentence with ADJECTIVE:[cite: 152]", options: ["Runs fast", "Two cats", "My sister is beautiful.", "Plays football"], ans: 2, exp: "beautiful[cite: 152]." },
+      { q: "3. PLURAL noun:[cite: 152]", options: ["Children", "Child", "Man", "Woman"], ans: 0, exp: "Children[cite: 152]." },
+      { passage: "English Speech Contest on Saturday, 15 May from 09.00 to 12.00 at School Hall.[cite: 152]", q: "4. Event:[cite: 152]", options: ["Meeting", "Debate", "Graduation", "English Speech Contest"], ans: 3, exp: "English Speech Contest[cite: 152]." },
+      { passage: "English Speech Contest on Saturday, 15 May from 09.00 to 12.00 at School Hall.[cite: 152]", q: "5. Date:[cite: 152]", options: ["14 May", "Saturday, 15 May", "16 May", "17 May"], ans: 1, exp: "Saturday, 15 May[cite: 152]." },
+      { passage: "English Speech Contest on Saturday, 15 May from 09.00 to 12.00 at School Hall.[cite: 152]", q: "6. Place:[cite: 152]", options: ["Library", "Yard", "Class", "School Hall"], ans: 3, exp: "School Hall[cite: 152]." },
+      { passage: "Bring science book tomorrow. Study after school. - Rani[cite: 152]", q: "7. Sender:[cite: 152]", options: ["Dina", "Teacher", "Rani", "Librarian"], ans: 2, exp: "Rani[cite: 152]." },
+      { passage: "Bring science book tomorrow. Study after school. - Rani[cite: 152]", q: "8. Book to bring:[cite: 152]", options: ["Dictionary", "English", "Story", "Science book"], ans: 3, exp: "Science book[cite: 152]." },
+      { passage: "Bring science book tomorrow. Study after school. - Rani[cite: 152]", q: "9. Activity:[cite: 152]", options: ["Game", "Study together", "TV", "Shopping"], ans: 1, exp: "Study together[cite: 152]." },
+      { q: "10. Synonym of BEGIN:[cite: 152]", options: ["stop", "finish", "close", "start"], ans: 3, exp: "start[cite: 152]." },
+      { q: "11. Antonym of STRONG:[cite: 152]", options: ["tall", "weak", "thin", "heavy"], ans: 1, exp: "weak[cite: 152]." },
+      { q: "12. Synonym of LARGE:[cite: 152]", options: ["small", "big", "tiny", "short"], ans: 1, exp: "big[cite: 152]." },
+      { q: "13. Test is _____ than last one.[cite: 152]", options: ["difficult", "more difficult", "most difficult", "difficulty"], ans: 1, exp: "more difficult[cite: 152]." },
+      { q: "14. Mount Everest is _____ mountain.[cite: 152]", options: ["highest", "higher", "more high", "most high"], ans: 0, exp: "highest[cite: 152]." },
+      { q: "15. Yesterday I _____ grandmother.[cite: 152]", options: ["visited", "visits", "visit", "visiting"], ans: 0, exp: "visited[cite: 152]." },
+      { q: "16. We _____ English every Monday.[cite: 152]", options: ["studied", "studies", "study", "studying"], ans: 2, exp: "study[cite: 152]." },
+      { passage: "Zoo trip: Saw tigers, elephants, giraffes. Liked elephant show most. Wonderful day.[cite: 152]", q: "17. Went to:[cite: 152]", options: ["Beach", "Park", "Museum", "Zoo"], ans: 3, exp: "Zoo[cite: 152]." },
+      { passage: "Zoo trip: Saw tigers, elephants, giraffes. Liked elephant show most. Wonderful day.[cite: 152]", q: "18. Animals:[cite: 152]", options: ["Tigers, lions", "Elephant, giraffe, tiger", "Cat, dog", "Birds"], ans: 1, exp: "Elephant, giraffe, tiger[cite: 152]." },
+      { passage: "Zoo trip: Saw tigers, elephants, giraffes. Liked elephant show most. Wonderful day.[cite: 152]", q: "19. Best show:[cite: 152]", options: ["Tiger", "Giraffe", "Elephant show", "Monkey"], ans: 2, exp: "Elephant show[cite: 152]." },
+      { passage: "Zoo trip: Saw tigers, elephants, giraffes. Liked elephant show most. Wonderful day.[cite: 152]", q: "20. Day was:[cite: 152]", options: ["Wonderful", "Tiring", "Boring", "Sad"], ans: 0, exp: "Wonderful[cite: 152]." }
+    ];
+
+    const dataSchEngLv4 = [
+      { q: "1. 'Runs quickly'. 'quickly' is:[cite: 152]", options: ["Noun", "Verb", "Adverb", "Adjective"], ans: 2, exp: "Adverb[cite: 152]." },
+      { q: "2. Adjective correctly:[cite: 152]", options: ["Interest", "Fastly", "She is a beautiful singer.", "They is"], ans: 2, exp: "beautiful singer[cite: 152]." },
+      { q: "3. 'Cat is under table'. Preposition:[cite: 152]", options: ["under", "cat", "The", "table"], ans: 0, exp: "under[cite: 152]." },
+      { passage: "Woodcutter refused golden and silver axes honestly. Fairy gave all three.[cite: 152]", q: "4. Moral:[cite: 152]", options: ["Hard work", "Riches", "Don't trust", "Honesty brings reward."], ans: 3, exp: "Honesty brings reward[cite: 152]." },
+      { passage: "Woodcutter refused golden and silver axes honestly. Fairy gave all three.[cite: 152]", q: "5. Honesty action:[cite: 152]", options: ["Drop axe", "Refusing golden and silver axes.", "Meet fairy", "Take axes"], ans: 1, exp: "Refusing golden and silver axes[cite: 152]." },
+      { passage: "Woodcutter refused golden and silver axes honestly. Fairy gave all three.[cite: 152]", q: "6. Impressed means fairy was:[cite: 152]", options: ["Angry", "Surprised and proud of him", "Jealous", "Sad"], ans: 1, exp: "surprised and proud[cite: 152]." },
+      { passage: "Woodcutter refused golden and silver axes honestly. Fairy gave all three.[cite: 152]", q: "7. TRUE statement:[cite: 152]", options: ["Fairy kept axe", "Lied", "Fairy rewarded with three axes.", "Gold only"], ans: 2, exp: "Rewarded with three axes[cite: 152]." },
+      { passage: "Happy Graduation, Rina! - Your Family[cite: 152]", q: "8. Card type:[cite: 152]", options: ["Birthday", "Thank you", "Invitation", "Graduation card"], ans: 3, exp: "Graduation card[cite: 152]." },
+      { passage: "Happy Graduation, Rina! - Your Family[cite: 152]", q: "9. Card for:[cite: 152]", options: ["Teacher", "Rina", "Friends", "Family"], ans: 1, exp: "Rina[cite: 152]." },
+      { passage: "Birthday Party for Andi. Saturday, 5 June, 4.00 p.m.[cite: 152]", q: "10. Event:[cite: 152]", options: ["Farewell", "Graduation", "Meeting", "Birthday party"], ans: 3, exp: "Birthday party[cite: 152]." },
+      { passage: "Birthday Party for Andi. Saturday, 5 June, 4.00 p.m.[cite: 152]", q: "11. Time of day:[cite: 152]", options: ["Morning", "In the afternoon", "Evening", "Night"], ans: 1, exp: "In the afternoon (4.00 p.m.)[cite: 152]." },
+      { q: "12. Passive: 'Teacher gave homework yesterday.'[cite: 152]", options: ["Is given", "The homework was given by the teacher yesterday.", "Were given", "Gave"], ans: 1, exp: "The homework was given by the teacher yesterday[cite: 152]." },
+      { q: "13. Passive: 'Father buys new car.'[cite: 152]", options: ["Bought", "A new car is bought by my father.", "Were bought", "Bought"], ans: 1, exp: "A new car is bought by my father[cite: 152]." },
+      { passage: "SUPER SALE: All Shoes 30% OFF.[cite: 152]", q: "14. Product:[cite: 152]", options: ["Shoes", "Bags", "Clothes", "Food"], ans: 0, exp: "Shoes[cite: 152]." },
+      { passage: "SUPER SALE: All Shoes 30% OFF.[cite: 152]", q: "15. '30% OFF' means:[cite: 152]", options: ["The shoes are cheaper.", "Free", "Expensive", "New"], ans: 0, exp: "Cheaper[cite: 152]." },
+      { passage: "Online learning allows own pace. Classroom helps social discipline.[cite: 152]", q: "16. Issue:[cite: 152]", options: ["Shopping", "Social", "Online learning vs classroom learning", "Discipline"], ans: 2, exp: "Online learning vs classroom learning[cite: 152]." },
+      { passage: "Online learning allows own pace. Classroom helps social discipline.[cite: 152]", q: "17. Online benefit:[cite: 152]", options: ["Faster", "Disciplined", "Friends", "Students can learn at their own pace."], ans: 3, exp: "Learn at own pace[cite: 152]." },
+      { passage: "Online learning allows own pace. Classroom helps social discipline.[cite: 152]", q: "18. Online weakness:[cite: 152]", options: ["Expensive", "Students cannot socialize well.", "Dislike", "Time"], ans: 1, exp: "Students cannot socialize well[cite: 152]." },
+      { q: "19. 'If I _____ rich, I would travel.'[cite: 152]", options: ["am", "was", "were", "will be"], ans: 2, exp: "were[cite: 152]." },
+      { q: "20. 'If she had studied, she _____ passed.'[cite: 152]", options: ["would have passed", "would pass", "will pass", "passes"], ans: 0, exp: "would have passed[cite: 152]." }
+    ];
+
+    const dataSchMathLv1 = [
+      { q: "1. 2 + 3 + 4 + N = 27 - 2N. Nilai N + 4?[cite: 152]", options: ["8", "12", "10", "14"], ans: 2, exp: "3N = 18 -> N = 6 -> N + 4 = 10[cite: 152]." },
+      { q: "2. 3.974 + 1.016 - 2.505 = ....[cite: 152]", options: ["2.585", "2.845", "2.485", "2.985"], ans: 2, exp: "2.485[cite: 152]." },
+      { q: "3. 4 kambing dan 5 ayam. Total kaki?[cite: 152]", options: ["26", "32", "28", "24"], ans: 0, exp: "16 + 10 = 26[cite: 152]." },
+      { q: "4. -12 x 3 + 96 : 3 + 29 = ....[cite: 152]", options: ["15", "24", "18", "25"], ans: 3, exp: "-36 + 32 + 29 = 25[cite: 152]." },
+      { q: "5. (4 x n) + 9 = 25. Nilai n + 5?[cite: 152]", options: ["8", "9", "11", "10"], ans: 1, exp: "4n = 16 -> n = 4 -> n + 5 = 9[cite: 152]." },
+      { q: "6. x = 7/6 dan y = 9/6. Nilai x + y?[cite: 152]", options: ["17/6", "15/6", "18/6", "16/6"], ans: 3, exp: "16/6[cite: 152]." },
+      { q: "7. Lingkaran bagi 8 diarsir 3 = ....[cite: 152]", options: ["3/4", "3/5", "3/8", "3/6"], ans: 2, exp: "3/8[cite: 152]." },
+      { q: "8. Jumlah segitiga pada bintang segi enam = ....[cite: 152]", options: ["6", "7", "4", "8"], ans: 3, exp: "8 segitiga[cite: 152]." },
+      { q: "9. Sisi terbanyak gabungan 3 bangun = ....[cite: 152]", options: ["6", "8", "10", "12"], ans: 2, exp: "10 sisi[cite: 152]." },
+      { q: "10. 12 [-] 19 [+] 21 [-] 10 = 4.[cite: 152]", options: ["+, +, -", "-, +, -", "+, -, -", "-, -, +"], ans: 1, exp: "-, +, -[cite: 152]" },
+      { q: "11. Rumus A & B % C = B + C - 2A. 11 & 23 % 37 = ....[cite: 152]", options: ["28", "38", "42", "52"], ans: 1, exp: "38[cite: 152]." },
+      { q: "12. AA + A = 84 (A=7). 1 + 3 x A = ....[cite: 152]", options: ["22", "34", "32", "24"], ans: 0, exp: "22[cite: 152]." },
+      { q: "13. Apel=6, Jeruk=8. Jeruk - Apel = ....[cite: 152]", options: ["2", "3", "4", "5"], ans: 0, exp: "2[cite: 152]." },
+      { q: "14. 4 + 4N = 32. N = ....[cite: 152]", options: ["4", "6", "7", "8"], ans: 2, exp: "7[cite: 152]." },
+      { q: "15. Selisih 7 pada 6.721 (700) dan 7.405 (7000) = ....[cite: 152]", options: ["684", "316", "6.300", "6.316"], ans: 2, exp: "6.300[cite: 152]." },
+      { q: "16. 3 lusin sendok + 2 lusin garpu = ....[cite: 152]", options: ["Rp201.000", "Rp210.000", "Rp79.000", "Rp120.000"], ans: 0, exp: "Rp201.000[cite: 152]." },
+      { q: "17. Berangkat 19.45 tiba 04.30 + telat 20 menit = ....[cite: 152]", options: ["9 jam 5 mnt", "8 jam 45", "9 jam", "9 jam 20"], ans: 0, exp: "9 jam 5 menit[cite: 152]." },
+      { q: "18. Tiga bilangan jumlah 141 (46,47,48). 47 x 46 = ....[cite: 152]", options: ["2.162", "2.116", "2.208", "2.256"], ans: 0, exp: "2.162[cite: 152]." },
+      { q: "19. Kubus tangga 3 tingkat = ....[cite: 152]", options: ["10", "12", "14", "16"], ans: 0, exp: "10 kubus[cite: 152]." },
+      { q: "20. Pecahan senilai 3/4 adalah ....", options: ["6/8", "5/8", "9/15", "4/6"], ans: 0, exp: "6/8." }
+    ];
+
+    const dataSchMathLv2 = [
+      { q: "1. Sava + Ibu = 48. Ibu = 3x Sava (36 & 12). Selisih usia = ....[cite: 152]", options: ["18 th", "20 th", "24 th", "30 th"], ans: 2, exp: "24 tahun[cite: 152]." },
+      { q: "2. 39 siswa. 30 IPA, 17 Math, 3 tidak keduanya. Suka keduanya = ....[cite: 152]", options: ["11 anak", "14", "9", "15"], ans: 0, exp: "11 anak[cite: 152]." },
+      { q: "3. Jumlah 48, selisih 12 (30 & 18). Hasil kali = ....[cite: 152]", options: ["260", "460", "540", "340"], ans: 2, exp: "540[cite: 152]." },
+      { q: "4. Kelipatan 7 adalah ....[cite: 152]", options: ["2.311", "2.118", "1.813", "1.914"], ans: 2, exp: "1.813[cite: 152]." },
+      { q: "5. Berangkat 19.20 tempuh 10 jam. Tiba pukul ....[cite: 152]", options: ["04.05", "05.20 WIB", "04.30", "05.05"], ans: 1, exp: "05.20 WIB[cite: 152]." },
+      { q: "6. Meja sedang 7 meja, kecil 4 meja. Selisih = ....[cite: 152]", options: ["2", "4", "3 meja", "5"], ans: 2, exp: "3 meja[cite: 152]." },
+      { q: "7. Persegi keliling 64 cm potong jadi 3. Total keliling = ....[cite: 152]", options: ["98 cm", "112 cm", "100 cm", "144 cm"], ans: 1, exp: "112 cm[cite: 152]." },
+      { q: "8. Jajar genjang luas 180 cm². Sisi miring 15 cm. Tinggi = ....[cite: 152]", options: ["15 cm", "12 cm", "18 cm", "10 cm"], ans: 1, exp: "12 cm[cite: 152]." },
+      { q: "9. Data: 5, 6, 6, 8, 6, 5. Rata-rata = ....[cite: 152]", options: ["9", "7", "6", "8"], ans: 2, exp: "6[cite: 152]." },
+      { q: "10. 304 kg adalah 76% target. Target maksimal = ....[cite: 152]", options: ["400 kg", "450", "600", "500"], ans: 0, exp: "400 kg[cite: 152]." },
+      { q: "11. 3 laki-laki dan 2 perempuan duduk selang-seling = ....[cite: 152]", options: ["6", "12 cara", "5", "10"], ans: 1, exp: "12 cara[cite: 152]." },
+      { q: "12. Pengusaha 15% dari 300 orang = ....[cite: 152]", options: ["45 orang", "60", "30", "50"], ans: 0, exp: "45 orang[cite: 152]." },
+      { q: "13. Kubus kena 3 sisi cat di sudut kubus ada ....[cite: 152]", options: ["Tengah", "8 titik sudut", "Pusat", "Rusuk"], ans: 1, exp: "8 sudut[cite: 152]." },
+      { q: "14. Segitiga alas 8, tinggi 15, miring 17. Keliling = ....[cite: 152]", options: ["40 cm", "30", "45", "50"], ans: 0, exp: "40 cm[cite: 152]." },
+      { q: "15. Banyak rute dari A ke B pada grid = ....[cite: 152]", options: ["12", "16", "20 cara", "24"], ans: 2, exp: "20 cara[cite: 152]." },
+      { q: "16. Prisma segitiga punya rusuk sebanyak ....", options: ["6", "8", "9 rusuk", "12"], ans: 2, exp: "9 rusuk." },
+      { q: "17. 15² - 12² = ....", options: ["81", "91", "101", "71"], ans: 0, exp: "81." },
+      { q: "18. KPK dari 24 dan 36 = ....", options: ["48", "72", "96", "108"], ans: 1, exp: "72." },
+      { q: "19. FPB dari 48 dan 72 = ....", options: ["12", "18", "24", "36"], ans: 2, exp: "24." },
+      { q: "20. Sudut siku-siku besarnya ....", options: ["45°", "90°", "180°", "360°"], ans: 1, exp: "90°." }
+    ];
+
+    const dataSchSainsLv1 = [
+      { q: "1. Hidung untuk membau dan ..... untuk meraba.[cite: 152]", options: ["Kulit", "Lidah", "Telinga", "Mata"], ans: 0, exp: "Kulit[cite: 152]." },
+      { q: "2. Organ penyaring darah pembentuk urine = .....[cite: 152]", options: ["Hati", "Jantung", "Ginjal", "Lambung"], ans: 2, exp: "Ginjal[cite: 152]." },
+      { q: "3. Alat stainless steel dipilih karena .....[cite: 152]", options: ["Konduktor panas yang baik & kedap air", "Isolator", "Karat", "Murah"], ans: 0, exp: "Konduktor panas baik[cite: 152]." },
+      { q: "4. Gas lebih ringan dari oksigen adalah .....[cite: 152]", options: ["Propan", "Helium", "Klorin", "Sulfur"], ans: 1, exp: "Helium[cite: 152]." },
+      { q: "5. Alat optik tanpa lensa adalah .....[cite: 152]", options: ["Teleskop", "Kacamata", "Mikroskop", "Cermin datar"], ans: 3, exp: "Cermin datar[cite: 152]." },
+      { q: "6. Perubahan wujud menyerap kalor adalah .....[cite: 152]", options: ["Membeku", "Mengembun", "Padat menjadi gas (menyublim)", "Mengkristal"], ans: 2, exp: "Menyublim[cite: 152]." },
+      { q: "7. Sifat gas pengisi balon adalah .....[cite: 152]", options: ["Murah", "Mengisi seluruh ruang & menekan ke segala arah", "Padat", "Tetap"], ans: 1, exp: "Mengisi seluruh ruang[cite: 152]." },
+      { q: "8. Perubahan bentuk energi dinamakan .....[cite: 152]", options: ["Transfer", "Transformasi energi", "Rotasi", "Evolusi"], ans: 1, exp: "Transformasi energi[cite: 152]." },
+      { q: "9. Mobil listrik: Listrik -> baterai kimia -> gerak motor.[cite: 152]", options: ["Listrik -> gerak", "Gerak -> listrik", "Listrik -> kimia -> gerak", "Kimia -> gerak"], ans: 2, exp: "Listrik -> kimia -> gerak[cite: 152]." },
+      { q: "10. Sulit dorong lemari di lantai karena .....[cite: 152]", options: ["Pegas", "Gravitasi", "Gaya gesek yang besar", "Magnet"], ans: 2, exp: "Gaya gesek[cite: 152]." },
+      { q: "11. Benda berat amblas lebih dalam karena .....[cite: 152]", options: ["Energi potensial benda A lebih besar", "Kinetik", "Gravitasi nol", "Tinggi"], ans: 0, exp: "Energi potensial lebih besar[cite: 152]." },
+      { q: "12. Menyesuaikan diri dengan lingkungan disebut .....[cite: 152]", options: ["Fotosintesis", "Adaptasi", "Respirasi", "Aspirasi"], ans: 1, exp: "Adaptasi[cite: 152]." },
+      { q: "13. Zat tubuh melawan kuman = .....[cite: 152]", options: ["Antibodi", "Protein", "Vitamin E", "Kalsium"], ans: 0, exp: "Antibodi[cite: 152]." },
+      { q: "14. Paus dan kelelawar kelompok yang sama karena .....[cite: 152]", options: ["Insang", "Reproduksi melahirkan (mamalia)", "Herbivora", "Laut"], ans: 1, exp: "Mamalia melahirkan[cite: 152]." },
+      { q: "15. Daun teratai lebar dan tipis untuk .....[cite: 152]", options: ["Mempercepat penguapan & fotosintesis", "Simpan air", "Ombak", "Racun"], ans: 0, exp: "Mempercepat penguapan[cite: 152]." },
+      { q: "16. Akibat revolusi bumi adalah .....[cite: 152]", options: ["Siang malam", "Perubahan musim", "Pasang surut", "24 jam"], ans: 1, exp: "Perubahan musim[cite: 152]." },
+      { q: "17. Contoh reaksi perubahan kimia adalah .....[cite: 152]", options: ["Es cair", "Besi berkarat muncul bercak coklat", "Kertas gunting", "Batu belah"], ans: 1, exp: "Besi berkarat[cite: 152]." },
+      { q: "18. Anak balita butuh ..... untuk tulang & otot.[cite: 152]", options: ["Kalsium dan protein", "Lemak jenuh", "Gula", "Serat"], ans: 0, exp: "Kalsium dan protein[cite: 152]." },
+      { q: "19. Air tumpah 600 ml saat batu dimasukkan. Volume batu = .....[cite: 152]", options: ["1000 ml", "600 ml", "400 ml", "1600 ml"], ans: 1, exp: "600 ml[cite: 152]." },
+      { q: "20. Mengerem sepeda memakai gaya .....", options: ["Gaya gesek", "Gaya pegas", "Gaya magnet", "Gaya gravitasi"], ans: 0, exp: "Gaya gesek." }
+    ];
+
+    const dataSchSainsLv2 = [
+      { q: "1. Fungsi membran sel adalah .....[cite: 152]", options: ["Bentuk kaku", "Mengatur keluar-masuknya zat ke dalam sel", "Inti", "Klorofil"], ans: 1, exp: "Mengatur lalu lintas zat[cite: 152]." },
+      { q: "2. Organel HANYA pada sel tumbuhan adalah .....[cite: 152]", options: ["Nukleus", "Lisosom", "Kloroplas dan dinding sel", "Mitokondria"], ans: 2, exp: "Kloroplas dan dinding sel[cite: 152]." },
+      { q: "3. Kerja bisep dan trisep adalah gerak .....[cite: 152]", options: ["Antagonis (berlawanan)", "Sinergis", "Otomatis", "Refleks"], ans: 0, exp: "Antagonis[cite: 152]." },
+      { q: "4. Kecepatan 15 m/s direm berhenti dalam 3 detik. Perlambatan = .....[cite: 152]", options: ["15 m/s²", "6 m/s²", "8 m/s²", "5 m/s²"], ans: 3, exp: "5 m/s²[cite: 152]." },
+      { q: "5. Organ dengan HCl sangat asam adalah .....[cite: 152]", options: ["Pankreas", "Lambung", "Hati", "Usus"], ans: 1, exp: "Lambung[cite: 152]." },
+      { q: "6. Saat air masuk ke insang ikan terjadi .....[cite: 152]", options: ["Lepas O2", "Pengikatan oksigen oleh hemoglobin darah", "Ikat CO2", "Lendir"], ans: 1, exp: "Pengikatan O2 oleh hemoglobin[cite: 152]." },
+      { q: "7. Bola basket memantul membuktikan gaya .....[cite: 152]", options: ["Mengubah arah gerak benda", "Hilang massa", "Besar bola", "Henti gravitasi"], ans: 0, exp: "Mengubah arah gerak benda[cite: 152]." },
+      { q: "8. Dorong 50 N ke timur & 30 N ke barat. Resultan = .....[cite: 152]", options: ["20 N barat", "80 N timur", "80 N barat", "20 N ke arah timur"], ans: 3, exp: "20 N ke timur[cite: 152]." },
+      { q: "9. Usaha gaya 20 N memindahkan meja sejauh 2 m adalah .....[cite: 152]", options: ["20 J", "40 Joule", "50 J", "60 J"], ans: 1, exp: "40 Joule[cite: 152]." },
+      { q: "10. Eceng gondok mengapung karena .....[cite: 152]", options: ["Batang berongga dan akar serabut lebat", "Akar tunggang", "Duri", "Kayu"], ans: 0, exp: "Batang berongga[cite: 152]." },
+      { q: "11. Rantai makanan kolam: Zat organik (4) -> Plankton (3) -> Herbivora (5) -> Karnivora (1) -> Pengurai (2)[cite: 152]", options: ["4,5,1,2,3", "4,3,5,1,2", "5,3,1,2,4", "4,2,3,1,5"], ans: 1, exp: "4, 3, 5, 1, 2[cite: 152]." },
+      { q: "12. Bahan bakar kompor minyak tanah adalah .....[cite: 152]", options: ["Kerosin", "Parafin", "Vaselin", "Aspal"], ans: 0, exp: "Kerosin[cite: 152]." },
+      { q: "13. Jagung diserbukkan oleh perantara .....[cite: 152]", options: ["Angin (Anemogami)", "Air", "Burung", "Kelelawar"], ans: 0, exp: "Angin[cite: 152]." },
+      { q: "14. Hewan herbivora memperebutkan rumput disebut .....[cite: 152]", options: ["Predasi", "Amensalisme", "Mutualisme", "Kompetisi"], ans: 3, exp: "Kompetisi[cite: 152]." },
+      { q: "15. Benda A kalor jenis lebih besar dari B. Kenaikan suhu A .....[cite: 152]", options: ["Lebih cepat", "Perubahan suhu benda A lebih kecil daripada benda B", "Sama", "Rusak"], ans: 1, exp: "Lebih kecil / lambat[cite: 152]." },
+      { q: "16. Gendang telinga berfungsi .....", options: ["Menangkap getaran gelombang bunyi", "Keseimbangan", "Kotoran", "Tenggorokan"], ans: 0, exp: "Menangkap getaran bunyi." },
+      { q: "17. Hubungan benalu pada inang adalah .....", options: ["Parasitisme", "Mutualisme", "Komensalisme", "Netralisme"], ans: 0, exp: "Parasitisme." },
+      { q: "18. Bagian mata mengatur jumlah cahaya masuk adalah .....", options: ["Pupil dan iris", "Kornea", "Retina", "Saraf"], ans: 0, exp: "Pupil dan iris." },
+      { q: "19. Bunyi TIDAK merambat di .....", options: ["Ruang hampa udara (vakum)", "Air", "Besi", "Udara"], ans: 0, exp: "Ruang hampa udara." },
+      { q: "20. Zat makanan pembangun sel tubuh adalah .....", options: ["Protein", "Karbohidrat", "Lemak", "Vitamin"], ans: 0, exp: "Protein." }
+    ];
+
+    const dataPutriSains40 = [
+      { q: "1. Manusia, hewan, dan tumbuhan memerlukan makanan untuk .....", options: ["Bertambah banyak", "Menghasilkan energi dan bertahan hidup", "Mengubah warna kulit", "Bermain"], ans: 1, exp: "Makanan adalah sumber energi utama makhluk hidup." },
+      { q: "2. Ciri makhluk hidup yang ditunjukkan dengan bertambahnya tinggi dan berat badan adalah .....", options: ["Tumbuh", "Bernapas", "Peka terhadap rangsangan", "Bergerak"], ans: 0, exp: "Pertumbuhan ditandai dengan bertambahnya ukuran, tinggi, dan berat." },
+      { q: "3. Tumbuhan putri malu yang menguncup saat disentuh membuktikan bahwa tumbuhan .....", options: ["Memerlukan air", "Bernapas dengan daun", "Peka terhadap rangsangan", "Tumbuh tinggi"], ans: 2, exp: "Respon menguncup saat disentuh adalah ciri iritabilitas." },
+      { q: "4. Alat pernapasan pada ikan yang hidup di dalam air adalah .....", options: ["Paru-paru", "Insang", "Trakea", "Kulit"], ans: 1, exp: "Ikan bernapas menggunakan insang untuk menyerap oksigen terlarut." },
+      { q: "5. Bentuk paruh burung elang yang tajam dan bengkok berfungsi untuk .....", options: ["Mencari cacing", "Mencabik daging mangsa", "Mengisap madu", "Memecahkan biji"], ans: 1, exp: "Paruh elang tajam untuk mencabik daging mangsa." },
+      { q: "6. Pohon jati menggugurkan daunnya pada musim kemarau bertujuan untuk .....", options: ["Mempercepat fotosintesis", "Mengurangi penguapan air", "Memperbanyak bunga", "Menarik serangga"], ans: 1, exp: "Menggugurkan daun mengurangi penguapan saat kemarau." },
+      { q: "7. Cicak memutuskan ekornya saat terdesak bahaya musuh. Kemampuan ini disebut .....", options: ["Autotomi", "Mimikri", "Kamuflase", "Hibernasi"], ans: 0, exp: "Autotomi melepas ekor mengelabui pemangsa." },
+      { q: "8. Kaktus memiliki daun berbentuk duri yang berguna untuk .....", options: ["Menyimpan air", "Mengurangi penguapan air", "Menyerap cahaya", "Menarik perhatian"], ans: 1, exp: "Duri mengurangi luas penguapan di daerah kering." },
+      { q: "9. Karbohidrat sangat dibutuhkan oleh tubuh kita sebagai .....", options: ["Zat pembangun sel", "Sumber energi utama", "Zat pengatur suhu", "Pelarut vitamin"], ans: 1, exp: "Karbohidrat sumber energi utama tubuh." },
+      { q: "10. Protein sangat penting bagi anak-anak pada masa pertumbuhan karena berfungsi sebagai .....", options: ["Zat pembangun dan pengganti sel rusak", "Cadangan energi utama", "Pencegah aus", "Penyerap air"], ans: 0, exp: "Protein sebagai zat pembangun sel baru." },
+      { q: "11. Untuk menjaga kesehatan mata, kita dianjurkan banyak mengonsumsi makanan yang mengandung .....", options: ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"], ans: 0, exp: "Vitamin A menjaga kesehatan mata." },
+      { q: "12. Kekurangan Vitamin C dalam tubuh dapat menyebabkan gangguan kesehatan berupa .....", options: ["Sariawan dan gusi berdarah", "Tulang rapuh", "Kebutaan malam", "Darah sukar membeku"], ans: 0, exp: "Kekurangan vitamin C memicu sariawan." },
+      { q: "13. Es batu yang dibiarkan di udara terbuka lama-kelamaan akan berubah menjadi air. Proses ini disebut .....", options: ["Membeku", "Mencair", "Menguap", "Mengembun"], ans: 1, exp: "Perubahan padat jadi cair disebut mencair." },
+      { q: "14. Titik-titik air yang menempel di dinding luar gelas berisi es batu merupakan contoh peristiwa .....", options: ["Menguap", "Mengembun", "Menyublim", "Membeku"], ans: 1, exp: "Mengembun adalah perubahan gas jadi titik cair." },
+      { q: "15. Kamper atau kapur barus yang diletakkan di dalam lemari pakaian lama-lama habis. Perubahan wujud ini disebut .....", options: ["Mengkristal", "Menyublim", "Menguap", "Mencair"], ans: 1, exp: "Menyublim perubahan padat langsung jadi gas." },
+      { q: "16. Benda yang memiliki bentuk dan volume tetap walaupun dipindahkan ke mana saja adalah benda .....", options: ["Cair", "Gas", "Padat", "Plasma"], ans: 2, exp: "Benda padat bentuk dan volume konstan." },
+      { q: "17. Alat yang digunakan untuk mengukur suhu tubuh secara akurat adalah .....", options: ["Stetoskop", "Termometer", "Meteran", "Timbangan"], ans: 1, exp: "Termometer pengukur suhu." },
+      { q: "18. Satuan baku yang digunakan untuk menyatakan suhu di Indonesia adalah .....", options: ["Joule", "Meter", "Celsius (°C)", "Kilogram"], ans: 2, exp: "Skala baku suhu Indonesia Celsius." },
+      { q: "19. Air murni akan mendidih pada suhu standar sebesar .....", options: ["0 °C", "50 °C", "100 °C", "120 °C"], ans: 2, exp: "Titik didih air 100 °C." },
+      { q: "20. Penggaris dan meteran roll merupakan alat yang digunakan untuk mengukur besaran .....", options: ["Massa", "Panjang", "Waktu", "Suhu"], ans: 1, exp: "Penggaris mengukur panjang." },
+      { q: "21. Saat kita melempar bola ke atas, bola akan jatuh kembali ke bumi karena pengaruh .....", options: ["Gaya pegas", "Gaya gravitasi", "Gaya gesek", "Gaya magnet"], ans: 1, exp: "Gaya gravitasi menarik benda jatuh ke bawah." },
+      { q: "22. Sepeda yang direm akan melambat lalu berhenti karena adanya .....", options: ["Gaya gesek antara rem dan velg", "Gaya otot", "Gaya magnet", "Gaya gravitasi"], ans: 0, exp: "Gaya gesek menahan laju roda." },
+      { q: "23. Perubahan energi yang terjadi pada kipas angin listrik yang bernyala adalah .....", options: ["Energi listrik menjadi energi gerak", "Energi listrik menjadi panas", "Energi kimia jadi listrik", "Energi gerak jadi bunyi"], ans: 0, exp: "Listrik menggerakkan motor kipas." },
+      { q: "24. Pada alat setrika listrik terjadi perubahan dari energi listrik menjadi energi .....", options: ["Cahaya", "Panas (kalor)", "Bunyi", "Gerak"], ans: 1, exp: "Setrika mengubah listrik jadi panas." },
+      { q: "25. Bunyi dihasilkan oleh benda yang .....", options: ["Diam", "Bergetar", "Dingin", "Bening"], ans: 1, exp: "Sumber bunyi berasal dari benda bergetar." },
+      { q: "26. Peristiwa pembentukan bayangan pada cermin datar membuktikan sifat cahaya yaitu .....", options: ["Dapat dipantulkan", "Dapat dibiaskan", "Merambat lurus saja", "Menembus benda gelap"], ans: 0, exp: "Cermin datar memantulkan cahaya." },
+      { q: "27. Pensil yang dimasukkan ke dalam gelas berisi air bening terlihat seperti patah karena cahaya .....", options: ["Dipantulkan", "Dibiaskan", "Diserap", "Dipancarkan"], ans: 1, exp: "Pembiasan terjadi saat melewati dua medium berbeda." },
+      { q: "28. Bunyi tidak dapat merambat di ruang hampa udara karena bunyi membutuhkan .....", options: ["Cahaya", "Medium/zat perantara", "Suhu panas", "Listrik"], ans: 1, exp: "Bunyi butuh perantara untuk merambat." },
+      { q: "29. Sumber energi terbesar dan utama bagi kehidupan di bumi adalah .....", options: ["Minyak bumi", "Matahari", "Batu bara", "Angin"], ans: 1, exp: "Matahari energi utama bumi." },
+      { q: "30. Berikut ini yang termasuk kelompok sumber daya alam yang dapat diperbarui adalah .....", options: ["Minyak bumi dan emas", "Tumbuhan, hewan, dan air", "Batu bara dan besi", "Gas alam dan tembaga"], ans: 1, exp: "Tumbuhan, hewan, dan air dapat diperbarui." },
+      { q: "31. Penanaman kembali hutan yang gundul untuk mencegah tanah longsor dan banjir disebut .....", options: ["Reboisasi", "Erosi", "Irigasi", "Rehabilitasi"], ans: 0, exp: "Reboisasi penanaman kembali hutan." },
+      { q: "32. Keadaan udara pada suatu tempat yang sempit dan dalam waktu yang singkat disebut .....", options: ["Musim", "Iklim", "Cuaca", "Suhu"], ans: 2, exp: "Cuaca berlangsung singkat dan sempit." },
+      { q: "33. Pusat tata surya yang dikelilingi oleh planet-planet adalah .....", options: ["Bumi", "Matahari", "Bulan", "Yupiter"], ans: 1, exp: "Matahari pusat Tata Surya." },
+      { q: "34. Planet yang terdekat jaraknya dengan matahari adalah planet .....", options: ["Venus", "Merkurius", "Mars", "Bumi"], ans: 1, exp: "Merkurius planet terdekat Matahari." },
+      { q: "35. Gerakan bumi berputar pada porosnya sendiri dinamakan .....", options: ["Rotasi bumi", "Revolusi bumi", "Orbit", "Eklips"], ans: 0, exp: "Rotasi perputaran bumi pada porosnya." },
+      { q: "36. Peristiwa pergantian siang dan malam di bumi disebabkan oleh .....", options: ["Revolusi bumi", "Rotasi bumi", "Rotasi bulan", "Revolusi bulan"], ans: 1, exp: "Rotasi bumi menyebabkan siang malam." },
+      { q: "37. Waktu yang dibutuhkan oleh bumi untuk sekali mengelilingi matahari adalah .....", options: ["1 hari", "30 hari", "1 tahun (365¼ hari)", "10 tahun"], ans: 2, exp: "Revolusi bumi memerlukan 1 tahun." },
+      { q: "38. Satelit alami yang dimiliki oleh planet Bumi adalah .....", options: ["Matahari", "Bulan", "Titan", "Ganymede"], ans: 1, exp: "Bulan satelit alami bumi." },
+      { q: "39. Planet yang dijuluki sebagai 'Planet Merah' adalah .....", options: ["Mars", "Venus", "Yupiter", "Saturnus"], ans: 0, exp: "Mars dijuluki Planet Merah." },
+      { q: "40. Planet terbesar dalam sistem Tata Surya kita adalah .....", options: ["Saturnus", "Neptunus", "Yupiter", "Uranus"], ans: 2, exp: "Yupiter planet terbesar Tata Surya." }
+    ];
+
+    const shevaBacaData = {
+      1: [
+        { v: "⚽ ⚽", q: "Huruf b - o - l - a dibaca menjadi ....", o: ["BOLA", "POLA", "BALA"], a: 0, e: "b-o (bo) + l-a (la) = BOLA! ⚽" },
+        { v: "📖 ✏️", q: "Lengkapilah: BU - .....", o: ["KU (Buku)", "KI (Buki)", "KA (Buka)"], a: 0, e: "BU-KU! 📖" },
+        { v: "🐄 🥛", q: "SAPI dieja menjadi ....", o: ["SA - PI", "SI - PA", "SO - PI"], a: 0, e: "SA - PI! 🐄" },
+        { v: "🦆 🦆", q: "Mengeja bebek:", o: ["BE - BEK", "KA - TAK", "CI - CAK"], a: 0, e: "BE - BEK! 🦆" },
+        { v: "🏠 🏡", q: "Lengkapilah: RU - .....", o: ["MAH (Rumah)", "SA (Rusa)", "TI (Ruti)"], a: 0, e: "RU - MAH! 🏠" },
+        { v: "🐟 🌊", q: "Huruf awal kata IKAN adalah ....", o: ["Huruf I", "Huruf A", "Huruf U"], a: 0, e: "Huruf I! 🐟" },
+        { v: "🐱 🐱", q: "k-u-c-i-n-g dibaca ....", o: ["KUCING", "KACANG", "KANCING"], a: 0, e: "KUCING! 🐱" },
+        { v: "🍞 🥐", q: "RO - TI dibaca ....", o: ["ROTI", "RATU", "RATA"], a: 0, e: "ROTI! 🍞" },
+        { v: "🚗 🚙", q: "MO - BIL dibaca ....", o: ["MOBIL", "MOTOR", "MODAL"], a: 0, e: "MOBIL! 🚗" },
+        { v: "🍌 🍌", q: "PISANG terdiri dari huruf ....", o: ["p - i - s - a - n - g", "p - u - s - a", "b - i - s - a"], a: 0, e: "p-i-s-a-n-g! 🍌" }
+      ],
+      2: [
+        { v: "🪑 🪑", q: "ME - JA dibaca ....", o: ["MEJA", "MAJU", "MATA"], a: 0, e: "ME - JA! 🪑" },
+        { v: "🚪 🚪", q: "PIN - TU dibaca ....", o: ["PINTU", "PITA", "PIPA"], a: 0, e: "PIN - TU! 🚪" },
+        { v: "👟 👞", q: "SE - PA - TU dibaca ....", o: ["SEPATU", "SEPEDA", "SELIMUT"], a: 0, e: "SE - PA - TU! 👟" },
+        { v: "🧢 👒", q: "TO - PI dibaca ....", o: ["TOPI", "TALI", "TOKO"], a: 0, e: "TO - PI! 🧢" },
+        { v: "👗 👕", q: "BA - JU dibaca ....", o: ["BAJU", "BATU", "BAPAK"], a: 0, e: "BA - JU! 👗" },
+        { v: "👁️ 👁️", q: "MA - TA dibaca ....", o: ["MATA", "MADU", "MATI"], a: 0, e: "MA - TA! 👁️" },
+        { v: "👂 👂", q: "TE - LI - NGA dibaca ....", o: ["TELINGA", "TELUR", "TANGAN"], a: 0, e: "TE - LI - NGA! 👂" },
+        { v: "👃 👃", q: "HI - DUNG dibaca ....", o: ["HIDUNG", "HITAM", "HIJAU"], a: 0, e: "HI - DUNG! 👃" },
+        { v: "✋ 🤚", q: "TA - NGAN dibaca ....", o: ["TANGAN", "TANGGA", "TAMAN"], a: 0, e: "TA - NGAN! ✋" },
+        { v: "🦷 🦷", q: "GI - GI dibaca ....", o: ["GIGI", "GULA", "GELAS"], a: 0, e: "GI - GI! 🦷" }
+      ],
+      3: [
+        { v: "🍎 🍎", q: "A - PEL dibaca ....", o: ["APEL", "AYAM", "AWAN"], a: 0, e: "A - PEL manis! 🍎" },
+        { v: "🍊 🍊", q: "JE - RUK dibaca ....", o: ["JERUK", "JARUM", "JALAN"], a: 0, e: "JE - RUK segar! 🍊" },
+        { v: "🍉 🍉", q: "SE - MANG - KA dibaca ....", o: ["SEMANGKA", "SEPATU", "SEMUT"], a: 0, e: "SE - MANG - KA! 🍉" },
+        { v: "🍓 🍓", q: "STRO - BE - RI dibaca ....", o: ["STROBERI", "SEKOLAH", "SEPEDA"], a: 0, e: "STRO - BE - RI! 🍓" },
+        { v: "🍇 🍇", q: "ANG - GUR dibaca ....", o: ["ANGGUR", "ANGIN", "ANGSA"], a: 0, e: "ANG - GUR! 🍇" },
+        { v: "🥕 🥕", q: "WOR - TEL dibaca ....", o: ["WORTEL", "WAJAN", "WARUNG"], a: 0, e: "WOR - TEL! 🥕" },
+        { v: "🍅 🍅", q: "TO - MAT dibaca ....", o: ["TOMAT", "TOPI", "TOKO"], a: 0, e: "TO - MAT! 🍅" },
+        { v: "🥔 🥔", q: "KEN - TANG dibaca ....", o: ["KENTANG", "KANCING", "KAPAL"], a: 0, e: "KEN - TANG! 🥔" },
+        { v: "🌽 🌽", q: "JA - GUNG dibaca ....", o: ["JAGUNG", "JAMUR", "JARUM"], a: 0, e: "JA - GUNG! 🌽" },
+        { v: "🥥 🥥", q: "KE - LA - PA dibaca ....", o: ["KELAPA", "KELINCI", "KERA"], a: 0, e: "KE - LA - PA! 🥥" }
+      ],
+      4: [
+        { v: "🐔 🐔", q: "A - YAM dibaca ....", o: ["AYAM", "APEL", "AWAN"], a: 0, e: "A - YAM! 🐔" },
+        { v: "🐇 🐇", q: "KE - LIN - CI dibaca ....", o: ["KELINCI", "KANCIL", "KAMBING"], a: 0, e: "KE - LIN - CI! 🐇" },
+        { v: "🐐 🐐", q: "KAM - BING dibaca ....", o: ["KAMBING", "KUCING", "KANCIL"], a: 0, e: "KAM - BING! 🐐" },
+        { v: "🐘 🐘", q: "GA - JAH dibaca ....", o: ["GAJAH", "GAGAK", "GARAM"], a: 0, e: "GA - JAH besar! 🐘" },
+        { v: "🐒 🐒", q: "MO - NYET dibaca ....", o: ["MONYET", "MOBIL", "MOTOR"], a: 0, e: "MO - NYET lucu! 🐒" },
+        { v: "🦁 🦁", q: "SING - A dibaca ....", o: ["SINGA", "SAPI", "SEMUT"], a: 0, e: "SING - A gagah! 🦁" },
+        { v: "🐎 🐎", q: "KU - DA dibaca ....", o: ["KUDA", "KUKU", "KUTU"], a: 0, e: "KU - DA! 🐎" },
+        { v: "🐅 🐅", q: "HA - RI - MAU dibaca ....", o: ["HARIMAU", "HIU", "HAMSTER"], a: 0, e: "HA - RI - MAU! 🐅" },
+        { v: "🐢 🐢", q: "KU - RA - KU - RA dibaca ....", o: ["KURA-KURA", "KUPU-KUPU", "KUCING"], a: 0, e: "KU - RA - KU - RA! 🐢" },
+        { v: "🦋 🦋", q: "KU - PU - KU - PU dibaca ....", o: ["KUPU-KUPU", "KURA-KURA", "KUTU"], a: 0, e: "KU - PU - KU - PU! 🦋" }
+      ],
+      5: [
+        { v: "👩‍🍳 🍞", q: "'Ibu beli roti'. Siapa yang beli roti?", o: ["Ibu", "Adik", "Kakak"], a: 0, e: "IBU beli roti! 🍞" },
+        { v: "🐱 🏃‍♂️", q: "'Kucing lari cepat'. Apa yang lari cepat?", o: ["Kucing", "Sapi", "Ayam"], a: 0, e: "KUCING lari cepat! 🐱" },
+        { v: "🚲 👧", q: "'Sheva naik sepeda'. Sheva naik apa?", o: ["Sepeda", "Mobil", "Becak"], a: 0, e: "Naik SEPEDA! 🚲" },
+        { v: "🍎 😋", q: "'Apel rasanya manis'. Apa rasa apel?", o: ["Manis", "Pahit", "Asin"], a: 0, e: "Rasanya MANIS! 🍎" },
+        { v: "🥛 🧒", q: "'Adik minum susu'. Apa yang diminum adik?", o: ["Susu", "Air kopi", "Sirup"], a: 0, e: "Minum SUSU sehat! 🥛" },
+        { v: "🌞 🌅", q: "'Matahari terbit pagi'. Kapan terbitnya?", o: ["Pagi hari", "Malam hari", "Sore hari"], a: 0, e: "PAGI HARI! 🌞" },
+        { v: "🌸 🌷", q: "'Bunga melati putih'. Apa warnanya?", o: ["Putih", "Merah", "Biru"], a: 0, e: "Warna PUTIH! 🌸" },
+        { v: "🐟 🏊‍♂️", q: "'Ikan berenang di kolam'. Ikan berenang di mana?", o: ["Di kolam", "Di kasur", "Di pohon"], a: 0, e: "Di KOLAM! 🐟" },
+        { v: "📚 🎒", q: "'Budi baca buku'. Apa yang dibaca Budi?", o: ["Buku", "Koran", "Baju"], a: 0, e: "Baca BUKU cerita! 📚" },
+        { v: "🚗 💨", q: "'Mobil ayah melaju'. Mobil siapa yang melaju?", o: ["Mobil ayah", "Mobil paman", "Mobil kakek"], a: 0, e: "Mobil AYAH! 🚗" }
+      ]
+    };
+
+    const generateShevaMathPack = (pNum) => {
+      const items = [
+        { v: "🍎 🍎 + 🍎", q: "2 apel + 1 apel = ...", o: ["2", "3", "4"], a: 1, e: "2 + 1 = 3 apel! 🍎" },
+        { v: "⭐ ⭐ ⭐ + ⭐", q: "3 bintang + 1 bintang = ...", o: ["3", "4", "5"], a: 1, e: "3 + 1 = 4 bintang! ⭐" },
+        { v: "🚗 🚗 🚗 🚗 - 🚗", q: "4 mobil - 1 mobil = ...", o: ["2", "3", "4"], a: 1, e: "4 - 1 = 3 mobil! 🚗" },
+        { v: "🐥 🐥 + 🐥 🐥", q: "2 ayam + 2 ayam = ...", o: ["3", "4", "5"], a: 1, e: "2 + 2 = 4 ayam! 🐥" },
+        { v: "🍦 🍦 🍦 🍦 🍦 - 🍦 🍦", q: "5 es krim - 2 es krim = ...", o: ["2", "3", "4"], a: 1, e: "5 - 2 = 3 es krim! 🍦" },
+        { v: "🎈 🎈 🎈 + 🎈 🎈", q: "3 balon + 2 balon = ...", o: ["4", "5", "6"], a: 1, e: "3 + 2 = 5 balon! 🎈" },
+        { v: "🐱 🐱 🐱 🐱 🐱 🐱 - 🐱", q: "6 kucing - 1 kucing = ...", o: ["4", "5", "6"], a: 1, e: "6 - 1 = 5 kucing! 🐱" },
+        { v: "🍓 🍓 🍓 🍓 + 🍓 🍓", q: "4 stroberi + 2 stroberi = ...", o: ["5", "6", "7"], a: 1, e: "4 + 2 = 6 stroberi! 🍓" },
+        { v: "🍩 🍩 🍩 🍩 🍩 🍩 🍩 - 🍩 🍩", q: "7 donat - 2 donat = ...", o: ["4", "5", "6"], a: 1, e: "7 - 2 = 5 donat! 🍩" },
+        { v: "🍬 🍬 🍬 🍬 🍬 + 🍬 🍬 🍬", q: "5 permen + 3 permen = ...", o: ["7", "8", "9"], a: 1, e: "5 + 3 = 8 permen! 🍬" }
+      ];
+      return items.map((it, idx) => ({
+        type: "mcq", visual: it.v, q: `${idx + 1}. (Math TK ${pNum}) ${it.q}`, options: it.o, ans: it.a, exp: it.e
+      }));
+    };
+
+    const generateShevaEngPack = (pNum) => {
+      const items = [
+        { v: "🍎 🍎", q: "What fruit is this?", o: ["Apple", "Banana", "Grape"], a: 0, e: "Apple! 🍎" },
+        { v: "🐱 🐱", q: "What animal says 'Meow'?", o: ["Dog", "Cat", "Bird"], a: 1, e: "Cat! 🐱" },
+        { v: "🔴 🔴", q: "What color is this?", o: ["Blue", "Red", "Yellow"], a: 1, e: "Red! 🔴" },
+        { v: "🐶 🦴", q: "What animal is this?", o: ["Cat", "Dog", "Fish"], a: 1, e: "Dog! 🐶" },
+        { v: "🍌 🍌", q: "What fruit is yellow?", o: ["Banana", "Apple", "Orange"], a: 0, e: "Banana! 🍌" },
+        { v: "🌞 ☀️", q: "What shines in the day?", o: ["Sun", "Moon", "Star"], a: 0, e: "Sun! ☀️" },
+        { v: "⭐ 🌟", q: "'Twinkle twinkle little _____'", o: ["Car", "Star", "Book"], a: 1, e: "Star! ⭐" },
+        { v: "📚 ✏️", q: "We read a _____ at school.", o: ["Book", "Door", "Tree"], a: 0, e: "Book! 📚" },
+        { v: "🔵 🌊", q: "The sea is _____.", o: ["Blue", "Pink", "Black"], a: 0, e: "Blue! 🔵" },
+        { v: "🦆 🦆", q: "What says 'Quack quack'?", o: ["Duck", "Cow", "Cat"], a: 0, e: "Duck! 🦆" }
+      ];
+      return items.map((it, idx) => ({
+        type: "mcq", visual: it.v, q: `${idx + 1}. (English TK ${pNum}) ${it.q}`, options: it.o, ans: it.a, exp: it.e
+      }));
+    };
+
+    // =========================================================================
+    // 3. EVENT HANDLER, ROUTING & SISTEM EVALUASI SKOR + DATABASE SYNC
+    // =========================================================================
     let currentQuizType = "";
     let activeQuizData = [];
     let currentChildName = "";
@@ -798,21 +1221,112 @@
       const scoreBoard = document.getElementById("score-board");
       scoreBoard.classList.remove("math-theme", "tk-theme");
 
-      if (type === "putri_sains_kisi") {
+      // ROUTING DEKLARASI NAMA NAMA ANAK & MATERI
+      if (type.startsWith("anin") || type.includes("lv3") || type.includes("lv4")) {
+        currentChildName = "Kakak Anin";
+      } else if (type.startsWith("putri") || type.includes("lv1") || type.includes("lv2")) {
         currentChildName = "Kakak Putri";
+      } else if (type.startsWith("sheva") || type.includes("_tk")) {
+        currentChildName = "Adik Sheva";
+      }
+
+      // KATEGORI SCHOLARIX & DRILL KISI KISI
+      if (type === "putri_sains_kisi") {
         currentQuizTitle = "Sains Level 1 Presisi Kisi-Kisi";
         document.getElementById("quiz-header-title").textContent = "Kakak Putri • Sains Level 1 Kisi-Kisi";
         quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
         activeQuizData = dataPutriSains40;
       } else if (type === "sch_eng_tk") {
-        currentChildName = "Adik Sheva";
         currentQuizTitle = "Scholarix English TK";
-        document.getElementById("quiz-header-title").textContent = "Adik Sheva • Scholarix English TK[cite: 10]";
+        document.getElementById("quiz-header-title").textContent = "Adik Sheva • Scholarix English TK[cite: 152]";
         quizView.classList.add("tk-mode"); scoreBoard.classList.add("tk-theme");
         activeQuizData = dataSchEngTK;
+      } else if (type === "sch_math_tk") {
+        currentQuizTitle = "Scholarix Math TK";
+        document.getElementById("quiz-header-title").textContent = "Adik Sheva • Scholarix Math TK[cite: 152]";
+        quizView.classList.add("tk-mode"); scoreBoard.classList.add("tk-theme");
+        activeQuizData = dataSchMathTK;
+      } else if (type === "sch_sains_tk") {
+        currentQuizTitle = "Scholarix Sains TK";
+        document.getElementById("quiz-header-title").textContent = "Adik Sheva • Scholarix Sains TK[cite: 152]";
+        quizView.classList.add("tk-mode"); scoreBoard.classList.add("tk-theme");
+        activeQuizData = dataSchSainsTK;
+      } else if (type === "sch_eng_lv1") {
+        currentQuizTitle = "Scholarix English Level 1";
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Scholarix English Level 1[cite: 152]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
+        activeQuizData = dataSchEngLv1;
+      } else if (type === "sch_eng_lv2") {
+        currentQuizTitle = "Scholarix English Level 2";
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Scholarix English Level 2[cite: 152]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
+        activeQuizData = dataSchEngLv2;
+      } else if (type === "sch_math_lv1") {
+        currentQuizTitle = "Scholarix Math Level 1";
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Scholarix Math Level 1[cite: 152]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
+        activeQuizData = dataSchMathLv1;
+      } else if (type === "sch_math_lv2") {
+        currentQuizTitle = "Scholarix Math Level 2";
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Scholarix Math Level 2[cite: 152]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
+        activeQuizData = dataSchMathLv2;
+      } else if (type === "sch_sains_lv1") {
+        currentQuizTitle = "Scholarix Sains Level 1";
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Scholarix Sains Level 1[cite: 152]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
+        activeQuizData = dataSchSainsLv1;
+      } else if (type === "sch_sains_lv2") {
+        currentQuizTitle = "Scholarix Sains Level 2";
+        document.getElementById("quiz-header-title").textContent = "Kakak Putri • Scholarix Sains Level 2[cite: 152]";
+        quizView.classList.add("math-mode"); scoreBoard.classList.add("math-theme");
+        activeQuizData = dataSchSainsLv2;
+      } else if (type === "sch_eng_lv3") {
+        currentQuizTitle = "Scholarix English Level 3";
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Scholarix English Level 3[cite: 152]";
+        activeQuizData = dataSchEngLv3;
+      } else if (type === "sch_eng_lv4") {
+        currentQuizTitle = "Scholarix English Level 4";
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Scholarix English Level 4[cite: 152]";
+        activeQuizData = dataSchEngLv4;
+      } else if (type === "sch_math_lv3") {
+        currentQuizTitle = "Scholarix Math Level 3";
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Scholarix Math Level 3[cite: 152]";
+        activeQuizData = dataSchMathLv2;
+      } else if (type === "sch_math_lv4") {
+        currentQuizTitle = "Scholarix Math Level 4";
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Scholarix Math Level 4[cite: 152]";
+        activeQuizData = dataSchMathLv1;
+      } else if (type === "sch_sains_lv3") {
+        currentQuizTitle = "Scholarix Sains Level 3";
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Scholarix Sains Level 3[cite: 152]";
+        activeQuizData = dataSchSainsLv2;
+      } else if (type === "sch_sains_lv4") {
+        currentQuizTitle = "Scholarix Sains Level 4";
+        document.getElementById("quiz-header-title").textContent = "Kakak Anin • Scholarix Sains Level 4[cite: 152]";
+        activeQuizData = dataSchSainsLv1;
+      } else if (type.startsWith("sheva_baca")) {
+        const pNum = type.replace("sheva_baca", "");
+        currentQuizTitle = `Drilling Membaca Paket ${pNum}`;
+        document.getElementById("quiz-header-title").textContent = `Adik Sheva • Baca Paket ${pNum}`;
+        quizView.classList.add("tk-mode"); scoreBoard.classList.add("tk-theme");
+        activeQuizData = shevaBacaData[pNum].map((it, idx) => ({
+          type: "mcq", visual: it.v, q: `${idx + 1}. ${it.q}`, options: it.o, ans: it.a, exp: it.e
+        }));
+      } else if (type.startsWith("sheva_math")) {
+        const pNum = type.replace("sheva_math", "");
+        currentQuizTitle = `Math Ceria Paket ${pNum}`;
+        document.getElementById("quiz-header-title").textContent = `Adik Sheva • Math Ceria Paket ${pNum}`;
+        quizView.classList.add("tk-mode"); scoreBoard.classList.add("tk-theme");
+        activeQuizData = generateShevaMathPack(pNum);
+      } else if (type.startsWith("sheva_eng")) {
+        const pNum = type.replace("sheva_eng", "");
+        currentQuizTitle = `English Fun Paket ${pNum}`;
+        document.getElementById("quiz-header-title").textContent = `Adik Sheva • English Fun Paket ${pNum}`;
+        quizView.classList.add("tk-mode"); scoreBoard.classList.add("tk-theme");
+        activeQuizData = generateShevaEngPack(pNum);
       } else {
-        currentChildName = "Anin / Putri / Sheva";
-        currentQuizTitle = "Latihan Belajar";
+        currentQuizTitle = "Latihan Belajar Modul";
         document.getElementById("quiz-header-title").textContent = "Modul Latihan Belajar";
         activeQuizData = dataPutriSains40;
       }
@@ -836,16 +1350,25 @@
         let passageHTML = item.passage ? `<div class="passage-box"><strong>Reading / Teks:</strong><br>${item.passage}</div>` : "";
         let visualHTML = item.visual ? `<div class="visual-box">${item.visual}</div>` : "";
 
-        let inputHTML = `<div class="options-list">`;
-        item.options.forEach((opt, optIdx) => {
-          inputHTML += `
-            <label class="option-label" id="label-${index}-${optIdx}">
-              <input type="radio" name="question-${index}" value="${optIdx}">
-              <span>${String.fromCharCode(65 + optIdx)}. ${opt}</span>
-            </label>
+        let inputHTML = "";
+        if (item.type !== "input") {
+          inputHTML = `<div class="options-list">`;
+          item.options.forEach((opt, optIdx) => {
+            inputHTML += `
+              <label class="option-label" id="label-${index}-${optIdx}">
+                <input type="radio" name="question-${index}" value="${optIdx}">
+                <span>${opt.startsWith(String.fromCharCode(65 + optIdx) + '.') ? opt : `${String.fromCharCode(65 + optIdx)}. ${opt}`}</span>
+              </label>
+            `;
+          });
+          inputHTML += `</div>`;
+        } else {
+          inputHTML = `
+            <div>
+              <input type="text" class="input-box" id="input-${index}" placeholder="Tulis jawaban di sini..." autocomplete="off">
+            </div>
           `;
-        });
-        inputHTML += `</div>`;
+        }
 
         card.innerHTML = `
           <div class="q-number">Soal Nomor ${index + 1} / ${activeQuizData.length}</div>
@@ -868,29 +1391,47 @@
       activeQuizData.forEach((item, index) => {
         const expBox = document.getElementById(`exp-${index}`);
         const expTitle = document.getElementById(`exp-title-${index}`);
-        const selected = document.querySelector(`input[name="question-${index}"]:checked`);
-        const userVal = selected ? parseInt(selected.value) : -1;
         let isCorrect = false;
 
-        document.querySelectorAll(`input[name="question-${index}"]`).forEach(el => el.disabled = true);
+        if (item.type !== "input") {
+          const selected = document.querySelector(`input[name="question-${index}"]:checked`);
+          const userVal = selected ? parseInt(selected.value) : -1;
 
-        if (userVal === item.ans) {
-          isCorrect = true;
-          correctCount++;
-        }
+          document.querySelectorAll(`input[name="question-${index}"]`).forEach(el => el.disabled = true);
 
-        const correctLabel = document.getElementById(`label-${index}-${item.ans}`);
-        if (correctLabel) {
-          correctLabel.style.borderColor = "var(--correct-border)";
-          correctLabel.style.backgroundColor = "var(--correct-bg)";
-          correctLabel.style.fontWeight = "700";
-        }
+          if (userVal === item.ans) {
+            isCorrect = true;
+            correctCount++;
+          }
 
-        if (!isCorrect && userVal !== -1) {
-          const wrongLabel = document.getElementById(`label-${index}-${userVal}`);
-          if (wrongLabel) {
-            wrongLabel.style.borderColor = "var(--wrong-border)";
-            wrongLabel.style.backgroundColor = "var(--wrong-bg)";
+          const correctLabel = document.getElementById(`label-${index}-${item.ans}`);
+          if (correctLabel) {
+            correctLabel.style.borderColor = "var(--correct-border)";
+            correctLabel.style.backgroundColor = "var(--correct-bg)";
+            correctLabel.style.fontWeight = "700";
+          }
+
+          if (!isCorrect && userVal !== -1) {
+            const wrongLabel = document.getElementById(`label-${index}-${userVal}`);
+            if (wrongLabel) {
+              wrongLabel.style.borderColor = "var(--wrong-border)";
+              wrongLabel.style.backgroundColor = "var(--wrong-bg)";
+            }
+          }
+        } else {
+          const inputEl = document.getElementById(`input-${index}`);
+          const userText = inputEl.value.trim().toLowerCase();
+          inputEl.disabled = true;
+
+          const match = Array.isArray(item.ans) ? item.ans.some(a => a.toLowerCase() === userText) : false;
+          if (match) {
+            isCorrect = true;
+            correctCount++;
+            inputEl.style.borderColor = "var(--correct-border)";
+            inputEl.style.backgroundColor = "var(--correct-bg)";
+          } else {
+            inputEl.style.borderColor = "var(--wrong-border)";
+            inputEl.style.backgroundColor = "var(--wrong-bg)";
           }
         }
 
@@ -900,7 +1441,7 @@
           expTitle.innerHTML = "✅ <strong>Jawaban Benar! Hebat!</strong>";
         } else {
           expBox.className = "explanation-box wrong";
-          let correctText = `${String.fromCharCode(65 + item.ans)}. ${item.options[item.ans]}`;
+          let correctText = item.type !== "input" ? `${String.fromCharCode(65 + item.ans)}. ${item.options[item.ans]}` : (Array.isArray(item.ans) ? item.ans.join(" / ") : "");
           expTitle.innerHTML = `❌ <strong>Jawaban Kurang Tepat.</strong> (Kunci Jawaban: <strong>${correctText}</strong>)`;
         }
       });
@@ -914,7 +1455,7 @@
       document.getElementById("submit-all-btn").style.display = "none";
       document.getElementById("retry-btn").style.display = "inline-block";
 
-      // SYNC DATA DENGAN FIREBASE FIRESTORE & GOOGLE SHEETS (GAS)
+      // SYNC DATA PERSISTEN KE FIREBASE & GOOGLE SHEETS
       saveReportToDatabase(currentChildName, currentQuizTitle, percentage, correctCount, activeQuizData.length);
 
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -933,10 +1474,10 @@
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
       };
 
-      // 1. Simpan ke Firebase Firestore
+      // 1. Simpan ke Firestore Firebase
       const p1 = db.collection("progress_bocils").add(reportData);
 
-      // 2. Simpan ke Google Sheets via Google Apps Script (GAS)
+      // 2. Simpan ke Google Sheets via GAS Web App
       const p2 = fetch(GAS_WEB_APP_URL, {
         method: "POST",
         mode: "no-cors",
